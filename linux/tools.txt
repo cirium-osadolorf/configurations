@@ -1,0 +1,17 @@
+============ Find public ip ==================
+curl ifconfig.me
+curl icanhazip.com
+curl ipecho.net
+
+============ Add user to a group ============ 
+gpasswd -a $USER docker
+
+
+============  Sending file via putty, from windows to linux ============ 
+pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
+#https://it.cornell.edu/managed-servers/transfer-files-using-putty
+
+
+============ fix of Windows files not running when porting over to run on a Unix machine ============ 
+
+dos2unix  filename.sh
