@@ -1,4 +1,4 @@
-#! /bin/nash
+#! /bin/bash
 
 curl https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
 --output terraform_0.11.8_linux_amd64.zip
