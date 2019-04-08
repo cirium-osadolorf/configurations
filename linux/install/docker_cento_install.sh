@@ -1,4 +1,5 @@
 #! /bin/bash
+# Link for the  full instructions https://docs.docker.com/install/linux/docker-ce/centos/
 yum remove -y docker \
                   docker-client \
                   docker-client-latest \
@@ -12,15 +13,13 @@ yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
 
+
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 
 yum install -y docker-ce docker-ce-cli containerd.io
 
-
-
-# sudo yum -y install docker
 systemctl start docker
 systemctl enable docker
 groupadd docker
@@ -28,5 +27,6 @@ usermod -aG docker $USER
 systemctl restart docker
 systemctl status docker
 docker run hello-world
+
 #sudo usermod -aG docker jenkins
 #sudo systemctl restart jenkins

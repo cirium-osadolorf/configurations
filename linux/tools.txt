@@ -15,3 +15,7 @@ pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 ============ fix of Windows files not running when porting over to run on a Unix machine ============ 
 
 dos2unix  filename.sh
+
+
+============ amazing tools ============ 
+ sshpass 
