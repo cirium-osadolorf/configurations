@@ -6,9 +6,9 @@ module "image" {
 
 #Start the Container
 module "container" {
-  source = "/container"
+  source = "./container"
   image  = "${module.image.image_out}"
-  name = "${var.container_name}"
+  container_name = "${var.container_name}"
   int_port = "${var.int_port}"
   ext_port = "${var.ext_port}"
 }
