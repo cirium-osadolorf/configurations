@@ -19,3 +19,9 @@ dos2unix  filename.sh
 
 ============ amazing tools ============ 
  sshpass 
+
+
+========= Docker essentials ===========
+docker build -t fortunexfortune/moviesearchapi .
+
+docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
