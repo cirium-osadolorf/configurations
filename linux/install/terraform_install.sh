@@ -6,4 +6,4 @@ unzip terraform_0.11.8_linux_amd64.zip
 mkdir /bin/terraform
 mv terraform /usr/local/bin/
 rm -fR terraform_0.11.8_linux_amd64.zip
-terraform -v
+terraform -version
