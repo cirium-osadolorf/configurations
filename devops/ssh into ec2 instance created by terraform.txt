@@ -1,0 +1,21 @@
+https://www.quora.com/How-do-I-login-to-an-AWS-ec2-instance-which-is-created-by-a-terraform-script
+How do I login to an AWS ec2 instance which is created 
+by a terraform script?
+
+
+Terraform is only a way to deploy your infrastructure. The functionality depends
+ on the components you have deployed. So it depends on the type of OS you have 
+selected while creating the instance.
+
+Assuming you have defined a key pair in your terraform script, 
+below are the username for each distribution using which you can connect to the instance:
+
+Amazon Linux: ec2-user
+
+Ubuntu: ubuntu
+
+Debian: admin
+
+RHEL 6.4 and later: ec2-user
+
+Windows: Administrator (Password has to be decrpyt from the console using pem file)

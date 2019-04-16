@@ -1,0 +1,14 @@
+Insert this into the setting.json file
+
+
+{
+        {
+            "name": "test",
+            "root": "/home/fortune/dir",
+            "host": "52.209.64.141",
+            "port": 22,
+            "username": "fortune",
+            "password": "password"
+        }
+    ]
+}
