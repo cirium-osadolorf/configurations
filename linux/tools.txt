@@ -11,17 +11,20 @@ gpasswd -a $USER docker
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 #https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
+============ amazing tools ============ 
+sshpass 
+tree
+dos2unix  
 
-============ fix of Windows files not running when porting over to run on a Unix machine ============ 
+============ fixes files created in wondows that won't run in linux ============ 
 
 dos2unix  filename.sh
 
-
-============ amazing tools ============ 
- sshpass 
-
+============ tools to learn about============ 
+curl
+wget
 
 ========= Docker essentials ===========
 docker build -t fortunexfortune/moviesearchapi .
-
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
+

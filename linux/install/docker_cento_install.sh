@@ -27,6 +27,5 @@ usermod -aG docker $USER
 systemctl restart docker
 systemctl status docker
 docker run hello-world
-
 #sudo usermod -aG docker jenkins
 #sudo systemctl restart jenkins
