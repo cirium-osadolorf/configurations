@@ -28,3 +28,18 @@ wget
 docker build -t fortunexfortune/moviesearchapi .
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
 
+=========SSH FS (VS code plugin)=====================
+
+Insert this into the setting.json file
+{
+        "sshfs.configs": [
+        {
+            "host": "publicIP",
+            "name": "username",
+            "password": "pass",
+            "port": 22,
+            "root": "/home/path",
+            "username": "fortune"
+        }
+    ]
+}
