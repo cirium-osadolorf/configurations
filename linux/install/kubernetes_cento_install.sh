@@ -44,7 +44,7 @@ EOF
 # Set SELinux in permissive mode (effectively disabling it)
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-yum install -y kubelet=1.12.2-00 kubeadm=1.12.2-00 kubectl=1.12.2-00 --disableexcludes=kubernetes
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 yum versionlock add kubelet kubeadm kubectl
 yum list updates | cat -n
