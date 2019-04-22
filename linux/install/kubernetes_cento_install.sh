@@ -48,4 +48,5 @@ yum install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00 --disableex
 systemctl enable --now kubelet
 yum versionlock add kubelet kubeadm kubectl
 yum list updates | cat -n
+
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
