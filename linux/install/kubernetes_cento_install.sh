@@ -18,12 +18,17 @@ yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 
 yum install docker-ce-18.06.1.ce-3.el7 
+
+#Prevents docker from ever updating
+yum list updates | cat -n
+yum -y install yum-versionlock
+yum versionlock add docker-ce
+yum versionlock list
 yum list updates | cat -n
 
-
+#Starting docker
 systemctl start docker
 systemctl enable docker
 systemctl status docker
 docker run hello-world
-
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
