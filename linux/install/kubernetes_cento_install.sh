@@ -23,6 +23,8 @@ yum install -y docker-ce-18.06.1.ce-3.el7
 yum -y install yum-versionlock
 yum versionlock add docker-ce
 yum versionlock list
+yum list updates | cat -n
+
 
 #Starting docker
 systemctl start docker
@@ -46,9 +48,10 @@ setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-yum versionlock add kubelet kubeadm kubectl
-yum list updates | cat -n
+# yum versionlock add kubelet kubeadm kubectl
 systemctl enable --now kubelet
 kubeadm version
 
+#Link to the steps to configure master and nodes :
+# https://linuxacademy.com/cp/courses/lesson/course/3515/lesson/5/module/281
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
