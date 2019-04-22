@@ -20,11 +20,9 @@ yum-config-manager \
 yum install -y docker-ce-18.06.1.ce-3.el7 
 
 #Prevents docker from ever updating
-yum list updates | cat -n
 yum -y install yum-versionlock
 yum versionlock add docker-ce
 yum versionlock list
-yum list updates | cat -n
 
 #Starting docker
 systemctl start docker
@@ -46,8 +44,8 @@ EOF
 # Set SELinux in permissive mode (effectively disabling it)
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-
 yum install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00 --disableexcludes=kubernetes
 systemctl enable --now kubelet
-
+yum versionlock add kubelet kubeadm kubectl
+yum list updates | cat -n
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
