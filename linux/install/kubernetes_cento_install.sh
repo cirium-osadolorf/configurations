@@ -16,8 +16,14 @@ yum install -y yum-utils \
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-  
-yum install docker-ce-18.06.1.ce-3.el7 containerd.io
-yum update --exclude=docker
+
+yum install docker-ce-18.06.1.ce-3.el7 
+# yum install docker-ce-18.06.1.ce-3.el7 containerd.io
+# yum update --exclude=docker-ce-18.06.1.ce-3.el7
+
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+docker run hello-world
 
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
