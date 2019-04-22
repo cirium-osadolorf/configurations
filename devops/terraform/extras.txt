@@ -1,0 +1,13 @@
+=====================================================================
+Using Env Vraibles for Access Keys
+=====================================================================
+
+$ export AWS_ACCESS_KEY_ID="anaccesskey"
+$ export AWS_SECRET_ACCESS_KEY="asecretkey"
+$ export AWS_DEFAULT_REGION="us-west-2"
+$ terraform plan
+
+https://www.terraform.io/docs/providers/aws/index.html
+https://stackoverflow.com/questions/53330060/can-terraform-use-bash-environment-variables
+=====================================================================
+=====================================================================
