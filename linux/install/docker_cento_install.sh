@@ -29,4 +29,4 @@ systemctl status docker
 docker run hello-world
 #sudo usermod -aG docker jenkins
 #sudo systemctl restart jenkins
-#sudo chmod 766 configurations/linux/install/docker_cento _install.sh &&  sudo configurations/linux/install/docker_cento_install.s h
+#sudo chmod 766 configurations/linux/install/docker_cento_install.sh &&  sudo configurations/linux/install/docker_cento_install.sh
