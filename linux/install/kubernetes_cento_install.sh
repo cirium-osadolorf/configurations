@@ -47,10 +47,7 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00 --disableexcludes=kubernetes
 systemctl enable --now kubelet
-
-
-
 
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
