@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # Link for the  full instructions https://docs.docker.com/install/linux/docker-ce/centos/
 yum remove -y docker \
                   docker-client \
