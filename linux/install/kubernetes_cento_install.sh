@@ -18,8 +18,8 @@ yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 
 yum install docker-ce-18.06.1.ce-3.el7 
-# yum install docker-ce-18.06.1.ce-3.el7 containerd.io
-# yum update --exclude=docker-ce-18.06.1.ce-3.el7
+yum list updates | cat -n
+
 
 systemctl start docker
 systemctl enable docker
