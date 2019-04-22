@@ -1,4 +1,5 @@
 #! /bin/bash
+#Remove docker dependencies 
 yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -16,7 +17,8 @@ yum install -y yum-utils \
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-
+    
+#installing docker 
 yum install -y docker-ce-18.06.1.ce-3.el7 
 
 #Prevents docker from ever updating
@@ -32,6 +34,7 @@ systemctl enable docker
 systemctl status docker
 docker run hello-world
 
+#Kubernetes setup
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
