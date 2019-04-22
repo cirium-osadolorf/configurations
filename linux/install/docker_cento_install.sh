@@ -23,7 +23,7 @@ yum install -y docker-ce docker-ce-cli containerd.io
 systemctl start docker
 systemctl enable docker
 groupadd docker
-usermod -aG docker $USER
+usermod -aG docker whoami
 systemctl restart docker
 systemctl status docker
 docker run hello-world
