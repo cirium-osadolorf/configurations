@@ -44,9 +44,10 @@ EOF
 # Set SELinux in permissive mode (effectively disabling it)
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y kubelet-12.7-00 kubeadm-12.7-00 kubectl-12.7-00 --disableexcludes=kubernetes
 systemctl enable --now kubelet
 yum versionlock add kubelet kubeadm kubectl
 yum list updates | cat -n
+kubeadm version
 
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_install.sh &&  sudo configurations/linux/install/kubernetes_cento_install.sh
