@@ -2,7 +2,7 @@
 # script explanation is in the folloeing link :
 # https://linuxize.com/post/how-to-install-jenkins-on-centos-7/
 yum install -y java-1.8.0-openjdk-devel
-curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | tee /etc/yum.repos.d/jenkins.repo
 rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 yum -y install jenkins
 systemctl start jenkins
