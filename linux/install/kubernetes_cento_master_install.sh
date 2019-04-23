@@ -82,7 +82,4 @@ echo "============================================"
 echo"Verifying that all the fannel pods are Ready:"
 kubectl get pods -n kube-system
 
-
-#Link to the steps to configure master and nodes :
-# https://linuxacademy.com/cp/courses/lesson/course/3515/lesson/5/module/281
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh
