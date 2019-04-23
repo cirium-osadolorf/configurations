@@ -69,8 +69,7 @@ if [ $KUBE == $MASTER ]
     chown $(id -u):$(id -g) $HOME/.kube/config
     kubectl version
     echo "============================================"
-    echo "paste the line below on your worker nodes"
-    cat kubeadm_init | grep "kubeadm join"
+    tail -n 6 kubeadm_init
     echo "============================================"
 fi
 
