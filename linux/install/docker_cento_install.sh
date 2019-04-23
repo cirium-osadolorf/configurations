@@ -27,4 +27,4 @@ usermod -aG docker $USER
 systemctl restart docker
 systemctl status docker
 docker run hello-world
-#cd ~ && mkdir bin && sudo chmod 766 configurations/linux/install/docker_cento_install.sh && mv configurations/linux/install/docker_cento_install.sh /bin && docker_cento_install.sh
+#cd ~ && sudo chmod 766 configurations/linux/install/docker_cento_install.sh && mv configurations/linux/install/docker_cento_install.sh /usr/bin && docker_cento_install.sh
