@@ -59,9 +59,14 @@ kubeadm version
 
 cd    
 kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init    
-mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
+# mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+
+cp /etc/kubernetes/admin.conf $HOME/
+chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
+
 kubectl version
 echo "============================================"
 tail -n 6 kubeadm_init
