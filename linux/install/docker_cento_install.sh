@@ -1,6 +1,6 @@
 #! /bin/bash
 # Link for the  full instructions https://docs.docker.com/install/linux/docker-ce/centos/
-sudo yum remove -y docker \
+yum remove -y docker \
                   docker-client \
                   docker-client-latest \
                   docker-common \
