@@ -58,7 +58,7 @@ systemctl enable --now kubelet
 kubeadm version
 
 echo "============================================"
-echo "insert cluster token and hash"
+echo "insert cluster token and hash :"
 echo "============================================"
 read INPUT
 eval $INPUT
