@@ -80,6 +80,6 @@ echo"Verifying that all the nodes now have a STATUS of Ready:"
 kubectl get nodes
 echo "============================================"
 echo"Verifying that all the fannel pods are Ready:"
-kubectl get pods -n kube-system
+kubectl get pods -n kube-system 
 
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh
