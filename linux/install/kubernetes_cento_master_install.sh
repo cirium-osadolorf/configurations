@@ -75,7 +75,11 @@ kubectl get nodes
 echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
 sysctl -p
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+echo "============================================"
+echo"Verifying that all the nodes now have a STATUS of Ready:"
 kubectl get nodes
+echo "============================================"
+echo"Verifying that all the fannel pods are Ready:"
 kubectl get pods -n kube-system
 
 
