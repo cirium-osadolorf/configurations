@@ -1,4 +1,9 @@
 #! /bin/bash
+#Kubernetes setup with kubeadm, kubectl adn kubelet
+KUBE=$1
+MASTER="master"
+NODE="node"
+
 #Remove docker dependencies 
 yum remove docker \
                   docker-client \
@@ -50,10 +55,24 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
+#instakk kubeadm , kubectl and kubelet
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-# yum versionlock add kubelet kubeadm kubectl
 systemctl enable --now kubelet
 kubeadm version
+
+if [ $KUBE == $MASTER ]
+  then 
+    cd
+    kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init
+    mkdir -p $HOME/.kube
+    cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    chown $(id -u):$(id -g) $HOME/.kube/config
+    kubectl version
+    echo "============================================"
+    echo "paste the line below on your worker nodes"
+    cat kubeadm_init | grep "kubeadm join"
+    echo "============================================"
+fi
 
 #Link to the steps to configure master and nodes :
 # https://linuxacademy.com/cp/courses/lesson/course/3515/lesson/5/module/281
