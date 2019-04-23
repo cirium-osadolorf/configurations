@@ -71,6 +71,13 @@ echo "have you joined your workder nodes to the cluster? (yes / no) "
 read INPUT
 kubectl get nodes
 
+#Flannel setup
+echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
+sysctl -p
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+kubectl get nodes
+kubectl get pods -n kube-system
+
 
 #Link to the steps to configure master and nodes :
 # https://linuxacademy.com/cp/courses/lesson/course/3515/lesson/5/module/281
