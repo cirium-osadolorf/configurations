@@ -60,5 +60,6 @@ kubeadm version
 
 cd    
 kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init  
+cat kubeadm_init
 
 #sudo chmod 766 configurations/linux/install/test.sh &&  sudo configurations/linux/install/test.sh
