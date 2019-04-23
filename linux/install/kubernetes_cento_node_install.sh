@@ -64,4 +64,4 @@ eval $INPUT
 
 #Link to the steps to configure master and nodes :
 # https://linuxacademy.com/cp/courses/lesson/course/3515/lesson/5/module/281
-#sudo chmod 766 configurations/linux/install/kubernetes_cento_node_install &&  sudo configurations/linux/install/kubernetes_cento_node_install
+#sudo chmod 766 configurations/linux/install/kubernetes_cento_node_install.sh &&  sudo configurations/linux/install/kubernetes_cento_node_install.sh
