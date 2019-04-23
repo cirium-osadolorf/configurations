@@ -57,7 +57,9 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
+echo "============================================"
 echo "insert cluster token and hash"
+echo "============================================"
 read INPUT
 eval $INPUT
 
