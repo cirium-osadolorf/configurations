@@ -52,27 +52,26 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
-#instakk kubeadm , kubectl and kubelet
+#install kubeadm , kubectl and kubelet
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
-cd    
+#Bootstrap the cluster
 kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init    
 mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
-
 kubectl version
 echo "============================================"
 tail -n 6 kubeadm_init
 echo "============================================"
-
 echo "have you joined your workder nodes to the cluster? (yes / no) "
 read INPUT
 kubectl get nodes
 
-#Flannel setup
+
+#Flannel setup (Networking)
 echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
 sysctl -p
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
@@ -84,5 +83,3 @@ echo"Verifying that all the fannel pods are Ready:"
 kubectl get pods -n kube-system 
 
 #sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh && mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
- 
- 
