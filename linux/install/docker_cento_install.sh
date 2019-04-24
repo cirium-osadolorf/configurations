@@ -1,5 +1,8 @@
 #! /bin/bash
 # Link for the  full instructions https://docs.docker.com/install/linux/docker-ce/centos/
+
+USERNAME=$1
+
 yum remove -y docker \
                   docker-client \
                   docker-client-latest \
@@ -22,9 +25,9 @@ yum install -y docker-ce docker-ce-cli containerd.io
 systemctl start docker
 systemctl enable docker
 groupadd docker
-usermod -aG docker $USER
+usermod -aG docker $USERNAME
 systemctl restart docker
 systemctl status docker
 docker run hello-world
 
-#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh ~ && sudo ./docker_cento_install.sh
+#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh . && sudo ./docker_cento_install.sh $USER
