@@ -8,6 +8,7 @@ yum -y install jenkins
 systemctl start jenkins
 systemctl status jenkins
 systemctl enable jenkins
+echo "cat /var/lib/jenkins/secrets/initialAdminPassword"
 echo "your jenkins password is below: "
 cat /var/lib/jenkins/secrets/initialAdminPassword
 #sudo chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  sudo configurations/linux/install/jenkins_cento_install.sh
