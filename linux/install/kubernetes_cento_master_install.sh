@@ -1,5 +1,6 @@
 #! /bin/bash
 #Kubernetes setup with kubeadm, kubectl adn kubelet
+USERHOME=$1
 
 #Remove docker dependencies 
 yum remove docker \
@@ -59,9 +60,9 @@ kubeadm version
 
 cd    
 kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init    
-mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
+mkdir -p $USERHOME/.kube
+cp -i /etc/kubernetes/admin.conf $USERHOME/.kube/config
+chown $(id -u):$(id -g) $USERHOME/.kube/config
 
 kubectl version
 echo "============================================"
@@ -83,4 +84,4 @@ echo "============================================"
 echo"Verifying that all the fannel pods are Ready:"
 kubectl get pods -n kube-system 
 
-#sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh
+#sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh $HOME
