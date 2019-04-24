@@ -30,4 +30,4 @@ systemctl restart docker
 systemctl status docker
 docker run hello-world
 
-#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh . && sudo ./docker_cento_install.sh $USER
+#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && sudo configurations/linux/install/docker_cento_install.sh $USER
