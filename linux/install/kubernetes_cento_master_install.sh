@@ -1,6 +1,5 @@
 #! /bin/bash
 #Kubernetes setup with kubeadm, kubectl adn kubelet
-#USERHOME=$1
 
 #Remove docker dependencies 
 yum remove docker \
@@ -84,4 +83,4 @@ echo "============================================"
 echo"Verifying that all the fannel pods are Ready:"
 kubectl get pods -n kube-system 
 
-#sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh $HOME
+#sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh
