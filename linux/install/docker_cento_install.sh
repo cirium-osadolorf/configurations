@@ -31,4 +31,4 @@ docker run hello-world
 #cd ~ 
 #sudo chmod 766 configurations/linux/install/docker_cento_install.sh 
 #cp configurations/linux/install/docker_cento_install.sh / 
-#docker_cento_install.sh
+#/home/fortune/docker_cento_install.sh
