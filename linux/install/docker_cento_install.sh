@@ -13,7 +13,6 @@ yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
 
-
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
@@ -28,4 +27,3 @@ systemctl status docker
 docker run hello-world
 
 #sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh ~ && sudo ./docker_cento_install.sh && sudo usermod -aG docker $USER
- 
