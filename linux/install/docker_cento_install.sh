@@ -22,8 +22,9 @@ yum install -y docker-ce docker-ce-cli containerd.io
 systemctl start docker
 systemctl enable docker
 groupadd docker
+sudo usermod -aG docker $USER
 systemctl restart docker
 systemctl status docker
 docker run hello-world
 
-#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh ~ && sudo ./docker_cento_install.sh && sudo usermod -aG docker $USER
+#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && cp configurations/linux/install/docker_cento_install.sh ~ && sudo ./docker_cento_install.sh
