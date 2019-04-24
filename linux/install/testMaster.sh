@@ -1,8 +1,6 @@
 #! /bin/bash
 #Kubernetes setup with kubeadm, kubectl adn kubelet
 
-USERHOME=$1
-
 #Remove docker dependencies 
 yum remove docker \
                   docker-client \
@@ -61,9 +59,9 @@ kubeadm version
 
 cd    
 kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init    
-mkdir -p $USERHOME/.kube
-cp -i /etc/kubernetes/admin.conf $USERHOME/.kube/config
-chown $(id -u):$(id -g) $USERHOME/.kube/config
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl version
 echo "============================================"
