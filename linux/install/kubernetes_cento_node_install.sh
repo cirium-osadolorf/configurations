@@ -57,11 +57,18 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
-echo "============================================"
-echo "insert cluster token and hash :"
-echo "============================================"
-read INPUT
-eval $INPUT
+
+#script will keep asking for token and hash until the return status is 0
+expr 0 / 0
+while [ ! $? -eq "0" ]
+do
+  echo "============================================"
+  echo "insert cluster token and hash :"
+  echo "============================================"
+  echo " > "
+  read INPUT
+  eval "$INPUT" 2>> /dev/null
+done
 
 #Flannel setup
 echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
