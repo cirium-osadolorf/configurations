@@ -1,7 +1,6 @@
 ============ Find public ip ==================
-curl ifconfig.me
 curl icanhazip.com
-curl ipecho.net
+curl ifconfig.me
 
 ============ Add user to a group ============ 
 gpasswd -a $USER docker
@@ -24,10 +23,6 @@ dos2unix  filename.sh
 curl
 wget
 
-========= Docker essentials ===========
-docker build -t fortunexfortune/moviesearchapi .
-docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
-
 =========SSH FS (VS code plugin)=====================
 
 Insert this into the setting.json file
@@ -43,9 +38,4 @@ Insert this into the setting.json file
         }
     ]
 }
-==================================
-#link to the resource https://askubuntu.com/questions/334994/which-one-is-better-using-or-to-execute-multiple-commands-in-one-line
-A; B    # Run A and then B, regardless of success of A
-A && B  # Run B if and only if A succeeded
-A || B  # Run B if and only if A failed
-A &     # Run A in background.
+

@@ -1,0 +1,166 @@
+============ Find public ip ==================
+curl icanhazip.com
+curl ifconfig.me
+
+============ Add user to a group ============ 	
+useradd user			#create user
+passwd user			#change user password
+userdel frank			#delete user
+groupadd basket			#create group
+usermod -aG group_name $USER	#add user to a group
+gpasswd -a $USER docker	
+adduser user && echo "deploy:passwrod" | chpasswd #craete user and password in one go
+
+
+=======New_groups===========================
+
+sudo groupadd basket
+
+/*Need sudo to create new group*/
+/*useradd == Creates a new group*/
+/*basket == the group username can be anything*/
+
+sudo usermod -a -G basket frank
+
+/*user mod is used to modify users*/
+/*-a == appennd or add to a group*/
+/*-g == change primary group */
+/*-G == add user to another group wihout taking him off his primary group*/
+
+
+============ SSH ============ 
+#Link to ssh article:  https://www.ssh.com/ssh/keygen/
+ssh-keygen   			#Creates new authentication key pairs for SSH
+ssh-keygen -t rsa		#Creates new authentication key pairs for SSH with rsa algorithm
+ssh user@hostname		#SSH into remote comupter
+ssh-copy-id pi@10.25.6.0	#Copies the public key to the remote computer
+
+============ Text ============ 
+head newfile.txt		#This will display the first 10 lines of a file
+tail newfile.txt		#This will display the last 10 lines of a file
+touch file.txt			#Create blank files
+cat file.txt 			#Read file
+cat file1.txt file2.txt  	#Read files
+mkdir				#maked directory
+mkdir -p hello/no/yes/lol	#Creates cascade directories,directories inside directories
+mv file /home/fortune/holder 	#Moves the file to the specified folder*/
+mv file file2			#rename the file to hello2*/
+rm 				#remove files*/
+rm -rf folder 			#removes directoriey
+cp  file location/path		#copy a file from a location to the other
+grep  "phrase" file 		#used to look for a word or phrase in a file, it will then print the specific line  
+diff file1 file2 		#analyze the 2 files and print out any line that do not match in both files
+
+============ Variables ============ 
+VARIABLENAME=VALUE		#Assign value to variable
+export VARIABLENAME		#export varaible value, allows the variable o be used in new bash instances
+echo $VARIABLENAME		#returns variable value
+
+=========== Riderection  ===========
+Any process that runs on the linux kernel as 3 CHANNELS called:
+STDIN -->0		 	#Your Standard keyboard input
+STDOUT -->1		 	#Your Standard terminal output
+STDERR -->2			#Your Standard terminal Error message
+
+echo "hello" 1>file.txt		#overwrites file by inserting the content into the first line
+echo "hello" >file.txt		#overwrites file by inserting the content into the first line
+
+echo "hello" 1>>file.txt	#create a new line and start inputing content into a new line
+echo "hello" >>file.txt		#create a new line and start inputing content into a new line
+
+zzzz 2> err.txt			#Insert error message into file by overwrting the file content
+zzzz 2>> err.txt		#Insert error message into the file new line
+
+============ Operators ======================
+#link to the resource https://askubuntu.com/questions/334994/which-one-is-better-using-or-to-execute-multiple-commands-in-one-line
+A; B    # Run A and then B, regardless of success of A
+A && B  # Run B if and only if A succeeded
+A || B  # Run B if and only if A failed
+A &     # Run A in background.
+
+prog | Prog2 | prog3		#Feeds the output of each comand or program into the next program
+		
+
+================ Permissions [ chmod ]============================
+
+7 == is the combination of all the numbers "Read Write Execute"
+6 == is the combination of 4 and 2 "Read and Write"
+5 == is the combination of 4 and 1 "Read and execute"
+4  == Stands for "read"
+3 == is the combination of 2 and 1 "Write and Execute"
+2  == Stands for "write"
+1  == Stands for "execute"
+0  == Stand for "No permissions"
+
+chmod 766 file			#Chanage permssion of suer , groups and others in one go		
+
+#	u /*user*/
+#	g /*group*/
+#	o /*others*/
+#	-rwxr-xr-x 2
+#	drwxr-xr-x 2
+#	d indicates is a dirctory*/
+#	r /* Stands for Read*/
+#	w /* Stands for Write*/
+#	X /* Stands for Execute*/
+#	- /* Stands for permission not set */
+__________________________
+
+chmod o+w file			#Gives perimsion to others to write
+chmod o-w file			#Takes away perimsion to others to write
+
+================ PowerOff============================
+
+shutdown now		#power off
+shutdown -r now		#Restart
+shutdown -h  now	#turn it off
+shutdown +60		#power off in 1 hour
+shutdown -r  +30	#Restart in half an hour
+shutdown -h  +10	#Turn it off in 10 mins
+init 0			#power off
+init 6			#Reebot
+
+
+================ File system essential ======================
+pwd 			#Print my working directory
+ls			#list the items in the currebt folder
+ls /path/folder		#list the items in the folder of your choice*/
+
+cd Desktop
+
+/*Change DIrectory/
+/*This command moves you to a location*/
+
+cd ..
+/*Takes you up 1 director, */
+
+cd .. / ..
+
+/*Takes you up 2 director, */
+
+cd ~
+
+/*Takes you to the home directory*/
+
+
+ls -a
+/*all files*/
+/*This command list all files , hiden and not hiden files*/
+
+ls -l
+/*GIve you a detailed report of the files and directories*/
+
+
+ls -la
+
+
+
+==================Extras===================
+
+CTRL + A 		#Takes you to the begining of the comand line
+CTRl + E 		#Takes you to the end of the comand line
+clear 			#clear the screen
+Up and Down		#scroll through the commands
+ctrl + r		#used after typing a comand, used to rewrite the same type of commands that was used in time past 
+ctrl+c 			#interupt, it will get you out of a process 
+

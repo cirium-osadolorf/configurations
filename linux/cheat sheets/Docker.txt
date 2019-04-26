@@ -1,0 +1,5 @@
+========= Building an image ===========
+docker build -t fortunexfortune/moviesearchapi .
+
+==========Running a container
+docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
