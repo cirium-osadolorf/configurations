@@ -57,10 +57,8 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
-
-#script will keep asking for token and hash until the return status is 0
-expr 0 / 0
-while [ ! $? -eq "0" ]
+#Conditional will keep asking for token and hash until the exit status of the kubeadm join comand is 0 
+while true      
 do
   echo "============================================"
   echo "insert cluster token and hash :"
@@ -68,6 +66,10 @@ do
   echo " > "
   read INPUT
   eval "$INPUT" 2>> /dev/null
+  if [[ "$?" == "0" ]] && [[ "${INPUT:0:12}" == "kubeadm join" ]];
+    then
+      break
+  fi
 done
 
 #Flannel setup
