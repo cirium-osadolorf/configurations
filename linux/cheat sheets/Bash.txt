@@ -1,6 +1,7 @@
 ============ Find public ip ==================
 curl icanhazip.com
 curl ifconfig.me
+ifconfig
 
 ============ Add user to a group ============ 	
 useradd user			#create user
@@ -106,11 +107,24 @@ chmod 766 file			#Chanage permssion of suer , groups and others in one go
 #	- /* Stands for permission not set */
 __________________________
 
-chmod o+w file			#Gives perimsion to others to write
-chmod o-w file			#Takes away perimsion to others to write
+chmod o+w file		#Gives perimsion to others to write
+chmod o-w file		#Takes away perimsion to others to write
+
+=================== Procesess=================== 
+ps 			#List all process that you own
+ps ax			#Prints list of all process
+ctrl +z 		#Used to pause a process
+kill (Process_id)	#used to  kill proceses
+
+
+
+==============Hardware information ==============
+lscpu			#Returns- information about the cpu and processing units
+hwinfo  --short		#Returns- Hardware Information
+lshw -short		#Retruns - List Hardware
+free -m			#Check the amount of Ram used
 
 ================ PowerOff============================
-
 shutdown now		#power off
 shutdown -r now		#Restart
 shutdown -h  now	#turn it off
@@ -125,35 +139,12 @@ init 6			#Reebot
 pwd 			#Print my working directory
 ls			#list the items in the currebt folder
 ls /path/folder		#list the items in the folder of your choice*/
-
-cd Desktop
-
-/*Change DIrectory/
-/*This command moves you to a location*/
-
-cd ..
-/*Takes you up 1 director, */
-
-cd .. / ..
-
-/*Takes you up 2 director, */
-
-cd ~
-
-/*Takes you to the home directory*/
-
-
-ls -a
-/*all files*/
-/*This command list all files , hiden and not hiden files*/
-
-ls -l
-/*GIve you a detailed report of the files and directories*/
-
-
-ls -la
-
-
+ls -a /path/folder	#retrun a list of all files (hiden files included)
+ls -l path/folder	#returns you a detailed report of the files
+cd /path/folder		#Change directory
+cd ..			#Takes you up 1 director
+cd .. / ..		#Takes you up 2 director
+cd ~			#Takes you to the home directory
 
 ==================Extras===================
 
@@ -163,4 +154,6 @@ clear 			#clear the screen
 Up and Down		#scroll through the commands
 ctrl + r		#used after typing a comand, used to rewrite the same type of commands that was used in time past 
 ctrl+c 			#interupt, it will get you out of a process 
+
+sha256sum fileName | grep fcaf10fa60066437b20... #Compares the result of the hash operation with the original, if the output from gerp is red, then the file was not hijacked
 

@@ -1,27 +1,24 @@
-============ Find public ip ==================
-curl icanhazip.com
-curl ifconfig.me
-
-============ Add user to a group ============ 
-gpasswd -a $USER docker
-
 
 ============  Sending file via putty, from windows to linux ============ 
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 #https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
-============ amazing tools ============ 
+============ amazing Linux tools ============ 
 sshpass 
 tree
 dos2unix  
 
-============ fixes files created in wondows that won't run in linux ============ 
+
+============ fixes files created in windows that won't run in linux ============ 
 
 dos2unix  filename.sh
 
 ============ tools to learn about============ 
 curl
 wget
+
+=============amazing visual studio code  tools =========
+sshfs
 
 =========SSH FS (VS code plugin)=====================
 
