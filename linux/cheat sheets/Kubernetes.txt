@@ -1,6 +1,5 @@
-====================================================
-======== Kubernetes Pod creation ============================
-
+======== Kubernetes Pod creation  ============================
+#Example:
 cat << EOF | kubectl create -f -
 apiVersion: v1
 kind: Pod
@@ -12,4 +11,101 @@ spec:
     image: nginx
 EOF
 
-====================================================
+===================Kuberentes Pod=============================
+#smallest Kubernetes unit, they run 1 to more containers
+kubectl get pods              #Get a list of pods 
+kubectl describe pod nginx    #Returns kadditionl info on specified pod
+kubectl delete pod nginx      #Delete pod
+
+
+================Kubernetes Nodes===================
+#Nodes are the worker servers that run applcations
+
+kubectl get nodes                 #return cluster nodes
+kubectl describe node $node_name  #return more details on speciied node
+
+
+================Kubernetes Deployments===================
+#Creating a deployment that creates two pods
+#Example:
+
+cat << EOF | kubectl create -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15.4
+        ports:
+        - containerPort: 80
+EOF
+
+#busybox is used for texsting pods by using curl
+
+cat << EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  containers:
+  - name: busybox
+    image: radial/busyboxplus:curl
+    args:
+    - sleep
+    - "1000"
+EOF
+
+
+kubectl get pods -o wide                  #return the IP addresses of your pods
+kubectl exec busybox -- curl $ip          #using th busybox pod to exec a curl on a different pod ip adress
+kubectl get deployments                   #returns your deployments
+kubectl describe deployment nginx-deployment #return more info related to the deployment
+
+============== Kubernetes Services ==============
+#Example:
+#the selector attribute is linked to the deployment label, this how it knows to waht pods to route traffic
+#NodePort allwos to expose the service externally, there are different types
+
+cat << EOF | kubectl create -f -
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30080
+  type: NodePort
+EOF
+
+
+kubectl get svc     #returns  list of services in the cluster.
+kubectl get service #returns  list of services in the cluster.
+
+
+============== Kubernetes Architecture and Components ==============
+
+kubectl get pods -n kube-system       #return backend kubernetes pods
+sudo systemctl status kubelet         #return status of the kublet service
+
+
+
+
