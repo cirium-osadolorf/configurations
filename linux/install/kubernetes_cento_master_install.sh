@@ -58,13 +58,11 @@ systemctl enable --now kubelet
 kubeadm version
 
 #Bootstrap the cluster
-kubeadm init --pod-network-cidr=10.244.0.0/16 >> kubeadm_init    
+kubeadm init --pod-network-cidr=10.244.0.0/16  
 mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl version
-echo "============================================"
-tail -n 6 kubeadm_init
 echo "============================================"
 echo "have you joined your workder nodes to the cluster? (yes / no) "
 read INPUT
