@@ -146,6 +146,23 @@ cd ..			#Takes you up 1 director
 cd .. / ..		#Takes you up 2 director
 cd ~			#Takes you to the home directory
 
+================RedHat Service Tools======================
+runlevel				#Returns you current runlevel
+chkconfig				#Returns runlevel services
+chkconfig --list 			#Returns runlevel services
+chkconfig --list serviceName		#Returns specified runlevel service
+chkconfig --level 3 serviceName off	#enable/disable services ability to run when system boots on specific run levels
+chkconfig --level 3 serviceName oon	#enable/disable services ability to run when system boots on specific run levels
+
+service serviceName status 		#Returns service status 
+service serviceName start		#enable/disable services ability to run 
+service serviceName stop 		#enable/disable services ability to run
+service serviceName restart 		#restart services 
+service serviceName reload 
+
+================Systremd======================
+
+
 ==================Extras===================
 
 CTRL + A 		#Takes you to the begining of the comand line
