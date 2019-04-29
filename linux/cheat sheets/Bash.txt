@@ -161,6 +161,16 @@ service serviceName restart 		#restart services
 service serviceName reload 
 
 ================Systremd======================
+systemd-cgls 				#returns all the processes of the system
+systemd-cgtop 				#returns the top cgroups accodring to their resources
+systemctl status			#returns the top cgroups accodring to their resources
+
+systemctl status serviceName		#Returns details on the service
+systemctl enable serviceName		#enable service to start at boot
+systemctl disable serviceName		#disbale serivce to start at boot
+systemctl start serviceName		#start service now
+systemctl stop serviceName		#stop service sertvice now
+systemctl help serviceName		#returns manuals of a service
 
 
 ==================Extras===================
