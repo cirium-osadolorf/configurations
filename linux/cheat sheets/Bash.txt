@@ -1,7 +1,7 @@
-============ Find public ip ==================
-curl icanhazip.com
-curl ifconfig.me
-ifconfig
+=========== IP  ==================
+curl icanhazip.com	#returns public ip
+curl ifconfig.me	#returns public ip
+ifconfig		#returns private ip
 
 ============ Add user to a group ============ 	
 useradd user			#create user
