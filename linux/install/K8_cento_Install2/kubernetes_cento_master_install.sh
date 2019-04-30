@@ -63,7 +63,7 @@ while read -r LINE; do
   HASH_TOKEN="$HASH_TOKEN $LINE"
 done < "hash_token.txt"  
 echo "=================TOKEN and HASH====================="
-echo "${HASH_TOKEN//\\}"
+# echo "${HASH_TOKEN//\\}"
 HASH_TOKEN="${HASH_TOKEN//\\}"
 echo "$HASH_TOKEN"
 
