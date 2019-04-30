@@ -89,4 +89,4 @@ echo "${HASH_TOKEN//\\}"
 # kubectl get pods -n kube-system 
 #kubectl taint nodes --all node-role.kubernetes.io/master-  # allows Kubernetes / terraform to place pods on the master node
 
-#sudo chmod 766 configurations/linux/install/Kubernates_cento_Install2/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/Kubernates_cento_Install2/kubernetes_cento_master_install.sh && mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#sudo chmod 766 configurations/linux/install/K8_cento_Install2/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/K8_cento_Install2/kubernetes_cento_master_install.sh && mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
