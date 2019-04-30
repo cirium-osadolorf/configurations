@@ -62,7 +62,6 @@ kubeadm init --pod-network-cidr=10.244.0.0/16  | tail -n 2  > hash_token.txt
 while read -r LINE; do 
   HASH_TOKEN="$HASH_TOKEN $LINE"
 done < "hash_token.txt"  
-echo "============================================"
 echo "=================TOKEN and HASH====================="
 echo "${HASH_TOKEN//\\}"
 
