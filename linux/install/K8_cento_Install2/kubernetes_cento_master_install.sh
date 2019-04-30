@@ -64,6 +64,8 @@ while read -r LINE; do
 done < "hash_token.txt"  
 echo "=================TOKEN and HASH====================="
 echo "${HASH_TOKEN//\\}"
+HASH_TOKEN="${HASH_TOKEN//\\}"
+echo "$HASH_TOKEN"
 
 
 # mkdir -p $HOME/.kube
