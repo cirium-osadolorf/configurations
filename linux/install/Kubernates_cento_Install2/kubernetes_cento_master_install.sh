@@ -60,10 +60,9 @@ kubeadm version
 #Bootstrap the cluster
 kubeadm init --pod-network-cidr=10.244.0.0/16  | tail -n 2  > hash_token.txt
 while read -r LINE; do 
-  ONELINER="$ONELINER $LINE"
+  HASH_TOKEN="$HASH_TOKEN $LINE"
 done < "hash_token.txt"  
-echo "${ONELINER///}" > output
-cat output
+echo "${HASH_TOKEN///}"
 
 
 # mkdir -p $HOME/.kube
