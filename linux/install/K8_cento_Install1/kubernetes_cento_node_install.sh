@@ -52,39 +52,28 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
-#install kubeadm , kubectl and kubelet
+#instakk kubeadm , kubectl and kubelet
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
-#Bootstrap the cluster
-kubeadm init --pod-network-cidr=10.244.0.0/16  | tail -n 2  > hash_token.txt
-while read -r LINE; do 
-  HASH_TOKEN="$HASH_TOKEN $LINE"
-done < "hash_token.txt"  
-echo "${HASH_TOKEN///}"
+#Conditional will keep asking for token and hash until the exit status of the kubeadm join comand is 0 
+while true      
+do
+  echo "============================================"
+  echo "insert cluster token and hash :"
+  echo "============================================"
+  echo " > "
+  read INPUT
+  eval "$INPUT" 2>> /dev/null
+  if [[ "$?" == "0" ]] && [[ "${INPUT:0:12}" == "kubeadm join" ]];
+    then
+      break
+  fi
+done
 
+#Flannel setup
+echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
+sysctl -p
 
-# mkdir -p $HOME/.kube
-# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-# chown $(id -u):$(id -g) $HOME/.kube/config
-# kubectl version
-# echo "============================================"
-# echo "have you joined your workder nodes to the cluster? (yes / no) "
-# read INPUT
-# kubectl get nodes
-
-
-# #Flannel setup (Networking)
-# echo "net.bridge.bridge-nf-call-iptables=1" | tee -a /etc/sysctl.conf
-# sysctl -p
-# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
-# echo "============================================"
-# echo"Verifying that all the nodes now have a STATUS of Ready:"
-# kubectl get nodes
-# echo "============================================"
-# echo"Verifying that all the fannel pods are Ready:"
-# kubectl get pods -n kube-system 
-#kubectl taint nodes --all node-role.kubernetes.io/master-  # allows Kubernetes / terraform to place pods on the master node
-
-#sudo chmod 766 configurations/linux/install/kubernetes_cento_master_install.sh &&  sudo configurations/linux/install/kubernetes_cento_master_install.sh && mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#sudo chmod 766 configurations/linux/install/K8_cento_Install1/kubernetes_cento_node_install.sh &&  sudo configurations/linux/install/K8_cento_Install1/kubernetes_cento_node_install.sh
