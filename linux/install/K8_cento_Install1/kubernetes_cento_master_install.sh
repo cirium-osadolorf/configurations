@@ -20,7 +20,7 @@ yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
     
-#installing docker 
+#installing docker 18.06
 yum install -y docker-ce-18.06.1.ce-3.el7 
 
 #Prevents docker from ever updating
@@ -36,7 +36,7 @@ systemctl enable docker
 systemctl status docker
 docker run hello-world
 
-#Kubernetes setup
+#Add the Kubernetes repo
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -49,6 +49,7 @@ exclude=kube*
 EOF
 
 # Set SELinux in permissive mode (effectively disabling it)
+# don't do this in production
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
@@ -57,7 +58,7 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 kubeadm version
 
-#Bootstrap the cluster
+#Initialize the cluster using the IP range for Flannel.
 kubeadm init --pod-network-cidr=10.244.0.0/16  | tail -n 2  > hash_token.txt
 while read -r LINE; do 
   HASH_TOKEN="$HASH_TOKEN $LINE"
