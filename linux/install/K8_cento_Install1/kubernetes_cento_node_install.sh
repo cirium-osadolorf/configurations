@@ -36,7 +36,7 @@ systemctl enable docker
 systemctl status docker
 docker run hello-world
 
-#Kubernetes setup
+#Add the Kubernetes repo
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -49,6 +49,7 @@ exclude=kube*
 EOF
 
 # Set SELinux in permissive mode (effectively disabling it)
+# don't do this in production
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
