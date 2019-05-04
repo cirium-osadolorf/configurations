@@ -8,8 +8,7 @@ sudo yum install java-1.8.0-openjdk-devel
 yum install maven
 mvn ––version
 
-#isntall git
-sudo yum install -y git
-
 #extras tools
 yum install -y tree
+
+#sudo chmod 766 configurations/linux/install/essentials_cento_install.sh && sudo configurations/linux/install/essentials_cento_install.sh
