@@ -2,7 +2,7 @@
 #Script that installs essental server packages for development 
 
 #Java install
-sudo yum install -y java-1.8.0-openjdk-devel
+yum install -y java-1.8.0-openjdk-devel
 
 #Maven install
 yum install maven -y
