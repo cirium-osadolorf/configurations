@@ -6,7 +6,8 @@ pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 ============ amazing Linux tools ============ 
 sshpass 
 tree
-dos2unix  
+dos2unix 
+cheat.sh
 
 
 ============ fixes files created in windows that won't run in linux ============ 
