@@ -10,7 +10,8 @@ userdel frank			#delete user
 groupadd basket			#create group
 usermod -aG group_name $USER	#add user to a group
 gpasswd -a $USER docker	
-adduser user && echo "deploy:passwrod" | chpasswd #craete user and password in one go
+adduser user && echo "user:password" | chpasswd #craete user and password in one go
+
 
 
 =======New_groups===========================
