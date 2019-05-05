@@ -24,16 +24,16 @@ sshfs
 =========SSH FS (VS code plugin)=====================
 
 Insert this into the setting.json file
-{
-        "sshfs.configs": [
+
+    "sshfs.configs": [
         {
-            "host": "publicIP",
-            "name": "username",
-            "password": "pass",
+            "host": "fortune1c.mylabserver.com",
+            "name": "main_cento_server",
             "port": 22,
-            "root": "/home/path",
+            "privateKeyPath": "C:\\Users\\fortune\\.ssh\\id_rsa",
+            "root": "/home/fortune",
             "username": "fortune"
         }
     ]
-}
+
 
