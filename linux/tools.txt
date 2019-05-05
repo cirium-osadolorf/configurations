@@ -19,7 +19,8 @@ curl
 wget
 
 =============amazing visual studio code  tools =========
-sshfs
+sshfs               #givves you remote control of server folders
+Settings Sync       #sync your themes and plugins on the cloud
 
 =========SSH FS (VS code plugin)=====================
 
