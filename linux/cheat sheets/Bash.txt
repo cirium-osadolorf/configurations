@@ -34,7 +34,8 @@ sudo usermod -a -G basket frank
 #Link to ssh article:  https://www.ssh.com/ssh/keygen/
 ssh-keygen   			#Creates new authentication key pairs for SSH
 ssh-keygen -t rsa		#Creates new authentication key pairs for SSH with rsa algorithm
-ssh user@hostname		#SSH into remote comupter
+ssh myName@hostname		#SSH into remote comupter
+ssh -p 22 myName@hostname	#SSH into remote computer 
 ssh-copy-id pi@10.25.6.0	#Copies the public key to the remote computer
 
 ============ Text ============ 
