@@ -31,7 +31,7 @@ systemctl enable docker
 groupadd docker
 usermod -aG docker $USERNAME
 
-if systemctl status jenkins ; then
+if systemctl status jenkins  2>> /dev/null; then
   usermod -aG docker jenkins
   echo "========= Jenkins Has Been Added to Docker Group================"
 else
@@ -42,4 +42,5 @@ systemctl restart docker
 systemctl status docker
 docker run hello-world
 
+# Script - stop
 #sudo chmod 766 configurations/linux/install/docker_cento_install.sh && sudo configurations/linux/install/docker_cento_install.sh $USER
