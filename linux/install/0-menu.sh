@@ -17,17 +17,24 @@ funDisplayMenu(){
 
 funCloneRepo(){
   cd
+  rm -rf configurations
+  yum install -y git
+  git clone https://github.com/FortunexFortune/configurations.git
+  cd
   #function that install jenkins
   funJenkinsInstall(){
+    chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  configurations/linux/install/jenkins_cento_install.sh
   }
-
   funDockerInstall(){
+    chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $USER
   }
   funTerraformInstall(){
+    chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
   }
   funKubernetesInstall(){
   }
   funEssentialsInstall(){
+    chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
   }
 
 }
@@ -42,12 +49,15 @@ else
 fi
 
 funDisplayMenu
+funCloneRepo
+
 case "`cat choice.txt`" in 
-  1) echo "installing Jenkins"
-  2) echo "installing Docker";;
-  3) echo "installing Terraform";;
+  1) echo "installing Jenkins" && funJenkinsInstall
+  2) echo "installing Docker" && funDockerInstall;;
+  3) echo "installing Terraform" && funTerraformInstall;;
   4) echo "installing Kubernetes";;
-  5) echo "installing Essentials";;
+  5) echo "installing Essentials" && funEssentialsInstall;;
   x) echo "exit";;
 esac
 # Script - stop
+#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh
