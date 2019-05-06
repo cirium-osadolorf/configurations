@@ -1,8 +1,12 @@
 #! /bin/bash
+# Script that installs docker on cento machines
 # Link for the  full instructions https://docs.docker.com/install/linux/docker-ce/centos/
+: ${1?"USAGE: $1 USERNAME "}
 
+# Global variables
 USERNAME=$1
 
+# Script Start
 yum remove -y docker \
                   docker-client \
                   docker-client-latest \
@@ -26,6 +30,14 @@ systemctl start docker
 systemctl enable docker
 groupadd docker
 usermod -aG docker $USERNAME
+
+if systemctl status jenkins ; then
+  usermod -aG docker jenkins
+  echo "========= Jenkins Has Been Added to Docker Group================"
+else
+  echo "========= Jenkins is not Installed in This Machine !!================"
+fi
+
 systemctl restart docker
 systemctl status docker
 docker run hello-world
