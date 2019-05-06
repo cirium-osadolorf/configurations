@@ -52,7 +52,7 @@ funDisplayMenu
 funCloneRepo
 
 case "`cat choice.txt`" in 
-  1) echo "installing Jenkins" && funJenkinsInstall
+  1) echo "installing Jenkins" && funJenkinsInstall;;
   2) echo "installing Docker" && funDockerInstall;;
   3) echo "installing Terraform" && funTerraformInstall;;
   4) echo "installing Kubernetes";;
