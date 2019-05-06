@@ -10,5 +10,7 @@ mvn ––version
 
 #extras tools
 yum install -y tree
+yum install -y dialog
+yum install -y dos2unix  
 
 #sudo chmod 766 configurations/linux/install/essentials_cento_install.sh && sudo configurations/linux/install/essentials_cento_install.sh
