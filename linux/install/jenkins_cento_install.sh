@@ -11,7 +11,7 @@ systemctl enable jenkins
 
 if systemctl status docker  2>> /dev/null; then
   usermod -aG docker jenkins
-  echo "========= Jenkins Has Been Added to Docker Group ================"
+  echo "========= Jenkins Has Been Added to the Docker Group ================"
 else
   echo "========= Docker is not Installed on This Machine !!================"
 fi

@@ -33,9 +33,9 @@ usermod -aG docker $USERNAME
 
 if systemctl status jenkins  2>> /dev/null; then
   usermod -aG docker jenkins
-  echo "========= Jenkins Has Been Added to Docker Group ================"
+  echo "========= Jenkins Has Been Added to the Docker Group ================"
 else
-  echo "========= Jenkins is not Installed in This Machine !!================"
+  echo "========= Jenkins is not Installed on This Machine !!================"
 fi
 
 systemctl restart docker
