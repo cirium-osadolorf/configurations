@@ -186,3 +186,7 @@ ctrl+c 			#interupt, it will get you out of a process
 
 sha256sum fileName | grep fcaf10fa60066437b20... #Compares the result of the hash operation with the original, if the output from gerp is red, then the file was not hijacked
 
+export PS1="\e[0;31m[\u@\h \W]\$ \e[m "		#To set a red color prompt
+#Link to  Promopt formatting --> https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
+
+
