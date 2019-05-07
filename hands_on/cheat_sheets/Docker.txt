@@ -23,8 +23,6 @@ docker build -t fortunexfortune/moviesearchapi .  #build image
 docker container --help                         #returns container commands
 docker container command --help                 #returns flags available to the command
 docker container run imageName                  #runs a container
-docker container run -P -d imageName            # -P = maps container to a random port 
-                                                # -d = runs the container in the background
 docker container ls                             # returns list of running containers
 docker container ps                             # returns list of running containers
 docker container ls -a                          # returns a lsit of all containers
@@ -37,15 +35,18 @@ docker container pause containerID              #pauses all running process
 docker container unpause containerID            #resumes all running process
 docker container logs containerID               #returns container logs
 docker container stats containerID              #returns cpu and memory usage of the cotnainer
-
-docker container exec -it containerID /bin/bash       
-#give you access to container prompt in the specified folder
-
-dokcer container exec -it containerID ls /desired/path 
-#returns output to standard to your standard out
-
 docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes both stop and running containers
-docker container prune                          #removes all stoped containers
+docker container prune -f                       #removes all stoped containers
+docker container run -P imageName               # -P = maps container to a random port 
+docker container run -d imageName               # -d = runs the container in the background
+docker container run --rm imageName             #Automatically remove container when it exits
+docker container run -it imageName              # -i = Keep STDIN open even if not attached
+docker container run --name                     # runs a container with specified name
+
+docker container exec -it containerID /bin/bash         #give you access to container prompt in the specified folder
+dokcer container exec -it containerID ls /desired/path  #returns output to standard to your standard out
+
+
 
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
