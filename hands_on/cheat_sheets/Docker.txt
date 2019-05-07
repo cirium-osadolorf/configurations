@@ -4,7 +4,7 @@ docker --help                             #returns list of managment_commands an
 docker managment_command --help           #returns list of commands available to the specified managment_command 
 docker managment_command command -help--  #returns flags available to the command
 
-=============================== Building an image =================================
+=============================== Images  =================================
 
 docker image --help                               #returns image commands
 docker image command --help                       #returns flags available to the command
@@ -18,7 +18,7 @@ docker image inspect name                         #return json doc of image deta
 
 docker build -t fortunexfortune/moviesearchapi .  #build image
 
-==============================Running a container======================================
+============================== Containers ======================================
 
 docker container --help                         #returns container commands
 docker container command --help                 #returns flags available to the command
