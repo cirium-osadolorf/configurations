@@ -36,15 +36,14 @@ docker container unpause containerID            #resumes all running process
 docker container logs containerID               #returns container logs
 docker container stats containerID              #returns cpu and memory usage of the cotnainer
 docker container rm containerID                 #removes stoped containers
-docker container rm -f containerID              #removes both stop and running containers
-docker container prune -f                       #removes all stoped containers
+docker container rm -f containerID              #removes container with force
+docker container prune -f                       #removes all containers
 docker container run -P imageName               # -P = publishes all container exposed ports to random ports
-docker container run -p 8080:80 imageName       # -p =  publishes a container's port(s) to the host 
+docker container run -p 8080:80 imageName       # -p =  publishes a container's port(s) to the host port
 docker container run -d imageName               # -d = runs the container in the background
 docker container run --rm imageName             #Automatically remove container when it exits
-docker container run -it imageName              # -i = Keep STDIN open even if not attached
 docker container run --name [Name] imageName    # runs a container with specified name
-
+docker container run -it imageName              # -i = Keep STDIN open even if not attached
 docker container exec -it containerID /bin/bash         #give you access to container prompt in the specified folder
 dokcer container exec -it containerID ls /desired/path  #returns output to standard to your standard out
 
