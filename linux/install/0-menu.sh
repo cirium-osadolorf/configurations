@@ -1,5 +1,7 @@
 #! /bin/bash
 # dialog box menu 
+: ${1?"USAGE: $1 USERNAME "}
+
 
 # Global variables
 MENUBOX=${MENUBOX=dialog}
@@ -8,6 +10,8 @@ MESSAGE="Select the Application to Install"
 XCOORD="15"
 YCOORD="45"
 N_OF_CHOICES="6"
+USERNAME=$1
+
 
 # Functions declaration - Start
 # Function that initialize the MenuBOX
@@ -17,28 +21,41 @@ funDisplayMenu(){
 
 funCloneRepo(){
   cd
+  mkdir tmp
+  cd tmp
   rm -rf configurations
   yum install -y git
   git clone https://github.com/FortunexFortune/configurations.git
 }
 
-#function that install jenkins
 funJenkinsInstall(){
+  funCloneRepo
   chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  configurations/linux/install/jenkins_cento_install.sh
 }
 funDockerInstall(){
-  chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $USER
+  funCloneRepo
+  chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $1
 }
 funTerraformInstall(){
+  funCloneRepo
   chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
 }
 funKubernetesInstall(){
-  echo ""
+  funCloneRepo
 }
 funEssentialsInstall(){
+  funCloneRepo
   chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
 }
-# Function declaration - Stop
+
+# funcCleanUp(){
+#   cd 
+#   echo "======================================="
+#   echo "$PWD"
+#   echo "======================================="
+#   rm -rf tmp
+#   rm choice.txt
+# }
 
 # Script - start
 if dialog --version 2>> /dev/null ; then
@@ -49,15 +66,17 @@ else
 fi
 
 funDisplayMenu
-funCloneRepo
 
 case "`cat choice.txt`" in 
-  1) echo "installing Jenkins" && funJenkinsInstall;;
-  2) echo "installing Docker" && funDockerInstall;;
-  3) echo "installing Terraform" && funTerraformInstall;;
-  4) echo "installing Kubernetes";;
-  5) echo "installing Essentials" && funEssentialsInstall;;
+  1) funJenkinsInstall;;
+  2) funDockerInstall $USERNAME;;
+  3) funTerraformInstall;;
+  4) echo "The installing Kubernetes feature is still been developed....";;
+  5) funEssentialsInstall;;
   x) echo "exit";;
 esac
+
 # Script - stop
-#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh
+
+#sudo 0-menu.sh $USER
+#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh $USER
