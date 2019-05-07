@@ -1,3 +1,7 @@
+============= Help ===================
+docker -h #returns list of docker commands
+docker command -h       
+
 ========= Building an image ===========
 docker build -t fortunexfortune/moviesearchapi .
 
