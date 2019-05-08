@@ -35,8 +35,8 @@ docker container unpause containerID            #resumes all running process
 docker container logs containerID               #returns container logs, useful for torubleshoting containers
 docker container stats containerID              #returns cpu and memory usage of the cotnainer
 docker container rm containerID                 #removes stoped containers
-docker container rm -f containerID              #removes container with force
-docker container prune -f                       #removes all containers
+docker container rm -f containerID              #removes running container
+docker container prune -f                       #removes all stopped containers
 
 ============================== Containers run ======================================
 
@@ -55,15 +55,21 @@ dokcer container exec -it containerID ls /desired/path  #returns output to host 
 
 
 ============================  Networks ================================================
-ifconfig                                              #returns all adaptors
-docker network --help                                 #returns networking commands
-docker network ls                                     #return all networks
-docker network ls --no-trunc
-docker network inspect [NAME]                         #gives details on selected network
-docker network create [NAME]                          #create a docker network
-docker network rm [NAME]                              #deletes selected network
+ifconfig                                   #returns all adaptors
+docker network --help                      #returns networking commands
+docker network ls                          #return all networks
+docker network ls --no-trunc               #Do not truncate the output
+docker network inspect [NAME]              #gives details on selected network
+docker network create [NAME]               #create a docker network
+docker network rm [NAME]                   #deletes selected network
+docker network prune -f                    #removes all inactive networks
+
 docker network connect [NetworkName] [ContainerName]  #Attach container to selected network
 docker network disconnect br01 network-test03         # Removes a container from a network
+
+
+docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 br02
+
 
 
 
