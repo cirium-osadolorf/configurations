@@ -87,7 +87,6 @@ docker container run -d \
  
 +++++++<-----------------------------------
 #Creating a volume using the volume flag:
-#the semicolon (:) is what separates the host from the target
 docker volume create html-volume
 docker container run -d \
  --name nginx-volume2 \
@@ -110,7 +109,6 @@ docker container run -d \
   nginx
 +++++++<-----------------------------------
 # Bind Mount persistent strorage method2
-#the semicolon (:) is what separates the host from the target
 docker container run -d \
  --name [NAME] \
  -v "$(pwd)"/target2:/app \
