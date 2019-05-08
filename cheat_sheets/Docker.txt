@@ -78,7 +78,7 @@ docker volume rm [NAME]                 #Deleting a volume
 docker volume prune                     #Removing all unused volumes:
 
 +++++++<-----------------------------------
-#Creating a volume using that volume mount:
+#Creating a volume using volume mount:
 docker volume create html-volume
 docker container run -d \
  --name nginx-volume1 \
@@ -86,39 +86,37 @@ docker container run -d \
  nginx#
  
 +++++++<-----------------------------------
-#Creating a volume using that volume flag:
+#Creating a volume using the volume flag:
+#the semicolon (:) is what separates the host from the target
+docker volume create html-volume
 docker container run -d \
  --name nginx-volume2 \
  -v html-volume:/usr/share/nginx/html/ \
  nginx
 +++++++<-----------------------------------
 #Creating a readonly volume:
-
+docker volume create html-volume
 docker container run -d \
   --name=nginx-volume3 \
   --mount source=html-volume,target=/usr/share/nginx/html,readonly \
   nginx
 ============================  Bind Mount  ================================================
-
-
 +++++++<-----------------------------------
-# You can either use the --mount flag or the -v flag
+# Bind Mount persistent strorage method1
 mkdir target
 docker container run -d \
   --name [NAME] \
   --mount type=bind,source="$(pwd)"/target,target=/app \
   nginx
-
-#the dir of intrest must be present in the host, else you can't mount it
-
 +++++++<-----------------------------------
+# Bind Mount persistent strorage method2
+#the semicolon (:) is what separates the host from the target
 docker container run -d \
  --name [NAME] \
  -v "$(pwd)"/target2:/app \
  nginx
  
 #the dir target2 is automatically created in the host folder if not present
-#the semicolon (:) is what seprates the host from the target
 *******************************************************************************************
 
 
