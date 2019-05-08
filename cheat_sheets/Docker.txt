@@ -76,7 +76,33 @@ docker volume create [NAME]             #create a volume
 docker volume inspect [NAME]            #Inspecting a volume:
 docker volume rm [NAME]                 #Deleting a volume
 docker volume prune                     #Removing all unused volumes:
-*******************************************************************************************
+
++++++++<-----------------------------------
+#Creating a volume using that volume mount:
+docker volume create html-volume
+docker container run -d \
+ --name nginx-volume1 \
+ --mount type=volume,source=html-volume,target=/usr/share/nginx/html/ \
+ nginx#
+ 
++++++++<-----------------------------------
+#Creating a volume using that volume flag:
+docker container run -d \
+ --name nginx-volume2 \
+ -v html-volume:/usr/share/nginx/html/ \
+ nginx
++++++++<-----------------------------------
+#Creating a readonly volume:
+
+docker container run -d \
+  --name=nginx-volume3 \
+  --mount source=html-volume,target=/usr/share/nginx/html,readonly \
+  nginx
+============================  Bind Mount  ================================================
+
+
++++++++<-----------------------------------
+# You can either use the --mount flag or the -v flag
 mkdir target
 docker container run -d \
   --name [NAME] \
@@ -84,7 +110,8 @@ docker container run -d \
   nginx
 
 #the dir of intrest must be present in the host, else you can't mount it
-*******************************************************************************************
+
++++++++<-----------------------------------
 docker container run -d \
  --name [NAME] \
  -v "$(pwd)"/target2:/app \
