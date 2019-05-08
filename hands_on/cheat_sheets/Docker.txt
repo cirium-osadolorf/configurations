@@ -50,8 +50,8 @@ docker container run -it imageName              # -i = Keep STDIN open even if n
 
 ============================== Containers exec ======================================
 
-docker container exec -it containerID /bin/bash         #give you access to container prompt in the specified folder
-dokcer container exec -it containerID ls /desired/path  #returns output to standard to your standard out
+docker container exec -it containerID /bin/bash         #Takes you to the contaienr prompt [ /bin/bash ]
+dokcer container exec -it containerID ls /desired/path  #returns output to host standard output
 
 
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
