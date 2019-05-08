@@ -54,4 +54,18 @@ docker container exec -it containerID /bin/bash         #Takes you to the contai
 dokcer container exec -it containerID ls /desired/path  #returns output to host standard output
 
 
+============================  Networks ================================================
+ifconfig                                              #returns all adaptors
+docker network --help                                 #returns networking commands
+docker network ls                                     #return all networks
+docker network ls --no-trunc
+docker network inspect [NAME]                         #gives details on selected network
+docker network create [NAME]                          #create a docker network
+docker network rm [NAME]                              #deletes selected network
+docker network connect [NetworkName] [ContainerName]  #Attach container to selected network
+docker network disconnect br01 network-test03         # Removes a container from a network
+
+
+
+
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
