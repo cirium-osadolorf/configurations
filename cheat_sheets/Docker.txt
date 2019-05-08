@@ -50,8 +50,9 @@ docker container run -it imageName              # -i = Keep STDIN open even if n
 
 ============================== Containers exec ======================================
 
-docker container exec -it containerID /bin/bash         #Takes you to the contaienr prompt [ /bin/bash ]
-dokcer container exec -it containerID ls /desired/path  #returns output to host standard output
+docker container exec -it containerID /bin/bash            #Takes you to the contaienr prompt [ /bin/bash ]
+dokcer container exec -it containerID ls /desired/path     #returns output to host standard output
+docker container exec -it containerID touch /app/file3.txt #creates a file in the selected folder 
 
 
 ============================  Networks ================================================
@@ -67,8 +68,31 @@ docker network prune -f                    #removes all inactive networks
 docker network connect [NetworkName] [ContainerName]  #Attach container to selected network
 docker network disconnect br01 network-test03         # Removes a container from a network
 
+============================  Volumes  ================================================
 
-docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 br02
+docker volume --help                    #volume guide
+docker volume ls                        #list volumes
+docker volume create [NAME]             #create a volume
+docker volume inspect [NAME]            #Inspecting a volume:
+docker volume rm [NAME]                 #Deleting a volume
+docker volume prune                     #Removing all unused volumes:
+*******************************************************************************************
+mkdir target
+docker container run -d \
+  --name [NAME] \
+  --mount type=bind,source="$(pwd)"/target,target=/app \
+  nginx
+
+#the dir of intrest must be present in the host, else you can't mount it
+*******************************************************************************************
+docker container run -d \
+ --name [NAME] \
+ -v "$(pwd)"/target2:/app \
+ nginx
+ 
+#the dir target2 is automatically created in the host folder if not present
+#the semicolon (:) is what seprates the host from the target
+*******************************************************************************************
 
 
 
