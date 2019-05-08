@@ -14,7 +14,7 @@ docker pull imageName                             #pulls the docker image from d
 docker image inspect imageID                      #return json doc of image details
 docker image inspect name                         #return json doc of image details
 
-
+=============================== Dockefile  =================================
 
 docker build -t fortunexfortune/moviesearchapi .  #build image
 
@@ -22,7 +22,6 @@ docker build -t fortunexfortune/moviesearchapi .  #build image
 
 docker container --help                         #returns container commands
 docker container command --help                 #returns flags available to the command
-docker container run imageName                  #runs a container
 docker container ls                             # returns list of running containers
 docker container ps                             # returns list of running containers
 docker container ls -a                          # returns a lsit of all containers
@@ -38,15 +37,21 @@ docker container stats containerID              #returns cpu and memory usage of
 docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes container with force
 docker container prune -f                       #removes all containers
+
+============================== Containers run ======================================
+
+docker container run imageName                  #runs a container
+docker container run --name [Name] imageName    # runs a container with specified name
 docker container run -P imageName               # -P = publishes all container exposed ports to random ports
 docker container run -p 8080:80 imageName       # -p =  publishes a container's port(s) to the host port
 docker container run -d imageName               # -d = runs the container in the background
 docker container run --rm imageName             #Automatically remove container when it exits
-docker container run --name [Name] imageName    # runs a container with specified name
 docker container run -it imageName              # -i = Keep STDIN open even if not attached
+
+============================== Containers exec ======================================
+
 docker container exec -it containerID /bin/bash         #give you access to container prompt in the specified folder
 dokcer container exec -it containerID ls /desired/path  #returns output to standard to your standard out
-
 
 
 docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
