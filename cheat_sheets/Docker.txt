@@ -48,6 +48,8 @@ docker container run -d imageName               # -d = runs the container in the
 docker container run --rm imageName             #Automatically remove container when it exits
 docker container run -it imageName              # -i = Keep STDIN open even if not attached
 
+docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
+
 ============================== Containers exec ======================================
 
 docker container exec -it containerID /bin/bash            #Takes you to the contaienr prompt [ /bin/bash ]
@@ -120,8 +122,11 @@ docker container run -d \
 
 docker image build -t [IMAGE_NAME] .                  #creates a docker image
 
++++++++<-----------------------------------
+#Overwritting default env varaibles NODE_ENV and PORT
+
+docker container run -d --name image_name -p 8083:3001 \
+--env PORT=3001 --env NODE_ENV=production
+\ container_Name
 
 
-
-
-docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
