@@ -118,7 +118,7 @@ docker container run -d \
 
 ============================  Dockerfiles  ================================================
 
-docker image build -t [IMAGE_NAME] .
+docker image build -t [IMAGE_NAME] .                  #creates a docker image
 
 
 
