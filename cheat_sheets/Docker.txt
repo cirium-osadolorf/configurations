@@ -115,7 +115,10 @@ docker container run -d \
  nginx
  
 #the dir target2 is automatically created in the host folder if not present
-*******************************************************************************************
+
+============================  Dockerfiles  ================================================
+
+docker image build -t [IMAGE_NAME] .
 
 
 
