@@ -16,7 +16,9 @@ docker image inspect name                         #return json doc of image deta
 
 =============================== Dockefile  =================================
 
+docker image build -t <NAME>:<TAG> .              #build Dockerfile in current folder
 docker build -t fortunexfortune/moviesearchapi .  #build image
+
 
 ============================== Containers ======================================
 
