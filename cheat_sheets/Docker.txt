@@ -123,10 +123,56 @@ docker container run -d \
 docker image build -t [IMAGE_NAME] .                  #creates a docker image
 
 +++++++<-----------------------------------
-#Overwritting default env varaibles NODE_ENV and PORT
+#ENV VARIABLES and Overwritting default env varaibles 
+FROM node
+LABEL org.label-schema.version=v1.1
+ENV NODE_ENV="development"
+ENV PORT 3000
+RUN mkdir -p /var/node
+ADD src/ /var/node/
+WORKDIR /var/node
+RUN npm install
+EXPOSE $PORT
+CMD ./bin/www
 
+docker image build -t imageName.
 docker container run -d --name image_name -p 8083:3001 \
 --env PORT=3001 --env NODE_ENV=production
 \ container_Name
+
++++++++<-----------------------------------
+#BUILD Arguments variables and Overwritting default Build Arguments 
+LABEL org.label-schema.version=v1.1
+ARG SRC_DIR=/var/node
+RUN mkdir -p $SRC_DIR
+ADD src/ $SRC_DIR
+WORKDIR $SRC_DIR
+RUN npm install
+EXPOSE 3000
+CMD ./bin/www
+
+docker image build -t image_name --build-arg SRC_DIR=/var/code .
+docker container run -d --name container_name -p 8085:3000 image_name
++++++++<-----------------------------------
+#Non Privileged User
+FROM centos:latest
+RUN useradd -ms /bin/bash cloud_user
+USER cloud_user
+
+docker image build -t centos7/nonroot:v1 .
+docker container run -it --name test-build centos7/nonroot:v1 /bin/bash
+docker container start test-build
+docker container exec -u 0 -it test-build /bin/bash    #log you in as root
+
++++++++<-----------------------------------
+#VOLUME instruction to automatically create a mount point in a Docker image.
+FROM nginx:latest
+VOLUME ["/usr/share/nginx/html/"]
+
+docker image build -t linuxacademy/nginx:v1 .
+docker container run -d --name nginx-volume linuxacademy/nginx:v1
+docker container inspect nginx-volume
+
+
 
 
