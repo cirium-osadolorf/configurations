@@ -122,7 +122,21 @@ docker container run -d \
 
 ============================  Dockerfiles  ================================================
 
-docker image build -t [IMAGE_NAME] .                  #creates a docker image
+docker image build -t <NAME>:<TAG> .                              #creates a docker image
+docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile
+docker image build -t <NAME>:<TAG>  -f --rm .                     #removes intermidiate images
+docker image build -t <NAME>:<TAG> --label com.qa.version=v1.8 .  #labelling the image
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>                #building image from github repo
+docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>         #building image from github repo folderpath
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>    #building image from github repo folderpath
+docker image build -t <NAME>:<TAG> - < <FILE>.tar.gz              #Building an image from a zip file
+
++++++++<-----------------------------------
+# Creating Dockerfile from standard in
+docker image build -t <NAME>:<TAG> -<<EOF
+FROM nginx:latest
+VOLUME ["/usr/share/nginx/html/"]
+EOF
 
 +++++++<-----------------------------------
 #ENV VARIABLES and Overwritting default env varaibles 
@@ -175,6 +189,13 @@ docker image build -t linuxacademy/nginx:v1 .
 docker container run -d --name nginx-volume linuxacademy/nginx:v1
 docker container inspect nginx-volume
 
+
+
+====================== Docker Hub =========================
+
+docker login
+docker image push <USERNAME>/<IMAGE_NAME>:<TAG>
+docker image tag <IMAGE_NAME>:<TAG> <USERNAME>/<IMAGE_NAME>:<TAG>
 
 
 
