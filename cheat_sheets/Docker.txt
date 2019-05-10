@@ -12,26 +12,31 @@ docker image ls                                   #retruns all images
 docker images                                     #retruns all images
 docker pull imageName                             #pulls the docker image from dockerhub
 docker image inspect imageID                      #return json doc of image details
-docker image inspect name                         #return json doc of image details
 
 docker image history <IMAGE>                      #returns image layers and commands
 docker image history --no-trunc <IMAGE>           #returns layers full id
 docker image history --quiet <IMAGE>              #returns layers ids only
 
-docker image save <IMAGE> > <FILE>.tar
-docker image save <IMAGE> -o <FILE>.tar
-docker image save <IMAGE> --output <FILE>.tar
+docker image save <IMAGE> > <FILE>.tar            #archieve Dockerimage
+docker image save <IMAGE> -o <FILE>.tar           #archieve Dockerimage
+docker image save <IMAGE> --output <FILE>.tar     #archieve Dockerimage
 
-docker image load < <FILE>.tar
-docker image load -i <FILE>.tar
-docker image load --input <FILE>.tar
+docker image load < <FILE>.tar                    #restoring  Dockerimage
+docker image load -i <FILE>.tar                   #restoring  Dockerimage
+docker image load --input <FILE>.tar              #restoring  Dockerimage
  
-
 =============================== Dockefile  =================================
 
-docker image build -t <NAME>:<TAG> .              #build Dockerfile in current folder
 docker build -t fortunexfortune/moviesearchapi .  #build image
 
+docker image build -t <NAME>:<TAG> .                              #creates a docker image
+docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile to build
+docker image build -t <NAME>:<TAG>  -f --rm .                     #removes intermidiate images
+docker image build -t <NAME>:<TAG> --label com.qa.version=v1.8 .  #labelling the image
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>                #building image from github repo
+docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>         #building image from github repo folderpath
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>    #building image from github repo folderpath
+docker image build -t <NAME>:<TAG> - < <FILE>.tar.gz              #Building an image from a zip file
 
 ============================== Containers ======================================
 
@@ -56,28 +61,25 @@ docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes running container
 docker container prune -f                       #removes all stopped containers
 
-
 ============================== Containers run ======================================
 
 docker container run imageName                  # runs a container
 docker container run --name [Name] imageName    # runs a container with specified name
-docker container run -P imageName               # -P = publishes all container exposed ports to random ports
-docker container run -p 8080:80 imageName       # -p =  publishes a container's port(s) to the host port
+docker container run -P imageName               # -P (CAPITAL)= publishes all container exposed ports to random ports
+docker container run -p 8080:80 imageName       # -p (SMALL)=  publishes a container's port(s) to the host port
 docker container run -d imageName               # -d = runs the container in the background
 docker container run --rm imageName             # Automatically remove container when it exits
-docker container run -it imageName              # -i = Keep STDIN open even if not attached
+docker container run -it imageName /bin/bash    # runs and logs you to the container tty
 
 docker container run -d --name name --restart [POLICY] user:image:latest #there are up to 4 policies
 docker container run -d --name name --restart always user:image:latest
-
 docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
 
 ============================== Containers exec ======================================
 
-docker container exec -it containerID /bin/bash            #Takes you to the contaienr prompt [ /bin/bash ]
+docker container exec -it containerID /bin/bash            #Takes you to the container prompt [ /bin/bash ]
 dokcer container exec -it containerID ls /desired/path     #returns output to host standard output
 docker container exec -it containerID touch /app/file3.txt #creates a file in the selected folder 
-
 
 ============================  Networks ================================================
 ifconfig                                   #returns all adaptors
@@ -139,17 +141,6 @@ docker container run -d \
  nginx
  
 #the dir target2 is automatically created in the host folder if not present
-
-============================  Dockerfiles  ================================================
-
-docker image build -t <NAME>:<TAG> .                              #creates a docker image
-docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile
-docker image build -t <NAME>:<TAG>  -f --rm .                     #removes intermidiate images
-docker image build -t <NAME>:<TAG> --label com.qa.version=v1.8 .  #labelling the image
-docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>                #building image from github repo
-docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>         #building image from github repo folderpath
-docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>    #building image from github repo folderpath
-docker image build -t <NAME>:<TAG> - < <FILE>.tar.gz              #Building an image from a zip file
 
 +++++++<-----------------------------------
 # Creating Dockerfile from standard in
@@ -223,7 +214,7 @@ docker system events                                       # returns server even
 docker system events --since '<TIME_PERIOD>'               # returns server events within a time period
 docker system events --since '1h'                          # returns containers events within a time period
 docker system events --filter <FILTER_NAME>=<FILTER>       # returns events realted to an object
-docker system events --filter type=container --since '1h'  # returns event related to an object
+docker system events --filter type=container --since '1h'  # returns event related to an object ( Network, Image, Container, etc)
 
 docker system events --filter type=container --filter event=attach
 docker system events --filter type=container --filter event=start --since '1h' # double filter
