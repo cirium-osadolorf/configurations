@@ -14,6 +14,19 @@ docker pull imageName                             #pulls the docker image from d
 docker image inspect imageID                      #return json doc of image details
 docker image inspect name                         #return json doc of image details
 
+docker image history <IMAGE>                      #returns image layers and commands
+docker image history --no-trunc <IMAGE>           #returns layers full id
+docker image history --quiet <IMAGE>              #returns layers ids only
+
+docker image save <IMAGE> > <FILE>.tar
+docker image save <IMAGE> -o <FILE>.tar
+docker image save <IMAGE> --output <FILE>.tar
+
+docker image load < <FILE>.tar
+docker image load -i <FILE>.tar
+docker image load --input <FILE>.tar
+ 
+
 =============================== Dockefile  =================================
 
 docker image build -t <NAME>:<TAG> .              #build Dockerfile in current folder
@@ -35,7 +48,8 @@ docker container stop containerID               #Stop container
 docker container pause containerID              #pauses all running process
 docker container unpause containerID            #resumes all running process
 docker container logs containerID               #returns container logs, useful for torubleshoting containers
-docker container stats containerID              #returns cpu and memory usage of the cotnainer
+docker container stats containerID              #returns cpu and memory usage 
+docker container top containerID
 docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes running container
 docker container prune -f                       #removes all stopped containers
@@ -50,7 +64,9 @@ docker container run -d imageName               # -d = runs the container in the
 docker container run --rm imageName             #Automatically remove container when it exits
 docker container run -it imageName              # -i = Keep STDIN open even if not attached
 
-docker run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
+docker container run -d --name name --restart [POLICY] user:image:latest
+docker container run -d --name name --restart always user:image:latest
+docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
 
 ============================== Containers exec ======================================
 
