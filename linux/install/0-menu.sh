@@ -76,7 +76,7 @@ case "`cat choice.txt`" in
   4) funTerraformInstall;;
   5) funEssentialsInstall;;
   x) echo "exit";;
-  *) echo "Input is not valid!!"
+  *) echo "Input is not valid!!";;
 esac
 
 # Script - stop
