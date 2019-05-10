@@ -16,7 +16,7 @@ USERNAME=$1
 # Functions declaration - Start
 # Function that initialize the MenuBOX
 funDisplayMenu(){
-  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Terraform" 4 "Kubernetes" 5 "Essentials" x "Exit" 2>choice.txt
+  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Terraform" 4 "Docker Compose" 5 "Essentials" x "Exit" 2>choice.txt
 }
 
 funCloneRepo(){
@@ -36,17 +36,19 @@ funDockerInstall(){
   funCloneRepo
   chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $1
 }
+funDockerComposeInstall(){
+ chmod 766 configurations/linux/install/dockercompose_cento_install.sh && sudo configurations/linux/install/dockercompose_cento_install.sh
+}
 funTerraformInstall(){
   funCloneRepo
   chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
-}
-funKubernetesInstall(){
-  funCloneRepo
 }
 funEssentialsInstall(){
   funCloneRepo
   chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
 }
+
+
 
 # funcCleanUp(){
 #   cd 
@@ -70,8 +72,8 @@ funDisplayMenu
 case "`cat choice.txt`" in 
   1) funJenkinsInstall;;
   2) funDockerInstall $USERNAME;;
-  3) funTerraformInstall;;
-  4) echo "The installing Kubernetes feature is still been developed....";;
+  3) funDockerComposeInstall;;
+  4) funTerraformInstall;;
   5) funEssentialsInstall;;
   x) echo "exit";;
 esac
