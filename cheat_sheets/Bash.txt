@@ -174,7 +174,17 @@ systemctl start serviceName		#start service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
+=============== Write to a file from standard in ========
 
+grep -i hello -<<EOF
+> hello dear
+> friend
+> EOF
+
+file.txt -<<EOF
+> hello dear
+> friend
+> EOF
 ==================Extras===================
 
 CTRL + A 		#Takes you to the begining of the comand line
