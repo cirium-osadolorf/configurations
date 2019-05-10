@@ -40,6 +40,8 @@ docker container command --help                 #returns flags available to the 
 docker container ls                             # returns list of running containers
 docker container ps                             # returns list of running containers
 docker container ls -a                          # returns a lsit of all containers
+docker container ls -a -q                       # returns all containersID
+docker container ls -a -f status=exited         #filters out all stopped containers
 docker container inspect containerID            #return json doc of container details
 docker container inspect containerName          #return json doc of container details
 docker container top containerID                #returns running processes of a container
@@ -53,6 +55,7 @@ docker container top containerID
 docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes running container
 docker container prune -f                       #removes all stopped containers
+
 
 ============================== Containers run ======================================
 
@@ -225,6 +228,14 @@ docker system events --filter type=container --since '1h'  # returns event relat
 docker system events --filter type=container --filter event=attach
 docker system events --filter type=container --filter event=start --since '1h' # double filter
 docker system events --filter type=container --filter event=attach --filter event=die --filter event=stop
+
+
+===================== Extras ===============================================
+
+docker container ls -a -f status=exited                   #List all stopped containers
+docker container ls -a -q -f status=exited                #List the IDs of stopped containers
+docker container ls -a -q -f status=exited | wc -l        #Get a count of all stopped containers
+docker container ls -a -f status=exited | grep prometheus #Get a listing of our containers
 
 
 
