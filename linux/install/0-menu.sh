@@ -16,7 +16,7 @@ USERNAME=$1
 # Functions declaration - Start
 # Function that initialize the MenuBOX
 funDisplayMenu(){
-  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Terraform" 4 "Docker Compose" 5 "Essentials" x "Exit" 2>choice.txt
+  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Docker Compose" 4 "Terraform" 5 "Essentials" x "Exit" 2>choice.txt
 }
 
 funCloneRepo(){
@@ -76,6 +76,7 @@ case "`cat choice.txt`" in
   4) funTerraformInstall;;
   5) funEssentialsInstall;;
   x) echo "exit";;
+  *) echo "Input is not valid!!"
 esac
 
 # Script - stop
