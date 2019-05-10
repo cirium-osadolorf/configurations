@@ -56,16 +56,17 @@ docker container prune -f                       #removes all stopped containers
 
 ============================== Containers run ======================================
 
-docker container run imageName                  #runs a container
+docker container run imageName                  # runs a container
 docker container run --name [Name] imageName    # runs a container with specified name
 docker container run -P imageName               # -P = publishes all container exposed ports to random ports
 docker container run -p 8080:80 imageName       # -p =  publishes a container's port(s) to the host port
 docker container run -d imageName               # -d = runs the container in the background
-docker container run --rm imageName             #Automatically remove container when it exits
+docker container run --rm imageName             # Automatically remove container when it exits
 docker container run -it imageName              # -i = Keep STDIN open even if not attached
 
-docker container run -d --name name --restart [POLICY] user:image:latest
+docker container run -d --name name --restart [POLICY] user:image:latest #there are up to 4 policies
 docker container run -d --name name --restart always user:image:latest
+
 docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
 
 ============================== Containers exec ======================================
