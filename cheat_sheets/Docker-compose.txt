@@ -26,3 +26,4 @@ docker-compose top         # Display the running processes
 docker-compose unpause     # Unpause services
 docker-compose up          # Create and start containers
 docker-compose version     # Show the Docker-Compose version information
+docker-compose up -f /path/yml  #path to compose yml file
