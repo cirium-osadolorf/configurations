@@ -228,7 +228,5 @@ docker container ls -a -q -f status=exited                #List the IDs of stopp
 docker container ls -a -q -f status=exited | wc -l        #Get a count of all stopped containers
 docker container ls -a -f status=exited | grep prometheus #Get a listing of our containers
 
-
-
-
+=============================== Docker Swarm ============================================
 
