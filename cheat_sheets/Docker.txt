@@ -228,5 +228,33 @@ docker container ls -a -q -f status=exited                #List the IDs of stopp
 docker container ls -a -q -f status=exited | wc -l        #Get a count of all stopped containers
 docker container ls -a -f status=exited | grep prometheus #Get a listing of our containers
 
-=============================== Docker Swarm ============================================
+========================== Docker Swarm =================================
+
+
+docker node ls                               #Listing nodes:
+docker node inspect [NODE_ID]                #Inspecting a node:
+docker node promote [NODE_ID]                #Promoting a worker to a manager:
+docker node demote [NODE_ID]                 #Demoting a manager to a worker:
+docker node rm -f [NODE_ID]                  #Removing a node form the swarm 
+                                             #if the node is a Manager it must be demoted first
+docker swarm leave                           # Make a node leave the swarm [ from node to normal docker host ]
+docker swarm join-token worker               # returns worker join-token:
+docker swarm join-token manager              # returns manager join-token:
+
+========================== Docker Services  =================================
+docker service create -d --name [NAME] \
+-p [HOST_PORT]:[CONTAINER_PORT] \
+--replicas [REPLICAS_NUMBER] \
+[IMAGE] [CMD]
+
+docker service create -d --name nginx_service -p 8080:80 --replicas 2 nginx:latest
+
+docker service ls
+docker service inspect [SERVICE_ID]
+docker service ps [SERVICE_ID]
+docker service scale [SERVICE_ID]=3
+
+
+                               
+                                             
 
