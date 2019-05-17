@@ -15,8 +15,10 @@ if systemctl status docker  2>> /dev/null; then
 else
   echo "========= Docker is not Installed on This Machine !!================"
 fi
+echo ""
 
+echo "=================================================="
+echo "Input the following command to obtain you Jenkins Password : "
+echo ""
 echo "cat /var/lib/jenkins/secrets/initialAdminPassword"
-echo "your jenkins password is below: "
-cat /var/lib/jenkins/secrets/initialAdminPassword
 #sudo chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  sudo configurations/linux/install/jenkins_cento_install.sh
