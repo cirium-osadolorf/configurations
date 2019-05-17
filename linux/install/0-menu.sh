@@ -28,26 +28,28 @@ funCloneRepo(){
 
 funJenkinsInstall(){
   funCloneRepo 
-  #chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  configurations/linux/install/jenkins_cento_install.sh
-
+  chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  configurations/linux/install/jenkins_cento_install.sh
 }
+
 funDockerInstall(){
   funCloneRepo 
-  #chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $1
-}
-funDockerComposeInstall(){
- funCloneRepo 
- #chmod 766 configurations/linux/install/dockercompose_cento_install.sh && sudo configurations/linux/install/dockercompose_cento_install.sh
-}
-funTerraformInstall(){
-  funCloneRepo 
-  #chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
-}
-funEssentialsInstall(){
-  funCloneRepo 
- # chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
+  chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $1
 }
 
+funDockerComposeInstall(){
+ funCloneRepo 
+ chmod 766 configurations/linux/install/dockercompose_cento_install.sh && sudo configurations/linux/install/dockercompose_cento_install.sh
+}
+
+funTerraformInstall(){
+  funCloneRepo 
+  chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
+}
+
+funEssentialsInstall(){
+  funCloneRepo 
+  chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
+}
 
 # Script - start
 if dialog --version 2>> /dev/null ; then
@@ -68,7 +70,11 @@ case "`cat $USER_HOME/choice.txt`" in
   x) echo "exit";;
 esac
 
+cd $USER_HOME 
+rm -rf $USER_HOME/choice.txt
+rm -rf $USER_HOME/configurations
+
 # Script - stop
 
 #sudo ./0-menu.sh $USER $HOME
-#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh $USER
+#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh $USER $HOME
