@@ -82,6 +82,7 @@ A || B  # Run B if and only if A failed
 A &     # Run A in background.
 
 prog | Prog2 | prog3		#Feeds the output of each comand or program into the next program
+A & B || c			#Runs either b or c if A succeed
 		
 
 ================ Permissions [ chmod ]============================
@@ -186,6 +187,9 @@ file.txt -<<EOF
 > friend
 > EOF
 ==================Extras===================
+( echo "Hello" ) 	#runs command in a subshell
+
+( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
 
 CTRL + A 		#Takes you to the begining of the comand line
 CTRl + E 		#Takes you to the end of the comand line
