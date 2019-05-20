@@ -9,14 +9,14 @@ TITLE=" [ M A I N  M E N U ] "
 MESSAGE="Select the Application to Install"
 XCOORD="15"
 YCOORD="45"
-N_OF_CHOICES="6"
+N_OF_CHOICES="7"
 USERNAME=$1
 USER_HOME=$2
 
 # Functions declaration - Start
 # Function that initialize the MenuBOX
 funDisplayMenu(){
-  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Docker Compose" 4 "Terraform" 5 "Essentials" x "Exit" 2>$USER_HOME/choice.txt
+  $MENUBOX --title "$TITLE" --menu "$MESSAGE" "$XCOORD" "$YCOORD" "$N_OF_CHOICES" 1 "Jenkins" 2 "Docker" 3 "Docker Compose" 4 "Terraform" 5 "Essentials" 6 "Nginx"  x "Exit" 2>$USER_HOME/choice.txt
 }
 
 funCloneRepo(){
@@ -51,6 +51,11 @@ funEssentialsInstall(){
   chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
 }
 
+funNginxInstall(){
+ funCloneRepo 
+ chmod 766 configurations/linux/install/nginx_cento_install.sh && configurations/linux/install/nginx_cento_install.sh
+}
+
 # Script - start
 if dialog --version 2>> /dev/null ; then
   echo "Very well, Dialog is already installed"
@@ -67,6 +72,7 @@ case "`cat $USER_HOME/choice.txt`" in
   3) funDockerComposeInstall;;
   4) funTerraformInstall;;
   5) funEssentialsInstall;;
+  6) funNginxInstall;;
   x) echo "exit";;
 esac
 
@@ -75,6 +81,9 @@ rm -rf $USER_HOME/choice.txt
 rm -rf $USER_HOME/configurations
 
 # Script - stop
+
+
+#to add : Nginx, Kubernates master, Kubernates worker
 
 #sudo ./0-menu.sh $USER $HOME
 #sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh $USER $HOME
