@@ -60,8 +60,8 @@ fun_K8s_Master_Install(){
 funCloneRepo 
 chmod 766 configurations/linux/install/K8_cento_Install1/kubernetes_cento_master_install.sh && \
 configurations/linux/install/K8_cento_Install1/kubernetes_cento_master_install.sh &&  \
-mkdir -p $2/.kube && sudo cp -i /etc/kubernetes/admin.conf $2/.kube/config && \
-sudo chown $1:$1 $2/.kube/config
+mkdir -p $2/.kube &&  cp -i /etc/kubernetes/admin.conf $2/.kube/config && \
+chown $1:$1 $2/.kube/config
 }
 
 fun_K8s_Node_Install(){
