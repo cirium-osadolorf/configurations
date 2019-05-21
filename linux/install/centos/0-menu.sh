@@ -48,7 +48,7 @@ funTerraformInstall(){
 
 funEssentialsInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/essentials_cento_install.sh && configurations/linux/install/essentials_cento_install.sh
+  chmod 766 configurations/linux/install/centos/essentials_install.sh && configurations/linux/install/centos/essentials_install.sh
 }
 
 funNginxInstall(){
