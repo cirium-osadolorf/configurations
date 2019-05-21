@@ -43,4 +43,4 @@ systemctl status docker
 docker run hello-world
 
 # Script - stop
-#sudo chmod 766 configurations/linux/install/docker_cento_install.sh && sudo configurations/linux/install/docker_cento_install.sh $USER
+#sudo chmod 766 configurations/linux/install/centos/docker_install.sh && sudo configurations/linux/install/centos/docker_install.sh $USER

@@ -19,4 +19,4 @@ systemctl enable nginx
 # systemctl enable nginx
 # systemctl status nginx
 
-#sudo chmod 766 configurations/linux/install/nginx_cento_install.sh && sudo configurations/linux/install/nginx_cento_install.sh
+#sudo chmod 766 configurations/linux/install/centos/nginx_install.sh && sudo configurations/linux/install/centos/nginx_install.sh

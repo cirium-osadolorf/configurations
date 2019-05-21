@@ -5,4 +5,4 @@ chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 
-#sudo chmod 766 configurations/linux/install/dockercompose_cento_install.sh && sudo configurations/linux/install/dockercompose_cento_install.sh
+#sudo chmod 766 configurations/linux/install/centos/dockercompose_install.sh && sudo configurations/linux/install/centos/dockercompose_install.sh

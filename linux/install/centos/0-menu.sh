@@ -28,22 +28,22 @@ funCloneRepo(){
 
 funJenkinsInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  configurations/linux/install/jenkins_cento_install.sh
+  chmod 766 configurations/linux/install/centos/jenkins_install.sh &&  configurations/linux/install/centos/jenkins_install.sh
 }
 
 funDockerInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/docker_cento_install.sh && configurations/linux/install/docker_cento_install.sh $1
+  chmod 766 configurations/linux/install/centos/docker_install.sh &&  configurations/linux/install/centos/docker_install.sh $USER
 }
 
 funDockerComposeInstall(){
  funCloneRepo 
- chmod 766 configurations/linux/install/dockercompose_cento_install.sh && configurations/linux/install/dockercompose_cento_install.sh
+ chmod 766 configurations/linux/install/centos/dockercompose_install.sh && configurations/linux/install/centos/dockercompose_install.sh
 }
 
 funTerraformInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/terraform_install.sh &&  configurations/linux/install/terraform_install.sh
+  chmod 766 configurations/linux/install/centos/terraform_install.sh &&  configurations/linux/install/centos/terraform_install.sh
 }
 
 funEssentialsInstall(){
@@ -53,21 +53,21 @@ funEssentialsInstall(){
 
 funNginxInstall(){
  funCloneRepo 
- chmod 766 configurations/linux/install/nginx_cento_install.sh && configurations/linux/install/nginx_cento_install.sh
+ chmod 766 configurations/linux/install/centos/nginx_install.sh && configurations/linux/install/centos/nginx_install.sh
 }
 
 fun_K8s_Master_Install(){
 funCloneRepo 
-chmod 766 configurations/linux/install/K8_cento_Install1/kubernetes_cento_master_install.sh && \
-configurations/linux/install/K8_cento_Install1/kubernetes_cento_master_install.sh &&  \
+chmod 766 configurations/linux/install/centos/K8_Install1/kubernetes_cento_master_install.sh && \
+configurations/linux/install/centos/K8_Install1/kubernetes_cento_master_install.sh &&  \
 mkdir -p $2/.kube &&  cp -i /etc/kubernetes/admin.conf $2/.kube/config && \
 chown $1:$1 $2/.kube/config
 }
 
 fun_K8s_Node_Install(){
 funCloneRepo 
-chmod 766 configurations/linux/install/K8_cento_Install1/kubernetes_cento_node_install.sh && \
-configurations/linux/install/K8_cento_Install1/kubernetes_cento_node_install.sh
+chmod 766 configurations/linux/install/centos/K8_Install1/kubernetes_cento_node_install.sh && \
+configurations/linux/install/centos/K8_Install1/kubernetes_cento_node_install.sh
 }
 
 # Script - start
@@ -99,4 +99,4 @@ rm -rf $USER_HOME/configurations
 # Script - stop
 
 #sudo ./0-menu.sh $USER $HOME
-#sudo chmod 766 configurations/linux/install/0-menu.sh && sudo configurations/linux/install/0-menu.sh $USER $HOME
+#sudo chmod 766 configurations/linux/install/centos/0-menu.sh && sudo configurations/linux/install/centos/0-menu.sh $USER $HOME

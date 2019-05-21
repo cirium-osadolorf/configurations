@@ -20,4 +20,4 @@ echo ""
 echo "=================================================="
 echo "Use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
-#sudo chmod 766 configurations/linux/install/jenkins_cento_install.sh &&  sudo configurations/linux/install/jenkins_cento_install.sh
+#sudo chmod 766 configurations/linux/install/centos/jenkins_install.sh &&  sudo configurations/linux/install/centos/jenkins_install.sh

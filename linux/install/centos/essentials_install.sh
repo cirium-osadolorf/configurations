@@ -15,4 +15,4 @@ yum install -y dos2unix
 yum install -y dialog
 
 
-#sudo chmod 766 configurations/linux/install/essentials_cento_install.sh && sudo configurations/linux/install/essentials_cento_install.sh
+#sudo chmod 766 configurations/linux/install/centos/essentials_install.sh && sudo configurations/linux/install/centos/essentials_install.sh
