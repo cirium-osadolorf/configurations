@@ -187,6 +187,8 @@ file.txt -<<EOF
 > friend
 > EOF
 ==================Extras===================
+users 			#returns logged in users
+users | wc -w		#returns number of logged in users
 ( echo "Hello" ) 	#runs command in a subshell
 
 ( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
