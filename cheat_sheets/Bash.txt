@@ -175,6 +175,16 @@ systemctl start serviceName		#start service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
+============== System ==================
+users 			#returns logged in users
+users | wc -w		#returns number of logged in users
+whoami 			#returns logged suer
+su			#logs you to root in the current directory 
+su -			#logs you to root in the root home folder
+su user			#logs you to  the user in the current directory 
+su - user		#logs you to the user in the user home folder
+
+
 =============== Write to a file from standard in ========
 
 grep -i hello -<<EOF
@@ -187,8 +197,7 @@ file.txt -<<EOF
 > friend
 > EOF
 ==================Extras===================
-users 			#returns logged in users
-users | wc -w		#returns number of logged in users
+
 ( echo "Hello" ) 	#runs command in a subshell
 
 ( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
