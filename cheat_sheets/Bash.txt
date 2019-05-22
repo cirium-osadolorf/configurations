@@ -176,6 +176,9 @@ systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
 ============== System ==================
+who 			#returns loggged in users
+w			# returns logged in users with more details
+id 			#return information on the user account
 users 			#returns logged in users
 users | wc -w		#returns number of logged in users
 whoami 			#returns logged suer
