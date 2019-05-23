@@ -113,7 +113,7 @@ __________________________
 chmod o+w file		#Gives perimsion to others to write
 chmod o-w file		#Takes away perimsion to others to write
 
-=================== Procesess=================== 
+=================== Procesess =================== 
 ps 			#List all process that you own
 ps ax			#Prints list of all process
 ctrl +z 		#Used to pause a process
@@ -121,13 +121,13 @@ kill (Process_id)	#used to  kill proceses
 
 
 
-==============Hardware information ==============
+============== Hardware information ==============
 lscpu			#Returns- information about the cpu and processing units
 hwinfo  --short		#Returns- Hardware Information
 lshw -short		#Retruns - List Hardware
 free -m			#Check the amount of Ram used
 
-================ PowerOff============================
+================ PowerOff ============================
 shutdown now		#power off
 shutdown -r now		#Restart
 shutdown -h  now	#turn it off
@@ -148,8 +148,13 @@ cd /path/folder		#Change directory
 cd ..			#Takes you up 1 director
 cd .. / ..		#Takes you up 2 director
 cd ~			#Takes you to the home directory
+whereis
+locate
+find
+which command 		#returns comand bianry path
+xxd `which command` 	#returns binary reppresentaion of the command script
 
-================RedHat Service Tools======================
+================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
 chkconfig				#Returns runlevel services
 chkconfig --list 			#Returns runlevel services
@@ -163,7 +168,7 @@ service serviceName stop 		#enable/disable services ability to run
 service serviceName restart 		#restart services 
 service serviceName reload 
 
-================Systremd======================
+================ Systremd ======================
 systemd-cgls 				#returns all the processes of the system
 systemd-cgtop 				#returns the top cgroups accodring to their resources
 systemctl status			#returns the top cgroups accodring to their resources
@@ -174,6 +179,7 @@ systemctl disable serviceName		#disbale serivce to start at boot
 systemctl start serviceName		#start service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
+============== search  ==================
 
 ============== System ==================
 who 			#returns loggged in users
