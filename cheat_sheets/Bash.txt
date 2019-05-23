@@ -152,8 +152,8 @@ whereis
 locate
 find
 which command 		#returns comand bianry path
-xxd  -b `which command` #returns hex reppresentaion of the command script
-xxd  `which command`	 #returns binary reppresentaion of the command script
+xxd  -b `which command` #returns hex reppresentaion of the program
+xxd  `which command`	 #returns binary reppresentaion of the program
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
