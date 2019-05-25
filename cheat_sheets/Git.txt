@@ -19,6 +19,7 @@ git staus                    # returns the status of the repo
 git add <filename>           # adds a specific file to staging
 git add .                    # adds all files to staging
 git commit -m "text "        # commits the changes
+git commit -a -m "text"      # stage and commit cahnges
 git rm <file>                # used to stop tracking a provided file.
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
@@ -42,4 +43,18 @@ git clone <path_of_original> <clone_repo_destination>
 #cloning over ssh
 git clone user@server:<original_repo_path_relative_to_user_home> <local_repo_path>    
 
+
 git push origin master    # pushing changes to origin repository
+git push origin --all     # pushes all barnaches ot the origin
+
+
+================== Branches =====================
+
+git branch <new branch>       # Create a branch
+git branch -a                 # returns list of all branches
+git branch -D <branch>        # deltes the branch 
+git checkout <branch>         # switches you to the new branch
+git checkout -b <new branch>  # creates and checks you out the new branch
+git merge <branch>            # merges the selected branch to your current branch
+
+
