@@ -12,31 +12,31 @@ git config --system core.editor vim
 #– Note: Files lower in the list override files higher in the list.
 
 
-=============   Creating a Repository ===============
+============= Repository Basics ===============
 
-git init
-git staus
-git add <filename>
-git add .
-git commit -m "text "
-git rm <file>                #used to stop tracking a provided file.
+git init                     # initalize a git repository
+git staus                    # returns the status of the repo
+git add <filename>           # adds a specific file to staging
+git add .                    # adds all files to staging
+git commit -m "text "        # commits the changes
+git rm <file>                # used to stop tracking a provided file.
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
 git log
-git log --oneline            # return abbreviated log info
-git log -p                   # returns detailed info 
-git log -1 --pretty=%H       # returns the last commit hash 
-
+git log --oneline             # return abbreviated log info
+git log -p                    # returns detailed info 
+git log -1 --pretty=%H        # returns the last commit hash 
 git log -- <filename>         # returns information on a particular file
 git log --oneline <filename>  # returns information on a particular file
 
 
 
 ============== Cloning and Pushing =========================
-git clone repouURL         #clone repo from https 
-git clone repoURl path
 
-##clones a local repo to a specific path
+git clone repouURL         # clone repo from https 
+git clone repoURl path     
+
+#clones a local repo to a specific path
 git clone <path_of_original> <clone_repo_destination>  
 
 #cloning over ssh
