@@ -1,1 +1,45 @@
+============= Git configuration  ====================
 
+git config -l 
+git config --global user.name <username>
+git config --global user.email <email_addr>
+git config --system core.editor vim
+
+# Alternatively, you may store system-wide configuration values in the file directly:
+#– /etc/gitconfig which corresponds to --system
+#– ~/.gitconfig or ~/.config/git/config which corresponds to --global
+#– .git/config in a repository which corresponds to --local
+#– Note: Files lower in the list override files higher in the list.
+
+
+=============   Creating a Repository ===============
+
+git init
+git staus
+git add <filename>
+git add .
+git commit -m "text "
+git rm <file>                #used to stop tracking a provided file.
+git checkout -- d_file       # brings back previosly commited file that was deleted
+
+git log
+git log --oneline            # return abbreviated log info
+git log -p                   # returns detailed info 
+git log -1 --pretty=%H       # returns the last commit hash 
+
+git log -- <filename>         # returns information on a particular file
+git log --oneline <filename>  # returns information on a particular file
+
+
+
+============== Cloning and Pushing =========================
+git clone repouURL         #clone repo from https 
+git clone repoURl path
+
+##clones a local repo to a specific path
+git clone <path_of_original> <clone_repo_destination>  
+
+#cloning over ssh
+git clone user@server:<original_repo_path_relative_to_user_home> <local_repo_path>    
+
+git push origin master    # pushing changes to origin repository
