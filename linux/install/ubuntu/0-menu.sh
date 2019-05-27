@@ -48,7 +48,7 @@ funTerraformInstall(){
 
 funEssentialsInstall(){
   funCloneRepo 
-  #Essential installer
+  sudo chmod 766 configurations/linux/install/ubuntu/essentials_install.sh && sudo configurations/linux/install/ubuntu/essentials_install.sh
 }
 
 funNginxInstall(){
