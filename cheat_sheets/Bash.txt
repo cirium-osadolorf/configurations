@@ -5,6 +5,7 @@ ifconfig		#returns private ip
 
 ============ Add user to a group ============ 	
 useradd user			#create user
+adduser user 			# On Debian, administrators should usually use adduser instead of useradd
 passwd user			#change user password
 userdel frank			#delete user
 groupadd basket			#create group
