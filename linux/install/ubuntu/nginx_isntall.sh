@@ -12,8 +12,8 @@ deb http://nginx.org/packages/ubuntu/ xenial nginx
 deb-src http://nginx.org/packages/ubuntu/ xenial nginx
 EOF
 
-sudo systemctl stop apache2.service
-sudo systemctl disable apache2.service
+systemctl stop apache2.service
+systemctl disable apache2.service
 
 apt-get update -y
 apt-get install -y nginx
