@@ -12,6 +12,10 @@ usermod -aG group_name $USER	#add user to a group
 gpasswd -a $USER docker	
 adduser user && echo "user:password" | chpasswd #craete user and password in one go
 
+userdel user's username
+userdel -r user's username
+
+
 
 
 =======New_groups===========================
