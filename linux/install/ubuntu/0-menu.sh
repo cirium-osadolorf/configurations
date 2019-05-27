@@ -28,27 +28,27 @@ funCloneRepo(){
 
 funJenkinsInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/ubuntu/jenkins_install.sh &&  configurations/linux/install/ubuntu/jenkins_install.sh
+  #Jenkins installer
 }
 
 funDockerInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/ubuntu/docker_install.sh &&  configurations/linux/install/ubuntu/docker_install.sh $USER
+  #Docker installer
 }
 
 funDockerComposeInstall(){
  funCloneRepo 
- chmod 766 configurations/linux/install/ubuntu/dockercompose_install.sh && configurations/linux/install/ubuntu/dockercompose_install.sh
+ #DockerCompose installer
 }
 
 funTerraformInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/ubuntu/terraform_install.sh &&  configurations/linux/install/ubuntu/terraform_install.sh
+  #Teraform installer
 }
 
 funEssentialsInstall(){
   funCloneRepo 
-  chmod 766 configurations/linux/install/ubuntu/essentials_install.sh && configurations/linux/install/ubuntu/essentials_install.sh
+  #Essential installer
 }
 
 funNginxInstall(){
@@ -58,17 +58,13 @@ funNginxInstall(){
 }
 
 fun_K8s_Master_Install(){
-funCloneRepo 
-chmod 766 configurations/linux/install/ubuntu/K8_Install1/kubernetes_cento_master_install.sh && \
-configurations/linux/install/ubuntu/K8_Install1/kubernetes_cento_master_install.sh &&  \
-mkdir -p $2/.kube &&  cp -i /etc/kubernetes/admin.conf $2/.kube/config && \
-chown $1:$1 $2/.kube/config
+  funCloneRepo 
+  #K8 Master installer
 }
 
 fun_K8s_Node_Install(){
-funCloneRepo 
-chmod 766 configurations/linux/install/ubuntu/K8_Install1/kubernetes_cento_node_install.sh && \
-configurations/linux/install/ubuntu/K8_Install1/kubernetes_cento_node_install.sh
+  funCloneRepo 
+  #K8 worrker installer
 }
 
 # Script - start
@@ -76,7 +72,7 @@ if dialog --version 2>> /dev/null ; then
   echo "Very well, Dialog is already installed"
 else
   echo "Installing Dialog ....."
-  yum install -y dialog
+  apt-get install -y dialog
 fi
 
 funDisplayMenu $USER_HOME
