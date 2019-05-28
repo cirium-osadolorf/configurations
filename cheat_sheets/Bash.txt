@@ -1,7 +1,22 @@
 =========== IP  ==================
 curl icanhazip.com	#returns public ip
 curl ifconfig.me	#returns public ip
-ifconfig		#returns private ip
+ifconfig		#returns network info
+ip addr show		#returns network info
+
+ip route show 		#return default route
+route			#retrun deafult route
+netstar -r 		#retrun deafult route
+host <website> 		#returns DNS name resolution
+ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot network conenction
+ping -c 3 <ipadress>	# -c = echeks ability to send data packeges, in this case 3 
+
+
+##To install DNS utilities on Ubuntu, use:
+# apt-get update
+# apt-get install dnsutils -y
+##For CentOS, use:
+# yum install bind-utils
 
 ============ Add user to a group ============ 	
 useradd user			#create user
