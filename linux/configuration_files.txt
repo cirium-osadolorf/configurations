@@ -1,16 +1,16 @@
 
 
 
-/etc/resolve.conf
-/etc/hosts
+/etc/resolv.conf        # DNS name the system contacts
+/etc/hosts              #
 
-/etc/sudoers    
-/etc/skel
-/etc/passwd
-/etc/groups
-/etc/shadow
+/etc/sudoers            # contains the information regarding privileges for different users and groups of our server
+/etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
+/etc/passwd             # stores general user info 
+/etc/groups             # stores general group info 
+/etc/shadow             # stores user passwd info
 
-/etc/profile
-~/.bashrc
-~/.bash_profile
+/etc/profile            #
+~/.bashrc               #
+~/.bash_profile         #
 
