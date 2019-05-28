@@ -1,11 +1,16 @@
 
 
 
-/etc/sudoers
 /etc/resolve.conf
-/etc/hostss
+/etc/hosts
+
+/etc/sudoers    
 /etc/skel
 /etc/passwd
 /etc/groups
 /etc/shadow
+
 /etc/profile
+~/.bashrc
+~/.bash_profile
+
