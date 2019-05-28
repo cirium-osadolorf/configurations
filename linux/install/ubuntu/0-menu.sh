@@ -28,7 +28,7 @@ funCloneRepo(){
 
 funJenkinsInstall(){
   funCloneRepo 
-  #Jenkins installer
+  chmod 766 configurations/linux/install/ubuntu/jenkins_install.sh && configurations/linux/install/ubuntu/jenkins_install.sh
 }
 
 funDockerInstall(){
