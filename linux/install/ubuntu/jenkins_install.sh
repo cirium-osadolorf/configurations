@@ -23,4 +23,8 @@ echo "=================================================="
 echo "and then use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 
+ufw enable
+ufw allow OpenSSH
+ufw allow 8080
+ufw status
 #sudo chmod 766 configurations/linux/install/ubuntu/jenkins_install.sh && sudo configurations/linux/install/ubuntu/jenkins_install.sh
