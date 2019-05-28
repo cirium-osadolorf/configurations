@@ -21,9 +21,3 @@ echo " Reboot Your Server "
 echo "=================================================="
 echo "and then use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
-
-
-
-#ufw enable
-#ufw default deny
-#ufw status 
