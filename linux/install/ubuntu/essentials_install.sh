@@ -1,5 +1,9 @@
 #! /bin/bash
 
+#Java install
+apt update
+apt install openjdk-8-jdk
+
 #extras tools
 apt-get install -y tree
 apt-get install -y dialog
