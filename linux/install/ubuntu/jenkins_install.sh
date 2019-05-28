@@ -12,17 +12,14 @@ fi
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -
 sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 apt update -y
+dpkg --configure -a
 apt install -y jenkins
 systemctl status jenkins
 
 echo ""
-echo " Reboot Your Server "
+echo " use the below command to obtain you Jenkins Password : "
 echo "=================================================="
-echo "and then use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
+echo "=================================================="
 
-ufw enable
-ufw allow OpenSSH
-ufw allow 8080
-ufw status
 #sudo chmod 766 configurations/linux/install/ubuntu/jenkins_install.sh && sudo configurations/linux/install/ubuntu/jenkins_install.sh
