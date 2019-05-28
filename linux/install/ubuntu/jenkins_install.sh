@@ -17,9 +17,9 @@ systemctl start jenkins
 systemctl status jenkins
 systemctl enable jenkins
 
-
+echo " Reboot Your Server "
 echo "=================================================="
-echo "Use the below command to obtain you Jenkins Password : "
+echo "and then use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 
 
