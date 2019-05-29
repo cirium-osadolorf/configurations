@@ -48,12 +48,12 @@ funTerraformInstall(){
 
 funEssentialsInstall(){
   funCloneRepo 
-  sudo chmod 766 configurations/linux/install/ubuntu/essentials_install.sh && sudo configurations/linux/install/ubuntu/essentials_install.sh
+  chmod 766 configurations/linux/install/ubuntu/essentials_install.sh && configurations/linux/install/ubuntu/essentials_install.sh
 }
 
 funNginxInstall(){
  funCloneRepo 
- sudo chmod 766 configurations/linux/install/ubuntu/nginx_isntall.sh && sudo configurations/linux/install/ubuntu/nginx_isntall.sh
+ chmod 766 configurations/linux/install/ubuntu/nginx_isntall.sh && configurations/linux/install/ubuntu/nginx_isntall.sh
 
 }
 
