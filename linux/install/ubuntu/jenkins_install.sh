@@ -20,7 +20,7 @@ dpkg --configure -a
 
 
 echo ""
-echo " Reboot he sysstem and use the command  below to obtain your Jenkins Password : "
+echo " Use the command  below to obtain your Jenkins Password : "
 echo "=================================================="
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 echo "=================================================="
