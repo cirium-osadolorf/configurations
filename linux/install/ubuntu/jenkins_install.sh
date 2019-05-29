@@ -13,8 +13,10 @@ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -
 sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 apt update -y
 apt install -y  jenkins
-dpkg --configure -a
 systemctl start jenkins
+
+dpkg --configure -a
+
 
 
 echo ""
