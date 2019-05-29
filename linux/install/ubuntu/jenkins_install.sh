@@ -14,9 +14,11 @@ sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.l
 apt update -y
 apt install -y  jenkins
 systemctl start jenkins
-#systemctl enable jenkins
-#systemctl status jenkins
+systemctl enable jenkins
+systemctl status jenkins
 dpkg --configure -a
+systemctl restart jenkins
+
 
 echo ""
 echo " Use the command  below to obtain your Jenkins Password : "
