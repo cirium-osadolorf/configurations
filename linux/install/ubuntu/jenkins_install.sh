@@ -17,7 +17,8 @@ systemctl start jenkins
 systemctl enable jenkins
 systemctl status jenkins
 dpkg --configure -a
-systemctl restart jenkins
+systemctl stop jenkins
+systemctl start jenkins
 
 
 echo ""
