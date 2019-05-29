@@ -17,9 +17,6 @@ systemctl start jenkins
 systemctl enable jenkins
 systemctl status jenkins
 dpkg --configure -a
-systemctl stop jenkins
-systemctl start jenkins
-
 
 echo ""
 echo " Use the command  below to obtain your Jenkins Password : "
