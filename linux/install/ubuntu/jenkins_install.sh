@@ -15,6 +15,7 @@ apt update -y
 apt install -y  jenkins
 systemctl start jenkins
 systemctl enable jenkins
+systemctl status jenkins
 dpkg --configure -a
 
 
