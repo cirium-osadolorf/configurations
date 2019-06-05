@@ -27,12 +27,8 @@ groupadd basket			#create group
 usermod -aG group_name $USER	#add user to a group
 gpasswd -a $USER docker	
 adduser user && echo "user:password" | chpasswd #craete user and password in one go
-
 userdel user's username
 userdel -r user's username
-
-
-
 
 =======New_groups===========================
 
@@ -48,7 +44,6 @@ sudo usermod -a -G basket frank
 /*-a == appennd or add to a group*/
 /*-g == change primary group */
 /*-G == add user to another group wihout taking him off his primary group*/
-
 
 ============ SSH ============ 
 #Link to ssh article:  https://www.ssh.com/ssh/keygen/
@@ -104,9 +99,7 @@ A &     # Run A in background.
 prog | Prog2 | prog3		#Feeds the output of each comand or program into the next program
 A & B || c			#Runs either b or c if A succeed
 		
-
 ================ Permissions [ chmod ]============================
-
 7 == is the combination of all the numbers "Read Write Execute"
 6 == is the combination of 4 and 2 "Read and Write"
 5 == is the combination of 4 and 1 "Read and execute"
@@ -139,8 +132,6 @@ ps ax			#Prints list of all process
 ctrl +z 		#Used to pause a process
 kill (Process_id)	#used to  kill proceses
 
-
-
 ============== Hardware information ==============
 lscpu			#Returns- information about the cpu and processing units
 hwinfo  --short		#Returns- Hardware Information
@@ -156,7 +147,6 @@ shutdown -r  +30	#Restart in half an hour
 shutdown -h  +10	#Turn it off in 10 mins
 init 0			#power off
 init 6			#Reebot
-
 
 ================ File system essential ======================
 pwd 			#Print my working directory
@@ -216,7 +206,6 @@ su - user		#logs you to the user in the user home folder
 
 
 =============== Write to a file from standard in ========
-
 grep -i hello -<<EOF
 > hello dear
 > friend
@@ -227,7 +216,6 @@ file.txt -<<EOF
 > friend
 > EOF
 ==================Extras===================
-
 ( echo "Hello" ) 	#runs command in a subshell
 
 ( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
