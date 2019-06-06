@@ -1,6 +1,3 @@
-
-
-
 /etc/resolv.conf        # DNS name the system contacts
 /etc/hosts              #
 
@@ -10,12 +7,9 @@
 /etc/groups             # stores general group info 
 /etc/shadow             # stores user passwd info
 
-
 /etc/services           # returns service names with corelating ports
 /etc/ssh/sshd_config    # ssh configuration file
-
 
 /etc/profile            #
 ~/.bashrc               #
 ~/.bash_profile         #
-
