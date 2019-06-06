@@ -207,10 +207,14 @@ grep -i hello -<<EOF
 > friend
 > EOF
 
-file.txt -<<EOF
-> hello dear
-> friend
-> EOF
+touch <File>
+cat << EOF > /path/<File>
+[nginx]
+baseurl=http://nginx.org/packages/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+EOF
+
 ==================Extras===================
 ( echo "Hello" ) 	#runs command in a subshell
 
