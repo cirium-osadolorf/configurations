@@ -191,6 +191,7 @@ systemctl start serviceName		#start service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 ============== search  ==================
+which <program_name>			#returns the bianry path to the program
 
 ============== System ==================
 who 			#returns loggged in users
