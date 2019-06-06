@@ -17,14 +17,14 @@ ping -c 3 <ipadress>	# -c = echeks ability to send data packeges, in this case 3
 # yum install bind-utils
 
 ============ Add user to a group ============ 	
-useradd user			#create user
-adduser user 			# On Debian, administrators should usually use adduser instead of useradd
-passwd user			#change user password
-userdel frank			#delete user
-groupadd basket			#create group
-usermod -aG group_name $USER	#add user to a group
-gpasswd -a $USER docker	
-
+useradd <user>			#create user
+adduser <user> 			# On Debian, administrators should usually use adduser instead of useradd
+passwd <user>			#change user password
+userdel <user>			#delete user
+groupadd <Group>		#create group
+usermod -aG <Group> <User>	#add user to a group
+gpasswd -a <User> <Group>	#add user to a group	
+groupdel <Group>		#Delete Group
 =======New_groups===========================
 
 sudo groupadd basket
