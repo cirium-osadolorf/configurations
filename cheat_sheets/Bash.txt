@@ -1,5 +1,4 @@
 =========== IP  ==================
-curl icanhazip.com	#returns public ip
 curl ifconfig.me	#returns public ip
 ifconfig		#returns network info
 ip addr show		#returns network info
@@ -10,7 +9,6 @@ netstar -r 		#retrun deafult route
 host <website> 		#returns DNS name resolution
 ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot network conenction
 ping -c 3 <ipadress>	# -c = echeks ability to send data packeges, in this case 3 
-
 
 ##To install DNS utilities on Ubuntu, use:
 # apt-get update
@@ -26,9 +24,6 @@ userdel frank			#delete user
 groupadd basket			#create group
 usermod -aG group_name $USER	#add user to a group
 gpasswd -a $USER docker	
-adduser user && echo "user:password" | chpasswd #craete user and password in one go
-userdel user's username
-userdel -r user's username
 
 =======New_groups===========================
 
