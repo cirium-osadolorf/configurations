@@ -13,3 +13,8 @@
 /etc/profile            #
 ~/.bashrc               #
 ~/.bash_profile         #
+
+
+
+/etc/apt/sources.list  #apt repositroy
+/etc/yum.repos.d/      #yum repositroy
