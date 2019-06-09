@@ -201,12 +201,24 @@ su user			#logs you to  the user in the current directory
 su - user		#logs you to the user in the user home folder
 
 
-=============== Write to a file from standard in ========
-grep -i hello -<<EOF
-> hello dear
-> friend
-> EOF
+=============== EOF - Here Document  ========
+# A here document is used to redirect input into an interactive shell script or program.
+# https://superuser.com/questions/1003760/what-does-eof-do
 
+# Read standard in 
+grep -i hello <<EOF
+hello dear
+friend
+EOF
+
+# Read standard in 
+wc -l << EOF
+This is a simple lookup program 
+for good (and bad) restaurants
+in Cape Town.
+EOF
+
+# Write to a file from standard in
 touch <File>
 cat << EOF > /path/<File>
 [nginx]
