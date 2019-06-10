@@ -12,7 +12,6 @@ echo "deb http://nginx.org/packages/ubuntu/ $CODENAME nginx" >> /etc/apt/sources
 echo "deb-src http://nginx.org/packages/ubuntu/ $CODENAME nginx" >>  /etc/apt/sources.list
 
 apt-get update -y
-apt-get update
 apt-get install -y nginx
 
 systemctl start nginx
