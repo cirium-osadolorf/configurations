@@ -13,6 +13,7 @@ echo "deb-src http://nginx.org/packages/ubuntu/ $CODENAME nginx" >>  /etc/apt/so
 
 apt-get update -y
 apt-get install -y nginx
+apt-get install -y nginx
 
 systemctl start nginx
 systemctl enable nginx
