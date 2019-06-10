@@ -1,14 +1,18 @@
-=========== IP  ==================
+=========== Networking  ==================
 curl ifconfig.me	#returns public ip
 ifconfig		#returns network info
 ip addr show		#returns network info
 
 ip route show 		#return default route
 route			#retrun deafult route
-netstar -r 		#retrun deafult route
+netstat -r 		#retrun deafult route
 host <website> 		#returns DNS name resolution
 ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot network conenction
-ping -c 3 <ipadress>	# -c = echeks ability to send data packeges, in this case 3 
+ping -c 3 <ipadress>	# -c = checks that the destination device can recive packages, in this case 3 
+
+sudo netstat -tupln	#Return listening ports
+sudo netstat -plnt	#Return listening ports
+
 
 ##To install DNS utilities on Ubuntu, use:
 # apt-get update
