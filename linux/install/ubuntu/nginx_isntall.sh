@@ -1,7 +1,6 @@
 #!  /bin/bash
 
-CODENAME=`lsb_release --codename | cut -f2`
-
+export CODENAME=`lsb_release --codename | cut -f2`
 
 curl -o nginx_signing.key http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
@@ -12,8 +11,8 @@ echo "## Add official NGINX repository" >> /etc/apt/sources.list
 echo "deb http://nginx.org/packages/ubuntu/ $CODENAME nginx" >> /etc/apt/sources.list
 echo "deb-src http://nginx.org/packages/ubuntu/ $CODENAME nginx" >>  /etc/apt/sources.list
 
-apt-get remove -y nginx-common
 apt-get update -y
+apt-get update
 apt-get install -y nginx
 
 systemctl start nginx
