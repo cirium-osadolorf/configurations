@@ -12,6 +12,7 @@ echo "## Add official NGINX repository" >> /etc/apt/sources.list
 echo "deb http://nginx.org/packages/ubuntu/ $CODENAME nginx" >> /etc/apt/sources.list
 echo "deb-src http://nginx.org/packages/ubuntu/ $CODENAME nginx" >>  /etc/apt/sources.list
 
+apt-get remove -y nginx-common
 apt-get update -y
 apt-get install -y nginx
 
