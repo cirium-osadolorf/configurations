@@ -189,6 +189,8 @@ systemctl help serviceName		#returns manuals of a service
 which <program_name>			#returns the bianry path to the program
 
 ============== System ==================
+uname  -a		#returns system info
+lsb_release  -a		#returns system info
 who 			#returns loggged in users
 w			# returns logged in users with more details
 id 			#return information on the user account
