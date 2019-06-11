@@ -192,8 +192,11 @@ systemctl status serviceName		#Returns details on the service
 systemctl enable serviceName		#enable service to start at boot
 systemctl disable serviceName		#disbale serivce to start at boot
 systemctl start serviceName		#start service now
+systemctl reload serviceName		#reload service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
+
+
 ============== search  ==================
 which <program_name>			#returns the bianry path to the program
 
