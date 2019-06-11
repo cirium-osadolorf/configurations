@@ -166,6 +166,8 @@ xxd  `which command`	 #returns binary reppresentaion of the program
 
 # Creates a Symbolic link
 ln -s /target_Path /destination_Path
+# Removes Symbolic link
+unlink link name 	
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
