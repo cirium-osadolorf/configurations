@@ -33,7 +33,7 @@ funJenkinsInstall(){
 
 funDockerInstall(){
   funCloneRepo 
-  #Docker installer
+  chmod 766 configurations/linux/install/ubuntu/docker_install.sh && configurations/linux/install/ubuntu/docker_install.sh $USER
 }
 
 funDockerComposeInstall(){
