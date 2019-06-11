@@ -13,7 +13,6 @@ ping -c 3 <ipadress>	# -c = checks that the destination device can recive packag
 sudo netstat -tupln	#Return listening ports
 sudo netstat -plnt	#Return listening ports
 
-
 ##To install DNS utilities on Ubuntu, use:
 # apt-get update
 # apt-get install dnsutils -y
@@ -163,6 +162,10 @@ find
 which command 		#returns comand bianry path
 xxd  -b `which command` #returns hex reppresentaion of the program
 xxd  `which command`	 #returns binary reppresentaion of the program
+
+
+# Creates a Symbolic link
+ln -s /target_Path /destination_Path
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
