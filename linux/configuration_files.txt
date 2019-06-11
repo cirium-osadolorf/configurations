@@ -18,3 +18,7 @@
 
 /etc/apt/sources.list  #apt repositroy
 /etc/yum.repos.d/      #yum repositroy
+
+
+/var/www                #used to server static web content
+/srv/www                #used to serve dynamic web content
