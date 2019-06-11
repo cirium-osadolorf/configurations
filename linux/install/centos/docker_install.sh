@@ -26,21 +26,20 @@ yum-config-manager \
 
 yum install -y docker-ce docker-ce-cli containerd.io
 
-systemctl start docker
-systemctl enable docker
+
 groupadd docker
 usermod -aG docker $USERNAME
 
-if systemctl status jenkins  2>> /dev/null; then
-  usermod -aG docker jenkins
-  echo "========= Jenkins Has Been Added to the Docker Group ================"
-else
-  echo "========= Jenkins is not Installed on This Machine !!================"
-fi
+# if systemctl status jenkins  2>> /dev/null; then
+#   usermod -aG docker jenkins
+#   echo "========= Jenkins Has Been Added to the Docker Group ================"
+# else
+#   echo "========= Jenkins is not Installed on This Machine !!================"
+# fi
 
-systemctl restart docker
+systemctl start docker
+systemctl enable docker
 systemctl status docker
-docker run hello-world
 
 # Script - stop
 #sudo chmod 766 configurations/linux/install/centos/docker_install.sh && sudo configurations/linux/install/centos/docker_install.sh $USER
