@@ -22,3 +22,5 @@
 
 /var/www                #used to server static web content
 /srv/www                #used to serve dynamic web content
+
+/etc/systemd/system     #system services location
