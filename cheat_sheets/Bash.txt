@@ -28,6 +28,9 @@ groupadd <Group>		#create group
 usermod -aG <Group> <User>	#add user to a group
 gpasswd -a <User> <Group>	#add user to a group	
 groupdel <Group>		#Delete Group
+
+
+#sudo useradd test && echo "test:password" | sudo chpasswd
 =======New_groups===========================
 
 sudo groupadd basket
