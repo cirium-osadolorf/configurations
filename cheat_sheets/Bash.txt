@@ -31,7 +31,12 @@ usermod -aG <Group> <User>	#add user to a group
 gpasswd -a <User> <Group>	#add user to a group	
 groupdel <Group>		#Delete Group
 
+#Cento
 #NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
+
+#Ubuntu
+#NEWUSER=test && sudo adduser $NEWUSER ; sudo usermod -aG sudo $NEWUSER 
+
 #sudo useradd test && echo "test:password" | sudo chpasswd
 ======= Groups ===========================
 
