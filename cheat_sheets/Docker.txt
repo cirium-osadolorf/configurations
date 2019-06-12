@@ -1,5 +1,8 @@
-======================================== Help ==============================
+==================== Online Resouce ===================
+https://docs.docker.com/engine/reference/run/
 
+
+======================================== Help ==============================
 docker --help                             #returns list of managment_commands and commands
 docker managment_command --help           #returns list of commands available to the specified managment_command 
 docker managment_command command -help--  #returns flags available to the command
