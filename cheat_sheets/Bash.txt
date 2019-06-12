@@ -19,19 +19,21 @@ sudo netstat -plnt	#Return listening ports
 ##For CentOS, use:
 # yum install bind-utils
 
-============ Add user to a group ============ 	
+============ Users ============ 	
 useradd <user>			#create user
 adduser <user> 			# On Debian, administrators should usually use adduser instead of useradd
 passwd <user>			#change user password
-userdel <user>			#delete user
+userdel -r<user>		#delete user
+deluser -r <user>		#delete user
+userdel -f <user>		#delete user with force
 groupadd <Group>		#create group
 usermod -aG <Group> <User>	#add user to a group
 gpasswd -a <User> <Group>	#add user to a group	
 groupdel <Group>		#Delete Group
 
-
+#NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
 #sudo useradd test && echo "test:password" | sudo chpasswd
-=======New_groups===========================
+======= Groups ===========================
 
 sudo groupadd basket
 
