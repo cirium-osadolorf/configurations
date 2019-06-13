@@ -38,7 +38,7 @@ funDockerInstall(){
 
 funDockerComposeInstall(){
  funCloneRepo 
- #DockerCompose installer
+ chmod 766 configurations/linux/install/ubuntu/dockercompose_install.sh && configurations/linux/install/ubuntu/dockercompose_install.sh
 }
 
 funTerraformInstall(){
