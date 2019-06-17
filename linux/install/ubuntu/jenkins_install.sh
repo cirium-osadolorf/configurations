@@ -16,7 +16,7 @@ apt install -y  jenkins
 dpkg --configure -a
 systemctl start jenkins
 systemctl status jenkins
-systemctl restart jenkins
+systemctl enable jenkins && systemctl restart jenkins  
 
 echo ""
 echo " Use the command  below to obtain your Jenkins Password : "
