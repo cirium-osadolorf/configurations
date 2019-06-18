@@ -3,3 +3,4 @@
 git clone https://github.com/FortunexFortune/configurations.git
 #install git , setup config --global 
 git config --global core.editor vim && git config --global user.email "osadolor.fortune@yahoo.it" && git config --global user.name "fortunexfortune"
+ 
