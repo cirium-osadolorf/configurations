@@ -43,7 +43,7 @@ funDockerComposeInstall(){
 
 funTerraformInstall(){
   funCloneRepo 
-  #Teraform installer
+  chmod 766 configurations/linux/install/ubuntu/terraform_install.sh && configurations/linux/install/ubuntu/terraform_install.sh
 }
 
 funEssentialsInstall(){
