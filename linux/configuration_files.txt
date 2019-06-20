@@ -12,8 +12,8 @@
 /etc/shadow             # stores user passwd info
 
 /etc/services           # returns service names with corelating ports
-/etc/ssh/sshd_config    # ssh configuration file
-
+/etc/ssh/sshd_config    # ssh deamon (servers)configuration file
+~.ssh                   # ssh client configuration file 
 /etc/profile            #
 ~/.bashrc               #
 ~/.bash_profile         #
@@ -35,3 +35,5 @@
 =========== Nginx ================
 /etc/nginx
 /usr/share/share/html
+
+
