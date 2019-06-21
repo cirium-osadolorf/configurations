@@ -28,6 +28,7 @@
 
 
 /etc/systemd/system     #system services location
+/etc/systemd/journal.conf # jounal conf file
 
 ============ Jenkins =============
 /var/lib/jenkins        #Jenkins Home Directory
