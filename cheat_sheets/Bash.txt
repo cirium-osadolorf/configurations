@@ -206,6 +206,23 @@ systemctl reload serviceName		#reload service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
+journalctl				# returns system log ( jorunal ) 
+journalctl -e				# jumps to the ned of the log page
+journalctl -f 				# Returns realtime  log entries
+journalctl -n 2 			# Retuns n number of ,ust recent entries
+journalctl -r 				# Returns must recent log data
+journalctl -u service_name		# Returns log related to the service selected
+journalctl -o versbose 			# Returns log in a DB format
+journalctl -o json-pretty		# Returns log in multi line json format 
+
+systemd-analyze				# Returns how long it took the system to boot up
+localectl 				# Retusns systmem localose and keyboard mapping
+timedatectl				# view and set time zone and system time
+timedatectl list-timezones 		# Return time zones available
+timedatectl set-timezone "time_zone"	# Sets Sysstem time zone 
+hostnamectl 				# Returns system hostname
+systemd-resolve website			# Returns hostname IP adress
+systmed-inhibit download file 		# Prevent the system from sleeping before finish the command passed in
 
 ============== search  ==================
 which <program_name>			#returns the bianry path to the program
