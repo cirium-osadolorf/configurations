@@ -9,14 +9,7 @@ systemctl start jenkins
 systemctl status jenkins
 systemctl enable jenkins
 
-if systemctl status docker  2>> /dev/null; then
-  usermod -aG docker jenkins
-  echo "========= Jenkins Has Been Added to the Docker Group ================"
-else
-  echo "========= Docker is not Installed on This Machine !!================"
-fi
 echo ""
-
 echo "=================================================="
 echo "Use the below command to obtain you Jenkins Password : "
 echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
