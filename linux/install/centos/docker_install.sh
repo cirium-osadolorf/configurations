@@ -30,13 +30,6 @@ yum install -y docker-ce docker-ce-cli containerd.io
 groupadd docker
 usermod -aG docker $USERNAME
 
-# if systemctl status jenkins  2>> /dev/null; then
-#   usermod -aG docker jenkins
-#   echo "========= Jenkins Has Been Added to the Docker Group ================"
-# else
-#   echo "========= Jenkins is not Installed on This Machine !!================"
-# fi
-
 systemctl start docker
 systemctl enable docker
 systemctl status docker
