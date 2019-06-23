@@ -1,6 +1,5 @@
 ============ System  =============
 
-
 /etc/resolv.conf        # DNS name the system contacts
 /etc/hosts              #used to map hostnames (in other words domains) to IP addresses. 
                         # With the hosts file you can change the IP address that you resolve a given domain name to. 
@@ -23,22 +22,20 @@
 ~/.bash_profile         #
 ~/.profile              #
 
-/etc/apt/sources.list  # apt repositroy
-/etc/yum.repos.d/      # yum repositroy
+/etc/apt/sources.list     # apt repositroy
+/etc/yum.repos.d/         # yum repositroy
 
+/var/www                  # used to server static web content
+/srv/www                  # used to serve dynamic web content
 
-/var/www                #used to server static web content
-/srv/www                #used to serve dynamic web content
-
-
-/etc/systemd/system     #system services location
+/etc/systemd/system       # system services location
 /etc/systemd/journal.conf # jounal conf file
 
 ============ Jenkins =============
 /var/lib/jenkins        #Jenkins Home Directory
 
 =========== Nginx ================
-/etc/nginx
-/usr/share/share/html
+/etc/nginx              # Nginx config dir
+/usr/share/share/html   # Default html page Nginx server
 
 
