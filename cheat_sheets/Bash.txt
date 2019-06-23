@@ -2,6 +2,7 @@
 curl ifconfig.me	#returns public ip
 ifconfig		#returns network info
 ip addr show		#returns network info
+ip a 			#for the lazy
 
 ip route show 		#return default route
 route			#retrun deafult route
