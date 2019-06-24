@@ -2,7 +2,6 @@
 # dialog box menu 
 : ${2?"USAGE: $1 USERNAME  $2 USER_HOME" } 
 
-
 # Global variables
 MENUBOX=${MENUBOX=dialog}
 TITLE=" [ M A I N  M E N U ] "
