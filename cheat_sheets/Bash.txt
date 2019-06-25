@@ -20,7 +20,9 @@ sudo netstat -plnt	#Return listening ports
 ##For CentOS, use:
 # yum install bind-utils
 
-============ Users ============ 	
+============ Users ============ 
+sudo visudo 			#returns sudoers file
+
 useradd <user>			#create user
 adduser <user> 			# On Debian, administrators should usually use adduser instead of useradd
 passwd <user>			#change user password
