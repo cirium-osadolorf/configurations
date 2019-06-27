@@ -1,0 +1,10 @@
+# Initial configuration
+
+AWS Access Key ID [None]: AK**LE
+AWS Secret Access Key [None]: je7MtG***PLEKEY
+Default region name [None]: us-east-1
+Default output format [None]: text or json
+
+aws s3 ls --profile cloud_user
+export AWS_DEFAULT_PROFILE=<USER>
+aws s3 ls 
