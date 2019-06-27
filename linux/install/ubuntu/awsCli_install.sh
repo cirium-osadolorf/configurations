@@ -1,12 +1,10 @@
 #! /bin/bash
 
-: ${1?"USAGE: $1 USER" } 
-
-apt-get update
-apt-get -y install python-pip
-pip install --upgrade pip
-pip install awscli
-pip install awscli --upgrade
+sudo apt-get update
+sudo apt-get -y install python-pip
+sudo pip install --upgrade pip
+sudo pip install awscli
+sudo pip install awscli --upgrade
 echo " ============================================== "
 echo "example configuration"
 echo" AWS Access Key ID : [****************M5YB]"
