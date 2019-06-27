@@ -13,12 +13,29 @@ aws configure
 aws --version
 
 
-#Another method
-#sudo apt-get install software-properties-common
-#sudo apt-add-repository universe
-#sudo apt-get update
-#sudo apt-get install python-pip
-#sudo apt-get install -y python-dev python-pip
-#sudo pip install awscli
-#aws --version
-#aws configure
+
+
+
+
+
+#! /bin/bash
+apt-get install -y software-properties-common
+apt-add-repository universe
+apt-get update -y
+apt-get install -y python-pip
+apt-get install -y python-dev python-pip
+pip install awscli
+
+echo " ============================================== "
+echo "example configuration"
+echo "AWS Access Key ID : [****************M5YB]"
+echo "AWS Secret Access Key : [****************I5C1]"
+echo "Default region name  : [eu-central-1]"
+echo "Default output format : [json or text]"  
+echo " ============================================== "
+
+aws configure
+aws --version
+
+echo "To set default user use: "
+echo "export AWS_DEFAULT_PROFILE=USER "
