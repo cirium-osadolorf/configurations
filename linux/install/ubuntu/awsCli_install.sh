@@ -1,12 +1,9 @@
 #! /bin/bash 
 
-apt-get install software-properties-common
+apt-get install -y  software-properties-common
 apt-add-repository universe
-apt-get update
-apt-get install python-pip
-
-apt-get update
-apt-get -y install python-pip
+apt-get update -y
+apt-get install -y  python-pip
 pip install --upgrade pip
 pip install awscli
 pip install awscli --upgrade
