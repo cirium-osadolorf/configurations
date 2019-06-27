@@ -1,4 +1,10 @@
 #! /bin/bash 
+
+apt-get install software-properties-common
+apt-add-repository universe
+apt-get update
+apt-get install python-pip
+
 apt-get update
 apt-get -y install python-pip
 pip install --upgrade pip
