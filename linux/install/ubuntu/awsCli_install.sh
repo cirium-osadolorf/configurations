@@ -11,3 +11,10 @@ echo "Default output format : [json or text]"
 echo " ============================================== "
 aws configure
 aws --version
+
+
+#Another method
+#sudo apt-get install -y python-dev python-pip
+#sudo pip install awscli
+#aws --version
+#aws configure
