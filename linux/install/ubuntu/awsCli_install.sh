@@ -14,6 +14,10 @@ aws --version
 
 
 #Another method
+#sudo apt-get install software-properties-common
+#sudo apt-add-repository universe
+#sudo apt-get update
+#sudo apt-get install python-pip
 #sudo apt-get install -y python-dev python-pip
 #sudo pip install awscli
 #aws --version
