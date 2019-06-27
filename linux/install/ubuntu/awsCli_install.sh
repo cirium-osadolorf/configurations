@@ -2,10 +2,12 @@
 
 apt install awscli
 aws --version
+echo " ============================================== "
 echo "example configuration"
 echo" AWS Access Key ID : [****************M5YB]"
 echo "AWS Secret Access Key : [****************I5C1]"
 echo "Default region name  : [eu-central-1]"
 echo "Default output format : [json or text]"  
+echo " ============================================== "
 aws configure
 aws --version
