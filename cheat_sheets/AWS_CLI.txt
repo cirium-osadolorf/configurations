@@ -1,10 +1,25 @@
 # Initial configuration
+# http://skillslane.com/aws-tutorial-vpc-launch-instance-cli/
 
-AWS Access Key ID [None]: AK**LE
-AWS Secret Access Key [None]: je7MtG***PLEKEY
-Default region name [None]: us-east-1
-Default output format [None]: text or json
+aws ec2 run-instances --generate-cli-skeleton
 
-aws s3 ls --profile cloud_user
-export AWS_DEFAULT_PROFILE=<USER>
 aws s3 ls 
+aws s3 ls --profile cloud_user
+
+export AWS_DEFAULT_PROFILE=<USER>
+
+# Vpc Creation
+aws ec2 create-vpc --cidr-block 10.0.0.0/16
+
+# Subnets creation
+aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
+aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
+
+# IGW creation
+aws ec2 create-internet-gateway
+
+# Attach to VPC
+aws ec2 attach-internet-gateway --internet-gateway-id igw-5d685a38 --vpc-id vpc-99e344fd
+
+# Route Table
+aws ec2 create-route-table --vpc-id vpc-99e344fd
