@@ -1,13 +1,25 @@
 # Initial configuration
 # http://skillslane.com/aws-tutorial-vpc-launch-instance-cli/
+=================================================================
+Configuration
+=================================================================
+aws configure 
+aws configure --profile user
+export AWS_DEFAULT_PROFILE=<USER>
 
-aws ec2 run-instances --generate-cli-skeleton
+=================================================================
+Querying
+=================================================================
 
 aws s3 ls 
 aws s3 ls --profile cloud_user
 
-export AWS_DEFAULT_PROFILE=<USER>
+# Generate service template
+aws ec2 run-instances --generate-cli-skeleton
 
+=================================================================
+Create
+=================================================================
 # Vpc Creation
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
 
@@ -15,11 +27,29 @@ aws ec2 create-vpc --cidr-block 10.0.0.0/16
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
 
+# Route Table
+aws ec2 create-route-table --vpc-id <value>
+
 # IGW creation
 aws ec2 create-internet-gateway
 
+=================================================================
+Attach
+=================================================================
 # Attach to VPC
-aws ec2 attach-internet-gateway --internet-gateway-id igw-5d685a38 --vpc-id vpc-99e344fd
+aws ec2 attach-internet-gateway --internet-gateway-id <value> --vpc-id <value>
 
-# Route Table
-aws ec2 create-route-table --vpc-id vpc-99e344fd
+
+=================================================================
+Describe ( Return )
+=================================================================
+aws ec2 describe-vpcs                     # Returns vpcs
+aws ec2 describe-internet-gateways        # Returns igws
+aws ec2 describe-instaces                 # Retuns ec2 instaces
+
+=================================================================
+Delete
+=================================================================
+
+aws ec2 delete-internet-gateway --internet-gateway-id <value>
+aws ec2 delete-vpc --vpc-id <value>
