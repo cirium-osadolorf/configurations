@@ -53,9 +53,6 @@ ansible -i inv remote -m lineinfile -a "path=file line='text' insertbefore='text
 ansible -i inv remote -m lineinfile -a "path=file line='text' create=yes"            # creates a file before appending
 ansible -i inv remote -m lineinfile -a "regexp=OLD_TEXT line=NEW_TXT path=file"      # replaces target text with new text
 
-
-
-
 # get_url module
 # used to download files
 ansible-doc get_url  help   # returns manual on the module
@@ -81,12 +78,26 @@ ansible -i inv remote -b -m user -a "name=super state=absent remove=yes "   # de
 
 # Group module
 ansible-doc group
-ansible -i inv remote -b -m group -a "name=newGroup"                #Creates a group
+ansible -i inv remote -b -m group -a "name=newGroup"  #Creates a group
 
+===================================================================
+Installing Software and Daemon Managment
+===================================================================
+# Package module
+ansible remote -i inv -b -m package -a "name=package state =latest"     #installs packaage on  targets
 
+#Yum module
+#Used when installing distro specific package 
+ansible remote -i inv -b -m package -a "name=tree state =latest"        #installs packaage on  targets
+
+#Apt module
+#Used when installing distro specific package 
+ansible remote -i inv -b -m package -a "name=tree state =latest"        #installs packaage on  targets
 
 ===================================================================
 Other Modules
 ===================================================================
+
+# https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
 # Replace module
 # script module
