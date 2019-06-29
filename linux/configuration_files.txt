@@ -38,4 +38,9 @@
 /etc/nginx              # Nginx config dir
 /usr/share/share/html   # Default html page Nginx server
 
+=========== Ansible =====================
+
+/etc/ansible/ansible.cfg  # Ansible configuration file 
+/etc/ansible/hosts        # Ansible default inventory 
+
 
