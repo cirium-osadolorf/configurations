@@ -27,8 +27,19 @@ ansible -i inv remote -m setup --tree facts           # write systems info to th
 ===================================================================
 File Manipulation Modules
 ===================================================================
-#File module, used to create delete and modify a file
+# File module
 
+# Used to create delete and modify a file
+ansible-doc file  # returns man on file moduule 
 
 ansible -i inv remote -m file -a "name=test.file state=touch"  # creates file
 ansible -i inv remote -m file -a "name=test.file state=absent" # deletes a file 
+
+ansible -i inv remote -b -m file -a "name=test.file state=touch"  # creates file with root permission 
+ansible -i inv remote -b -m file -a "name=test.file state=absent" # deletes a file with root permission
+
+# Copy module
+
+ansible-doc -s copy   # Returns man on copy module
+ansible -i inv remote -m copy -a "src=file dest=/path"         # Copies file from the maaster to nodes
+
