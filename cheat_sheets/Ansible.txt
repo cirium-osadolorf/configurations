@@ -4,10 +4,13 @@ ansible ALL=(ALL)  NOPASSWD: ALL
 
 
 #Ping Module
+# returns connectivity
+
 ansible localhost -m ping
 ansible -i inv remote -m ping
 
 # Command Module
+
 ansible localhost -a "touch hello"                  # creates file  hello
 ansible localhost -a "touch hello creates=hello"    # verify that hello does not exist, then creats it
 ansible localhost -a "rm -f hello"                  # removes file hello
@@ -17,7 +20,8 @@ ansible localhost -a "rm -f hello removes=hello"    # verify that hello exist th
 ansible localhost -m shell -a "echo $PATH > hello"
 
 
-# Setup module - system info
+# Setup module
+# returns system info
 
 ansible -i inv remote -m setup                        #  returns systems infos
 ansible -i inv remote -m setup | less                 # return systems info
@@ -28,8 +32,8 @@ ansible -i inv remote -m setup --tree facts           # write systems info to th
 File Manipulation Modules
 ===================================================================
 # File module
-
 # Used to create delete and modify a file
+
 ansible-doc file  # returns man on file moduule 
 
 ansible -i inv remote -m file -a "name=test.file state=touch"  # creates file
@@ -43,3 +47,12 @@ ansible -i inv remote -b -m file -a "name=test.file state=absent" # deletes a fi
 ansible-doc -s copy   # Returns man on copy module
 ansible -i inv remote -m copy -a "src=file dest=/path"         # Copies file from the maaster to nodes
 
+# lineinfile Module
+# used to insert (write) into files
+
+ansible -i inv remote -m lineinfile -a "path=file line='text' state=present"          # appends text to a file
+ansible -i inv remote -m lineinfile -a "path=file line='text' insertbefore='text' "`  # appends text before target text
+
+# Other modules
+# Replace module
+# script module
