@@ -1,3 +1,6 @@
+sudo apt-get purge nano
+sudo visudo 
+ansible ALL=(ALL)  NOPASSWD: ALL 
 
 
 #Ping Module
@@ -20,3 +23,12 @@ ansible -i inv remote -m setup                        #  returns systems infos
 ansible -i inv remote -m setup | less                 # return systems info
 ansible -i inv remote -m setup -a "filter=*dist*"     # filter out output
 ansible -i inv remote -m setup --tree facts           # write systems info to the facts folder
+
+===================================================================
+File Manipulation Modules
+===================================================================
+#File module, used to create delete and modify a file
+
+
+ansible -i inv remote -m file -a "name=test.file state=touch"  # creates file
+ansible -i inv remote -m file -a "name=test.file state=absent" # deletes a file 
