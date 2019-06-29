@@ -95,6 +95,12 @@ ansible remote -i inv -b -m package -a "name=tree state =latest"        #install
 ansible remote -i inv -b -m package -a "name=tree state =latest"        #installs packaage on  targets
 
 ===================================================================
+Controlling Daemons with the Service Module
+===================================================================
+# Service module
+ansible -i inv remote -b -m service -a "name=nginx state=started enabled=yes"
+
+===================================================================
 Other Modules
 ===================================================================
 
