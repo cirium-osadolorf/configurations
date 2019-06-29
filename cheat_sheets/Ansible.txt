@@ -1,7 +1,9 @@
+================================================================================
 sudo apt-get purge nano
 sudo visudo 
 ansible ALL=(ALL)  NOPASSWD: ALL 
-
+#Alwasys use full path when working with files and directories
+================================================================================
 
 #Ping Module
 # returns connectivity
@@ -10,7 +12,6 @@ ansible localhost -m ping
 ansible -i inv remote -m ping
 
 # Command Module
-
 ansible localhost -a "touch hello"                  # creates file  hello
 ansible localhost -a "touch hello creates=hello"    # verify that hello does not exist, then creats it
 ansible localhost -a "rm -f hello"                  # removes file hello
@@ -35,24 +36,57 @@ File Manipulation Modules
 # Used to create delete and modify a file
 
 ansible-doc file  # returns man on file moduule 
-
 ansible -i inv remote -m file -a "name=test.file state=touch"  # creates file
 ansible -i inv remote -m file -a "name=test.file state=absent" # deletes a file 
-
 ansible -i inv remote -b -m file -a "name=test.file state=touch"  # creates file with root permission 
 ansible -i inv remote -b -m file -a "name=test.file state=absent" # deletes a file with root permission
 
-# Copy module
 
+# Copy module
 ansible-doc -s copy   # Returns man on copy module
 ansible -i inv remote -m copy -a "src=file dest=/path"         # Copies file from the maaster to nodes
 
 # lineinfile Module
 # used to insert (write) into files
+ansible -i inv remote -m lineinfile -a "path=file line='text' state=present"         # appends text to a file
+ansible -i inv remote -m lineinfile -a "path=file line='text' insertbefore='text' "  # appends text before target text
+ansible -i inv remote -m lineinfile -a "path=file line='text' create=yes"            # creates a file before appending
+ansible -i inv remote -m lineinfile -a "regexp=OLD_TEXT line=NEW_TXT path=file"      # replaces target text with new text
 
-ansible -i inv remote -m lineinfile -a "path=file line='text' state=present"          # appends text to a file
-ansible -i inv remote -m lineinfile -a "path=file line='text' insertbefore='text' "`  # appends text before target text
 
-# Other modules
+
+
+# get_url module
+# used to download files
+ansible-doc get_url  help   # returns manual on the module
+ansible -i inv remote -m get_url -a "url=www.url.com dest =/home/ansible/url"         # Downloads file to absolute path
+
+
+# Archive module
+# used to create archive of files
+ansible -i inv remote -m archive -a "path=dir format=tar dest=files.zip"                # archive files present in a dir
+ansible -i inv remote -m unarchive -a "src=file dest=dir"                               # unarchive from master to nodes
+ansible -i inv remote -m unarchive -a "src=file dest=dir remote_src=yes"                # unarchive archive present in the node
+
+
+===================================================================
+Configuring System Users and Groups
+===================================================================
+# User module
+ansible-doc user
+ansible -i inv remote -b -m user -a "name=super"                            # creates user
+ansible -i inv remote -b -m user -a "name=super state=absent"               # deletes user but not user's home dir
+ansible -i inv remote -b -m user -a "name=super state=absent remove=yes "   # delete user and user home dir 
+
+
+# Group module
+ansible-doc group
+ansible -i inv remote -b -m group -a "name=newGroup"                #Creates a group
+
+
+
+===================================================================
+Other Modules
+===================================================================
 # Replace module
 # script module
