@@ -1,0 +1,22 @@
+
+
+#Ping Module
+ansible localhost -m ping
+ansible -i inv remote -m ping
+
+# Command Module
+ansible localhost -a "touch hello"                  # creates file  hello
+ansible localhost -a "touch hello creates=hello"    # verify that hello does not exist, then creats it
+ansible localhost -a "rm -f hello"                  # removes file hello
+ansible localhost -a "rm -f hello removes=hello"    # verify that hello exist then removes it
+
+# Shell Module
+ansible localhost -m shell -a "echo $PATH > hello"
+
+
+# Setup module - system info
+
+ansible -i inv remote -m setup                        #  returns systems infos
+ansible -i inv remote -m setup | less                 # return systems info
+ansible -i inv remote -m setup -a "filter=*dist*"     # filter out output
+ansible -i inv remote -m setup --tree facts           # write systems info to the facts folder
