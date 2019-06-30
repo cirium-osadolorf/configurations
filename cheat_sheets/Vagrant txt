@@ -1,14 +1,37 @@
 Vagrant is a virtual machine manager. It allows you to script the virtual machine 
 configuration as well as the provisioning (scripts, Chef, Puppet, Ansible ).
 
+Vagrant --version         # Returns vegrant version
+
+vagrant init -h           # Returns help on the init commnad
+vagrant <command> -h      # Returns help on the selected command
 
 Vagrant init              # initialize a vagrant environment by creating a vagrantfile
+Vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
 Vagrant up                # Creates and configure machine according to your Vagrantfile
+vagrant halt              # shuts down 1 or more machines
 Vagrant destroy           # used to destroy the environment 
+Vagrant destroy -f        # used to destroy the environment 
 Vagrant validate          # validates vagrant file
 Vagrant provision         # runs any configured provisioners
-Vagrant reload            #
+Vagrant reload            # Reboots the system, use it after alteraing the Vagrant file
 Vagrant status            # returns the state of the machine
 Vagrant ssh               # SSH into a vagrant box
+vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
+vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
 
-Vagrant --version         # Returns vegrant version
+
+=============================================================
+Providers
+=============================================================
+https://www.vagrantup.com/docs/providers/
+
+# Before you can use another provider, you must install it. 
+# Installation of other providers is done via the Vagrant plugin system
+
+#A provider is responsible for the lifecycle of a resource: 
+#create, read, update, delete. An example of a provider is AWS,
+#which can manage resources of type aws_instance, aws_eip, aws_elb, etc.
+
+
+ https://app.vagrantup.com/boxes/search
