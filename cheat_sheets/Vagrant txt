@@ -19,6 +19,7 @@ Vagrant status            # returns the state of the machine
 Vagrant ssh               # SSH into a vagrant box
 vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
 vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
+vagrant ssh-config        # Returns info on ssh setup
 
 
 =============================================================
