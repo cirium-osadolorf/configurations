@@ -1,0 +1,14 @@
+Vagrant is a virtual machine manager. It allows you to script the virtual machine 
+configuration as well as the provisioning (scripts, Chef, Puppet, Ansible ).
+
+
+Vagrant init              # initialize a vagrant environment by creating a vagrantfile
+Vagrant up                # Creates and configure machine according to your Vagrantfile
+Vagrant destroy           # used to destroy the environment 
+Vagrant validate          # validates vagrant file
+Vagrant provision         # runs any configured provisioners
+Vagrant reload            #
+Vagrant status            # returns the state of the machine
+Vagrant ssh               # SSH into a vagrant box
+
+Vagrant --version         # Returns vegrant version
