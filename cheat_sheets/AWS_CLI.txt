@@ -22,6 +22,7 @@ Create
 =================================================================
 # Vpc Creation
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
+aws ec2 create-vpc --generate-cli-skeleton
 
 # Subnets creation
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
@@ -58,6 +59,10 @@ aws ec2 describe-instaces                 # Retuns ec2 instaces
 aws ec2 describe-subnets                  # Returns Subnet instances
 aws ec2 describe-route-tables             # Returns Route tables instances
 
+
+aws ec2 describe-vpcs --generate-cli-skeleton
+
+
 =================================================================
 Delete
 =================================================================
@@ -70,4 +75,3 @@ aws ec2 delete-route-table --route-table-id <value>
 ===============================================================
 Generate-cli-skeleton
 ===============================================================
-aws ec2 describe-vpcs --generate-cli-skeleton
