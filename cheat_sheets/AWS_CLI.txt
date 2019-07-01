@@ -65,3 +65,9 @@ Delete
 aws ec2 delete-internet-gateway --internet-gateway-id <value>
 aws ec2 delete-vpc --vpc-id <value>
 aws ec2 delete-route-table --route-table-id <value>
+
+
+===============================================================
+Generate-cli-skeleton
+===============================================================
+aws ec2 describe-vpcs --generate-cli-skeleton
