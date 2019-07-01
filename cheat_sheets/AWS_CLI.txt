@@ -8,60 +8,12 @@ aws configure --profile user
 export AWS_DEFAULT_PROFILE=<USER>
 
 =================================================================
-Querying
-=================================================================
-
-aws s3 ls 
-aws s3 ls --profile cloud_user
-
-# Generate service template
-aws ec2 run-instances --generate-cli-skeleton
-
-=================================================================
-Create
-=================================================================
-# Vpc Creation
-aws ec2 create-vpc --cidr-block 10.0.0.0/16
-aws ec2 create-vpc --generate-cli-skeleton > vpc.json
-aws ec2 create-vpc --cli-input-json file:///home/vagrant/workspace/vpc.json
-# Subnets creation
-aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
-aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
-
-# Route Table
-aws ec2 create-route-table --vpc-id <value>
-
-# IGW creation
-aws ec2 create-internet-gateway
-
-# Create Security Groups
- aws ec2 create-security-group --group-name MySecurityGroup --description "..." --vpc-id <value>
- 
- # Load Balancer
- 
- aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-15aaab61 --security-groups sg-a61988c3
-
-=================================================================
 Attach
 =================================================================
 # Attach to VPC
 aws ec2 attach-internet-gateway --internet-gateway-id <value> --vpc-id <value>
 aws ec2 associate-route-table --route-table-id <value> --subnet-id <value>
 aws ec2 create-route --route-table-id <value> --destination-cidr-block 0.0.0.0/0 --gateway-id <value>
-
-
-=================================================================
-Describe ( Return )
-=================================================================
-aws ec2 describe-vpcs                     # Returns vpcs instances
-aws ec2 describe-internet-gateways        # Returns igws instances
-aws ec2 describe-instaces                 # Retuns ec2 instaces
-aws ec2 describe-subnets                  # Returns Subnet instances
-aws ec2 describe-route-tables             # Returns Route tables instances
-
-
-aws ec2 describe-vpcs --generate-cli-skeleton
-
 
 =================================================================
 Delete
@@ -72,6 +24,73 @@ aws ec2 delete-vpc --vpc-id <value>
 aws ec2 delete-route-table --route-table-id <value>
 
 
-===============================================================
-Generate-cli-skeleton
-===============================================================
+
+=================================================================
+Vpc
+=================================================================
+
+# Vpc Creation
+aws ec2 create-vpc --cidr-block 10.0.0.0/16
+aws ec2 create-vpc --generate-cli-skeleton > vpc.json
+aws ec2 create-vpc --cli-input-json file:///home/vagrant/workspace/vpc.json
+aws ec2 describe-vpcs  # Returns vpcs instances
+
+=================================================================
+Igw
+=================================================================
+aws ec2 create-internet-gateway
+aws ec2 describe-internet-gateways        # Returns igws instances
+
+
+=================================================================
+Subnet
+=================================================================
+
+# Subnets creation
+aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
+aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
+aws ec2 describe-subnets                  # Returns Subnet instances
+
+=================================================================
+Route tbale
+=================================================================
+
+aws ec2 create-route-table --vpc-id <value>
+aws ec2 describe-route-tables             # Returns Route tables instances
+
+
+=================================================================
+Route connection
+=================================================================
+
+=================================================================
+Security Groups
+=================================================================
+aws ec2 create-security-group --group-name MySecurityGroup --description "..." --vpc-id <value>
+
+
+
+=================================================================
+instaces
+=================================================================
+aws ec2 run-instances --generate-cli-skeleton
+aws ec2 describe-instaces  # Retuns ec2 instaces
+
+
+=================================================================
+S3
+=================================================================
+aws s3 ls 
+
+=================================================================
+Load Balancer
+=================================================================
+ 
+ aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-15aaab61 --security-groups sg-a61988c3
+
+=================================================================
+Auto-scaling-groups 
+=================================================================
+
+
+ aws autoscaling describe-auto-scaling-groups 
