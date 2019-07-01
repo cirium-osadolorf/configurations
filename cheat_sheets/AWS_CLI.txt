@@ -22,8 +22,8 @@ Create
 =================================================================
 # Vpc Creation
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
-aws ec2 create-vpc --generate-cli-skeleton
-
+aws ec2 create-vpc --generate-cli-skeleton > vpc.json
+aws ec2 create-vpc --cli-input-json file:///home/vagrant/workspace/vpc.json
 # Subnets creation
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
