@@ -23,13 +23,10 @@ aws ec2 delete-internet-gateway --internet-gateway-id <value>
 aws ec2 delete-vpc --vpc-id <value>
 aws ec2 delete-route-table --route-table-id <value>
 
-
-
 =================================================================
 Vpc
 =================================================================
 
-# Vpc Creation
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
 aws ec2 create-vpc --generate-cli-skeleton > vpc.json
 aws ec2 create-vpc --cli-input-json file:///home/vagrant/workspace/vpc.json
@@ -38,15 +35,14 @@ aws ec2 describe-vpcs  # Returns vpcs instances
 =================================================================
 Igw
 =================================================================
+
 aws ec2 create-internet-gateway
 aws ec2 describe-internet-gateways        # Returns igws instances
-
 
 =================================================================
 Subnet
 =================================================================
 
-# Subnets creation
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.1.0/24
 aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
 aws ec2 describe-subnets                  # Returns Subnet instances
@@ -89,8 +85,14 @@ Load Balancer
  aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-15aaab61 --security-groups sg-a61988c3
 
 =================================================================
-Auto-scaling-groups 
+Autoscaling
 =================================================================
+aws ec2 describe-security-groups
 
 
- aws autoscaling describe-auto-scaling-groups 
+aws autoscaling describe-auto-scaling-groups 
+aws autoscaling create-auto-scaling-group
+aws autoscaling  create-launch-configuration
+
+aws autoscaling delete-auto-scaling-group
+aws autoscaling delete-launch-configuration
