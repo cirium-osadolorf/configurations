@@ -99,8 +99,6 @@ aws autoscaling create-auto-scaling-group
 aws autoscaling  create-launch-configuration
 
 aws autoscaling delete-auto-scaling-group
-aws autoscaling delete-launch-configuration
-
 
 # Basic Launch Configuration setup
 
@@ -111,6 +109,11 @@ aws autoscaling create-launch-configuration
     --security-groups 
      --user-data file://myuserdata.txt
       --key-name my-key-pair
+      
+      
+aws autoscaling describe-launch-configurations
+aws autoscaling delete-launch-configuration --launch-configuration-name <value>
+
 
 
 =================================================================
