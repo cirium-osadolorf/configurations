@@ -1,5 +1,7 @@
 #! /bin/bash
 
+: ${1?"USAGE: $1 AWS_USER "}
+
 sudo apt-get update
 sudo apt-get -y install python-pip
 sudo pip install --upgrade pip
@@ -12,7 +14,7 @@ echo "AWS Secret Access Key : [****************I5C1]"
 echo "Default region name  : [eu-central-1]"
 echo "Default output format : [json or text]"  
 echo " ============================================== "
-aws configure --profile $USER
+aws configure --profile $AWS_USER
 aws --version
 
 echo "To set default user use: "
