@@ -102,19 +102,24 @@ aws autoscaling delete-auto-scaling-group
 aws autoscaling delete-launch-configuration
 
 
+# Basic Launch Configuration setup
 
 aws autoscaling create-launch-configuration 
  --launch-configuration-name my-launch-config 
-   --image-id ami-c6169af6 --instance-type m1.medium
-    --associate-public-ip-address
-     --security-groups <value>
-     
-     
-aws autoscaling create-launch-configuration \
- --launch-configuration-name my-launch-config \
-  --image-id ami-0ad82a384c06c911e --instance-type m1.micro  \
-   --associate-public-ip-address \
-    --security-groups
+  --image-id ami-0ad82a384c06c911e --instance-type t2.micro  
+   --associate-public-ip-address 
+    --security-groups 
+     --user-data file://myuserdata.txt
+      --key-name my-key-pair
 
 
+=================================================================
+EC2 Key Pairs
+=================================================================
+      
+ # Generatin aws ec2 create-key-pair
+ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+ aws ec2 describe-key-pairs --key-name MyKeyPair
+ aws ec2 delete-key-pair --key-name MyKeyPair
 
+   
