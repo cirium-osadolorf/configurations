@@ -17,8 +17,12 @@ echo " ============================================== "
 aws configure --profile $AWS_USER
 aws --version
 
+sudo apt-get install -y python3-pip python3 python3-setuptools
+pip3 install boto3 --user
+
 echo "To set default user use: "
 echo "export AWS_DEFAULT_PROFILE=USER "
+
 
 
 #https://computingforgeeks.com/how-to-install-and-use-aws-cli-on-linux-ubuntu-debian-centos/
