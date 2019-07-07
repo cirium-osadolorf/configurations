@@ -6,9 +6,10 @@ Esc         # Switch to Command mode
 : q!        # Quit the file without saving
 : w         # Save the file
 : wq        # Save and exit the file  
+ZZ          # Save and exit the file   
 i           # Switches to Insert mode
 r           # Switches to Replace mode
-: ↕           # Up or Down, moves you thugh the command history           
+: ↕         # Up or Down, moves you thugh the command history           
 
 =====================================================
 Movment ( While in Command mode)
