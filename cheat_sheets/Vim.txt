@@ -8,6 +8,7 @@ Esc         # Switch to Command mode
 : wq        # Save and exit the file  
 i           # Switches to Insert mode
 r           # Switches to Replace mode
+↕           # Up or Down, moves you thugh the command history           
 
 =====================================================
 Movment ( While in Command mode)
@@ -69,4 +70,11 @@ seraching  ( While in Command mode)
 
 /<text_you-are_looking_for> # Once you are inserted the string Press Enter
                             # To move to the next instace of of the string use letter n 
+                            # it starts the search from the fist instance down
 
+
+? <text_you-are_looking_for> # Once you are inserted the string Press Enter
+                             # To move to the next instace of of the string use letter n 
+                             # it starts the search from the last instance up
+                             
+                            
