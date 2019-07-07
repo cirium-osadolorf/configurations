@@ -48,3 +48,15 @@ i           # Inserts text before highlighted character
 a           # Inserts text after highlighted character 
 o           # Insert text on the  next paragraph
 
+u           # undo previos changes
+x           # Deletes highlighted character
+.           # Copies and paste changes made in the last insert mode
+dd          # Delete line
+dw          # Delete a word
+
+yy          # Copies line
+p           # Paste line
+
+v ← or →    # Mark mode, Copies highlighted text  
+p           # paste 
+
