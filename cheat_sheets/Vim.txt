@@ -1,6 +1,6 @@
-==================================
+=====================================================
 System 
-==================================
+=====================================================
 
 Esc         # Switch to Command mode
 : q!        # Quit the file without saving
@@ -9,9 +9,9 @@ Esc         # Switch to Command mode
 i           # Switches to Insert mode
 r           # Switches to Replace mode
 
-==================================
+=====================================================
 Movment ( While in Command mode)
-==================================
+=====================================================
 
 
 k         # Moves cursor up  
@@ -30,4 +30,21 @@ gg        # Moves cursor to the top of the file
 1gg       # Moves cursor to the top of the file
 1G        # Moves cursor to the top of the file
 G         # Moves cursor to the bottom of the file
+
+{         # Moves cursor to the previous paragraph 
+}         # Moves cursor to the next paragraph
+
+%         # Moves cursor in between brackets scope
+
+=====================================================
+Numbers ( While in Command mode)
+=====================================================
+
+=====================================================
+Text Manipulation ( While in Command mode)
+=====================================================
+
+i           # Inserts text before highlighted character 
+a           # Inserts text after highlighted character 
+o           # Insert text on the  next paragraph
 
