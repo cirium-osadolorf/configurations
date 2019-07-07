@@ -9,7 +9,7 @@ Esc         # Switch to Command mode
 ZZ          # Save and exit the file   
 i           # Switches to Insert mode
 r           # Switches to Replace mode
-: ↕         # Up or Down, moves you thugh the command history           
+: ↕         # Up or Down, moves you thugh the command history 
 
 =====================================================
 Movment ( While in Command mode)
@@ -93,3 +93,10 @@ Executing Terminal Commands  ( While in Command mode)
 
 : ! <Bash_command>      # Returns the ouput of the command
 : r ! <bash_command>    # Insert the  output of the command into the file
+
+=====================================================
+Extras  ( While in Command mode)
+=====================================================
+
+: saveas <File_Name.txt>  # Saves content to a differnt file
+
