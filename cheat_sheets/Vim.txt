@@ -8,7 +8,7 @@ Esc         # Switch to Command mode
 : wq        # Save and exit the file  
 i           # Switches to Insert mode
 r           # Switches to Replace mode
-↕           # Up or Down, moves you thugh the command history           
+: ↕           # Up or Down, moves you thugh the command history           
 
 =====================================================
 Movment ( While in Command mode)
@@ -64,6 +64,14 @@ p           # paste
 >>          # indents line
 <<          # removes indent
 
+: 1,5a/^/#    # Insert block of Comment. 
+             # 1 = Staring line
+             # 5 = Ending Line
+             # # = Comment symbol
+
+: %s /<old-value>/<new_value>/g    # Replcae all instaces of the word 
+: %s /<old-value>/<new_value>/gc   # Replcae all instaces of the word with confirmation prompt 
+
 =====================================================
 seraching  ( While in Command mode)
 =====================================================
@@ -78,3 +86,9 @@ seraching  ( While in Command mode)
                              # it starts the search from the last instance up
                              
                             
+=====================================================
+Executing Terminal Commands  ( While in Command mode)
+=====================================================
+
+: ! <Bash_command>      # Returns the ouput of the command
+: r ! <bash_command>    # Insert the  output of the command into the file
