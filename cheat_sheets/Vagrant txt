@@ -36,30 +36,3 @@ https://www.vagrantup.com/docs/providers/
 
 
  https://app.vagrantup.com/boxes/search
-
-
-==========================================================================
-Simple Vagrant Box
-==========================================================================
-
-Vagrant.configure("2") do |config|
-  config.vm.box = "base"
-end
-
-==========================================================================
-Vagrant Box
-==========================================================================
-Vagrant.configure("2") do |config|
- config.vm.define "ansible" do |ansible|
-  ansible.vm.box = "bento/ubuntu-18.04"
- end
-
- config.vm.define "aws" do |aws|
-  aws.vm.box = "bento/ubuntu-18.04"
-   aws.vm.synced_folder "aws/",  "/home/vagrant/"
- end
-
- config.vm.define "test" do |test|
-  test.vm.box = "bento/ubuntu-18.04"
- end
-end
