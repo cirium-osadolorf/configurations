@@ -93,6 +93,13 @@ cp  file location/path		#copy a file from a location to the other
 grep  "phrase" file 		#used to look for a word or phrase in a file, it will then print the specific line  
 diff file1 file2 		#analyze the 2 files and print out any line that do not match in both files
 
+========== File Compression and Archiving  ==================
+#
+#
+#
+#
+
+
 ============ Variables ============ 
 VARIABLENAME=VALUE		#Assign value to variable
 export VARIABLENAME		#export varaible value, allows the variable o be used in new bash instances
