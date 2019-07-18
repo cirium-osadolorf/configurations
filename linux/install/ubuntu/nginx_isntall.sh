@@ -1,5 +1,5 @@
 #!  /bin/bash
-
+apt-get install -y lsb-core
 export CODENAME=`lsb_release --codename | cut -f2`
 
 curl -o nginx_signing.key http://nginx.org/keys/nginx_signing.key
