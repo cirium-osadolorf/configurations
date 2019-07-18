@@ -3,10 +3,10 @@
 #: ${1?"USAGE: $1 AWS_USER "}
 
 sudo apt-get update
-sudo apt-get -y install python-pip
-sudo pip install --upgrade pip
-sudo pip install awscli
-sudo pip install awscli --upgrade
+sudo apt-get install -y python3-pip python3 python3-setuptools
+sudo pip3 install --upgrade pip
+sudo pip3 install awscli
+sudo pip3 install awscli --upgrade
 echo " ============================================== "
 echo "example configuration"
 echo" AWS Access Key ID : [****************M5YB]"
@@ -17,7 +17,6 @@ echo " ============================================== "
 aws configure
 #aws configure --profile $AWS_USER
 aws --version
-sudo apt-get install -y python3-pip python3 python3-setuptools
 pip3 install boto3 --user
 echo "To set default user use: "
 echo "export AWS_DEFAULT_PROFILE=USER "
