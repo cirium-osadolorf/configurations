@@ -163,6 +163,8 @@ ps ax			#Prints list of all process
 ctrl +z 		#Used to pause a process
 kill (Process_id)	#used to  kill proceses
 
+top
+
 ============== Hardware information ==============
 lscpu			#Returns- information about the cpu and processing units
 hwinfo  --short		#Returns- Hardware Information
