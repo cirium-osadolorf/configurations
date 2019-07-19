@@ -191,9 +191,6 @@ cd /path/folder		#Change directory
 cd ..			#Takes you up 1 director
 cd .. / ..		#Takes you up 2 director
 cd ~			#Takes you to the home directory
-whereis
-locate
-find
 which command 		#returns comand bianry path
 xxd  -b `which command` #returns hex reppresentaion of the program
 xxd  `which command`	 #returns binary reppresentaion of the program
@@ -203,6 +200,14 @@ xxd  `which command`	 #returns binary reppresentaion of the program
 ln -s /target_Path /destination_Path
 # Removes Symbolic link
 unlink link name 	
+
+================ Search files  ======================
+
+whereis software 	# binary file directories, man page directories, and library directories
+locate software		# locate command in Linux is used to find the files by name (Looks though a DB)
+find software		# used to find files and directories (Looks though the file system)
+which software		# used to locate the executable file associated with the given command
+
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
