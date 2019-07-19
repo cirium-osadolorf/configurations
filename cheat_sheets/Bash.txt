@@ -94,10 +94,18 @@ grep  "phrase" file 		#used to look for a word or phrase in a file, it will then
 diff file1 file2 		#analyze the 2 files and print out any line that do not match in both files
 
 ========== File Compression and Archiving  ==================
-#
-#
-#
-#
+tar -cf <file> <file> Name		# Archive files
+					# -c = create new archieve
+					# -f = name of the archieve 
+				
+tar -tf <file> <file> Name	        # List archieve content
+					# -t list content
+					# -f = name of the archieve 
+				
+tar -xf <file> <file> Name       	# open archive 
+					# 
+		
+				
 
 
 ============ Variables ============ 
