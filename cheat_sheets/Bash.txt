@@ -9,7 +9,8 @@ route			#retrun deafult route
 netstat -r 		#retrun deafult route
 host <website> 		#returns DNS name resolution
 ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot network conenction
-ping -c 3 <ipadress>	# -c = checks that the destination device can recive packages, in this case 3 
+ping -c 3 <ipadress>	# used to test the reachability of a host on an Internet Protocol network.
+			# -c = checks that the destination device can recive packages, in this case 3 
 
 sudo netstat -tupln	#Return listening ports
 sudo netstat -plnt	#Return listening ports
