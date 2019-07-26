@@ -69,7 +69,7 @@ ssh user@hostname <COMMAND>	#Returns command standard-out peformed on the server
 
 scp file user@hostname:/path_on_server		#Transer file from client to server
 scp file user@hostname:				#Transer file from client to server HOME directory
-scp -P file user@hostname:/path_on_server	#Transer file from client to server over specific port
+scp -P  port file user@hostname:/path_on_server	#Transer file from client to server over specific port
 scp -r dir user@hostname:/path_on_server	#Transer dirctory from client to server
 
 scp user@hostname:/path_on_server .		#Transer file from server to client
