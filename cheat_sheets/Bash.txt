@@ -114,6 +114,13 @@ VARIABLENAME=VALUE		#Assign value to variable
 export VARIABLENAME		#export varaible value, allows the variable o be used in new bash instances
 echo $VARIABLENAME		#returns variable value
 
+
+
+============= Allies ==============
+alias
+alias hello='echo hello world'
+unalias hello 
+
 =========== Riderection  ===========
 Any process that runs on the linux kernel as 3 CHANNELS called:
 STDIN -->0		 	#Your Standard keyboard input
