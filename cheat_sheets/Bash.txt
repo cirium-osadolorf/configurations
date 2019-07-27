@@ -29,7 +29,7 @@ sudo netstat -plnt	#Return listening ports
 ##For CentOS, use:
 # yum install bind-utils
 
-dig -4 <domain> 	# reutrns A records of the domain name
+dig -4 <domain> 	# reutrns "A records" of the domain name
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
