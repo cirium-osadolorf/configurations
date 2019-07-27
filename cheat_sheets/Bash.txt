@@ -1,9 +1,13 @@
 =========== Networking  ==================
 curl ifconfig.me	#returns public ip
 ifconfig		# (Depricated) returns network info
-ip addr show		#returns network info
+ip addr show		# returns network info
 ip a 			# for the lazy
-hostname -I
+ip route show 		# returns info on gateway
+routel 			# returns info on gateway
+nmcli			# returns network info
+nmcli device show	# returns network info
+hostname -I		# returns private ip address
 
 ip route show 		#return default route
 route			#retrun deafult route
