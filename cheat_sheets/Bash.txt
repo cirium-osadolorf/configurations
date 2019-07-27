@@ -4,14 +4,13 @@ ifconfig		# (Obsolate) returns network info
 ip addr show		# returns network info
 ip a 			# for the lazy
 ip route show 		# returns info on gateway
+route			# returns info on gateway
 routel 			# returns info on gateway
+netstat -r 		# returns info on gateway
+
 nmcli			# returns network info
 nmcli device show	# returns network info
 hostname -I		# returns private ip address
-
-ip route show 		#return default route
-route			#retrun deafult route
-netstat -r 		#retrun deafult route
 
 ip n 			# reutns arp (address resolution protocol) table
 
@@ -20,8 +19,8 @@ ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot net
 ping -c 3 <ipadress>	# used to test the reachability of a host on an Internet Protocol network.
 			# -c = checks that the destination device can recive packages, in this case 3 
 
-sudo netstat -tupln	#Return listening ports
-sudo netstat -plnt	#Return listening ports
+sudo netstat -tupln	# Return listening ports
+sudo netstat -plnt	# Return listening ports
 
 ##To install DNS utilities on Ubuntu, use:
 # apt-get update
@@ -115,9 +114,7 @@ tar -tf <file> <file> Name	        # List archieve content
 				
 tar -xf <file> <file> Name       	# open archive 
 					# 
-		
 				
-
 
 ============ Variables ============ 
 VARIABLENAME=VALUE		#Assign value to variable
