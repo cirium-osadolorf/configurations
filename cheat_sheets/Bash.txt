@@ -1,6 +1,6 @@
 =========== Networking  ==================
 curl ifconfig.me	# returns public ip
-ifconfig		# (Depricated) returns network info
+ifconfig		# (Obsolate) returns network info
 ip addr show		# returns network info
 ip a 			# for the lazy
 ip route show 		# returns info on gateway
