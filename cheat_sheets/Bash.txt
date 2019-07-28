@@ -24,13 +24,16 @@ sudo netstat -plnt	# (Obsolate) Return listening ports
 sudo ss -tl		# Return listening TCP ports
 sudo ss -ltn		# Return listening TCP ports and process name
 
-sudo ss -luntp | grep -i dhc
-
-
 ## To install DNS utilities on Ubuntu, use:
 # apt-get install dnsutils -y
 # yum install bind-utils
 dig -4 <domain> 	# reutrns "A records" of the domain name
+
+sudo shclient -r		# release ip address 
+sudo dhclient 			# restarts dhc client 
+sudo ss -luntp | grep -i dhc	# Return dhclient listening port 
+
+
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
