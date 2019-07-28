@@ -31,6 +31,8 @@
 /etc/systemd/system       # system services location
 /etc/systemd/journal.conf # jounal conf file
 
+/var/lib/dhcp/dhcpd.leases  # dhcp client info
+
 ============ Jenkins =============
 /var/lib/jenkins        #Jenkins Home Directory
 
