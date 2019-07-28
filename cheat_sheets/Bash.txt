@@ -21,8 +21,10 @@ ping -c 3 <ipadress>	# used to test the reachability of a host on an Internet Pr
 sudo netstat -tupln	# (Obsolate) Return listening ports
 sudo netstat -plnt	# (Obsolate) Return listening ports
 
-sudo ss -tl		# Return listening ports
-sudo ss -ltn		# Return listening ports and process name
+sudo ss -tl		# Return listening TCP ports
+sudo ss -ltn		# Return listening TCP ports and process name
+
+sudo ss -luntp | grep -i dhc
 
 
 ## To install DNS utilities on Ubuntu, use:
