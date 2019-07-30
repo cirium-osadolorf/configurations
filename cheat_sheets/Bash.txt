@@ -185,6 +185,15 @@ __________________________
 chmod o+w file		#Gives perimsion to others to write
 chmod o-w file		#Takes away perimsion to others to write
 
+__________________________
+
+chown <userName>: file   # changes user  ownership of a file
+chown :<groupName> file  # changes group ownership of a file
+chgrp <groupName> file	 # changes group ownership of a file
+
+# The only user that can change user permission on a file is Root
+
+
 =================== Procesess =================== 
 ps 			#List all process that you own
 ps ax			#Prints list of all process
