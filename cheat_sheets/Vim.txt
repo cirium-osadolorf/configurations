@@ -70,8 +70,8 @@ p           # paste
              # 5 = Ending Line
              # # = Comment symbol
 
-: %s /<old-value>/<new_value>/g    # Replcae all instaces of the word 
-: %s /<old-value>/<new_value>/gc   # Replcae all instaces of the word with confirmation prompt 
+: %s /<old-value>/<new_value>/g    # Replace all instaces of the word 
+: %s /<old-value>/<new_value>/gc   # Replace all instaces of the word with confirmation prompt 
 
 =====================================================
 seraching  ( While in Command mode)
