@@ -1,4 +1,5 @@
-sudo -u postgres psql     # Accessing a Postgres Prompt
+sudo -i -u postgres       # Login as the Postgres user
+sudo -u postgres psql     # Accessing a Postgres Prompt as the current user 
 \l                        # list databases
 \q                        # exit
 
