@@ -1,5 +1,7 @@
 sudo -i -u postgres       # Login as the Postgres user
 sudo -u postgres psql     # Accessing a Postgres Prompt as the current user 
+postgres -V               # View Server version
+psql -V                   # View client version  
 \l                        # list databases
 \q                        # exit
 
