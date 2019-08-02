@@ -10,6 +10,10 @@ psql -V                   # View client version
 
 
 CREATE DATABASE guru99;   # create db
+DROP DATABASE guru99;
+
 \c guru99                 # To connect to a Database 
 \dt                       # List tables 
 SELECT * FROM  table      # list objects in a table
+\d                        # describe table
+\d+                       # describe table with more details 
