@@ -1,1 +1,9 @@
-# 
+sudo -u postgres psql     # Accessing a Postgres Prompt
+\q                        # exit
+
+\du                       # list all accounts in postgres
+\du+
+
+
+CREATE DATABASE guru99;   # create db
+\c guru99                 # To connect to a Database 
