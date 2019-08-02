@@ -1,4 +1,5 @@
 sudo -u postgres psql     # Accessing a Postgres Prompt
+\l                        # list databases
 \q                        # exit
 
 \du                       # list all accounts in postgres
