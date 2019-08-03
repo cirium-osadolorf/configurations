@@ -2,7 +2,7 @@ sudo -i -u postgres       # Login as the Postgres user
 sudo -u postgres psql     # Accessing a Postgres Prompt as the current user 
 postgres -V               # View Server version
 psql -V                   # View client version  
-\l                        # list databases
+\l                        # List databases
 \q                        # exit
 
 \du                       # list all accounts in postgres
@@ -12,8 +12,8 @@ psql -V                   # View client version
 CREATE DATABASE guru99;   # create db
 DROP DATABASE guru99;
 
-\c guru99                 # To connect to a Database 
+\c guru99                 # Connect to a Database 
 \dt                       # List tables 
-SELECT * FROM  table      # list objects in a table
-\d                        # describe table
-\d+                       # describe table with more details 
+SELECT * FROM  table      # List objects in a table
+\d                        # Describe table
+\d+                       # Describe table with more details 
