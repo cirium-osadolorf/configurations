@@ -50,11 +50,11 @@ gpasswd -a <User> <Group>	#add user to a group
 groupdel <Group>		#Delete Group
 
 #Cento
-#NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
+NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
 
 #Ubuntu
-#NEWUSER=test && sudo adduser $NEWUSER ; sudo usermod -aG sudo $NEWUSER 
-#NEWUSER=test && PASWD=pass && sudo adduser --disabled-password --gecos "" $NEWUSER &&  echo "$NEWUSER:$PASWD" | sudo chpasswd
+NEWUSER=test && sudo adduser $NEWUSER ; sudo usermod -aG sudo $NEWUSER 
+NEWUSER=test && PASWD=pass && sudo adduser --disabled-password --gecos "" $NEWUSER &&  echo "$NEWUSER:$PASWD" | sudo chpasswd
 
 
 #sudo useradd test && echo "test:password" | sudo chpasswd
