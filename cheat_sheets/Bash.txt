@@ -27,6 +27,7 @@ sudo ss -ltn		# Return listening TCP ports and process name
 ## To install DNS utilities on Ubuntu, use:
 # apt-get install dnsutils -y
 # yum install bind-utils
+
 dig -4 <domain> 	# reutrns "A records" of the domain name
 
 sudo shclient -r		# release ip address 
