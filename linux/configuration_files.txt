@@ -6,6 +6,8 @@
                          
 /etc/sudoers            # contains the information regarding privileges for different users and groups of our server
 /etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
+                        #  .bash_logout .bashrc  examples.desktop  .profile
+                        
 /etc/passwd             # stores general user info 
 /etc/groups             # stores general group info 
 /etc/shadow             # stores user passwd info
