@@ -262,6 +262,7 @@ service serviceName start		#enable/disable services ability to run
 service serviceName stop 		#enable/disable services ability to run
 service serviceName restart 		#restart services 
 service serviceName reload 
+sudo service --status-all 		# List all running services 
 
 ================ Systremd ======================
 systemd-cgls 				#returns all the processes of the system
@@ -293,6 +294,7 @@ timedatectl set-timezone "time_zone"	# Sets Sysstem time zone
 hostnamectl 				# Returns system hostname
 systemd-resolve website			# Returns hostname IP adress
 systmed-inhibit download file 		# Prevent the system from sleeping before finish the command passed in
+sudo service --status-all 		# List all running services 
 
 ============== search  ==================
 which <program_name>			#returns the bianry path to the program
