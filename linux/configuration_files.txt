@@ -18,7 +18,8 @@
 /var/log/auth.log       # All authentication related events in Debian and Ubuntu server are logged here.
 /var/log/secure         # All authentication related events in Debian and REDHAT/CENTOS server are logged here.
 
-/etc/environment        #
+/etc/environment        # intended for setting environment variables for every user on login
+                        # /etc/environment doesn't allow scripting at all. You can only set variables here
 /etc/profile            #
 ~/.bashrc               #
 ~/.bash_profile         #
