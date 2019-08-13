@@ -96,8 +96,12 @@ sshfs user@hostanme:dir_to-mount /place_to_mount_localally # Mount dir
 fusermount -u /path/to/dirMounted			   # UnmountDir
 
 ============ Text ============ 
-head newfile.txt		#This will display the first 10 lines of a file
-tail newfile.txt		#This will display the last 10 lines of a file
+head newfile.txt		# This will display the first 10 lines of a file
+tail newfile.txt		# This will display the last 10 lines of a file
+tail -f /log			# Monitor Logs in Real Time
+tailf /log			# Monitor Logs in Real Time
+sudo tail -n2 -f /log		# Monitor Logs last n lines in Real Time
+
 touch file.txt			#Create blank files
 cat file.txt 			#Read file
 cat file1.txt file2.txt  	#Read files
