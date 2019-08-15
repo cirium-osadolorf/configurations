@@ -369,6 +369,8 @@ setxkbmap -layout us  # set keyboard to us
 setxkbmap -layout gb  # set keyboard to gb
 
 sudo mount -t cifs -o username=fooo,password=fortune12..# //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
+sudo umount -f -l  /mnt/folder
+
 
 ============  Sending file via putty, from windows to linux ============ 
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
