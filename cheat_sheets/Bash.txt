@@ -281,6 +281,8 @@ systemctl reload serviceName		#reload service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
+systemctl list-unit-files | grep enabled
+
 journalctl				# returns system log ( jorunal ) 
 journalctl -e				# jumps to the ned of the log page
 journalctl -f 				# Returns realtime  log entries
