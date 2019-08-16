@@ -281,7 +281,19 @@ systemctl reload serviceName		#reload service now
 systemctl stop serviceName		#stop service sertvice now
 systemctl help serviceName		#returns manuals of a service
 
+systemctl is-active application.service
+systemctl is-enabled application.service
+systemctl is-failed application.service
+systemctl list-units				# list of all of the active units that systemd knows about
+
+systemctl list-units --all --state=inactive
+systemctl list-units --type=service
+systemctl list-unit-files
 systemctl list-unit-files | grep enabled
+
+systemctl cat application.service		# Cat unite file 
+systemctl list-dependencies sshd.service	# Returns unit's dependency tree
+
 
 journalctl				# returns system log ( jorunal ) 
 journalctl -e				# jumps to the ned of the log page
