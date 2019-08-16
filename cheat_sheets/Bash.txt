@@ -314,6 +314,12 @@ systemd-resolve website			# Returns hostname IP adress
 systmed-inhibit download file 		# Prevent the system from sleeping before finish the command passed in
 sudo service --status-all 		# List all running services 
 
+===================== Powering off ===================
+init 0
+init 6
+shutdown -h +15 "Shutting down in 15 minutes2
+shutdown -r +10 "Rebooting in 10 minutes."
+
 ============== search  ==================
 which <program_name>			#returns the bianry path to the program
 
