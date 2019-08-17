@@ -125,7 +125,7 @@ tar -tf <file> <file> Name	        # List archieve content
 					# -f = name of the archieve 
 				
 tar -xf <file> <file> Name       	# open archive 
-					# 
+					
 				
 
 ============ Variables ============ 
@@ -226,6 +226,7 @@ init 0			#power off
 init 6			#Reebot
 
 ================ File system essential ======================
+
 pwd 			#Print my working directory
 ls			#list the items in the currebt folder
 ls /path/folder		#list the items in the folder of your choice*/
@@ -269,17 +270,19 @@ service serviceName reload
 sudo service --status-all 		# List all running services 
 
 ================ Systremd ======================
-systemd-cgls 				#returns all the processes of the system
-systemd-cgtop 				#returns the top cgroups accodring to their resources
-systemctl status			#returns the top cgroups accodring to their resources
+systemd-cgls 				# returns all the processes of the system
+systemd-cgtop 				# returns the top cgroups accodring to their resources
+systemctl status			# returns the top cgroups accodring to their resources
 
-systemctl status serviceName		#Returns details on the service
-systemctl enable serviceName		#enable service to start at boot
-systemctl disable serviceName		#disbale serivce to start at boot
-systemctl start serviceName		#start service now
-systemctl reload serviceName		#reload service now
-systemctl stop serviceName		#stop service sertvice now
-systemctl help serviceName		#returns manuals of a service
+systemctl status serviceName		# Returns details on the service
+systemctl enable serviceName		# enable service to start at boot
+systemctl disable serviceName		# disbale serivce to start at boot
+systemctl start serviceName		# start service now
+systemctl reload serviceName		# reload service now
+systemctl stop serviceName		# stop service sertvice now
+systemctl help serviceName		# returns manuals of a service
+systemctl daemon-reload			# Reload dependeccy tree, use it after modyfing a unit file
+systemd-delta				# Returns modified unit files
 
 systemctl is-active application.service
 systemctl is-enabled application.service
@@ -293,7 +296,8 @@ systemctl list-unit-files | grep enabled
 
 systemctl cat application.service		# Cat unite file 
 systemctl list-dependencies sshd.service	# Returns unit's dependency tree
-
+systemctl edit <applciation.unit>		# creates a drop-in unit
+systemctl edit --full <applciation.unit>	# creates a drop-in unit
 
 journalctl				# returns system log ( jorunal ) 
 journalctl -e				# jumps to the ned of the log page
@@ -304,15 +308,26 @@ journalctl -u service_name		# Returns log related to the service selected
 journalctl -o versbose 			# Returns log in a DB format
 journalctl -o json-pretty		# Returns log in multi line json format 
 
-systemd-analyze				# Returns how long it took the system to boot up
 localectl 				# Retusns systmem localose and keyboard mapping
 timedatectl				# view and set time zone and system time
 timedatectl list-timezones 		# Return time zones available
 timedatectl set-timezone "time_zone"	# Sets Sysstem time zone 
 hostnamectl 				# Returns system hostname
+
+systemd-analyze				# Returns how long it took the system to boot up
 systemd-resolve website			# Returns hostname IP adress
-systmed-inhibit download file 		# Prevent the system from sleeping before finish the command passed in
-sudo service --status-all 		# List all running services 
+systmed-inhibit download file 		# Prevent the system from sleeping before finishing the command passed in
+
+
+systemctl list-unit-files -t target	# returns all target unit files
+systemctl list-units -t target		# Reutrns active target units
+systemctl get-default			# return default target
+systemctl set-default <target.unit>	# change deafult target to specified target
+systemctl isolate <target.unit>		# change system to specified target
+
+systemctl rescue			# change system to run level 1
+systemctl reboot			# run reboot target unit 
+systemctl poweroff			# run reboot target unit
 
 ===================== Powering off ===================
 init 0
