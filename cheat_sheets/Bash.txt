@@ -364,6 +364,15 @@ gpgcheck=0
 enabled=1
 EOF
 
+================== Mounting ===================
+
+sudo mount -t cifs -o username={{username}},password={{password}} //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
+sudo umount -f -l  /mnt/folder
+
+# NFS
+sudo mount serverIP:/exportFolder_server /mnt/mountfolder_client
+showmount -e 192.168.1.12	# Run this on the client
+
 ==================Extras===================
 ( echo "Hello" ) 	#runs command in a subshell
 
@@ -386,17 +395,9 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 setxkbmap -layout us  # set keyboard to us
 setxkbmap -layout gb  # set keyboard to gb
 
-sudo mount -t cifs -o username=fooo,password=fortune12..# //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
-sudo umount -f -l  /mnt/folder
-
 
 ============  Sending file via putty, from windows to linux ============ 
+
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 #https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
-=========== Running Scripts on Startup ======================
-
-# Systemd
-https://www.youtube.com/watch?v=-aKb-k8B8xo&list=PLJQpcSiy3yYNKnqW4BRL3T5ULTr5MdxOv&index=65&t=10s
-# rc.local
-https://www.youtube.com/watch?v=4bFgB1XTQXI
