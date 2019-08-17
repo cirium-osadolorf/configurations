@@ -15,6 +15,7 @@ Vagrant destroy -f        # used to destroy the environment
 Vagrant validate          # validates vagrant file
 Vagrant provision         # runs any configured provisioners
 Vagrant reload            # Reboots the system, use it after alteraing the Vagrant file
+vagrant reload <id> --provision  # Reboots the system and also run provisioner
 Vagrant status            # returns the state of the machine
 Vagrant ssh               # SSH into a vagrant box
 vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
