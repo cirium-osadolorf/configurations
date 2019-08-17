@@ -31,10 +31,13 @@
 /var/www                  # used to server static web content
 /srv/www                  # used to serve dynamic web content
 
-/etc/systemd/system       # system services location
-/etc/systemd/journal.conf # jounal conf file
-
 /var/lib/dhcp/dhcpd.leases  # dhcp client info
+
+
+============ Systemd =============
+/etc/systemd/system       # system services location
+/usr/lib/systemd/system   # lcoation where packages install unit files (Do not edit this them) 
+/etc/systemd/journal.conf # jounal conf file
 
 ============ Jenkins =============
 /var/lib/jenkins        #Jenkins Home Directory
@@ -44,7 +47,6 @@
 /usr/share/share/html   # Default html page Nginx server
 
 =========== Ansible =====================
-
 /etc/ansible/ansible.cfg  # Ansible configuration file 
 /etc/ansible/hosts        # Ansible default inventory 
 
