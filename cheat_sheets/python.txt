@@ -3,4 +3,4 @@
 #######################################
 
 string.strip()          # returns a copy of the string in which white spaces have been stripped
-string.strip(".sql")    # returns a copy of the string in which the input string will be stripped 
+string.strip(".sql")    # returns a copy of the string in which the input parameter will be stripped 
