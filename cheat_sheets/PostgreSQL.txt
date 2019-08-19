@@ -1,4 +1,5 @@
 sudo -i -u postgres       # Login as the Postgres user
+# https://www.a2hosting.co.uk/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
 sudo -u postgres psql     # Accessing a Postgres Prompt as the current user 
 postgres -V               # View Server version
 psql -V                   # View client version  
