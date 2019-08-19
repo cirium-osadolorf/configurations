@@ -379,6 +379,50 @@ gpgcheck=0
 enabled=1
 EOF
 
+================== Cron ================== 
+# https://crontab.guru/
+crontab -l 		# return user cronjobs
+crontab -e		# edit croontab
+crontab -u <user> -e	# edit user crontab
+sudo contabl -l 	# returns root crontab
+sudo crontab -e
+crontab -r		# removes crontab for user
+
+
+# template
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                       7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+
+# The following will run on the 1st and the 15th of the month
+# 0 0 1,15 * *  command_to_execute
+
+# The following will run the command every 10 mins
+# */10 * * * *  command_to_execute
+
+# The following will run the command every 3 days
+# 0 0 */3 * *  command_to_execute
+
+# The following will run the command from midnight to 5 am of every day
+# 0 0-5 * * *  command_to_execute
+
+# The following will run the command every 30 min Mon to Frid from 9am-5pm
+*/30 9-17 * * 1-5 command_to_execute
+
+###### Sample crontab ######
+
+# Empty temp folder every Friday at 5pm
+0 5 * * 5 rm -rf /tmp/*
+
+# Backup images to Google Drive every night at midnight
+0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
+
 ================== Mounting ===================
 
 sudo mount -t cifs -o username={{username}},password={{password}} //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
