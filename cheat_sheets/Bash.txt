@@ -432,6 +432,14 @@ sudo umount -f -l  /mnt/folder
 sudo mount serverIP:/exportFolder_server /mnt/mountfolder_client
 showmount -e 192.168.1.12	# Run this on the client
 
+
+================== Encryption ===================
+# https://www.cyberciti.biz/tips/linux-how-to-encrypt-and-decrypt-files-with-a-password.html
+
+gpg -c filename				# Encrypt 
+gpg myfinancial.info.txt.gpg		# Decrypt
+gpg -d myfinancial.info.txt.gpg		# Decrypt
+gpg --decrypt myfinancial.info.txt.gpg	# Decrypt
 ==================Extras===================
 ( echo "Hello" ) 	#runs command in a subshell
 
