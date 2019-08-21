@@ -86,6 +86,8 @@ aws ec2 describe-instaces  # Retuns ec2 instaces
 S3
 =================================================================
 aws s3 ls 
+aws s3 cp s3://fmap-sat/planetscope ./ --recursive  # Copies content within a bucket into destination folder
+
 
 =================================================================
 Load Balancer
