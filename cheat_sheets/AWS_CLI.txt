@@ -87,7 +87,10 @@ S3
 =================================================================
 aws s3 ls 
 aws s3 cp s3://pathS3 ./ --recursive     # Copies content within a bucket into destination folder
-aws s3 cp s3://pathS3 ./ --recursive --exclude "*" --include object_name"  # Download specificied object name
+#aws s3 cp s3://fmap-sat/etc . --recursive --exclude "*" --include "*5e4d01*" # Download only objects that match the include pattern
+
+
+
 
 
 =================================================================
