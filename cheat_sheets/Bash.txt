@@ -439,8 +439,12 @@ showmount -e 192.168.1.12	# Run this on the client
 
 gpg -c filename				# Encrypt 
 gpg myfinancial.info.txt.gpg		# Decrypt
+gpg -o outputFile fileToDecrypt.gpg	# Decrypt gpg content to destination file
 gpg -d myfinancial.info.txt.gpg		# Decrypt
 gpg --decrypt myfinancial.info.txt.gpg	# Decrypt
+
+gpg --gen-key				# generates keys (public and private)
+# You can use gpg pub and private key to encrypt and decrypt files
 ==================Extras===================
 ( echo "Hello" ) 	#runs command in a subshell
 
