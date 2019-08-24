@@ -446,6 +446,7 @@ gpg --decrypt myfinancial.info.txt.gpg	# Decrypt
 gpg --gen-key				# generates keys (public and private)
 # You can use gpg pub and private key to encrypt and decrypt files
 ==================Extras===================
+echo $?			# return exit status of previuos command
 ( echo "Hello" ) 	#runs command in a subshell
 
 ( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
