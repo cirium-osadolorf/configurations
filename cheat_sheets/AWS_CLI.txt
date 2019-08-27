@@ -90,6 +90,7 @@ aws s3 cp s3://pathS3 ./ --recursive     # Copies content within a bucket into d
 #aws s3 cp s3://fmap-sat/etc . --recursive --exclude "*" --include "*5e4d01*" # Download only objects that match the include pattern
 aws s3api list-objects --bucket bucketname --query "Contents[?LastModified>='2019-06-01T00:00:000Z'].{Key: Key , LastModified: LastModified}"
 
+aws s3api list-objects --bucket myBucketName --query "Contents[?contains(Key, `mySearchPattern`)]"
 
 
 
