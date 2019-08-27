@@ -175,7 +175,8 @@ A & B || c			#Runs either b or c if A succeed
 1  == Stands for "execute"
 0  == Stand for "No permissions"
 
-chmod 766 file			#Chanage permssion of suer , groups and others in one go		
+chmod 766 file			# Change permssion of suer , groups and others in one go		
+chmod -R 777 /www/store		# REcorsively change permssion of folder
 
 #	u /*user*/
 #	g /*group*/
