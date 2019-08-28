@@ -470,6 +470,8 @@ setxkbmap -layout us  # set keyboard to us
 setxkbmap -layout gb  # set keyboard to gb
 
 
+VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
+
 ============  Sending file via putty, from windows to linux ============ 
 
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
