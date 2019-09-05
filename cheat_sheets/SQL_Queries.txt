@@ -1,0 +1,1 @@
+SELECT customer_id, field_id, source_id, product_type_id, start_date, end_date FROM services WHERE customer_id='user';
