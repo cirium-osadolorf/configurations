@@ -438,14 +438,19 @@ showmount -e 192.168.1.12	# Run this on the client
 ================== Encryption ===================
 # https://www.cyberciti.biz/tips/linux-how-to-encrypt-and-decrypt-files-with-a-password.html
 
-gpg -c filename				# Encrypt 
-gpg myfinancial.info.txt.gpg		# Decrypt
-gpg -o outputFile fileToDecrypt.gpg	# Decrypt gpg content to destination file
+gpg -c filename				# (symmetric encryption) Encrypt  
+gpg myfinancial.info.txt.gpg		# (symmetric encryption) Decrypt
+gpg -o outputFile fileToDecrypt.gpg	# (symmetric encryption Decrypt gpg content to destination file
+echo RELOADAGENT | gpg-connect-agent	# reload gpg agent, clear it's cache, hence it will forget passoword
 gpg -d myfinancial.info.txt.gpg		# Decrypt
 gpg --decrypt myfinancial.info.txt.gpg	# Decrypt
 
-gpg --gen-key				# generates keys (public and private)
-# You can use gpg pub and private key to encrypt and decrypt files
+gpg --gen-key							# (asymmetric encryption) generate gpg keys
+gpg --armor --output pubkey.txt --export 'Adrian'		# (asymmetric encryption) export pub key to a file
+gpg --armor --output privkey.asc --export-secret-keys 'Adrian'	# (asymmetric encryption) export private key to a file
+gpg --encrypt --recipient 'Adrian' hiddenmessage.txt		# (asymmetric encryption) encrypt file with the adrian public key
+gpg --output decrypted.txt --decrypt hiddenmessage.txt.gpg	# (asymmetric encryption) dencrypt file with the adrian public key
+
 ==================Extras===================
 echo $?			# return exit status of previuos command
 ( echo "Hello" ) 	#runs command in a subshell
