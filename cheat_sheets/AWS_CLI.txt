@@ -1,14 +1,34 @@
 # Initial configuration
 # http://skillslane.com/aws-tutorial-vpc-launch-instance-cli/
+# https://github.com/rajivkanaujia/alphaworks/wiki/Installing-AWS-CLI-via-pip3-and-python3
+
 =================================================================
 Configuration
 =================================================================
 
+pip3 install --user --upgrade awscli
 aws configure 
+
+# Create another AWS CLI user profile that uses another keys
 aws configure --profile user
+aws configure --profile  user2
+
+# Switching between user
+aws ec2 describe-instances
+aws ec2 describe-instances --profile user2
+
+# Set default aws profile
 export AWS_DEFAULT_PROFILE=<USER>
 
+# List of configured profiles
+cat  ~/.aws/credentials | grep "\["
+
+# return caller identity
 aws sts get-caller-identity
+
+=================================================================
+IAM
+=================================================================
 
 =================================================================
 Availability zones
