@@ -2,6 +2,7 @@
 https://docs.docker.com/engine/reference/run/
 
 
+
 ======================================== Help ==============================
 docker --help                             #returns list of managment_commands and commands
 docker managment_command --help           #returns list of commands available to the specified managment_command 
@@ -257,7 +258,5 @@ docker service inspect [SERVICE_ID]
 docker service ps [SERVICE_ID]
 docker service scale [SERVICE_ID]=3
 
-
-                               
-                                             
-
+docker cp foo.txt mycontainer:/foo.txt # One specific file can be copied TO the container like:
+docker cp mycontainer:/foo.txt foo.txt # One specific file can be copied FROM the container like             
