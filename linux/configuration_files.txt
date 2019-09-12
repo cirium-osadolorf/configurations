@@ -51,3 +51,5 @@
 /etc/ansible/hosts        # Ansible default inventory 
 
 
+=========== Docker =====================
+/var/lib/docker/volumes   # path to docker volumes
