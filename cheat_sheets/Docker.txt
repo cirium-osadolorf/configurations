@@ -260,3 +260,6 @@ docker service scale [SERVICE_ID]=3
 
 docker cp foo.txt mycontainer:/foo.txt # copy file from host to container
 docker cp mycontainer:/foo.txt foo.txt # copy file from container to host          
+
+docker update --restart=always <container> # Add a restart policy to a container that was already created
+
