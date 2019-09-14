@@ -24,3 +24,6 @@ SELECT * FROM  <TABLE>    # List objects in a table
 # Postress from the comand line
 ###############################
 # https://www.a2hosting.co.uk/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
+
+
+psql -c '\l'    # List databses 
