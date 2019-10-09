@@ -1,9 +1,18 @@
 ============= Git configuration  ====================
 
 git config -l 
-git config --global user.name <username>
-git config --global user.email <email_addr>
-git config --system core.editor vim
+git config --list
+git config --list --show-origin
+
+git config --global user.name <username>      # sets global git credentials
+git config --global user.email <email_addr>   # sets global git credentials
+
+git config --system core.editor vim          
+git config --global core.editor emac
+
+git config user.name "Your Name Here"         # sets local git credentials
+git config user.email your@email.com          # sets local git credentials
+
 
 # Alternatively, you may store system-wide configuration values in the file directly:
 #– /etc/gitconfig which corresponds to --system
