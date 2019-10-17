@@ -11,14 +11,13 @@ psql -V                   # View client version
 
 CREATE DATABASE <DBNAME>;   # create db
 DROP DATABASE <DBNAME>;
+ALTER DATABASE "old_dbname" RENAME TO "new_dbname"
 
 \c <DBNAME>               # Connect to a Database 
 \dt                       # List tables 
 SELECT * FROM  <TABLE>    # List objects in a table
 \d                        # Describe table
 \d+                       # Describe table with more details 
-
-
 
 ###############################
 # Postress from the comand line
