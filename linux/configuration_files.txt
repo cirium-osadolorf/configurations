@@ -53,3 +53,9 @@
 
 =========== Docker =====================
 /var/lib/docker/volumes   # path to docker volumes
+
+
+=========== Postgres =====================
+/etc/postgresql/9.5/main/pg_hba.conf
+/etc/postgresql/9.5/main/postgresql.conf
+
