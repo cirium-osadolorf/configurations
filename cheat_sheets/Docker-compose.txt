@@ -30,3 +30,5 @@ docker-compose up -d              # Create and start containers in the backgroun
 
 docker-compose version           # Show the Docker-Compose version information
 docker-compose up -f /path/yml    #path to compose yml file
+docker-compose -f up /path/yml    #path to compose yml file
+
