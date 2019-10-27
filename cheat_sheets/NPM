@@ -1,0 +1,3 @@
+npm init        // Generates a package.json file
+npm install paackage    // install package locally
+npm install -g  package // insatllas a package globally
