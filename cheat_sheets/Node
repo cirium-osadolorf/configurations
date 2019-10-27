@@ -1,6 +1,7 @@
 node --version
 npm --version
 
+node     // returns js REPL
 
 npm init        // Generates a package.json file
 npm install paackage    // install package locally
