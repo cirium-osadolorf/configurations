@@ -59,3 +59,9 @@
 /etc/postgresql/9.5/main/pg_hba.conf
 /etc/postgresql/9.5/main/postgresql.conf
 
+
+
+=========== Node =====================
+Package.json
+
+
