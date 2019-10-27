@@ -62,6 +62,7 @@
 
 
 =========== Node =====================
-Package.json
+Package.json    // file that contains list of a nodeJS dependencies
+node_modules/   // folder where dependencies are installed
 
 
