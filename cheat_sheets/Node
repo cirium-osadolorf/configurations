@@ -7,3 +7,10 @@ node file.js // runs java scrirpt file
 npm init        // Generates a package.json file
 npm install paackage    // install package locally
 npm install -g  package // insatllas a package globally
+
+
+######################################################
+## Angular
+############################################
+
+ng serve --host 0.0.0.0
