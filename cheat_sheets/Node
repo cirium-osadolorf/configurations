@@ -29,3 +29,12 @@ ng serve --host 0.0.0.0     // serve project to all IPs
 ############################################
 ## Typescript
 ############################################
+
+tsc file.ts         // compiles typescript to js
+node file.js        // runs js that has been complied by typescript
+
+tsc file.ts --ot output-script.js   // specify output file name
+tsc file.ts --ot output-script.js  --watch  // specify output file name
+                                            // updates the js output file in real time, as you save the ts file
+tsc --help  
+tsc --init  // generate a tsconfig.json
