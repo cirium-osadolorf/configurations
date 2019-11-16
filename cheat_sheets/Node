@@ -7,7 +7,7 @@ node file.js // runs java scrirpt file
 npm init        // Generates a package.json file
 npm install paackage    // install package locally
 npm install -g  package // insatllas a package globally
-
+npm root -g           // teels you where your global packages are being installed
 npm uninstall <name>
 
 ######################################################
