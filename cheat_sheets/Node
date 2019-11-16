@@ -13,12 +13,15 @@ npm uninstall <name>
 ######################################################
 ## Angular
 ############################################
-ng new [project-name]   // Create Angular CLI app
+ng new [project-name]        // Create Angular CLI app
 ng generate component [name]  // Create new component
-ng generate service [name]
-ng generate module [name]
+ng g c [name]                 // Create new component
+ng generate service [name]    // Create new service
+ng g s [name]                 // Create new service
+ng generate module [name]    // Create new module
+ng g module [name]            // Create new module
 
-ng serve --host 0.0.0.0
+ng serve --host 0.0.0.0     // serve project to all IPs
 
 
 
