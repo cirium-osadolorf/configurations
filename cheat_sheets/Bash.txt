@@ -204,6 +204,9 @@ chgrp <groupName> file	 # changes group ownership of a file
 
 =================== Procesess =================== 
 ps aux  | grep -i process
+ps -ef  | grep -i process
+
+
 ps 			#List all process that you own
 ps ax			#Prints list of all process
 ctrl +z 		#Used to pause a process
