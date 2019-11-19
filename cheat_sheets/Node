@@ -1,16 +1,17 @@
 node --version
 npm --version
 
-node     // returns js REPL
-node file.js // runs java scrirpt file
+node                              // returns js REPL
+node file.js                      // runs javascrirpt file
 
-npm init        // Generates a package.json file
-npm install paackage    // install package locally
-npm install -g  package // install a package globally
+npm init                          // Generates a package.json file
+npm install <paackageName>        // install package locally
+npm install -g  <paackageName>   // install a package globally
+npm install   <paackageName>   --save-dev // install package as a dev dependency
 
-npm root -g           // teels you where your global packages are being installed
-npm uninstall <name>
-npm remove  <name>
+npm root -g                     // teels you where your global packages are being installed
+npm uninstall <paackageName>
+npm remove  <paackageName>
 
 ######################################################
 ## Angular
