@@ -481,8 +481,7 @@ setxkbmap -layout gb  # set keyboard to gb
 cat /proc/sys/vm/swappiness	# Returns swapiness level
 sudo sysctl vm.swappiness=10 	# Change swappines level
 
-
-
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf	# Appends input to output file
 
 VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
 
