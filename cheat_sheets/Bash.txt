@@ -478,6 +478,11 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 setxkbmap -layout us  # set keyboard to us
 setxkbmap -layout gb  # set keyboard to gb
 
+cat /proc/sys/vm/swappiness	# Returns swapiness level
+sudo sysctl vm.swappiness=10 	# Change swappines level
+
+
+
 
 VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
 
