@@ -33,6 +33,8 @@
 
 /var/lib/dhcp/dhcpd.leases  # dhcp client info
 
+/etc/sysctl.conf          # file is used to override default kernel parameter values
+
 
 ============ Systemd =============
 /etc/systemd/system       # system services location
