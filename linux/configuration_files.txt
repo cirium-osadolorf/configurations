@@ -33,7 +33,7 @@
 
 /var/lib/dhcp/dhcpd.leases  # dhcp client info
 
-/etc/sysctl.conf          # file is used to override default kernel parameter values
+/etc/sysctl.conf          # file is used to override default kernel parameter values, for exmpale swap
 
 
 ============ Systemd =============
