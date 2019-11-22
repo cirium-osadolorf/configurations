@@ -463,6 +463,8 @@ sudo sysctl vm.swappiness=10 	# Change swappines level
 sudo smem -nk
 sudo smem -p
 sudo smem --processfilter="firefox"
+sudo swapoff -a
+sudo swapon -a
 
 ==================Extras===================
 echo $?			# return exit status of previuos command
