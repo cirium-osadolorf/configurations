@@ -218,7 +218,7 @@ top
 lscpu			#Returns- information about the cpu and processing units
 hwinfo  --short		#Returns- Hardware Information
 lshw -short		#Retruns - List Hardware
-free -m			#Check the amount of Ram used
+free -m			#Check the amount of Ram used (Phsyscal ram and Swap)
 
 ================ PowerOff ============================
 shutdown now		#power off
