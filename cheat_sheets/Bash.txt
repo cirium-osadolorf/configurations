@@ -501,3 +501,9 @@ VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
 pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 #https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
+
+
+
+df -h 	# How to view disk space usage in human readable format
+df -BG  /mnt/SDS_data_small/ # How to view space available and mount point for a folder
+			     # return size info in GB
