@@ -513,3 +513,5 @@ du -sh /file/path	# returns size of folder
 du -shk /file/path	# returns size of a folder in Kilobytes
 
 find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt
+
+sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
