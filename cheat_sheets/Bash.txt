@@ -359,6 +359,14 @@ su - user		#logs you to the user in the user home folder
 
 lsblk	# reutrns paritions
 
+
+df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
+df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
+
+du -sh /file/path	# returns size of folder
+du -shk /file/path	# returns size of a folder in Kilobytes
+
+
 =============== EOF - Here Document  ========
 # A here document is used to redirect input into an interactive shell script or program.
 # https://superuser.com/questions/1003760/what-does-eof-do
@@ -502,16 +510,7 @@ pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 #https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
 
-
-
-df -h 	# How to view disk space usage in human readable format
-df -BG  /mnt/SDS_data_small/ # How to view space available and mount point for a folder
-			     # return size info in GB
-
-
-du -sh /file/path	# returns size of folder
-du -shk /file/path	# returns size of a folder in Kilobytes
-
-find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt
+find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt	
 
 sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
+
