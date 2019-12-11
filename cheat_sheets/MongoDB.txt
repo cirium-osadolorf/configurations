@@ -1,0 +1,23 @@
+mongo                               # Log you into the mongo DB shell
+
+use dbName                          # switch (create if does not exist) to a db
+db.createCollection("staff_info")   # crating a collection ("table")
+show collections                    # returns a list of collection (tables)
+db.staff_info.drop()                # Drops the collection (table)
+db.dropDatabase()                   # Drops Database
+
+mongoimport -d cities -c cityinfo —type CSV —file ./cities.csv —headerline  # uses CSV file to create ad DB
+  # cities = db Name
+  # cityinfo = name of the collection 
+  # headerline = mongo looks at the first line of the csv and uses the columns as a key for the pairs
+
+###############################################
+# Queries
+###############################################
+
+db.staff_info.insert({name:"jenny",phone:"8675309",status:"jessies"})   # insert row into ac Collection (table)
+
+db.staff_info.find()                   # returns all items in the collection (get all)
+db.staff_info.find({name:"jenny"})     # returns rows that match search parameter
+db.staff_info.updateOne({name:"jenny"},{$set:{status:"mine"}})    # Updates database entry
+db.staff_info.remove({name:"jenny"})    # removes entry from the collection (table)
