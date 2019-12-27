@@ -474,6 +474,8 @@ sudo swapoff -a
 sudo swapon -a
 
 ==================Extras===================
+curl -I ip_Adress # Curls the header of the target ip
+
 echo $?			# return exit status of previuos command
 ( echo "Hello" ) 	#runs command in a subshell
 
