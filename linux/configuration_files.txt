@@ -1,9 +1,14 @@
 ============ System  =============
 
+
 /etc/resolv.conf        # DNS name the system contacts
 /etc/hosts              #used to map hostnames (in other words domains) to IP addresses. 
                         # With the hosts file you can change the IP address that you resolve a given domain name to. 
-                         
+                 
+/etc/nsswitch.conf      # is used by applications tomdetermine the sources from which to 
+                          obtain name-service information,and in what order                
+                 
+                 
 /etc/sudoers            # contains the information regarding privileges for different users and groups of our server
 /etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
                         #  .bash_logout .bashrc  examples.desktop  .profile
