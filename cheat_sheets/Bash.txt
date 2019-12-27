@@ -32,9 +32,7 @@ sudo dhclient 			# restarts dhc client
 sudo ss -luntp | grep -i dhc	# Return dhclient listening port 
 
 
-## To install DNS utilities on Ubuntu, use:
-# apt-get install dnsutils -y
-# yum install bind-utils
+
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
