@@ -332,6 +332,8 @@ systemctl rescue			# change system to run level 1
 systemctl reboot			# run reboot target unit 
 systemctl poweroff			# run reboot target unit
 
+
+sudo systemctl status {firewalld,iptables} # returns the running services
 ===================== Powering off ===================
 init 0
 init 6
