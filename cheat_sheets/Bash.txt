@@ -520,4 +520,4 @@ sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
 
 
 tree --du -h /opt/ktube-media-downloader
-
+sudo  tune2fs -l /dev/nvme2n1 | grep Block
