@@ -363,6 +363,10 @@ df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
 
 du -sh /file/path	# returns size of folder
 du -shk /file/path	# returns size of a folder in Kilobytes
+du -shm /home/tecmint	# returns size of a folder in mb
+
+du -h /home/tecmint 	# returns the size of each file inside the target folder
+du -mh /home/tecmint
 
 
 =============== EOF - Here Document  ========
