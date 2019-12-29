@@ -112,6 +112,7 @@ rm -rf folder 			#removes directoriey
 cp  file location/path		#copy a file from a location to the other
 grep  "phrase" file 		#used to look for a word or phrase in a file, it will then print the specific line  
 diff file1 file2 		#analyze the 2 files and print out any line that do not match in both files
+diff -qr directory-1/ directory-2/ 	# returns diff between dirs, r = rescurive and q = returns only differenes
 
 ========== File Compression and Archiving  ==================
 tar -cf <file> <file> Name		# Archive files
