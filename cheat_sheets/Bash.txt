@@ -48,13 +48,12 @@ usermod -aG <Group> <User>	#add user to a group
 gpasswd -a <User> <Group>	#add user to a group	
 groupdel <Group>		#Delete Group
 
-#Cento
+#User creaion in Centos
 NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
 
-#Ubuntu
+#User creaion in Ubuntu
 NEWUSER=test && sudo adduser $NEWUSER ; sudo usermod -aG sudo $NEWUSER 
 NEWUSER=test && PASWD=pass && sudo adduser --disabled-password --gecos "" $NEWUSER &&  echo "$NEWUSER:$PASWD" | sudo chpasswd
-
 
 #sudo useradd test && echo "test:password" | sudo chpasswd
 ======= Groups ===========================
@@ -65,7 +64,7 @@ sudo groupadd basket
 /*useradd == Creates a new group*/
 /*basket == the group username can be anything*/
 
-sudo usermod -a -G basket frank
+sudo usermod -a -G basket frank	
 
 /*user mod is used to modify users*/
 /*-a == appennd or add to a group*/
@@ -97,10 +96,9 @@ fusermount -u /path/to/dirMounted			   # UnmountDir
 head newfile.txt		# This will display the first 10 lines of a file
 tail newfile.txt		# This will display the last 10 lines of a file
 tail -f /log			# Monitor Logs in Real Time
-tailf /log			# Monitor Logs in Real Time
 sudo tail -n2 -f /log		# Monitor Logs last n lines in Real Time
 
-touch file.txt			#Create blank files
+touch file.txt			#Create blank file
 cat file.txt 			#Read file
 cat file1.txt file2.txt  	#Read files
 mkdir				#maked directory
@@ -153,6 +151,10 @@ echo "hello" >>file.txt		#create a new line and start inputing content into a ne
 
 zzzz 2> err.txt			#Insert error message into file by overwrting the file content
 zzzz 2>> err.txt		#Insert error message into the file new line
+
+
+SomeCommand 2>&1 | tee SomeFile.txt	# outputs both stderr and output displayed on the console and in a file
+
 
 ============ Operators ======================
 #link to the resource https://askubuntu.com/questions/334994/which-one-is-better-using-or-to-execute-multiple-commands-in-one-line
@@ -212,6 +214,7 @@ ctrl +z 		#Used to pause a process
 kill (Process_id)	#used to  kill proceses
 
 top
+htop 
 
 ============== Hardware information ==============
 lscpu			#Returns- information about the cpu and processing units
@@ -257,6 +260,66 @@ locate software		# locate command in Linux is used to find the files by name (Lo
 find software		# used to find files and directories (Looks though the file system)
 which software		# used to locate the executable file associated with the given command
 
+===================== Powering off ===================
+init 0
+init 6
+shutdown -h +15 "Shutting down in 15 minutes2
+shutdown -r +10 "Rebooting in 10 minutes."
+
+
+============== System ==================
+uname  -a		#returns system info
+lsb_release  -a		#returns system info
+who 			#returns loggged in users
+w			# returns logged in users with more details
+id 			#return information on the user account
+users 			#returns logged in users
+users | wc -w		#returns number of logged in users
+whoami 			#returns logged suer
+su			#logs you to root in the current directory 
+su -			#logs you to root in the root home folder
+su user			#logs you to  the user in the current directory 
+su - user		#logs you to the user in the user home folder
+
+lsblk	# reutrns paritions
+
+
+df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
+df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
+
+du -sh /file/path	# returns size of folder
+du -shk /file/path	# returns size of a folder in Kilobytes
+du -shm /home/tecmint	# returns size of a folder in mb
+
+du -h /home/tecmint 	# returns the size of each file inside the target folder
+du -mh /home/tecmint
+
+
+=============== EOF - Here Document  ========
+# A here document is used to redirect input into an interactive shell script or program.
+# https://superuser.com/questions/1003760/what-does-eof-do
+
+# Read standard in 
+grep -i hello <<EOF
+hello dear
+friend
+EOF
+
+# Read standard in 
+wc -l << EOF
+This is a simple lookup program 
+for good (and bad) restaurants
+in Cape Town.
+EOF
+
+# Write to a file from standard in
+touch <File>
+cat << EOF > /path/<File>
+[nginx]
+baseurl=http://nginx.org/packages/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+EOF
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
@@ -335,68 +398,6 @@ systemctl poweroff			# run reboot target unit
 
 
 sudo systemctl status {firewalld,iptables} # returns the running services
-===================== Powering off ===================
-init 0
-init 6
-shutdown -h +15 "Shutting down in 15 minutes2
-shutdown -r +10 "Rebooting in 10 minutes."
-
-============== search  ==================
-which <program_name>			#returns the bianry path to the program
-
-============== System ==================
-uname  -a		#returns system info
-lsb_release  -a		#returns system info
-who 			#returns loggged in users
-w			# returns logged in users with more details
-id 			#return information on the user account
-users 			#returns logged in users
-users | wc -w		#returns number of logged in users
-whoami 			#returns logged suer
-su			#logs you to root in the current directory 
-su -			#logs you to root in the root home folder
-su user			#logs you to  the user in the current directory 
-su - user		#logs you to the user in the user home folder
-
-lsblk	# reutrns paritions
-
-
-df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
-df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
-
-du -sh /file/path	# returns size of folder
-du -shk /file/path	# returns size of a folder in Kilobytes
-du -shm /home/tecmint	# returns size of a folder in mb
-
-du -h /home/tecmint 	# returns the size of each file inside the target folder
-du -mh /home/tecmint
-
-
-=============== EOF - Here Document  ========
-# A here document is used to redirect input into an interactive shell script or program.
-# https://superuser.com/questions/1003760/what-does-eof-do
-
-# Read standard in 
-grep -i hello <<EOF
-hello dear
-friend
-EOF
-
-# Read standard in 
-wc -l << EOF
-This is a simple lookup program 
-for good (and bad) restaurants
-in Cape Town.
-EOF
-
-# Write to a file from standard in
-touch <File>
-cat << EOF > /path/<File>
-[nginx]
-baseurl=http://nginx.org/packages/centos/7/$basearch/
-gpgcheck=0
-enabled=1
-EOF
 
 ================== Cron ================== 
 # https://crontab.guru/
@@ -483,10 +484,9 @@ sudo swapon -a
 ==================Extras===================
 curl -I ip_Adress # Curls the header of the target ip
 
-echo $?			# return exit status of previuos command
-( echo "Hello" ) 	#runs command in a subshell
-
-( echo $BASH_SUBSHELL)	#runs commaind in a subshell 
+echo $?			# return exit status of previuos command, 0 = sucess , 1 = error, >1 = other special error
+( echo "Hello" ) 	# runs command in a subshell
+( echo $BASH_SUBSHELL)	# runs commaind in a subshell 
 
 CTRL + A 		#Takes you to the begining of the comand line
 CTRl + E 		#Takes you to the end of the comand line
@@ -495,7 +495,8 @@ Up and Down		#scroll through the commands
 ctrl + r		#used after typing a comand, used to rewrite the same type of commands that was used in time past 
 ctrl+c 			#interupt, it will get you out of a process 
 
-sha256sum fileName | grep fcaf10fa60066437b20... #Compares the result of the hash operation with the original, if the output from gerp is red, then the file was not hijacked
+sha256sum fileName | grep fcaf10fa60066437b20... # Compares the result of the hash operation with the original, if the output from gerp
+						 # is red, then the file was not hijacked
 
 export PS1="\e[0;31m[\u@\h \W]\$ \e[m "		#To set a red color prompt
 #Link to  Promopt formatting --> https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
@@ -522,5 +523,5 @@ find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt
 sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
 
 
-tree --du -h /opt/ktube-media-downloader
-sudo  tune2fs -l /dev/nvme2n1 | grep Block
+tree --du -h /opt/ktube-media-downloader		# Returns tree output with size information
+sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
