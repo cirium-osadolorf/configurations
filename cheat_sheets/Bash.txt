@@ -281,7 +281,7 @@ su -			#logs you to root in the root home folder
 su user			#logs you to  the user in the current directory 
 su - user		#logs you to the user in the user home folder
 
-lsblk	# reutrns paritions
+lsblk	# list block devices
 
 
 df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
