@@ -35,6 +35,12 @@ sudo ss -luntp | grep -i dhc	# Return dhclient listening port
 telnet {host} {port}
 nmap -p {port} {host}		# ping and test for a specific port
 
+nc -l 2399			# Server side - server listens on selected port
+nc localhost 2399		# Client side - client communicate to server on selected port
+
+nc localhost 2399 Hello Server	# Client side - client sends message to server over specfific port
+nc -l 2399 Hello Server		# Server sidee	- Server listens on selected port with message
+
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
 
