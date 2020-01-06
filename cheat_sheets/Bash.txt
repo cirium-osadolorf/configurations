@@ -32,7 +32,8 @@ sudo dhclient 			# restarts dhc client
 sudo ss -luntp | grep -i dhc	# Return dhclient listening port 
 
 
-
+telnet {host} {port}
+nmap -p {port} {host}		# ping and test for a specific port
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
