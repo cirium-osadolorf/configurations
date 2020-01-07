@@ -24,7 +24,7 @@ git config user.email your@email.com          # sets local git credentials
 ============= Repository Basics ===============
 
 git init                     # initalize a git repository
-git staus                    # returns the status of the repo
+git status                   # returns the status of the repo
 git add <filename>           # adds a specific file to staging
 git add .                    # adds all files to staging
 git commit -m "text "        # commits the changes
