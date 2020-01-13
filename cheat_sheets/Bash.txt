@@ -487,6 +487,7 @@ sudo smem -p
 sudo smem --processfilter="firefox"
 sudo swapoff -a
 sudo swapon -a
+sudo swapon --show	# return swap location
 
 ==================Extras===================
 curl -I ip_Adress # Curls the header of the target ip
