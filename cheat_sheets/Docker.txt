@@ -271,3 +271,6 @@ docker run -it --user nobody busybox  # run container as a user
 
 # Commit a container with new CMD and EXPOSE instructions
 docker commit --change='CMD ["apachectl", "-DFOREGROUND"]' -c "EXPOSE 80" c3f279d17e0a  svendowideit/testimage:version4 
+
+
+docker rename my_container my_new_container
