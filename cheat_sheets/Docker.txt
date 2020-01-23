@@ -66,7 +66,6 @@ docker container rm -f containerID              #removes running container
 docker container prune -f                       #removes all stopped containers
 
 docker commit 5a8f89adeead newimagename         # creates a new image from containers changes (5a8f89adeead = containerID)
-
 ============================== Containers run ======================================
 
 docker container run imageName                  # runs a container
@@ -260,9 +259,15 @@ docker service inspect [SERVICE_ID]
 docker service ps [SERVICE_ID]
 docker service scale [SERVICE_ID]=3
 
+============================== Extras ==============================
+
 docker cp foo.txt mycontainer:/foo.txt # copy file from host to container
 docker cp mycontainer:/foo.txt foo.txt # copy file from container to host          
 
 docker update --restart=always <container> # Add a restart policy to a container that was already created
 docker container exec -it --user postgres pg-docker /bin/bash  # exec as a user
 docker run -it --user nobody busybox  # run container as a user
+
+
+# Commit a container with new CMD and EXPOSE instructions
+docker commit --change='CMD ["apachectl", "-DFOREGROUND"]' -c "EXPOSE 80" c3f279d17e0a  svendowideit/testimage:version4 
