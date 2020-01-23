@@ -65,6 +65,8 @@ docker container rm containerID                 #removes stoped containers
 docker container rm -f containerID              #removes running container
 docker container prune -f                       #removes all stopped containers
 
+docker commit 5a8f89adeead newimagename         # creates a new image from containers changes (5a8f89adeead = containerID)
+
 ============================== Containers run ======================================
 
 docker container run imageName                  # runs a container
