@@ -73,3 +73,8 @@ Package.json    // file that contains list of a nodeJS dependencies
 node_modules/   // folder where dependencies are installed
 
 
+=========== Tomcat =====================
+
+/usr/local/tomcat/conf/tomcat-users.xml
+
+
