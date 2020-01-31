@@ -10,6 +10,8 @@ netstat -r 		# (Obsolate) returns info on gateway
 
 nmcli			# returns network info
 nmcli device show	# returns network info
+nmcli device status
+
 hostname -I		# returns private ip address
 ip n 			# reutns arp (address resolution protocol) table
 
