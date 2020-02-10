@@ -221,7 +221,8 @@ ps aux  | grep -i process
 				-a lists processes started by all users
 				-x also lists processes started at boot like daemons
 				-u will add columns with additional information on each process
-ps -ef  | grep -i process
+				
+ps -ef  | grep -i process	# To see every process on the system using standard syntax
 
 
 ps 			#List all process that you own
