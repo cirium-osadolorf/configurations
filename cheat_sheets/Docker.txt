@@ -59,6 +59,7 @@ docker container stop containerID               #Stop container
 docker container pause containerID              #pauses all running process
 docker container unpause containerID            #resumes all running process
 docker container logs containerID               #returns container logs, useful for torubleshoting containers
+docker container logs -f containerID``          # returns logs in real time
 docker container stats containerID              #returns cpu and memory usage 
 docker container top containerID
 docker container rm containerID                 #removes stoped containers
