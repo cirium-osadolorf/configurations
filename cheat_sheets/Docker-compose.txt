@@ -12,6 +12,7 @@ docker-compose help               # Get help on a command
 docker-compose images             # List images
 docker-compose kill               # Kill containers
 docker-compose logs               # View output from containers
+docker-compose logs -f <serviceName> # real time logs of a service
 docker-compose pause              # Pause services
 docker-compose port               # Print the public port for a port binding
 docker-compose ps                 # List containers
