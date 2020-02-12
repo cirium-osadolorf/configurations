@@ -1,0 +1,3 @@
+mvn dependency:purge-local-repository # purge dependencies that were incorrectly downloaded 
+                                        # force mvn to download dependecies if u deleted the .m2 fodler
+
