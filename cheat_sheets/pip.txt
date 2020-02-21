@@ -1,0 +1,4 @@
+
+
+pip freeze    # returns list of intalled packages
+ pip install -r requirements.txt  # install packages via file
