@@ -1,8 +1,16 @@
 
-
-pip freeze    # returns list of intalled packages
-pip install -r requirements.txt  # install packages via file
+pip list                             # shows ALL packages.
+pip freeze                           # shows packages YOU installed via pip or pipenv 
+pip install -r requirements.txt      # install packages via file
 
 
 
 pip show <packageName>  # returns the location and metadeta of the package
+
+
+pip freeze > requirements.txt         # Save installed packages to file:
+
+
+pip install package_name==package_version
+
+pip uninstall package_name            # Uninstall a package:
