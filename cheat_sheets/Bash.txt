@@ -165,7 +165,7 @@ echo "hello" >>file.txt		#create a new line and start inputing content into a ne
 zzzz 2> err.txt			#Insert error message into file by overwrting the file content
 zzzz 2>> err.txt		#Insert error message into the file new line
 
-
+command > file-name 2>&1.               # outputs both stderr and output into a file 
 SomeCommand 2>&1 | tee SomeFile.txt	# outputs both stderr and output displayed on the console and in a file
 
 
@@ -254,7 +254,7 @@ shutdown +60		#power off in 1 hour
 shutdown -r  +30	#Restart in half an hour
 shutdown -h  +10	#Turn it off in 10 mins
 init 0			#power off
-init 6			#Reebot
+init 6			#Reebot 
 
 ================ File system essential ======================
 
