@@ -550,3 +550,11 @@ sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
 
 tree --du -h /opt/ktube-media-downloader		# Returns tree output with size information
 sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
+
+
+#########################################
+#### Shell Expansion
+##########################################
+
+sudo mkdir /mnt/{dir1,dir2,dir3,dir3}  # create multiple dir under /mnt
+
