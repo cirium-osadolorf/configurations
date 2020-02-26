@@ -187,7 +187,7 @@ A & B || c			#Runs either b or c if A succeed
 3 == is the combination of 2 and 1 "Write and Execute"
 2  == Stands for "write"
 1  == Stands for "execute"
-0  == Stand for "No permissions"
+0  == Stand for "No permissions". 
 
 chmod 766 file			# Change permssion of suer , groups and others in one go		
 chmod -R 777 /www/store		# REcorsively change permssion of folder
