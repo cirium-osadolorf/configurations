@@ -552,6 +552,11 @@ tree --du -h /opt/ktube-media-downloader		# Returns tree output with size inform
 sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
 
 
+command & # This command will let your command run in background, but will be killed when current session closed.
+nohup <command> <args> ><filename> 2>&1 &  # This command will continue running even the terminal session ends.
+
+
+ 
 #########################################
 #### Shell Expansion
 ##########################################
