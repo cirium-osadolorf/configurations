@@ -138,6 +138,7 @@ tar -xf <file> <file> Name       	# open archive
 					
 	
 tar -czvf file.tar.gz folder_to_zip 	# tar.gz an entire folder (archieve and comprime)
+tar -xf Rese.tar.gz			# unzip tar.gz
 
 				
 
