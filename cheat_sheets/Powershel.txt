@@ -1,4 +1,5 @@
 ipconfig              # returns netowrk information
+ipconfig /all
 ping <ip>             # tests netowk connectivity to target               
 netstat -aon          # return ports information 
 netsh interface show interface    # This command will provide a list of interfaces
