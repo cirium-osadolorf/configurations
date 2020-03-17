@@ -41,6 +41,17 @@
 /etc/sysctl.conf          # file is used to override default kernel parameter values, for exmpale swap
 
 
+
+
+/etc/rc.local   # The script /etc/rc.local is for use by the system administrator. 
+                # It is traditionally executed after all the normal system services are started
+                
+/etc/network/interfaces
+                
+           
+
+
+
 ============ Systemd =============
 /etc/systemd/system       # system services location
 /usr/lib/systemd/system   # lcoation where packages install unit files (Do not edit this them) 
