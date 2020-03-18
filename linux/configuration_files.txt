@@ -20,7 +20,7 @@
 /etc/services           # returns service names with corelating ports
 /etc/ssh/sshd_config    # ssh deamon (servers)configuration file
 ~.ssh                   # ssh client configuration file 
-/var/log/auth.log       # All authentication related events in Debian and Ubuntu server are logged here.
+/var/log/auth.log       # All authentication related events in Debian and Ubuntu server are logged here (ssh).
 /var/log/secure         # All authentication related events in Debian and REDHAT/CENTOS server are logged here.
 
 /etc/environment        # intended for setting environment variables for every user on login
