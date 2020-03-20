@@ -73,6 +73,7 @@ git checkout -b  feature/login
 git checkout develop
 git merge feature/login
 git branch -d new-feature  # delete branch
+git push origin --delete new-feature  # delete remote branch
 
 
 =============== unsorted ===========================
