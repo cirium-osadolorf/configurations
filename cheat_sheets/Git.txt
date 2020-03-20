@@ -65,6 +65,7 @@ git branch -D <branch>        # deltes the branch
 git checkout <branch>         # switches you to the new branch
 git checkout -b <new branch>  # creates and checks you out the new branch
 git merge <branch>            # merges the selected branch to your current branch
+git push origin --delete <new branch> # delete remote branch
 
 
 
