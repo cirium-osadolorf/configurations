@@ -68,8 +68,11 @@ git merge <branch>            # merges the selected branch to your current branc
 
 
 
-
-
+=============== Merging branches ===========================
+git checkout -b  feature/login
+git checkout develop
+git merge feature/login
+git branch -d new-feature  # delete branch
 
 
 =============== unsorted ===========================
