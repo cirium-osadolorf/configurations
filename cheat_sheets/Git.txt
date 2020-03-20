@@ -77,3 +77,5 @@ git merge <branch>            # merges the selected branch to your current branc
 git remote add origin https://github.com/user/repo.git   # Set a new remote
 git remote -v   # Verify new remote
 
+git push origin master 
+
