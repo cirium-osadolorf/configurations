@@ -67,3 +67,13 @@ git checkout -b <new branch>  # creates and checks you out the new branch
 git merge <branch>            # merges the selected branch to your current branch
 
 
+
+
+
+
+
+=============== unsorted ===========================
+
+git remote add origin https://github.com/user/repo.git   # Set a new remote
+git remote -v   # Verify new remote
+
