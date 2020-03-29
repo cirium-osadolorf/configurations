@@ -28,6 +28,7 @@ ng g module [name]            // Create new module
 
 ng serve --host 0.0.0.0     // serve project to all IPs
 
+ng serve --port 4401        // run app on different port
 
 
 
