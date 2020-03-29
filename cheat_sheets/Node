@@ -13,9 +13,11 @@ npm root -g                     // teels you where your global packages are bein
 npm uninstall <paackageName>
 npm remove  <paackageName>
 
-######################################################
+############################################
 ## Angular
 ############################################
+npm install -g @angular/cli
+
 ng new [project-name]        // Create Angular CLI app
 ng generate component [name]  // Create new component
 ng g c [name]                 // Create new component
