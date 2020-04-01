@@ -88,7 +88,6 @@ dokcer container exec -it containerID ls /desired/path     #returns output to ho
 docker container exec -it containerID touch /app/file3.txt #creates a file in the selected folder 
 
 ============================  Networks ================================================
-ifconfig                                   #returns all adaptors
 docker network --help                      #returns networking commands
 docker network ls                          #return all networks
 docker network ls --no-trunc               #Do not truncate the output
@@ -99,6 +98,8 @@ docker network prune -f                    #removes all inactive networks
 
 docker network connect [NetworkName] [ContainerName]  #Attach container to selected network
 docker network disconnect br01 network-test03         # Removes a container from a network
+
+docker network inspect bridge         # return bridge network 
 
 ============================  Volumes  ================================================
 
