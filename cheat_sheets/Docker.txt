@@ -101,6 +101,13 @@ docker network disconnect br01 network-test03         # Removes a container from
 
 docker network inspect bridge         # return bridge network 
 
+docker network create \
+  --driver=bridge \
+  --subnet=172.28.0.0/16 \
+  --ip-range=172.28.5.0/24 \
+  --gateway=172.28.5.254 \
+  br0
+
 ============================  Volumes  ================================================
 
 docker volume --help                    #volume guide
