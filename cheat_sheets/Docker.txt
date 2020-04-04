@@ -107,10 +107,11 @@ docker network create \
   --gateway=172.28.5.254 \
   br0
   
+
+docker container run --name network-test01 -it --network br04 centos /bin/bash # attaching container to multiple netowrks
   
-  docker container run --name network-test01 -it --network br04 centos /bin/bash # attaching container to multiple netowrks
-  
-  
+docker network create -d bridge --internal localhost    # --internal creates a private network
+
   
 
 ============================  Volumes  ================================================
