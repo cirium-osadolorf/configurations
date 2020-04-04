@@ -110,7 +110,7 @@ docker network create \
 
 docker container run --name network-test01 -it --network br04 centos /bin/bash # attaching container to multiple netowrks
   
-docker network create -d bridge --internal localhost    # --internal creates a private network
+docker network create -d bridge --internal privateNet    # --internal creates a private network
 
   
 
