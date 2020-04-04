@@ -98,8 +98,7 @@ docker network prune -f                    #removes all inactive networks
 
 docker network connect [NetworkName] [ContainerName]  #Attach container to selected network
 docker network disconnect br01 network-test03         # Removes a container from a network
-
-docker network inspect bridge         # return bridge network 
+docker network inspect bridge                         # return bridge network 
 
 docker network create \
   --driver=bridge \
@@ -107,6 +106,12 @@ docker network create \
   --ip-range=172.28.5.0/24 \
   --gateway=172.28.5.254 \
   br0
+  
+  
+  docker container run --name network-test01 -it --network br04 centos /bin/bash # attaching container to multiple netowrks
+  
+  
+  
 
 ============================  Volumes  ================================================
 
