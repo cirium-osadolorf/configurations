@@ -86,6 +86,8 @@ docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/movie
 docker container exec -it containerID /bin/bash            #Takes you to the container prompt [ /bin/bash ]
 dokcer container exec -it containerID ls /desired/path     #returns output to host standard output
 docker container exec -it containerID touch /app/file3.txt #creates a file in the selected folder 
+docker container exec -u 0 -it test-build /bin/bash            # login into the contianer as the root user
+
 
 ============================  Networks ================================================
 docker network --help                      #returns networking commands
@@ -281,6 +283,8 @@ docker cp mycontainer:/foo.txt foo.txt # copy file from container to host
 
 docker update --restart=always <container> # Add a restart policy to a container that was already created
 docker container exec -it --user postgres pg-docker /bin/bash  # exec as a user
+docker container exec -u 0 -it test-build /bin/bash            # login into the contianer as the root user
+
 docker run -it --user nobody busybox  # run container as a user
 
 
