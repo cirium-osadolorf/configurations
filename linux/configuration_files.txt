@@ -1,13 +1,4 @@
-============ System  =============
-
-
-/etc/resolv.conf        # DNS name the system contacts
-/etc/hosts              #used to map hostnames (in other words domains) to IP addresses. 
-                        # With the hosts file you can change the IP address that you resolve a given domain name to. 
-                 
-/etc/nsswitch.conf      # is used by applications tomdetermine the sources from which to 
-                          obtain name-service information,and in what order                
-                 
+============ System  =============               
                  
 /etc/sudoers            # contains the information regarding privileges for different users and groups of our server
 /etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
@@ -46,11 +37,19 @@
 /etc/rc.local   # The script /etc/rc.local is for use by the system administrator. 
                 # It is traditionally executed after all the normal system services are started
                 
-/etc/network/interfaces
                 
-           
+============ Networking  =============
 
 
+/etc/hostname                # contains name of the machine, as known to applications that run locally.
+/etc/network/interfaces      # This is where you configure how your system is  connected to the network.
+/etc/resolv.conf             # DNS name the system contacts
+/etc/hosts                   # used to map hostnames (in other words domains) to IP addresses.                   
+/etc/nsswitch.conf           # is used by applications to determine the sources from which to obtain name-service information,
+                               and in what order                
+
+                
+          
 
 ============ Systemd =============
 /etc/systemd/system       # system services location
