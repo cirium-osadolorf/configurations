@@ -28,7 +28,14 @@ SELECT * FROM  <TABLE>    # List objects in a table
 ###############################
 # https://www.a2hosting.co.uk/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
 
-psql -U postgres -c " command "          # Execute postgress comand from comand line
-psql -U postgres -c "CREATE ROLE deimos" # from the comand line
 
-psql -c '\l'    # List databses 
+###############################
+#backup and restore
+###############################
+
+# sudo pg_dump -h <public_dns> -U <db_user> -f </path/to/your/file/name_of_dump_file.sql> <db_name>
+sudo pg_dump -h 127.0.0.1 -U user -f dump_file.sql kore
+
+# Populate local databse from the sql file
+# First make sure you create the database then run the following to populate it 
+sudo psql -U postgres -d newdb -f dump_file.sql
