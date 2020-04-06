@@ -293,3 +293,7 @@ docker commit --change='CMD ["apachectl", "-DFOREGROUND"]' -c "EXPOSE 80" c3f279
 
 
 docker rename my_container my_new_container
+
+
+
+docker run -t -i centos /bin/bash   # used to  stand containers of an images that do not contain cmd command (do not run any default app)
