@@ -57,6 +57,10 @@ EOF
 2) git log -1 --pretty=%H
 docker image build -t linuxacademy/weather-app:<GIT_HASH> .
 
+# tagging an image off another image
+docker image tag linuxacademy/weather-app:<GIT_HASH> linuxacademy/weather-app:latest
+
+
 ============================== Containers ======================================
 
 docker container --help                         #returns container commands
