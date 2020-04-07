@@ -35,12 +35,21 @@ docker build -t fortunexfortune/moviesearchapi .  #build image
 
 docker image build -t <NAME>:<TAG> .                              #creates a docker image
 docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile to build
-docker image build -t <NAME>:<TAG>  --rm .                        # rm == removes intermidiate images
-docker image build -t <NAME>:<TAG> --label com.qa.version=v1.8 .  #labelling the image
+docker image build -t <NAME>:<TAG>  --rm .                        # rm == removes intermidiate containers
+docker image build -t <NAME>:<TAG> --label com.forune.version=v1.8 .  #labelling the image
+docker image build -t <NAME>:<TAG> - < <FILE>.tar.gz              #Building an image from a tar file
+
 docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>                #building image from github repo
 docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>         #building image from github repo folderpath
-docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>    #building image from github repo folderpath
-docker image build -t <NAME>:<TAG> - < <FILE>.tar.gz              #Building an image from a zip file
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>    #building image from github repo folderpath # ref = branch
+
+
+docker image build -t linuxacademy/weather-app:github https://github.com/linuxacademy/content-weather-app.git#remote-build
+
+docker image build -t linuxacademy/nginx:stind --rm -<<EOF        # Buildin an image from standard in
+FROM nginx:latest
+VOLUME ["/usr/share/nginx/html/"]
+EOF
 
 ============================== Containers ======================================
 
