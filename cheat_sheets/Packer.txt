@@ -1,3 +1,28 @@
 ###############
 #
 ###############
+
+
+packer build        # used to build the machine image, takes in a template file as input and generates an  artifact as output
+
+packer fix          # takes current packer template and updates it to the latest version of packer
+
+packer inspect      # eads a template and outputs the various components that the template defines 
+
+packer validate     # check the syntax and configfuration of your template
+
+
+
+
+
+##########################################
+## Builder types
+########################################
+
+-Amazon AMI
+-Docker
+-HyperV
+-OpenStack
+-VirutalBox
+-VMware
+- etc
