@@ -61,31 +61,6 @@ docker image build -t linuxacademy/weather-app:<GIT_HASH> .
 docker image tag linuxacademy/weather-app:<GIT_HASH> linuxacademy/weather-app:latest
 
 
-============================== Containers ======================================
-
-docker container --help                         #returns container commands
-docker container command --help                 #returns flags available to the command
-docker container ls                             # returns list of running containers
-docker container ps                             # returns list of running containers
-docker container ls -a                          # returns a lsit of all containers
-docker container ls -a -q                       # returns all containersID
-docker container ls -a -f status=exited         #filters out all stopped containers
-docker container inspect containerID            #return json doc of container details
-docker container inspect containerName          #return json doc of container details
-docker container top containerID                #returns running processes of a container
-docker container start containerID              #Start container
-docker container stop containerID               #Stop container
-docker container pause containerID              #pauses all running process
-docker container unpause containerID            #resumes all running process
-docker container logs containerID               #returns container logs, useful for torubleshoting containers
-docker container logs -f containerID``          # returns logs in real time
-docker container stats containerID              #returns cpu and memory usage 
-docker container top containerID
-docker container rm containerID                 #removes stoped containers
-docker container rm -f containerID              #removes running container
-docker container prune -f                       #removes all stopped containers
-
-docker commit 5a8f89adeead newimagename         # creates a new image from containers changes (5a8f89adeead = containerID)
 ============================== Containers run ======================================
 
 docker container run imageName                  # runs a container
@@ -99,6 +74,37 @@ docker container run -it imageName /bin/bash    # runs and logs you to the conta
 docker container run -d --name name --restart [POLICY] user:image:latest #there are up to 4 policies
 docker container run -d --name name --restart always user:image:latest
 docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
+
+
+============================== Containers ======================================
+
+docker container --help                         #returns container commands
+docker container <command> --help                 #returns flags available to the command
+docker container ls                             # returns list of running containers
+docker container ps                             # returns list of running containers
+docker container ls -a                          # returns a lsit of all containers
+docker container ls -a -q                       # returns all containersID
+docker container ls -a -f status=exited         #filters out all stopped containers
+docker container inspect containerID            #return json doc of container details
+docker container inspect containerName          #return json doc of container details
+docker container start containerID              #Start container
+docker container stop containerID               #Stop container
+docker container pause containerID              #pauses all running process
+docker container unpause containerID            #resumes all running process
+
+docker container rm containerID                 #removes stoped containers
+docker container rm -f containerID              #removes running container
+docker container prune -f                       #removes all stopped containers
+
+docker commit 5a8f89adeead newimagename         # creates a new image from containers changes (5a8f89adeead = containerID)
+
+>> monitoring <<
+
+docker container ps                             # returns list of running containers
+docker container logs containerID               #returns container logs, useful for torubleshoting containers
+docker container logs -f containerID``          # returns logs in real time
+docker container stats containerID              #returns cpu and memory usage 
+docker container top containerID                #returns running processes of a container
 
 ============================== Containers exec ======================================
 
