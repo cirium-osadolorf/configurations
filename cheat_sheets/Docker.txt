@@ -309,6 +309,16 @@ docker service inspect [SERVICE_ID]
 docker service ps [SERVICE_ID]
 docker service scale [SERVICE_ID]=3
 
+============================== Portainer ==============================
+
+docker volume create portainer_data
+
+docker container run -d --name portainer -p 9000:9000 \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_data:/data portainer/portainer
+
+
 ============================== Extras ==============================
 
 docker cp foo.txt mycontainer:/foo.txt # copy file from host to container
