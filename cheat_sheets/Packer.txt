@@ -1,15 +1,15 @@
 ###############
-#
+# Packer
 ###############
 
 
-packer build        # used to build the machine image, takes in a template file as input and generates an  artifact as output
+packer build <File>        # used to build the machine image, takes in a template file as input and generates an  artifact as output
 
-packer fix          # takes current packer template and updates it to the latest version of packer
+packer fix <File>       # takes current packer template and updates it to the latest version of packer
 
-packer inspect      # eads a template and outputs the various components that the template defines 
+packer inspect <File>     # eads a template and outputs the various components that the template defines 
 
-packer validate     # check the syntax and configfuration of your template
+packer validate <File>    # check the syntax and configfuration of your template
 
 
 
