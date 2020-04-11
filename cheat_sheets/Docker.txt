@@ -264,7 +264,7 @@ docker system events --filter <FILTER_NAME>=<FILTER>       # returns events real
 docker system events --filter type=container --since '1h'  # returns event related to an object ( Network, Image, Container, etc)
 
 docker system events --filter type=container --filter event=attach
-docker system events --filter type=container --filter event=start --since '1h' # double filter
+docker system events --filter type=container --filter event=start --since '1h' # double filter, fitlering containers start events
 docker system events --filter type=container --filter event=attach --filter event=die --filter event=stop
 
 
