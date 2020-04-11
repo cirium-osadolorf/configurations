@@ -32,6 +32,8 @@ docker image load --input <FILE>.tar              #restoring  Dockerimage
 =============================== Dockefile  =================================
 
 docker build -t fortunexfortune/moviesearchapi .  #build image
+docker image build -t rivethead42/my-express --no-cache . #build image with not cache
+
 
 docker image build -t <NAME>:<TAG> .                              #creates a docker image
 docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile to build
@@ -309,7 +311,9 @@ docker service inspect [SERVICE_ID]
 docker service ps [SERVICE_ID]
 docker service scale [SERVICE_ID]=3
 
-============================== Portainer ==============================
+============================== Tools  ==============================
+
+>> Portainer <<
 
 docker volume create portainer_data
 
@@ -317,6 +321,13 @@ docker container run -d --name portainer -p 9000:9000 \
 --restart=always \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v portainer_data:/data portainer/portainer
+
+>> WatchTower <<
+
+docker container run -d --name watchtower \
+--restart always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+v2tec/watchtower -i 15
 
 
 ============================== Extras ==============================
