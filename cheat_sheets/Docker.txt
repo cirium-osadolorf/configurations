@@ -290,9 +290,9 @@ docker container ls -a -f status=exited | grep prometheus #Get a listing of our 
 docker swarm init --advertise-addr [PRIVATE_IP]               # Initilize cluster Master
 docker swarm join --token [TOKEN] [PRIVATE_IP]:2377           # add node to cluster 
 
-
 docker node ls                               # Listing nodes:
-docker node inspect [NODE_ID]                # Inspecting a node:
+docker node inspect [NODE_ID]                # Inspecting a node
+
 docker node promote [NODE_ID]                # Promoting a worker to a manager:
 docker node demote [NODE_ID]                 # Demoting a manager to a worker:
 docker node rm -f [NODE_ID]                  # Removing a node form the swarm 
