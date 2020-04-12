@@ -302,17 +302,25 @@ docker swarm join-token worker               # returns worker join-token:
 docker swarm join-token manager              # returns manager join-token:
 
 ========================== Docker Services  =================================
+
+docker service create -d --name nginx_service -p 8080:80 --replicas 2 nginx:latest
+
 docker service create -d --name [NAME] \
 -p [HOST_PORT]:[CONTAINER_PORT] \
 --replicas [REPLICAS_NUMBER] \
 [IMAGE] [CMD]
 
-docker service create -d --name nginx_service -p 8080:80 --replicas 2 nginx:latest
+docker service ls                           # List docker services
+docker service logs [NAME]                  # Return logs of the service
+docker service inspect [SERVICE_ID]         # inspect a service
+docker service ps [SERVICE_ID]              # List all tasks of a service
+docker service scale [SERVICE_ID]=3         # Scale a service up or down
 
-docker service ls
-docker service inspect [SERVICE_ID]
-docker service ps [SERVICE_ID]
-docker service scale [SERVICE_ID]=3
+docker service update [OPTIONS] [NAME]      # update a running service
+docker service update -h                    # There are many upate feauresm have a look at them
+
+
+
 
 ============================== Tools  ==============================
 
