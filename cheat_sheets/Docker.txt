@@ -322,6 +322,16 @@ docker service update -h                    # There are many upate feauresm have
 
 
 
+docker network create -d overlay [NAME]
+docker service update --network-add [NETWORK] [SERVICE]             # Add a service to a network:
+docker network create -d overlay --opt encrypted encrypted_overlay  # Create an encrypted overlay network
+
+
+
+
+
+
+
 ============================== Tools  ==============================
 
 >> Portainer <<
