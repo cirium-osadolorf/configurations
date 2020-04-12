@@ -111,6 +111,11 @@ scp user@hostname:/path_on_server /home/user	#Transer file from server to client
 sshfs user@hostanme:dir_to-mount /place_to_mount_localally # Mount dir
 fusermount -u /path/to/dirMounted			   # UnmountDir
 
+
+
+ssh-keygen -R <ServerIp or HostName>		# Fixing the WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
+
+
 ============ Text ============ 
 head newfile.txt		# This will display the first 10 lines of a file
 tail newfile.txt		# This will display the last 10 lines of a file
