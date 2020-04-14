@@ -25,6 +25,8 @@ docker image save <IMAGE> > <FILE>.tar            #archieve Dockerimage
 docker image save <IMAGE> -o <FILE>.tar           #archieve Dockerimage
 docker image save <IMAGE> --output <FILE>.tar     #archieve Dockerimage
 
+gzip <filt.tar>                                   # compress the archieve dockerimage
+
 docker image load < <FILE>.tar                    #restoring  Dockerimage
 docker image load -i <FILE>.tar                   #restoring  Dockerimage
 docker image load --input <FILE>.tar              #restoring  Dockerimage
