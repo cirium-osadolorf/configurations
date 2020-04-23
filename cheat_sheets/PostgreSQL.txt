@@ -1,27 +1,37 @@
-SHOW data_directory;    # use within psql terminal | returns directory where postgresql will keep all databases and configurations
 
+psql                      # lunch postgres terminal, must be logged as the postgres user to lunch this (su - postgres)
+sudo -u postgres psql     # Accessing a Postgres Prompt as the postgres uer 
+sudo -i -u postgres       # lunch postgres terminal as the the Postgres user
 
-psql                      # lunch postgres terminal
-sudo -i -u postgres       # Login as the Postgres user
-sudo -u postgres psql     # Accessing a Postgres Prompt as the current user 
 postgres -V               # View Server version
 psql -V                   # View client version  
+
+######################################
+## psql terminal
+######################################
+SHOW data_directory;    # use within psql terminal | returns directory where postgresql will keep all databases and configurations
+
 \l                        # List databases
 \q                        # exit
-
-\du                       # list all accounts in postgres
-\du+
-
-
-CREATE DATABASE <DBNAME>;   # create db
-DROP DATABASE <DBNAME>;
-ALTER DATABASE "old_dbname" RENAME TO "new_dbname"
+\du                       # list all accounts  in postgres
+\du+                      # # list all accounts in postgres with extra info
 
 \c <DBNAME>               # Connect to a Database 
 \dt                       # List tables 
 SELECT * FROM  <TABLE>    # List objects in a table
 \d                        # Describe table
 \d+                       # Describe table with more details 
+
+CREATE DATABASE <DBNAME>;                               # create db
+DROP DATABASE <DBNAME>;                                 # Drop db
+ALTER DATABASE "old_dbname" RENAME TO "new_dbname"      # Rename a db
+
+######################################
+## Postgress user command
+###################################### 
+# must be logged as postgres user to lunch the following
+
+createdb sammy
 
 ###############################
 # Postress from the comand line
