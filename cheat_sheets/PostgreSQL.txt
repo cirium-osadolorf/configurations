@@ -28,6 +28,19 @@ CREATE DATABASE <DBNAME>;                               # create db
 DROP DATABASE <DBNAME>;                                 # Drop db
 ALTER DATABASE "old_dbname" RENAME TO "new_dbname";     # Rename a db
 
+
+-- Table --
+CREATE TABLE cities (
+cityid varchar(5),
+cityname varchar(80),
+state varchar(20));
+
+INSERT INTO cities VALUES ('test','modena', 'Emiglia_Romagnia');
+SELECT * FROM cities;
+
+
+
+
 ######################################
 ## Postgress user command
 ###################################### 
