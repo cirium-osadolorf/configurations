@@ -6,6 +6,7 @@ sudo -i -u postgres       # lunch postgres terminal as the the Postgres user
 postgres -V               # View Server version
 psql -V                   # View client version  
 
+psql <dbName>             # logs into the db riectly from command line
 ######################################
 ## psql terminal
 ######################################
@@ -17,6 +18,7 @@ SHOW data_directory;    # use within psql terminal | returns directory where pos
 \du+                      # # list all accounts in postgres with extra info
 
 \c <DBNAME>               # Connect to a Database 
+\connect <DBNAME>         # Connect to a Database 
 \dt                       # List tables 
 SELECT * FROM  <TABLE>    # List objects in a table
 \d                        # Describe table
@@ -31,7 +33,10 @@ ALTER DATABASE "old_dbname" RENAME TO "new_dbname";     # Rename a db
 ###################################### 
 # must be logged as postgres user to lunch the following
 
-createdb sammy
+su - postgres
+
+createdb dbName # create db
+dropdb dbName   # drop db
 
 ###############################
 # Postress from the comand line
