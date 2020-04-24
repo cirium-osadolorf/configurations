@@ -11,6 +11,7 @@ psql <dbName>             # logs into the db riectly from command line
 ######################################
 ## psql terminal
 ######################################
+SHOW hba_file;          # returns path pg_hba.conf file
 SHOW data_directory;    # use within psql terminal | returns directory where postgresql will keep all databases and configurations
 
 \l                        # List databases
