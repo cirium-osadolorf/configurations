@@ -1,6 +1,7 @@
 
 psql                      # lunch postgres terminal, must be logged as the postgres user to lunch this (su - postgres)
-sudo -u postgres psql     # Accessing a Postgres Prompt as the postgres uer 
+sudo -u postgres psql     # Accessing a Postgres Prompt as selected user 
+sudo -u otherUSer psql    # Accessing a Postgres Prompt as selected user 
 sudo -i -u postgres       # lunch postgres terminal as the the Postgres user
 
 postgres -V               # View Server version
@@ -45,11 +46,18 @@ SELECT * FROM cities;
 ## Postgress user command
 ###################################### 
 # must be logged as postgres user to lunch the following
-
 su - postgres
 
 createdb dbName # create db
 dropdb dbName   # drop db
+
+######################################
+## psql terminal
+######################################
+# must be logged as postgres user to lunch the following
+su - postgres
+
+createuser test
 
 ###############################
 # Postress from the comand line
