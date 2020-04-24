@@ -24,7 +24,7 @@ SELECT * FROM  <TABLE>    # List objects in a table
 
 CREATE DATABASE <DBNAME>;                               # create db
 DROP DATABASE <DBNAME>;                                 # Drop db
-ALTER DATABASE "old_dbname" RENAME TO "new_dbname"      # Rename a db
+ALTER DATABASE "old_dbname" RENAME TO "new_dbname";     # Rename a db
 
 ######################################
 ## Postgress user command
