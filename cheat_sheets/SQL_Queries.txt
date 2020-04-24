@@ -1,31 +1,69 @@
-SELECT customer_id, field_id, source_id, product_type_id, start_date, end_date FROM services WHERE customer_id='user';
-SELECT * FROM data_sources JOIN acquisitions ON data_sources.source_id = acquisitions.source_id WHERE acquisitions.cat_id='xx';
-DELETE FROM acquisitions WHERE cat_id='xx';
+===  Basic Example ====
+
+-- Table --
+CREATE TABLE cities (
+cityid varchar(5),
+cityname varchar(80),
+state varchar(20));
+
+INSERT INTO cities VALUES ('test','modena', 'Emiglia_Romagnia');
+SELECT * FROM cities;
+
+
+
+
+
+
+
+
+
+
+#############################
+## Select  queries
+############################
+
+SELECT id, name, address, gender  FROM services WHERE customer_id='user';
+
+
+
+SELECT column_names FROM table_name WHERE column_name IS NULL;
+
+
+# Substring
+SELECT first_name,last_name FROM customer WHERE first_name LIKE 'Jen%';
+
+
+#############################
+## Insert  queries
+############################
 
 INSERT INTO person (id,username) VALUES ('1','fortune');
-
-SELECT * FROM services JOIN product_types ON product_types.product_id = services.product_type_id JOIN fields ON services.field_id = fields.field_id JOIN data_sources on services.source_id = data_sources.source_id WHERE product_types.product_name = 'standard' AND services.start_date='2010-01-01' AND services.end_date='2050-12-31' AND data_sources.source ='rapideye' AND fields.field_boundary = 'xx';
-
-
-
-
+	
+#############################
+## Update queries
+############################
 UPDATE table
 SET column1 = value1,
     column2 = value2 ,...
 WHERE
    condition;
 
+	
+#############################
+## Delete queries
+############################
 
-SELECT column_names
-FROM table_name
-WHERE column_name IS NULL;
+DELETE FROM acquisitions WHERE cat_id='xx';
+
+
+#############################
+## Joins   queries
+############################
+
+SELECT * FROM data_sources JOIN acquisitions ON data_sources.source_id = acquisitions.source_id WHERE acquisitions.cat_id='xx';
+
+SELECT * FROM services JOIN product_types ON product_types.product_id = services.product_type_id JOIN fields ON services.field_id = fields.field_id JOIN data_sources on services.source_id = data_sources.source_id WHERE product_types.product_name = 'standard' AND services.start_date='2010-01-01' AND services.end_date='2050-12-31' AND data_sources.source ='rapideye' AND fields.field_boundary = 'xx';
 
 
 
-SELECT
-	first_name,
-        last_name
-FROM
-	customer
-WHERE
-	first_name LIKE 'Jen%';
+
