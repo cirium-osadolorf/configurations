@@ -8,6 +8,13 @@ postgres -V               # View Server version
 psql -V                   # View client version  
 
 psql <dbName>             # logs into the db riectly from command line
+
+>>>  This is one of the first things you do after login into psql <<<
+
+\password postgres      
+CREATE EXTENSION adminpack;
+
+
 ######################################
 ## psql terminal
 ######################################
