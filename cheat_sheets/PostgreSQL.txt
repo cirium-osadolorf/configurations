@@ -1,8 +1,8 @@
 
 psql                      # lunch postgres terminal, must be logged as the postgres user to lunch this (su - postgres)
-sudo -u postgres psql     # Accessing a Postgres Prompt as selected user 
-sudo -u otherUSer psql    # Accessing a Postgres Prompt as selected user 
-sudo -i -u postgres       # lunch postgres terminal as the the Postgres user
+sudo -u postgres psql     # Accessing a psql Prompt as the postgres user 
+sudo -u otherUSer psql    # Accessing a psql Prompt as the selected user 
+sudo -i -u postgres       # Switch over to the postgres account on your server
 
 postgres -V               # View Server version
 psql -V                   # View client version  
