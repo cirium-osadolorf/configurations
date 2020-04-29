@@ -73,8 +73,8 @@
 
 
 =========== Postgres =====================
-/etc/postgresql/9.5/main/pg_hba.conf
-/etc/postgresql/9.5/main/postgresql.conf
+/etc/postgresql/9.5/main/pg_hba.conf                # host-based authentication, used to setup authe systems
+/etc/postgresql/9.5/main/postgresql.conf            # 
 
 
 
