@@ -22,6 +22,7 @@ CREATE EXTENSION adminpack;
 ######################################
 SHOW hba_file;          # returns path pg_hba.conf file
 show hba_file;          # returns path pg_hba.conf file
+SHOW config_file;
 SHOW data_directory;    # use within psql terminal | returns directory where postgresql will keep all databases and configurations
 
 \l                        # List databases
