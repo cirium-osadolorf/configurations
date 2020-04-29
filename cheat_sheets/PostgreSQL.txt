@@ -81,12 +81,19 @@ createuser test
 #backup and restore
 ###############################
 
+pg_dump dbName > file.txt   # backup db to a file, must be logged in as db user
+psql dbName < file.txt      # populate db from backup file
+
 # sudo pg_dump -h <public_dns> -U <db_user> -f </path/to/your/file/name_of_dump_file.sql> <db_name>
 sudo pg_dump -h 127.0.0.1 -U user -f dump_file.sql kore
 
 # Populate local databse from the sql file
 # First make sure you create the database then run the following to populate it 
 sudo psql -U postgres -d newdb -f dump_file.sql
+
+
+
+
 
 
 ###############################
