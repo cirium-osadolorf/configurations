@@ -87,3 +87,18 @@ sudo pg_dump -h 127.0.0.1 -U user -f dump_file.sql kore
 # Populate local databse from the sql file
 # First make sure you create the database then run the following to populate it 
 sudo psql -U postgres -d newdb -f dump_file.sql
+
+
+###############################
+# Allowing incoming coneection to db via pgadmin
+###############################
+
+-->  postgresql.conf 
+listen_addresses = 'localhost'         # what IP address(es) to listen on;
+listen_addresses = '*'                 # what IP address(es) to listen on;
+
+-->  pg_hba.conf
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv4 local connections:
+host    all             all              0.0.0.0/0              md5
