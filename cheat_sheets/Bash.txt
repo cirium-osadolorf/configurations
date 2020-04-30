@@ -364,6 +364,12 @@ gpgcheck=0
 enabled=1
 EOF
 
+
+================= installing software ==========
+
+--debian packer
+sudo apt install ./name.deb # install a debian deb package
+
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
 chkconfig				#Returns runlevel services
