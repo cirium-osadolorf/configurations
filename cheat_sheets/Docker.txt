@@ -343,6 +343,10 @@ docker network create -d overlay --opt encrypted encrypted_overlay  # Create an 
 docker stack deploy --compose-file docker-compose.yml [stackName]
 docker stack ls
 
+# https://docs.docker.com/compose/compose-file/#dns
+When dealing with docker-compose files for docker stwacs feplyoent, you can read the documentaion above and filter by 
+" Note when using docker stack deploy" to know what attributes do not work with docker stack
+
 
 ============================== Tools  ==============================
 
