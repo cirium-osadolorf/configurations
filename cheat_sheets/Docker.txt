@@ -316,10 +316,7 @@ docker plugin disable [ID]
 docker plugin rm [ID]
 
 
-
-
-
-========================== Docker Services  =================================
+>> Services <<  
 
 docker service create -d --name nginx_service -p 8080:80 --replicas 2 nginx:latest
 
@@ -337,17 +334,14 @@ docker service scale [SERVICE_ID]=3         # Scale a service up or down
 docker service update [OPTIONS] [NAME]      # update a running service
 docker service update -h                    # There are many upate feauresm have a look at them
 
-
-
-
+>> Network <<  
 docker network create -d overlay [NAME]
 docker service update --network-add [NETWORK] [SERVICE]             # Add a service to a network:
 docker network create -d overlay --opt encrypted encrypted_overlay  # Create an encrypted overlay network
 
-
-
-
-
+>> Stacks <<  
+docker stack deploy --compose-file docker-compose.yml [stackName]
+docker stack ls
 
 
 ============================== Tools  ==============================
