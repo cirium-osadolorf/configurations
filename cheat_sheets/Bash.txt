@@ -370,6 +370,9 @@ EOF
 --debian packer
 sudo apt install ./name.deb # install a debian deb package
 
+sudo apt-mark hold kubelet kubeadm kubectl	# put's packages on hold meaning you can not update the package
+
+
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
 chkconfig				#Returns runlevel services
