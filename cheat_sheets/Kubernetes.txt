@@ -41,4 +41,18 @@ kubectl delete svc nginx-service  #deletes service
 
 
 
+============== Kubernetes MicroServices ==============
+cd ~/
+git clone https://github.com/linuxacademy/robot-shop.git
+kubectl create namespace robot-shop                             #Create a namespace
+kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/   #deploy app objects using the deployment descriptors from the repo
+kubectl get pods -n robot-shop -w                               #-w gives the ability to watch ral time creation of the pods
+http://$kube_server_public_ip:30080                             #access the application via the kubernetes master ip
+
+
+
+
+
+
+
 
