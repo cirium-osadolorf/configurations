@@ -53,6 +53,6 @@ http://$kube_server_public_ip:30080                             #access the appl
 
 
 
-
+https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
 
 
