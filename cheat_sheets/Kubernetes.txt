@@ -1,116 +1,23 @@
-======== Kubernetes Pod creation  ============================
-#Example:
-cat << EOF | kubectl create -f -
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-EOF
+#######################################
+## Container and pods
+######################################
 
-===================Kuberentes Pod=============================
-#smallest Kubernetes unit, they run 1 to more containers
-kubectl get pods              #Get a list of pods 
-kubectl describe pod nginx    #Returns kadditionl info on specified pod
-kubectl delete pod nginx      #Delete pod
+kubectl get pods                            # returns running pods
+
+kubectl get pods -n kube-system             # retruns system pods (used by kubernetes in the backgound to run the cluster)
+
+kubectl describe pod nginx
+kubectl delete pod nginx
 
 
-================Kubernetes Nodes===================
-#Nodes are the worker servers that run applcations
-
-kubectl get nodes                 #return cluster nodes
-kubectl describe node $node_name  #return more details on speciied node
+kubectl get pods -o wide                    # returns ip address of your pods
 
 
-================Kubernetes Deployments===================
-#Creating a deployment that creates two pods
-#Example:
 
-cat << EOF | kubectl create -f -
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.15.4
-        ports:
-        - containerPort: 80
-EOF
-
-#busybox is used for texsting pods by using curl
-
-cat << EOF | kubectl create -f -
-apiVersion: v1
-kind: Pod
-metadata:
-  name: busybox
-spec:
-  containers:
-  - name: busybox
-    image: radial/busyboxplus:curl
-    args:
-    - sleep
-    - "1000"
-EOF
+#######################################
+## Clustering and Nodes
+######################################
 
 
-kubectl get pods -o wide                        #return the IP addresses of your pods
-kubectl exec busybox -- curl $ip                #using th busybox pod to exec a curl on a different pod ip adress
-kubectl get deployments                         #returns your deployments
-kubectl describe deployment nginx-deployment    #return more info related to the deployment
-kubectl delete deployment nginx                 #delete deployment
-
-============== Kubernetes Services ==============
-#Example:
-#the selector attribute is linked to the deployment label, this how it knows to waht pods to route traffic
-#NodePort allwos to expose the service externally, there are different types
-
-cat << EOF | kubectl create -f -
-kind: Service
-apiVersion: v1
-metadata:
-  name: nginx-service
-spec:
-  selector:
-    app: nginx
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: 30080
-  type: NodePort
-EOF
-
-
-kubectl get svc                   #returns  list of services in the cluster.
-kubectl get service               #returns  list of services in the cluster.
-kubectl delete svc nginx-service  #deletes service
-
-============== Kubernetes MicroServices ==============
-cd ~/
-git clone https://github.com/linuxacademy/robot-shop.git
-kubectl create namespace robot-shop                             #Create a namespace
-kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/   #deploy app objects using the deployment descriptors from the repo
-kubectl get pods -n robot-shop -w                               #-w gives the ability to watch ral time creation of the pods
-http://$kube_server_public_ip:30080                             #access the application via the kubernetes master ip
-
-============== Kubernetes Architecture and Components ==============
-
-kubectl get pods -n kube-system       #return backend kubernetes pods
-sudo systemctl status kubelet         #return status of the kublet service
+kubectl get nodes                   # Get a list of nodes
+kubectl describe node $node_name    # Get more information about a specific node
