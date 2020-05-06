@@ -32,5 +32,13 @@ kubectl describe deployment nginx-deployment    #return more info related to the
 kubectl delete deployment nginx                 #delete depl
 
 
+#######################################
+## Deployments
+######################################
+kubectl get svc                   #returns  list of services in the cluster.
+kubectl get service               #returns  list of services in the cluster.
+kubectl delete svc nginx-service  #deletes service
+
+
 
 
