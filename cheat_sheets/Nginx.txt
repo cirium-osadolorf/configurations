@@ -1,0 +1,3 @@
+nginx -t      # testing flag used to test the configuration that would be loaded if we reloaded
+
+systemctl reload nginx    # reloa nginx deamon
