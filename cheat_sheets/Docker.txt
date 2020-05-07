@@ -31,6 +31,11 @@ gzip -d <file.tar>                                # decompress the archieve dock
 docker image load < <FILE>.tar                    #restoring  Dockerimage
 docker image load -i <FILE>.tar                   #restoring  Dockerimage
 docker image load --input <FILE>.tar              #restoring  Dockerimage
+
+docker tag <Image-ID> <desired Name:Tag>         # tagging image to was jsut restored
+# https://stackoverflow.com/questions/43957171/docker-save-load-lose-original-image-repository-name-tag
+
+
  
 =============================== Dockefile  =================================
 
