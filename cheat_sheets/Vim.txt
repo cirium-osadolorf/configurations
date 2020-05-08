@@ -2,14 +2,18 @@
 System 
 =====================================================
 
-Esc         # Switch to Command mode
-: q!        # Quit the file without saving
-: w         # Save the file
-: wq        # Save and exit the file  
-ZZ          # Save and exit the file   
-i           # Switches to Insert mode
-r           # Switches to Replace mode
-: ↕         # Up or Down, moves you thugh the command history 
+Esc                     # Switch to Command mode
+: q                     # Quit the file without saving
+: q!                    # Quit and dump changes on made on a READ ONLY file
+
+: w                     # Save the file
+: w fileName.txt        # Save file to filename
+
+: wq                    # Save and exit the file  
+ZZ                      # Save and exit the file   
+i                       # Switches to Insert mode
+r                       # Switches to Replace mode
+: ↕                     # Up or Down, moves you thugh the command history 
 
 =====================================================
 Movment ( While in Command mode)
