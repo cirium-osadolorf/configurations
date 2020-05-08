@@ -4,6 +4,9 @@
 /etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
                         #  .bash_logout .bashrc  examples.desktop  .profile
                         
+/usr/bin                # contains executable programs that are part of the operating system and installed by its package manager
+/usr/local/bin          # default location for executable programs not part of the operating system and
+                        
 /etc/passwd             # stores general user info 
 /etc/groups             # stores general group info 
 /etc/shadow             # stores user passwd info
