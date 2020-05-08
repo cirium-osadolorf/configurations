@@ -100,6 +100,10 @@ ssh-copy-id pi@10.25.6.0	#Copies the public key to the remote computer
 ssh -v user@hostname		#SSH into remote computer while returning what the client is doing
 ssh user@hostname <COMMAND>	#Returns command standard-out peformed on the server to the client terminal
 
+
+#ssh -p 8011 -L 8080:172.20.0.1:4200 ubuntu@184.34.4.4	# ssh local port fowarding
+
+
 ssh -D 9000 -C ubuntu@179.32.9.6 -p 2222	# Socks proxy via ssh Dynamic tunnel setup
 ssh -D 9000 -C ubuntu@179.32.9.6 		# Socks proxy via ssh Dynamic tunnel setup
 
