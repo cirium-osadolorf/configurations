@@ -586,7 +586,10 @@ command & # This command will let your command run in background, but will be ki
 nohup <command> <args> ><filename> 2>&1 &  # This command will continue running even the terminal session ends.
 
 
- 
+ grep -c "echo" FILE		#  This will output the number of lines that contain your search string.
+
+
+
 #########################################
 #### Shell Expansion
 ##########################################
