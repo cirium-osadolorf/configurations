@@ -10,9 +10,9 @@ Esc                     # Switch to Command mode
 : w fileName.txt        # Save file to filename
 
 : wq                    # Save and exit the file  
-ZZ                      # Save and exit the file   
-i                       # Switches to Insert mode
-r                       # Switches to Replace mode
+:ZZ                      # Save and exit the file   
+:i                       # Switches to Insert mode
+:r                       # Switches to Replace mode
 : ↕                     # Up or Down, moves you thugh the command history 
 
 =====================================================
