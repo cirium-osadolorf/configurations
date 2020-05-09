@@ -54,6 +54,8 @@ i           # Inserts text before highlighted character
 a           # Inserts text after highlighted character 
 o           # Insert text on the  next paragraph
 
+shift + ~   # toggle charachter to upercare or lowercase
+
 u           # undo previos changes
 x           # Deletes highlighted character
 .           # Copies and paste changes made in the last insert mode
