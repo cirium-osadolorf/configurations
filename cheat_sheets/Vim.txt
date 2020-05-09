@@ -43,8 +43,10 @@ G         # Moves cursor to the bottom of the file
 %         # Moves cursor in between brackets scope
 
 =====================================================
-Numbers ( While in Command mode)
+Visual Mode
 =====================================================
+:v                                # then you highligh strings
+:V  + highlight string + u        # toggle String to upercare or lowercase
 
 =====================================================
 Text Manipulation ( While in Command mode)
