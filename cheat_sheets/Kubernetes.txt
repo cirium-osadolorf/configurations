@@ -42,6 +42,12 @@ kubectl get service               #returns  list of services in the cluster.
 kubectl delete svc nginx-service  #deletes service
 
 
+#######################################
+## namespaces
+######################################
+
+kubectl get namespaces     
+
 
 ============== Kubernetes MicroServices ==============
 cd ~/
