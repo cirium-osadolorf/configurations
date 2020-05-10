@@ -1,4 +1,11 @@
 #######################################
+## System
+######################################
+kubectl get componentstatus                 # returns compoenets status
+
+kubectl create -f <file.yaml>               # create 
+
+#######################################
 ## Container and pods
 ######################################
 
@@ -29,10 +36,9 @@ kubectl describe node $node_name    # Get more information about a specific node
 ## Deployments
 ######################################
 
-kubectl get deployments                         #returns your deployments
-kubectl describe deployment nginx-deployment    #return more info related to the deployment
-kubectl delete deployment nginx                 #delete depl
-
+kubectl get deployments                         # returns your deployments
+kubectl describe deployment nginx-deployment    # return more info related to the deployment
+kubectl delete deployment nginx                 # delete depl
 
 #######################################
 ## Deployments
