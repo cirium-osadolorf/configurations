@@ -11,6 +11,7 @@ Vagrant init              # initialize a vagrant environment by creating a vagra
 Vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
 
 ======== Mangaging the box  ========
+# Remember taht a <hostname> can be specifiedas part of the following commands
 
 Vagrant up                       # Creates and configure machine according to your Vagrantfile
 vagrant halt                     # shuts down 1 or more machines
