@@ -23,6 +23,8 @@ vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
 vagrant ssh-config        # Returns info on ssh setup
 
 
+vagrant box add ubuntu/bionic64  # add box localy
+
 =============================================================
 Providers
 =============================================================
