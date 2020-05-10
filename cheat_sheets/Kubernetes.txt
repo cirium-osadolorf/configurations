@@ -12,6 +12,8 @@ kubectl delete pod nginx
 
 kubectl get pods -o wide                    # returns ip address of your pods
 
+kubectl get pods --all-namespeces           # get pods across all namespaces
+kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
 
 #######################################
