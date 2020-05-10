@@ -29,7 +29,7 @@ vagrant ssh <hostname>    # With the hostname being the name of the virtual mach
 vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
 vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
 vagrant ssh-config        # Returns info on ssh setup
-
+ssh -p 2222 vagrant@127.0.0.1
 
 
 =============================================================
