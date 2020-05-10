@@ -19,7 +19,10 @@ Vagrant destroy -f               # used to destroy the environment
 Vagrant validate                 # validates vagrant file
 Vagrant reload                   # Reboots the system, use it after alteraing the Vagrant file
 vagrant reload <id> --provision  # Reboots the system and also run provisioner
-Vagrant status                   # returns the state of the machine
+Vagrant status                   # returns the state of the machine present in the current workplace
+vagrant global-status            # returns the state of the machine present in the system
+vagrant status <hostname>        # returns state of the specified vm
+vagrant global-status --prune    # clear status log
 Vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
 
