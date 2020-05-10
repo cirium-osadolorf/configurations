@@ -90,4 +90,9 @@ node_modules/   // folder where dependencies are installed
 
 /usr/local/tomcat/conf/tomcat-users.xml
 
+=========== vagrant =====================
+
+.vagrant/machines/ubuntu18/virtualbox/private_key  # ssh key location of vagrant box
+
+
 
