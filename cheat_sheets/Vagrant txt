@@ -14,6 +14,9 @@ Vagrant init -m           # initialize a vagrant environment by creating a vagra
 
 Vagrant up                       # Creates and configure machine according to your Vagrantfile
 vagrant halt                     # shuts down 1 or more machines
+vagrant suspend                  # saves our virtual environment at the current point-in-time, then stops the machine
+vagrant resume                   # resume supsended vm 
+
 Vagrant destroy                  # used to destroy the environment 
 Vagrant destroy -f               # used to destroy the environment 
 Vagrant validate                 # validates vagrant file
