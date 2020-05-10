@@ -11,7 +11,7 @@ Vagrant init              # initialize a vagrant environment by creating a vagra
 Vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
 
 ======== Mangaging the box  ========
-# Remember taht a <hostname> can be specifiedas part of the following commands
+## Remember taht a <hostname> can be specifiedas part of the following commands
 
 Vagrant up                       # Creates and configure machine according to your Vagrantfile
 vagrant halt                     # shuts down 1 or more machines
@@ -29,6 +29,28 @@ vagrant status <hostname>        # returns state of the specified vm
 vagrant global-status --prune    # clear status log
 Vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
+
+======== Snapshot  ========
+
+vagrant snapshot save updated               # takes snapshot of the virtual mcahine
+
+vagrant snapshot save <hostname> updated    # takes snapshot of a specific box
+vagrant snapshot save default updated       # takes snapshot of a specific box
+vagrant snapshot list                       # lsit snapshoes
+
+vagrant snapshot restore updated            # restore snapshots
+vagrant snapshot restore default updated    # restroe specific snapshot
+
+vagrant snapshot delete <snapo_name>        # delete snapshot, halt the box before deleting
+
+
+
+
+--push and pop  method --
+
+
+
+
 
 ======== ssh  ========
 Vagrant ssh               # SSH into a vagrant box, used for single guest in an enverioment 
