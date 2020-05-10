@@ -24,7 +24,8 @@ Vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
 
 ======== ssh  ========
-Vagrant ssh               # SSH into a vagrant box
+Vagrant ssh               # SSH into a vagrant box, used for single guest in an enverioment 
+vagrant ssh <hostname>    # With the hostname being the name of the virtual machine as provided in the Vagrantfile. Generally, this is used when we have a multi-machine setup
 vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
 vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
 vagrant ssh-config        # Returns info on ssh setup
