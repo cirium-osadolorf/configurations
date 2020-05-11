@@ -38,15 +38,16 @@ kubectl describe node $node_name    # Get more information about a specific node
 
 kubectl get deployments                         # returns your deployments
 kubectl describe deployment nginx-deployment    # return more info related to the deployment
-kubectl delete deployment nginx                 # delete depl
+kubectl delete deployment nginx                 # delete deployments
+kubectl get deployment <name> -o yaml
 
 #######################################
 ## Deployments
 ######################################
+#you can use "svc" or "service"
 kubectl get svc                   #returns  list of services in the cluster.
 kubectl get service               #returns  list of services in the cluster.
 kubectl delete svc nginx-service  #deletes service
-
 
 #######################################
 ## namespaces
