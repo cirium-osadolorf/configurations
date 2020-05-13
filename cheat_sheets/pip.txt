@@ -14,3 +14,9 @@ pip freeze > requirements.txt         # Save installed packages to file:
 pip install package_name==package_version
 
 pip uninstall package_name            # Uninstall a package:
+
+
+======================================================================================================
+# https://docs.python.org/3/installing/index.html
+pip is the preferred installer program. Starting with Python 3.4, it is included by default with the Python binary installers.
+
