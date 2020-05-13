@@ -3,31 +3,31 @@ configuration as well as the provisioning (scripts, Chef, Puppet, Ansible ).
 
 ======== General  ========
 
-Vagrant --version         # Returns vegrant version
+vagrant --version         # Returns vegrant version
 vagrant <command> -h      # Returns help on the selected command
 
 ======== Vagrantfile  ========
-Vagrant init              # initialize a vagrant environment by creating a vagrantfile
-Vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
+vagrant init              # initialize a vagrant environment by creating a vagrantfile
+vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
 
 ======== Mangaging the box  ========
 ## Remember taht a <hostname> can be specifiedas part of the following commands
 
-Vagrant up                       # Creates and configure machine according to your Vagrantfile
+vagrant up                       # Creates and configure machine according to your Vagrantfile
 vagrant halt                     # shuts down 1 or more machines
 vagrant suspend                  # saves our virtual environment at the current point-in-time, then stops the machine
 vagrant resume                   # resume supsended vm 
 
-Vagrant destroy                  # used to destroy the environment 
-Vagrant destroy -f               # used to destroy the environment 
-Vagrant validate                 # validates vagrant file
-Vagrant reload                   # Reboots the system, use it after alteraing the Vagrant file
+vagrant destroy                  # used to destroy the environment 
+vagrant destroy -f               # used to destroy the environment 
+vagrant validate                 # validates vagrant file
+vagrant reload                   # Reboots the system, use it after alteraing the Vagrant file
 vagrant reload <id> --provision  # Reboots the system and also run provisioner
-Vagrant status                   # returns the state of the machine present in the current workplace
+vagrant status                   # returns the state of the machine present in the current workplace
 vagrant global-status            # returns the state of the machine present in the system
 vagrant status <hostname>        # returns state of the specified vm
 vagrant global-status --prune    # clear status log
-Vagrant provision                # runs any configured provisioners
+vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
 
 ======== Snapshot  ========
@@ -53,7 +53,7 @@ vagrant snapshot delete <snapo_name>        # delete snapshot, halt the box befo
 
 
 ======== ssh  ========
-Vagrant ssh               # SSH into a vagrant box, used for single guest in an enverioment 
+vagrant ssh               # SSH into a vagrant box, used for single guest in an enverioment 
 vagrant ssh <hostname>    # With the hostname being the name of the virtual machine as provided in the Vagrantfile. Generally, this is used when we have a multi-machine setup
 vagrant ssh -c "ls /"     # Returns ssh comand to hostm machine
 vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
