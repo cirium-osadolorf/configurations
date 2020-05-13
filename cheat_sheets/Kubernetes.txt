@@ -81,6 +81,7 @@ kubectl get namespaces
 kubectl label pods <pod name> env=pod         # apply label to a pod
 kubectl get pods -L env                       # see specific label
 
+
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
 
