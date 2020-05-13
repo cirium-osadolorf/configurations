@@ -5,6 +5,21 @@ kubectl get componentstatus                 # returns compoenets status
 
 kubectl create -f <file.yaml>               # create 
 
+kubectl cluster-info                        # returns info on where the master and DNS is running
+
+kubectl config view                         # returns brief configuration of your cluster
+
+kubectl describe nodes                      # get Information about nodes
+kubectl describe pods                       # get Information about pods
+
+kubectl get pods  --all-namespaces          # get Information about pods across all name spaces
+kubectl describe pods  --all-namespaces     # get Information about pods across all name spaces
+
+kubectl  get services  --all-namespaces     # get informtiaon about services across all name spaces
+kubectl  describe services  --all-namespaces
+
+kubectl api-resources -o wide              # get all resource avaible on your cluster
+
 #######################################
 ## Container and pods
 ######################################
@@ -24,6 +39,7 @@ kubectl get pods --all-namespeces -o wide   # get pods across all namespaces wit
 
 kubectl get pods  --show-labels             # get labels
 
+kubectl describe pods  --all-namespaces     # get Information about pods across al name spaces
 
 
 #######################################
@@ -32,6 +48,7 @@ kubectl get pods  --show-labels             # get labels
 
 
 kubectl get nodes                   # Get a list of nodes
+kubectl describe nodes               # get Information about nodes
 kubectl describe node $node_name    # Get more information about a specific node
 
 
@@ -45,7 +62,7 @@ kubectl delete deployment nginx                 # delete deployments
 kubectl get deployment <name> -o yaml
 
 #######################################
-## Deployments
+## Services
 ######################################
 #you can use "svc" or "service"
 kubectl get svc                   #returns  list of services in the cluster.
