@@ -75,6 +75,15 @@ kubectl delete svc nginx-service  #deletes service
 
 kubectl get namespaces     
 
+#######################################
+## Labels
+######################################
+kubectl label pods <pod name> env=pod         # apply label to a pod
+kubectl get pods -L env                       # see specific label
+
+kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
+kubectl get pods --field-selector status.phase=Running
+
 
 ============== Kubernetes MicroServices ==============
 cd ~/
