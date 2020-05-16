@@ -59,7 +59,7 @@ kubectl describe node $node_name    # Get more information about a specific node
 kubectl get deployments                         # returns your deployments
 kubectl describe deployment nginx-deployment    # return more info related to the deployment
 kubectl delete deployment nginx                 # delete deployments
-kubectl get deployment <name> -o yaml
+kubectl get deployment <name> -o yaml           # returns the complete yaml of the deployment (COMPLETE)
 
 #######################################
 ## Services
