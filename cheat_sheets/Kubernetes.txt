@@ -39,7 +39,7 @@ kubectl get pods --all-namespeces -o wide   # get pods across all namespaces wit
 
 kubectl get pods  --show-labels             # get labels
 
-kubectl describe pods  --all-namespaces     # get Information about pods across al name spaces
+kubectl get pods --all-namespaces           # get Information about pods across al name spaces
 
 
 #######################################
