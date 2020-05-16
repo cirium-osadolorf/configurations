@@ -1,8 +1,12 @@
 =========== Networking  ==================
+ip a 			# the new substitue for ifonfig
+ip r			# returns info on gateway 
+routel			# return route tables
+
 curl ifconfig.me	# returns public ip
 ifconfig		# (Obsolate) returns network info
 ip addr show		# returns network info
-ip a 			# for the lazy
+ip a 			# the new substitue for ifonfig
 ip route show 		# returns info on gateway
 ip r
 route			# returns info on gateway
