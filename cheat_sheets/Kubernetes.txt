@@ -80,7 +80,7 @@ kubectl get namespaces
 
 kubectl get pods  --show-labels             # returns pods with their label
 
-kubectl label pods <name> key=value         # apply a new label to a set of labels, obtain the name with kubectl get pods  --show-labels  
+kubectl label pods <name> key=value         # apply a new label to a set of labels 
 kubectl label pods <pod name> env=pod       # apply label to a pod
 
 kubectl get pods -L env                     # returns pods with specific label
