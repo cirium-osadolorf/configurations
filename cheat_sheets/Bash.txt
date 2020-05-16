@@ -4,6 +4,7 @@ ifconfig		# (Obsolate) returns network info
 ip addr show		# returns network info
 ip a 			# for the lazy
 ip route show 		# returns info on gateway
+ip r
 route			# returns info on gateway
 routel 			# returns info on gateway
 netstat -r 		# (Obsolate) returns info on gateway
