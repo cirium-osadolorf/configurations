@@ -1,71 +1,65 @@
 #######################################
 ## System
 ######################################
-kubectl get componentstatus                 # returns compoenets status
 
 kubectl create -f <file.yaml>               # create 
 
-kubectl cluster-info                        # returns info on where the master and DNS is running
 
+kubectl get componentstatus                 # returns compoenets status
+
+
+kubectl cluster-info                        # returns info on where the master and DNS is running
 kubectl config view                         # returns brief configuration of your cluster
+kubectl api-resources -o wide               # get all resource avaible on your cluster
+kubectl get pods -n kube-system             # retruns system pods (used by kubernetes in the backgound to run the cluster)
 
 kubectl describe nodes                      # get Information about nodes
 kubectl describe pods                       # get Information about pods
-
-kubectl get pods  --all-namespaces          # get Information about pods across all name spaces
-kubectl describe pods  --all-namespaces     # get Information about pods across all name spaces
-
-kubectl  get services  --all-namespaces     # get informtiaon about services across all name spaces
-kubectl  describe services  --all-namespaces
-
-kubectl api-resources -o wide              # get all resource avaible on your cluster
 
 #######################################
 ## Container and pods
 ######################################
 
 kubectl get pods                            # returns running pods
-
-kubectl get pods -n kube-system             # retruns system pods (used by kubernetes in the backgound to run the cluster)
-
-kubectl describe pod nginx
-kubectl delete pod nginx
-
-
 kubectl get pods -o wide                    # returns ip address of your pods
-
 kubectl get pods --all-namespeces           # get pods across all namespaces
 kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
-kubectl get pods  --show-labels             # returns pods and their labels
+kubectl describe pods
+kubectl describe pod nginx
+kubectl delete pod nginx
+kubectl describe pods  --all-namespaces     # get Information about pods across all name spaces
 
-kubectl get pods --all-namespaces           # get Information about pods across al name spaces
+kubectl get pods  --show-labels             # returns pods and their labels
 
 #######################################
 ## Clustering and Nodes
 ######################################
 
-
 kubectl get nodes                   # Get a list of nodes
 kubectl describe nodes               # get Information about nodes
 kubectl describe node $node_name    # Get more information about a specific node
-
 
 #######################################
 ## Deployments
 ######################################
 
 kubectl get deployments                         # returns your deployments
+kubectl get deployment <name> -o yaml           # returns the complete yaml of the deployment (COMPLETE)
+
 kubectl describe deployment nginx-deployment    # return more info related to the deployment
 kubectl delete deployment nginx                 # delete deployments
-kubectl get deployment <name> -o yaml           # returns the complete yaml of the deployment (COMPLETE)
 
 #######################################
 ## Services
 ######################################
-#you can use "svc" or "service"
-kubectl get svc                   #returns  list of services in the cluster.
-kubectl get service               #returns  list of services in the cluster.
+# You can use "svc" or "service"
+
+kubectl get svc                              #returns  list of services in the cluster.
+kubectl get service                          #returns  list of services in the cluster.
+kubectl  get services  --all-namespaces      # get informtiaon about services across all name spaces
+
+kubectl  describe services  --all-namespaces
 kubectl delete svc nginx-service  #deletes service
 
 #######################################
@@ -77,14 +71,18 @@ kubectl get namespaces
 #######################################
 ## Labels
 ######################################
+# applied at the pod level
 
 kubectl get pods  --show-labels             # returns pods with their label
+kubectl get pods -L env                     # returns pods with specific label
 
 kubectl label pods <name> key=value         # apply a new label to a set of labels 
 kubectl label pods <pod name> env=pod       # apply label to a pod
 
-kubectl get pods -L env                     # returns pods with specific label
-
+#######################################
+## Annotations
+######################################
+# applied at the obejct  level 
 
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
@@ -100,8 +98,4 @@ http://$kube_server_public_ip:30080                             #access the appl
 
 
 
-
-
 https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
-
-
