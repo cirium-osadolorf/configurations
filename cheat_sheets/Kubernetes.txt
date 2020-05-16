@@ -37,7 +37,7 @@ kubectl get pods -o wide                    # returns ip address of your pods
 kubectl get pods --all-namespeces           # get pods across all namespaces
 kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
-kubectl get pods  --show-labels             # get labels
+kubectl get pods  --show-labels             # returns pods and their labels
 
 kubectl get pods --all-namespaces           # get Information about pods across al name spaces
 
