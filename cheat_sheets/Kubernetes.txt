@@ -41,6 +41,9 @@ kubectl get pods  --show-labels             # returns pods and their labels
 
 kubectl get pods --all-namespaces           # get Information about pods across al name spaces
 
+kubectl label pods <name> key:value         # apply a new label to a set of labels
+kubectl label pods <name> key:value         # apply a new label to a set of labels
+
 
 #######################################
 ## Clustering and Nodes
