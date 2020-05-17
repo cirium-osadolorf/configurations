@@ -16,6 +16,9 @@ kubectl get pods -n kube-system             # retruns system pods (used by kuber
 kubectl describe nodes                      # get Information about nodes
 kubectl describe pods                       # get Information about pods
 
+kubectl get endpoints
+kubectl get endpoints kube-scheduler -n kube-system  -o yaml
+
 #######################################
 ## Container and pods
 ######################################
