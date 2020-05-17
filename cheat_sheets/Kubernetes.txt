@@ -18,6 +18,7 @@ kubectl describe pods                       # get Information about pods
 
 kubectl get endpoints
 kubectl get endpoints kube-scheduler -n kube-system  -o yaml
+kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 
 #######################################
 ## Container and pods
