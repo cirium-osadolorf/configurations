@@ -594,8 +594,9 @@ sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoi
 command & # This command will let your command run in background, but will be killed when current session closed.
 nohup <command> <args> ><filename> 2>&1 &  # This command will continue running even the terminal session ends.
 
-
- grep -c "echo" FILE		#  This will output the number of lines that contain your search string.
+grep -o				# -o returns the match cahraters only and not the entire line
+grep -P				# perl regular experssion
+grep -c "echo" FILE		#  This will output the number of lines that contain your search string.
 
 
 
