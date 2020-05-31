@@ -37,6 +37,8 @@ kubectl describe pods  --all-namespaces     # get Information about pods across 
 
 kubectl get pods  --show-labels             # returns pods and their labels
 
+kubectl get pods/<podname> -o yaml          # return yaml of a pod state
+
 #######################################
 ## Clustering and Nodes
 ######################################
