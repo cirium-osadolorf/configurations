@@ -2,11 +2,9 @@
 ## System
 ######################################
 
-kubectl create -f <file.yaml>               # create 
-
+kubectl create -f <file.yaml>               # create k8 object
 
 kubectl get componentstatus                 # returns compoenets status
-
 
 kubectl cluster-info                        # returns info on where the master and DNS is running
 kubectl config view                         # returns brief configuration of your cluster
@@ -77,8 +75,6 @@ kubectl get namespaces        # return namespace
 kubectl get pods -n my-ns     # get pods belonging to a namespace
 kubectl create ns my-ns       # Create a new namespace named my-ns
 
-
-
 #######################################
 ## Labels
 ######################################
@@ -98,6 +94,14 @@ kubectl label pods <pod name> env=pod       # apply label to a pod
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
 
+#######################################
+## ServiceAccount
+######################################
+ 
+# Every namespace has a default service account resource called default. You can list this and any other serviceAccount resources in the  # namespace with this command :
+
+kubectl get serviceaccounts
+
 
 # Creating additional serviceacoount
 kubectl apply -f - <<EOF
@@ -109,31 +113,18 @@ EOF
 
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
-#######################################
-## ServiceAccount
-######################################
-kubectl get serviceaccounts
- 
-Every namespace has a default service account resource called default. You can list this and any other serviceAccount resources in the namespace with this command:
-
-
 ============== Kubernetes MicroServices ==============
 cd ~/
 git clone https://github.com/linuxacademy/robot-shop.git
-kubectl create namespace robot-shop                             #Create a namespace
-kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/   #deploy app objects using the deployment descriptors from the repo
-kubectl get pods -n robot-shop -w                               #-w gives the ability to watch ral time creation of the pods
-http://$kube_server_public_ip:30080                             #access the application via the kubernetes master ip
-
-
+kubectl create namespace robot-shop                             # Create a namespace
+kubectl -n robot-shop create -f ~/robot-shop/K8s/descriptors/   # deploy app objects using the deployment descriptors from the repo
+kubectl get pods -n robot-shop -w                               # -w gives the ability to watch ral time creation of the pods
+http://$kube_server_public_ip:30080                             # access the application via the kubernetes master ip
 
 https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
 
-
-
-
-==========================
-== Extra
-==========================
+##########################
+## Extra
+##########################
 
 kubectl get secrets # kubectl get secrets
