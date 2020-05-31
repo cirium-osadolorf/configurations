@@ -26,6 +26,7 @@ kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 
 kubectl get pods                            # returns running pods
 kubectl get pods -o wide                    # returns ip address of your pods
+kubectl get pods -n <name>                  # get pods belonging to a namespace
 kubectl get pods --all-namespeces           # get pods across all namespaces
 kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
@@ -70,7 +71,11 @@ kubectl delete svc nginx-service  #deletes service
 ## namespaces
 ######################################
 
-kubectl get namespaces     
+kubectl get namespaces        # return namespace
+kubectl get pods -n my-ns     # get pods belonging to a namespace
+kubectl create ns my-ns       # Create a new namespace named my-ns
+
+
 
 #######################################
 ## Labels
@@ -91,6 +96,13 @@ kubectl label pods <pod name> env=pod       # apply label to a pod
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
 
+#######################################
+## ServiceAccount
+######################################
+kubectl get serviceaccounts
+ 
+Every namespace has a default service account resource called default. You can list this and any other serviceAccount resources in the namespace with this command:
+
 
 ============== Kubernetes MicroServices ==============
 cd ~/
@@ -103,3 +115,12 @@ http://$kube_server_public_ip:30080                             #access the appl
 
 
 https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
+
+
+
+
+==========================
+== Extra
+==========================
+
+kubectl get secrets # kubectl get secrets
