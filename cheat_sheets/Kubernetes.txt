@@ -98,6 +98,17 @@ kubectl label pods <pod name> env=pod       # apply label to a pod
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
 
+
+# Creating additional serviceacoount
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-robot
+EOF
+
+kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
+
 #######################################
 ## ServiceAccount
 ######################################
