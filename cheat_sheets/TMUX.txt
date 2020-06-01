@@ -1,4 +1,4 @@
-TMUX   (1 or more) --> session (1 or more) ---> plane 
+TMUX   (1 or more) --> session (1 or more) ---> window 
 
 ###########################
 # System
@@ -17,20 +17,21 @@ ctrl + b                  # Prefix, all tmux commands are executed after this pr
 # After Prefix
 ###########################
 
-
 c (after Prefix)          # create a new window
-
-number (after Prefix)     # switch between windows
 
 , (after Prefix)          # rename current window
 
-% (after Prefix)          # Split current pane horizontally into two panes
-" (after Prefix)          # Split current pane vertically into two panes
+% (after Prefix)          # Split current window into 2 horizontally panes
+" (after Prefix)          # Split current window into 2 vertical panes
 
-o (after Prefix)          # Go to the next pane
+number (after Prefix)     # switch between windows
+o (after Prefix)          # Go to the next window
+n (after Prefix)          # Go to the next window
+p (after Prefix)          # Go to the previous window
 ; (after Prefix)          # Toggle between the current and previous pane
+
 w (after Prefix)          # list planes
-x (after Prefix)          # Close the current pane
+x (after Prefix)          # Close the current window
 
 t (after Prefix)          # show the time
 
