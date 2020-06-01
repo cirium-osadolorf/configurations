@@ -29,6 +29,7 @@ number (after Prefix)     # switch between windows
 
 o (after Prefix)          # Go to the next pane
 ; (after Prefix)          # Toggle between the current and previous pane
+w (after Prefix)          # list planes
 x (after Prefix)          # Close the current pane
 
 t (after Prefix)          # show the time
