@@ -1,4 +1,4 @@
-TMUX   (1 or more) --> session (1 or more) ---> tab 
+TMUX   (1 or more) --> session (1 or more) ---> plane 
 
 ###########################
 # System
