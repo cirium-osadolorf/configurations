@@ -1,6 +1,8 @@
 #######################################
 ## System
 ######################################
+kubectl explain pod                               # Explain resource
+kubectl explain persistentvolumes.spec.hostPath   # Explain resource
 
 kubectl create -f <file.yaml>               # create k8 object
 
