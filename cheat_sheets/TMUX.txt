@@ -1,11 +1,27 @@
-tmux new -s <name>        # start new tmux session
+tmux                      # lunch tmux, 
+tmux new -s <name>        # start new named seesion tmux session. By default, Tmux sessions are named numerically.
+tmux ls                   # returns tmux mux sessions
+tmux attach-session -t 0  # attaching to a specific tmux session
 
-ctrl + b                  # Prefix
+ctrl + b                  # Prefix, all tmux commands are executed after this prefix
+
+###########################
+# After Prefix
+###########################
 
 c (after Prefix)          # create a new window
 
-number (after Prefix)     # swirch between windows
+number (after Prefix)     # switch between windows
 
-tmux ls                   # returns number of mux sessions
+, (after Prefix)          # rename current window
+
+% (after Prefix)          # Split current pane horizontally into two panes
+" (after Prefix)          # Split current pane vertically into two panes
+
+o (after Prefix)          # Go to the next pane
+; (after Prefix)          # Toggle between the current and previous pane
+x (after Prefix)          # Close the current pane
 
 t (after Prefix)          # show the time
+
+d (after prefix)          # You can detach from the Tmux session and return to your normal shell
