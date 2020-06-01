@@ -4,6 +4,8 @@
 kubectl explain pod                               # Explain resource
 kubectl explain persistentvolumes.spec.hostPath   # Explain resource
 
+sudo systemctl status kubelet
+
 kubectl create -f <file.yaml>               # create k8 object
 
 kubectl get componentstatus                 # returns compoenets status
