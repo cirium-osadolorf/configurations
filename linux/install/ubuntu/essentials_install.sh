@@ -2,12 +2,15 @@
 
 #Java install
 apt update
-apt install openjdk-8-jdk
 
 #extras tools
+apt-get install -y vim
+apt-get install -y tmux
+apt-get install -y htop
 apt-get install -y tree
 apt-get install -y dialog
 apt-get install -y dos2unix  
+apt install openjdk-8-jdk
 apt-get install -y cmatrix
 
 
