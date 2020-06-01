@@ -1,4 +1,4 @@
-TMUX   (1 or more) --> session (1 or more) ---> window 
+TMUX   (1 or more) --> session (1 or more) ---> window (1 or more) ---> pane
 
 ###########################
 # System
