@@ -1,0 +1,9 @@
+tmux new -s <name>        # start new tmux session
+
+ctrl + b                  # Prefix
+
+c (after Prefix)          # create a new window
+
+number (after Prefix)     # swirch between windows
+
+tmux ls                   # returns number of mux sessions
