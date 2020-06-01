@@ -7,3 +7,5 @@ c (after Prefix)          # create a new window
 number (after Prefix)     # swirch between windows
 
 tmux ls                   # returns number of mux sessions
+
+t (after Prefix)          # show the time
