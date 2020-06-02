@@ -393,3 +393,7 @@ docker rename my_container my_new_container
 
 
 docker run -t -i centos /bin/bash   # used to  stand containers of an images that do not contain cmd command (do not run any default app)
+
+
+
+docker inspect --format '{{ .State.Pid }}' [container_id] # Get the process ID for the container
