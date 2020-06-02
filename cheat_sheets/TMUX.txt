@@ -25,7 +25,8 @@ c (after Prefix)          # create a new window
 " (after Prefix)          # Split current window into 2 vertical panes
 
 number (after Prefix)     # switch between windows
-o (after Prefix)          # Go to the next window
+o (after Prefix)          # Go to the next pane
+Prefix + o                # flip pane position
 n (after Prefix)          # Go to the next window
 p (after Prefix)          # Go to the previous window
 ; (after Prefix)          # Toggle between the current and previous pane
