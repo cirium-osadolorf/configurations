@@ -92,6 +92,7 @@ sudo pg_dump -h 127.0.0.1 -U user -f dump_file.sql kore
 sudo psql -U postgres -d newdb -f dump_file.sql
 
 
+pg_dump -s databasename     # Backing up schema only
 
 
 
