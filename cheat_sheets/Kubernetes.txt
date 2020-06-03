@@ -73,6 +73,10 @@ kubectl delete svc nginx-service  #deletes service
 
 kubectl get endpoints                        # View the list of endpoints in your cluster that get created with a service
 
+kubectl get services -w                      # Watch as an external port is created for a service
+
+kubectl get services kubeserve2 -o yaml      # gets yaml of the service
+
 #######################################
 ## namespaces
 ######################################
