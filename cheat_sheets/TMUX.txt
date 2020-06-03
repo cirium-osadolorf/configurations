@@ -17,23 +17,29 @@ ctrl + b                  # Prefix, all tmux commands are executed after this pr
 # After Prefix
 ###########################
 
+# Window managament 
 c (after Prefix)          # create a new window
-
 , (after Prefix)          # rename current window
+w (after Prefix)          # list windows
 
+# Pane managment 
 % (after Prefix)          # Split current window into 2 horizontally panes
 " (after Prefix)          # Split current window into 2 vertical panes
 
+# Window Movement 
 number (after Prefix)     # switch between windows
-o (after Prefix)          # Go to the next pane
 Prefix + o                # flip pane position
 n (after Prefix)          # Go to the next window
 p (after Prefix)          # Go to the previous window
-; (after Prefix)          # Toggle between the current and previous pane
 
-w (after Prefix)          # list planes
-x (after Prefix)          # Close the current window
+# Pane Movement 
+o (after Prefix)          # Go to the next pane
+; (after Prefix)          # Toggle between the current and previous pane
+Prefix + direction        # Resize the pane 
+direction (after Prefix)  # move between panes
+
+
 
 t (after Prefix)          # show the time
-
+x (after Prefix)          # Close the current window
 d (after prefix)          # You can detach from the Tmux session and return to your normal shell
