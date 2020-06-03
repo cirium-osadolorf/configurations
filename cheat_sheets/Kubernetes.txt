@@ -1,10 +1,10 @@
 #######################################
 ## System
 ######################################
-kubectl explain pod                               # Explain resource
-kubectl explain persistentvolumes.spec.hostPath   # Explain resource
+kubectl explain pod                               # Explain resource (help)
+kubectl explain persistentvolumes.spec.hostPath   # Explain resource (help)
 
-sudo systemctl status kubelet
+sudo systemctl status kubelet               # check status of the service
 
 kubectl create -f <file.yaml>               # create k8 object
 
@@ -71,11 +71,21 @@ kubectl  get services  --all-namespaces      # get informtiaon about services ac
 kubectl  describe services  --all-namespaces
 kubectl delete svc nginx-service  #deletes service
 
+kubectl get services -w                      # Watch as an external port is created for a service
 kubectl get endpoints                        # View the list of endpoints in your cluster that get created with a service
 
-kubectl get services -w                      # Watch as an external port is created for a service
-
 kubectl get services kubeserve2 -o yaml      # gets yaml of the service
+
+#######################################
+## ingress Service
+######################################
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+
+kubectl edit ingress            # Edit the ingress rules:
+
+kubectl describe ingress        # View the existing ingress rules:
+
+
 
 #######################################
 ## namespaces
