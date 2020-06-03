@@ -119,6 +119,25 @@ EOF
 
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
+#######################################
+## OneLiners
+######################################
+
+# 1)  Run a deployment that includes at least one pod, and verify it was successful.
+kubectl create deployment nginx --image=nginx 
+
+# 5) Create a service, and verify connectivity on the node port.
+kubectl expose deployment nginx --port 80 --type NodePort
+
+# 3)  Use port forwarding to extend port 80 to 8081, and verify access to the pod directly.
+kubectl port-forward [pod_name] 8081:80 # this session must be left open
+
+# 4)  Execute a command directly on a pod.
+kubectl exec -it <pod_name> -- nginx -v
+
+# Busybox
+kubectl exec busybox -- curl <IP:80>  # Runnin the curl comand from the busybox pod
+
 ============== Kubernetes MicroServices ==============
 cd ~/
 git clone https://github.com/linuxacademy/robot-shop.git
