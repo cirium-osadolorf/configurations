@@ -142,6 +142,11 @@ kubectl exec -it <pod_name> -- nginx -v
 # Busybox
 kubectl exec busybox -- curl <IP:80>  # Runnin the curl comand from the busybox pod
 
+
+# 5) Scale deployment replicas
+kubectl scale deployment/kubeserve2 --replicas=2
+
+
 ============== Kubernetes MicroServices ==============
 cd ~/
 git clone https://github.com/linuxacademy/robot-shop.git
