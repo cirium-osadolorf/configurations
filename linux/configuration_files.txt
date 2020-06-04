@@ -45,8 +45,8 @@
 
 
 /etc/hostname                # contains name of the machine, as known to applications that run locally.
-/etc/network/interfaces      # This is where you configure how your system is  connected to the network.
-/etc/resolv.conf             # DNS name the system contacts
+/etc/network/interfaces      # This is where you configure how your system is  connected to the network. DHCP and static can be set here
+/etc/resolv.conf             # used o configure the system's Domain Name System (DNS) resolver
 /etc/hosts                   # used to map hostnames (in other words domains) to IP addresses.                   
 /etc/nsswitch.conf           # is used by applications to determine the sources from which to obtain name-service information,
                                and in what order                
