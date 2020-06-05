@@ -47,3 +47,27 @@ direction (after Prefix)  # move between panes
 t (after Prefix)          # show the time
 x (after Prefix)          # Close the current window
 d (after prefix)          # You can detach from the Tmux session and return to your normal shell
+
+
+
+
+
+
+
+
+
+
+
+
+% create a horizontal pane
+" create a vertical pane
+h move to the left pane. *
+j move to the pane below *
+l move to the right pane *
+k move to the pane above *
+q show pane numbers
+o toggle between panes
+} swap with next pane
+{ swap with previous pane
+! break the pane out of the window
+x kill the current pane
