@@ -7,15 +7,19 @@ TMUX   (1 or more) --> session (1 or more) ---> window (1 or more) ---> pane
 tmux                      # lunch tmux, 
 tmux new -s <name>        # start new named seesion tmux session. By default, Tmux sessions are named numerically.
 tmux ls                   # returns tmux mux sessions
+tmux attach               # Attach to latest session
+tmux a                    # Attach to latest session
 tmux attach-session -t 0  # attaching to a specific tmux session
-tmux switch -t <name>     # switches to an existing session named session_name
+tmux a -t <name>          # attaching to a specific tmux session
 
-
-ctrl + b                  # Prefix, all tmux commands are executed after this prefix
+tmux switch -t <name>       # switches to an existing session named session_name
+tmux kill-session -t <name> # kill session (delete)
 
 ###########################
 # After Prefix
 ###########################
+ctrl + b                  # Prefix, all tmux commands are executed after this prefix
+
 
 # Window managament 
 c (after Prefix)          # create a new window
