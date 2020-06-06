@@ -44,16 +44,27 @@ gg        # Moves cursor to the top of the file
 1G        # Moves cursor to the top of the file
 G         # Moves cursor to the bottom of the file
 
+100%      # moves to line percentage of the file
+<numer>%
+
 {         # Moves cursor to the previous paragraph 
 }         # Moves cursor to the next paragraph
 
 %         # Moves cursor in between brackets scope
 
+pg up      # takes you up one page up
+pg dn      # akes you down one page down
+ctrl b     # takes you up one page up       (backwards)
+ctrl f     #t akes you down one page down   (foward)
+
+H          # highest visible line
+M          # middle visible line
+L          # lowest visible line
+
 :<number>  # Moves cursor to line number
 <Number> G # Moves cursor to line number
 
-pg up
-pg dn
+
 
 =====================================================
 Visual Mode
