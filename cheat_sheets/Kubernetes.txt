@@ -174,7 +174,7 @@ https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
 kubectl get secrets # kubectl get secrets
 
 
-
+kubectl get endpoints kube-scheduler -n kube-system -o yam l
 
 
 ##########################
