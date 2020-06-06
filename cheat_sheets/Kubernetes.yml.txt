@@ -1,0 +1,26 @@
+##########################
+## 
+##########################
+
+
+##########################
+## Utilties
+##########################
+# Busyboc pod
+# kubectl create -f <file.yaml>
+# kubectl exec -it busybox -- <comand>
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  containers:
+  - image: busybox:1.28.4
+    command:
+      - sleep
+      - "3600"
+    imagePullPolicy: IfNotPresent
+    name: busybox
+  restartPolicy: Always
