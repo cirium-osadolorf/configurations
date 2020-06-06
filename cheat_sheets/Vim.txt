@@ -45,6 +45,8 @@ G         # Moves cursor to the bottom of the file
 
 %         # Moves cursor in between brackets scope
 
+:<number> # Moves cursor to line number
+
 =====================================================
 Visual Mode
 =====================================================
