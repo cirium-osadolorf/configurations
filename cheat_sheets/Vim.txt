@@ -39,6 +39,9 @@ e         # Moves cursor to the last charaacter of the next word
 0         # Moves cursor to the begining of the line
 $         # Moves cursor to the end of the line 
 
+home      # [kb] Moves cursor to the begining of the line
+end       # [kb] Moves cursor to the end of the line 
+
 gg        # Moves cursor to the top of the file
 1gg       # Moves cursor to the top of the file
 1G        # Moves cursor to the top of the file
@@ -52,8 +55,8 @@ G         # Moves cursor to the bottom of the file
 
 %         # Moves cursor in between brackets scope
 
-pg up      # takes you up one page up
-pg dn      # akes you down one page down
+pg up      # [kb] takes you up one page up
+pg dn      # [kb] takes you down one page down
 ctrl b     # takes you up one page up       (backwards)
 ctrl f     #t akes you down one page down   (foward)
 
@@ -105,6 +108,8 @@ p           # paste
 
 : %s /<old-value>/<new_value>/g    # Replace all instaces of the word 
 : %s /<old-value>/<new_value>/gc   # Replace all instaces of the word with confirmation prompt 
+
+J            # Appends the start of previosly line to the end of the current line
 
 =====================================================
 seraching  ( While in Command mode)
