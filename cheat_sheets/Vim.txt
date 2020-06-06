@@ -18,6 +18,10 @@ Esc                     # Switch to Command mode
 : help
 : help <keyworkd>
 
+:set number             # number all lines
+
+ vim +36 <fileName>     # open file at specific line number
+
 =====================================================
 Movment ( While in Command mode)
 =====================================================
