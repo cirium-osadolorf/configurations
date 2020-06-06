@@ -154,6 +154,8 @@ Set commands
 :set modifiable     # will make a buffer modifiable
 :set noma           # disbale modification
 
+:set scrolloff=5    #offset view of line at the top and botttom of the file
+
 
 =====================================================
 Save and load
