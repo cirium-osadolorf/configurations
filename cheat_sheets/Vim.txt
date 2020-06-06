@@ -118,3 +118,18 @@ Extras  ( While in Command mode)
 
 : saveas <File_Name.txt>  # Saves content to a differnt file
 
+
+=====================================================
+Save and load
+=====================================================
+
+:help quotes       # return file
+:w! ~/quotes.txt   # save content to file, overide if exist
+:q!
+:e quotes.txt      # loads that content into urrent vim session
+
+# In case of error 
+# https://stackoverflow.com/questions/5745506/vim-modifiable-is-off
+:set ma             # which is short for
+:set modifiable     # will make a buffer modifiable. And
+:set noma           # disbale modification
