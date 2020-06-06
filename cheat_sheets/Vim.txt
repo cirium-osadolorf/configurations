@@ -95,6 +95,9 @@ dw          # Delete a word
 yy          # Copies line
 p           # Paste line
 
+J           # Appends the start of previosly line to the end of the current line
+
+
 v ← or →    # Mark mode, Copies highlighted text [ once you are done selecting use Esc to finsh the action ]
 p           # paste 
 
@@ -109,7 +112,6 @@ p           # paste
 : %s /<old-value>/<new_value>/g    # Replace all instaces of the word 
 : %s /<old-value>/<new_value>/gc   # Replace all instaces of the word with confirmation prompt 
 
-J            # Appends the start of previosly line to the end of the current line
 
 =====================================================
 seraching  ( While in Command mode)
