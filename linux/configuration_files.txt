@@ -96,7 +96,8 @@ node_modules/   // folder where dependencies are installed
 
 ============== Kubernetes ==================
 
-.kube/config     #  By default, kubectl looks for a file named config in the $HOME/.kube directory
+.kube/config     # By default, kubectl looks for a file named config in the $HOME/.kube directory
+                 # A file that is used to configure access to clusters 
 
 
 
