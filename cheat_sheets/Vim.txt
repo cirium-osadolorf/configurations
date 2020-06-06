@@ -49,7 +49,11 @@ G         # Moves cursor to the bottom of the file
 
 %         # Moves cursor in between brackets scope
 
-:<number> # Moves cursor to line number
+:<number>  # Moves cursor to line number
+<Number> G # Moves cursor to line number
+
+pg up
+pg dn
 
 =====================================================
 Visual Mode
