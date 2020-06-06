@@ -462,6 +462,18 @@ systemctl poweroff			# run reboot target unit
 
 sudo systemctl status {firewalld,iptables} # returns the running services
 
+====================== Script =====================
+#Used to record shell sessions
+script 			# start recording
+script 	<fileName>	# start recording into a filename
+exit			# ends the recorind
+
+
+script <fileName> --timing=time.log	# start replayble recording
+scriptreplay -s <fileName> -t time.log	# replay replayable recording
+
+script -c "netstat -tupln" netstat.log	# write outpuut into log file
+
 ================== Cron ================== 
 # https://crontab.guru/
 crontab -l 		# return user cronjobs
