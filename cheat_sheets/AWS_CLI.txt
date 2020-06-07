@@ -35,7 +35,6 @@ Availability zones
 =================================================================
 aws ec2 describe-availability-zones
 
-
 =================================================================
 Attach
 =================================================================
@@ -77,16 +76,10 @@ aws ec2 create-subnet --vpc-id vpc-99e344fd --cidr-block 10.0.2.0/24
 aws ec2 describe-subnets                  # Returns Subnet instances
 
 =================================================================
-Route tbale
+Route table
 =================================================================
-
 aws ec2 create-route-table --vpc-id <value>
 aws ec2 describe-route-tables             # Returns Route tables instances
-
-
-=================================================================
-Route connection
-=================================================================
 
 =================================================================
 Security Groups
@@ -94,13 +87,11 @@ Security Groups
 aws ec2 create-security-group --group-name MySecurityGroup --description "..." --vpc-id <value>
 aws ec2 describe-security-groups
 
-
 =================================================================
 instaces
 =================================================================
 aws ec2 run-instances --generate-cli-skeleton
 aws ec2 describe-instaces  # Retuns ec2 instaces
-
 
 =================================================================
 S3
@@ -111,9 +102,6 @@ aws s3 cp s3://pathS3 ./ --recursive     # Copies content within a bucket into d
 aws s3api list-objects --bucket bucketname --query "Contents[?LastModified>='2019-06-01T00:00:000Z'].{Key: Key , LastModified: LastModified}"
 
 aws s3api list-objects --bucket myBucketName --query "Contents[?contains(Key, `mySearchPattern`)]"
-
-
-
 
 =================================================================
 Load Balancer
@@ -145,8 +133,6 @@ aws autoscaling create-launch-configuration
 aws autoscaling describe-launch-configurations
 aws autoscaling delete-launch-configuration --launch-configuration-name <value>
 
-
-
 =================================================================
 EC2 Key Pairs
 =================================================================
@@ -155,5 +141,3 @@ EC2 Key Pairs
  aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
  aws ec2 describe-key-pairs --key-name MyKeyPair
  aws ec2 delete-key-pair --key-name MyKeyPair
-
-   
