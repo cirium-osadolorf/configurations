@@ -12,6 +12,8 @@ tmux a                    # Attach to latest session
 tmux attach-session -t 0  # attaching to a specific tmux session
 tmux a -t <name>          # attaching to a specific tmux session
 
+tmux rename-session -t 0 database   # rename session
+
 tmux switch -t <name>       # switches to an existing session named session_name
 tmux kill-session -t <name> # kill session (delete)
 
@@ -52,9 +54,12 @@ d (after prefix)          # You can detach from the Tmux session and return to y
 
 
 
+C-b ? to see a list of all available commands and start experimenting.
 
 
 
+
+C-b z: make a pane go full screen. Hit C-b z again to shrink it back to its previous size
 
 
 
