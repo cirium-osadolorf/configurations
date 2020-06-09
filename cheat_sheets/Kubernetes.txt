@@ -106,6 +106,9 @@ kubectl get pods -L env                     # returns pods with specific label
 kubectl label pods <name> key=value         # apply a new label to a set of labels 
 kubectl label pods <pod name> env=pod       # apply label to a pod
 
+kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
+
+
 #######################################
 ## Annotations
 ######################################
