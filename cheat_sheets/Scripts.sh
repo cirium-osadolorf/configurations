@@ -1,7 +1,7 @@
 ################################################
 # unzip every file in the fodler
 ################################################
-
+# https://www.jamf.com/jamf-nation/discussions/25560/loop-through-files-bash-help
 #! /bin/bash
 FILES=*
 for f in $FILES
