@@ -6,7 +6,7 @@ show collections                    # returns a list of collection (tables)
 db.staff_info.drop()                # Drops the collection (table)
 db.dropDatabase()                   # Drops Database
 
-mongoimport -d cities -c cityinfo —type CSV —file ./cities.csv —headerline  # uses CSV file to create ad DB
+mongoimport -d cities -c cityinfo —type CSV —file ./cities.csv —headerline  # uses CSV file to create a DB
   # cities = db Name
   # cityinfo = name of the collection 
   # headerline = mongo looks at the first line of the csv and uses the columns as a key for the pairs
