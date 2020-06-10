@@ -2,7 +2,6 @@
 # Packer
 ###############
 
-
 packer build <File>        # used to build the machine image, takes in a template file as input and generates an  artifact as output
 
 packer build -only=foo,bar <File> 
@@ -15,17 +14,3 @@ packer inspect <File>     # eads a template and outputs the various components t
 packer validate <File>    # check the syntax and configfuration of your template
 
 
-
-
-
-##########################################
-## Builder types
-########################################
-
--Amazon AMI
--Docker
--HyperV
--OpenStack
--VirutalBox
--VMware
-- etc
