@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################################################
 # unzip every file in the fodler
 ################################################
@@ -10,3 +27,46 @@ do
   # take action on each file. $f store current file name
   gzip -d $f
 done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################################################
+# unzip every file in the fodler
+################################################################################################
+# https://linuxconfig.org/how-to-change-welcome-message-motd-on-ubuntu-18-04-server
+
+
+## /etc/update-motd.d/50-landscape-sysinfo
+
+#!/bin/sh
+cores=$(grep -c ^processor /proc/cpuinfo 2>/dev/null)
+[ "$cores" -eq "0" ] && cores=1
+threshold="${cores:-1}.0"
+if [ $(echo "`cut -f1 -d ' ' /proc/loadavg` < $threshold" | bc) -eq 1 ]; then
+    echo
+    echo -n "  System information as of "
+    /bin/date
+    echo
+    /usr/bin/landscape-sysinfo
+else
+    echo
+    echo " System information disabled due to load higher than $threshold"
+fi
+
+
+
+
+
