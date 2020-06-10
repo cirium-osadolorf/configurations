@@ -1,20 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ################################################
 # unzip every file in the fodler
 ################################################
@@ -27,14 +10,6 @@ do
   # take action on each file. $f store current file name
   gzip -d $f
 done
-
-
-
-
-
-
-
-
 
 
 
