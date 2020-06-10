@@ -85,4 +85,15 @@ git pull  origin master
 git push origin master 
 
 
+===========================================
+# Deleting local branches
+===========================================
+git branch -a
+git branch -d test
 
+===========================================
+# Deleting remote branches
+===========================================
+
+git branch -a
+git push origin --delete test
