@@ -3,8 +3,6 @@
 ===================
 java -jar <jar-file-name>.jar   #Run jar file in command prompt
 
-
-
 ===================
 # maven
 ===================
