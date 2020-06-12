@@ -19,3 +19,33 @@ project
 
 -version
 0.0.1
+
+
+
+================
+=
+===============
+
+	@Test
+	public void testA() {
+		OffsetDateTime now = OffsetDateTime.now();
+		OffsetDateTime utc = OffsetDateTime.now(ZoneOffset.UTC);
+		OffsetDateTime utc2 = OffsetDateTime.now(ZoneId.of("Europe/Berlin"));
+		OffsetDateTime utc3 = OffsetDateTime.now(ZoneId.of("Greenwich"));
+
+		System.out.println(utc);
+		System.out.println(utc2);
+		System.out.println(utc3);
+		/*
+		 * 
+		 * 
+		 *  2020-06-10T09:08:43.721Z
+			2020-06-10T11:08:43.722+02:00
+			2020-06-10T09:08:43.722Z
+
+		 */
+		 
+	OffsetDateTime b =  OffsetDateTime.parse("2019-02-22 19:29:43+02:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ssXXX"));
+	System.out.println(b);
+
+	}
