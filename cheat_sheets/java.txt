@@ -8,3 +8,14 @@ java -jar <jar-file-name>.jar   #Run jar file in command prompt
 ===================
 mvn dependency:purge-local-repository # purge dependencies that were incorrectly downloaded 
                                         # force mvn to download dependecies if u deleted the .m2 fodler
+                                        
+                                        
+                                    
+-groupId
+com.companyname.project
+
+-artifactId
+project
+
+-version
+0.0.1
