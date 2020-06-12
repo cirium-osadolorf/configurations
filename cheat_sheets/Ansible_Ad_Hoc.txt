@@ -1,5 +1,4 @@
 ================================================================================
-sudo apt-get purge nano
 sudo visudo 
 ansible ALL=(ALL)  NOPASSWD: ALL 
 #Alwasys use full path when working with files and directories
