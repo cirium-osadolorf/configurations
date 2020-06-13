@@ -6,6 +6,8 @@
                         
 /usr/bin                # contains executable programs that are part of the operating system and installed by its package manager
 /usr/local/bin          # default location for executable programs not part of the operating system and
+
+/etc/shells             # path where all shells are stored
                         
 /etc/passwd             # stores general user info 
 /etc/groups             # stores general group info 
