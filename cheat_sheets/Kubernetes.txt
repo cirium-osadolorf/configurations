@@ -41,6 +41,8 @@ kubectl get pods  --show-labels             # returns pods and their labels
 
 kubectl get pods/<podname> -o yaml          # return yaml of a pod state
 
+kubectl edit pod <podName>                  # k8 updates the pod and updates it in real time
+
 #######################################
 ## Clustering and Nodes
 ######################################
@@ -116,6 +118,12 @@ kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
 
 kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="chad"
 kubectl get pods --field-selector status.phase=Running
+
+#######################################
+## logs
+######################################
+
+kubectl logs <podName> <containerName>
 
 #######################################
 ## ServiceAccount
