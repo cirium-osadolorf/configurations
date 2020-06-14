@@ -15,7 +15,7 @@ kubectl get componentstatus                 # returns compoenets status
 kubectl cluster-info                        # returns info on where the master and DNS is running
 kubectl config view                         # returns brief configuration of your cluster
 kubectl api-resources -o wide               # get all resource avaible on your cluster
-kubectl get pods -n kube-system             # retruns system pods (used by kubernetes in the backgound to run the cluster)
+kubectl get pods -n kube-system             # returns pods running in the kube system namespace
 
 kubectl describe nodes                      # get Information about nodes
 kubectl describe pods                       # get Information about pods
