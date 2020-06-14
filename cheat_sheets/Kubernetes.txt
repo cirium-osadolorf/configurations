@@ -1,6 +1,8 @@
 #######################################
 ## System
 ######################################
+kubectl get all                                   # returns all objects
+
 kubectl explain pod                               # Explain resource (help)
 kubectl explain persistentvolumes.spec.hostPath   # Explain resource (help)
 
