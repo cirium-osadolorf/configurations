@@ -3,12 +3,13 @@
 ######################################
 kubectl get all                                   # returns all objects
 
-kubectl explain pod                               # Explain resource (help)
+kubectl explain <object>                               # Explain resource (help)
 kubectl explain persistentvolumes.spec.hostPath   # Explain resource (help)
 
 sudo systemctl status kubelet               # check status of the service
 
-kubectl create -f <file.yaml>               # create k8 object
+kubectl create -f <file.yaml>                             # create k8 object
+kubectl create -f <file.yaml>  --namespace=dev            # create k8 object within specific namesapce
 
 kubectl get componentstatus                 # returns compoenets status
 
@@ -24,6 +25,8 @@ kubectl get endpoints
 kubectl get endpoints kube-scheduler -n kube-system  -o yaml
 kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 
+kubectl get object --namespeces=<name>        # get object from a namespace
+
 #######################################
 ## Container and pods
 ######################################
@@ -31,6 +34,7 @@ kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 kubectl get pods                            # returns running pods
 kubectl get pods -o wide                    # returns ip address of your pods
 kubectl get pods -n <name>                  # get pods belonging to a namespace
+kubectl get pods --namespeces=<name>        # get pods from a namespace
 kubectl get pods --all-namespeces           # get pods across all namespaces
 kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
