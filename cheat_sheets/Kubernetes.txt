@@ -1,12 +1,12 @@
 #######################################
 ## System
 ######################################
-kubectl get all                                   # returns all objects
+kubectl get all                                        # returns all objects
 
 kubectl explain <object>                               # Explain resource (help)
-kubectl explain persistentvolumes.spec.hostPath   # Explain resource (help)
+kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
 
-sudo systemctl status kubelet               # check status of the service
+sudo systemctl status kubelet                          # check status of the service
 
 kubectl create -f <file.yaml>                             # create k8 object
 kubectl create -f <file.yaml>  --namespace=dev            # create k8 object within specific namesapce
@@ -34,7 +34,7 @@ kubectl get object --namespeces=<name>        # get object from a namespace
 kubectl get pods                            # returns running pods
 kubectl get pods -o wide                    # returns ip address of your pods
 kubectl get pods -n <name>                  # get pods belonging to a namespace
-kubectl get pods --namespeces=<name>        # get pods from a namespace
+kubectl get pods --namespeces=<name>        # get pods belonging to a namespace
 kubectl get pods --all-namespeces           # get pods across all namespaces
 kubectl get pods --all-namespeces -o wide   # get pods across all namespaces with more details
 
@@ -54,7 +54,7 @@ kubectl edit pod <podName>                  # k8 updates the pod and updates it 
 ######################################
 
 kubectl get nodes                   # Get a list of nodes
-kubectl describe nodes               # get Information about nodes
+kubectl describe nodes              # get Information about nodes
 kubectl describe node $node_name    # Get more information about a specific node
 
 #######################################
@@ -72,11 +72,11 @@ kubectl delete deployment nginx                 # delete deployments
 ######################################
 # You can use "svc" or "service"
 
-kubectl get svc                              #returns  list of services in the cluster.
-kubectl get service                          #returns  list of services in the cluster.
+kubectl  get svc                             # returns  list of services in the cluster.
+kubectl  get service                         # returns  list of services in the cluster.
 kubectl  get services  --all-namespaces      # get informtiaon about services across all name spaces
 
-kubectl  describe services  --all-namespaces
+kubectl describe services  --all-namespaces
 kubectl delete svc nginx-service  #deletes service
 
 kubectl get services -w                      # Watch as an external port is created for a service
@@ -97,9 +97,15 @@ kubectl describe ingress        # View the existing ingress rules:
 ## namespaces
 ######################################
 
-kubectl get namespaces        # return namespace
-kubectl get pods -n my-ns     # get pods belonging to a namespace
-kubectl create ns my-ns       # Create a new namespace named my-ns
+kubectl get namespaces                               # return namespace
+kubectl get <object> --namespeces=<name>             # get pods belonging to a namespace
+kubectl get <object> -n my-ns                        # get pods belonging to a namespace
+kubectl create ns my-ns                              # Create a new namespace named my-ns
+
+kubectl create -f <file.yaml>  --namespace=dev       # create k8 object within specific namesapce
+
+kubectl config set-context $(kubectl config current-context) --namespace=dev  # change workspace scope
+
 
 #######################################
 ## Labels
