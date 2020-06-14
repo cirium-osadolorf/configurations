@@ -140,6 +140,11 @@ kubectl get replicationController
 ######################################
 kubectl get replicaset
 
+kubeçtl replace -f replicaset-definition.yml              # after updating replica file, us this to update the object
+kubectl scale --replicas=6 -f replicaset-definition.yml   # scales replica, does not odify file content
+kubectl scale --replicas=6 replicaset myapp-replicaset    # scales replica, does not odify file content
+
+
 #######################################
 ## OneLiners
 ######################################
