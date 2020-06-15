@@ -107,6 +107,8 @@ kubectl create -f <file.yaml>  --namespace=dev       # create k8 object within s
 
 kubectl config set-context $(kubectl config current-context) --namespace=dev  # change workspace scope
 
+kubectl get ns --no-headers     # returns namespaces without title row
+
 
 #######################################
 ## Labels
@@ -201,5 +203,14 @@ https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
 
 kubectl get secrets # kubectl get secrets
 
-kubectl get endpoints kube-scheduler -n kube-system -o yam l
+
+kubectl get endpoints kube-scheduler -n kube-system -o yaml
+
+
+
+# Create a pod instead of a deployment
+# --dry-run simulaate the execution
+# --restart=Never makes sure this is a pod and not a deployment
+kubectl run redis --image=redis --restart=Never --dry-run -o yaml > pod.yaml
+
 
