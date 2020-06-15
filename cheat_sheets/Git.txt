@@ -97,3 +97,8 @@ git branch -d test
 
 git branch -a
 git push origin --delete test
+
+
+
+
+git clone --single-branch --branch master https://<url>
