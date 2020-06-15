@@ -102,3 +102,6 @@ git push origin --delete test
 
 
 git clone --single-branch --branch master https://<url>
+
+git branch -a   # list local branches
+git branch -r   # list remote branches
