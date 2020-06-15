@@ -97,7 +97,7 @@ kubectl describe ingress        # View the existing ingress rules:
 ## namespaces
 ######################################
 
-kubectl get namespaces                               # return namespace
+kubectl get namespaces                               # return all cluster namespaces
 kubectl get <object> --namespeces=<name>             # get object belonging to a namespace
 kubectl get <object> -n my-ns                        # get object belonging to a namespace
 kubectl  get <object>  --all-namespaces              # get all object belonging to a namespace
