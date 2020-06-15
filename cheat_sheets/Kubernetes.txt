@@ -205,12 +205,15 @@ kubectl get secrets # kubectl get secrets
 
 
 kubectl get endpoints kube-scheduler -n kube-system -o yaml
-
+kubectl gp <serviceName>
 
 
 # Create a pod instead of a deployment
 # --dry-run simulaate the execution
 # --restart=Never makes sure this is a pod and not a deployment
 kubectl run redis --image=redis --restart=Never --dry-run -o yaml > pod.yaml
+
+
+
 
 
