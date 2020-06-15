@@ -77,17 +77,19 @@ kubectl  get service                         # returns  list of services in the 
 kubectl  get services  --all-namespaces      # get informtiaon about services across all name spaces
 
 kubectl describe services  --all-namespaces
-kubectl delete svc nginx-service  #deletes service
+kubectl delete svc nginx-service             # deletes service
+
+kubectl get services kubeserve2 -o yaml      # gets yaml of the service
 
 kubectl get services -w                      # Watch as an external port is created for a service
 kubectl get endpoints                        # View the list of endpoints in your cluster that get created with a service
+kubectl get gp <serviceName>                 # Vew service endpoint
 
-kubectl get services kubeserve2 -o yaml      # gets yaml of the service
+
 
 #######################################
 ## ingress Service
 ######################################
-# https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 kubectl edit ingress            # Edit the ingress rules:
 kubectl describe ingress        # View the existing ingress rules:
@@ -146,14 +148,10 @@ kubectl get serviceaccounts
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
 #######################################
-## ReplicationController
-######################################
-kubectl get replicationController
-
-#######################################
 ## ReplicaSet
 ######################################
 kubectl get replicaset
+kubectl get replicationController
 
 kubeçtl replace -f replicaset-definition.yml              # after updating replica file, us this to update the object
 kubectl scale --replicas=6 -f replicaset-definition.yml   # scales replica, does not odify file content
@@ -163,12 +161,22 @@ kubectl scale --replicas=6 replicaset myapp-replicaset    # scales replica, does
 #######################################
 ## OneLiners
 ######################################
+https://kodekloud.com/courses/539883/lectures/10503265
 
-
-
-# 1)  Run a deployment that includes at least one pod, and verify it was successful.
-kubectl create deployment nginx --image=nginx 
+--Pod
 kubectl run nginx --image nginx
+kubectl run nginx --image=nginx --dry-run=client -o yaml  
+
+--Deployment
+kubectl create deployment nginx --image=nginx 
+kubectl create deployment --image=nginx nginx --dry-run -o yaml
+kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
+
+-- Generate Deployment with 4 Replicas
+kubectl create deployment nginx --image=nginx
+kubectl scale deployment nginx --replicas=4
+
+-- service
 
 # 5) Create a service, and verify connectivity on the node port.
 kubectl expose deployment nginx --port 80 --type NodePort
@@ -205,7 +213,7 @@ kubectl get secrets # kubectl get secrets
 
 
 kubectl get endpoints kube-scheduler -n kube-system -o yaml
-kubectl gp <serviceName>
+
 
 
 # Create a pod instead of a deployment
