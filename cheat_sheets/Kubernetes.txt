@@ -98,8 +98,9 @@ kubectl describe ingress        # View the existing ingress rules:
 ######################################
 
 kubectl get namespaces                               # return namespace
-kubectl get <object> --namespeces=<name>             # get pods belonging to a namespace
-kubectl get <object> -n my-ns                        # get pods belonging to a namespace
+kubectl get <object> --namespeces=<name>             # get object belonging to a namespace
+kubectl get <object> -n my-ns                        # get object belonging to a namespace
+kubectl  get <object>  --all-namespaces              # get all object belonging to a namespace
 kubectl create ns my-ns                              # Create a new namespace named my-ns
 
 kubectl create -f <file.yaml>  --namespace=dev       # create k8 object within specific namesapce
