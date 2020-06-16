@@ -139,6 +139,12 @@ kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="cha
 kubectl get pods --field-selector status.phase=Running
 
 #######################################
+## Taints
+######################################
+kubectl taint nodes <nodename> key=value:taint=effect # what happens to pod that do not tolerate the taint
+
+
+#######################################
 ## logs
 ######################################
 
