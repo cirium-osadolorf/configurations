@@ -141,7 +141,8 @@ kubectl get pods --field-selector status.phase=Running
 #######################################
 ## Taints
 ######################################
-kubectl taint nodes <nodename> key=value:taint=effect # what happens to pod that do not tolerate the taint
+kubectl taint nodes <nodename> key=value:taint=effect # Taint a node
+kubectl taint nodes node1 key:NoSchedule-             # unTaine a node
 
 
 #######################################
