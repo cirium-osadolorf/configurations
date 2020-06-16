@@ -44,6 +44,9 @@ kubectl delete pod nginx
 kubectl describe pods  --all-namespaces     # get Information about pods across all name spaces
 
 kubectl get pods  --show-labels             # returns pods and their labels
+kubectl get pods --selector key=value       # returns pods with specfic labels
+kubectl get pods  -l key=value,key2=value2  # returns pods with specfic labels
+
 
 kubectl get pods/<podname> -o yaml          # return yaml of a pod state
 
@@ -119,6 +122,7 @@ kubectl get ns --no-headers     # returns namespaces without title row
 
 kubectl get pods  --show-labels             # returns pods with their label
 kubectl get pods -L env                     # returns pods with specific label
+kubectl get pods --selector key=value       # returns pods with specfic labels
 
 kubectl label pods <name> key=value         # apply a new label to a set of labels 
 kubectl label pods <pod name> env=pod       # apply label to a pod
