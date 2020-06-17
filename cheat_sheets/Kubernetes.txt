@@ -9,8 +9,10 @@ kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
 sudo systemctl status kubelet                          # check status of the service
 
 kubectl create -f <file.yaml>                             # create k8 object
-kubectl create -f <file.yaml>  --namespace=dev            # create k8 object within specific namesapce
-
+kubectl create -f <file.yaml>  --namespace=dev            # create object within
+namesapce
+k apply -f o.yam  -n=kube-system                          # # create object within
+namesapce
 kubectl get componentstatus                 # returns compoenets status
 
 kubectl cluster-info                        # returns info on where the master and DNS is running
