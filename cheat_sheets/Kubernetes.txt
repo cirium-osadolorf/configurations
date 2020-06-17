@@ -70,6 +70,40 @@ kubectl get deployment <name> -o yaml           # returns the complete yaml of t
 kubectl describe deployment nginx-deployment    # return more info related to the deployment
 kubectl delete deployment nginx                 # delete deployments
 
+
+#######################################
+## namespaces
+######################################
+
+kubectl get namespaces                               # return all cluster namespaces
+kubectl get <object> --namespeces=<name>             # get object belonging to a namespace
+kubectl get <object> -n my-ns                        # get object belonging to a namespace
+kubectl  get <object>  --all-namespaces              # get all object belonging to a namespace
+kubectl create ns my-ns                              # Create a new namespace named my-ns
+
+kubectl create -f <file.yaml>  --namespace=dev       # create k8 object within specific namesapce
+
+kubectl config set-context $(kubectl config current-context) --namespace=dev  # change workspace scope
+
+kubectl get ns --no-headers     # returns namespaces without title row
+
+#######################################
+## ReplicaSet
+######################################
+kubectl get replicaset
+kubectl get replicationController
+
+kubeçtl replace -f replicaset-definition.yml              # after updating replica file, us this to update the object
+kubectl scale --replicas=6 -f replicaset-definition.yml   # scales replica, does not odify file content
+kubectl scale --replicas=6 replicaset myapp-replicaset    # scales replica, does not odify file content
+
+#######################################
+## DeamonSet
+######################################
+kubectl get deamonset
+kubectl describe deamonset
+
+
 #######################################
 ## Services
 ######################################
@@ -88,32 +122,12 @@ kubectl get services -w                      # Watch as an external port is crea
 kubectl get endpoints                        # View the list of endpoints in your cluster that get created with a service
 kubectl get gp <serviceName>                 # Vew service endpoint
 
-
-
 #######################################
 ## ingress Service
 ######################################
 
 kubectl edit ingress            # Edit the ingress rules:
 kubectl describe ingress        # View the existing ingress rules:
-
-
-#######################################
-## namespaces
-######################################
-
-kubectl get namespaces                               # return all cluster namespaces
-kubectl get <object> --namespeces=<name>             # get object belonging to a namespace
-kubectl get <object> -n my-ns                        # get object belonging to a namespace
-kubectl  get <object>  --all-namespaces              # get all object belonging to a namespace
-kubectl create ns my-ns                              # Create a new namespace named my-ns
-
-kubectl create -f <file.yaml>  --namespace=dev       # create k8 object within specific namesapce
-
-kubectl config set-context $(kubectl config current-context) --namespace=dev  # change workspace scope
-
-kubectl get ns --no-headers     # returns namespaces without title row
-
 
 #######################################
 ## Labels
@@ -128,7 +142,6 @@ kubectl label pods <name> key=value         # apply a new label to a set of labe
 kubectl label pods <pod name> env=pod       # apply label to a pod
 
 kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
-
 
 #######################################
 ## Annotations
@@ -145,6 +158,7 @@ kubectl taint nodes <nodename> key=value:taint=effect # Taint a node
 kubectl taint nodes node1 key:NoSchedule-             # unTaine a node
 
 
+
 #######################################
 ## logs
 ######################################
@@ -158,15 +172,7 @@ kubectl logs <podName> <containerName>
 kubectl get serviceaccounts
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
-#######################################
-## ReplicaSet
-######################################
-kubectl get replicaset
-kubectl get replicationController
 
-kubeçtl replace -f replicaset-definition.yml              # after updating replica file, us this to update the object
-kubectl scale --replicas=6 -f replicaset-definition.yml   # scales replica, does not odify file content
-kubectl scale --replicas=6 replicaset myapp-replicaset    # scales replica, does not odify file content
 
 
 #######################################
