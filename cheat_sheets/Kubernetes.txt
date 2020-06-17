@@ -100,8 +100,8 @@ kubectl scale --replicas=6 replicaset myapp-replicaset    # scales replica, does
 #######################################
 ## DeamonSet
 ######################################
-kubectl get deamonset
-kubectl describe deamonset
+kubectl get daemonsets 
+kubectl describe daemonsets 
 
 
 #######################################
