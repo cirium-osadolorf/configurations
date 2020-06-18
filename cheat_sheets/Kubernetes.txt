@@ -166,7 +166,10 @@ kubectl taint nodes node1 key:NoSchedule-             # unTaine a node
 ## logs
 ######################################
 
-kubectl logs <podName> <containerName>
+kubectl logs <podName> 
+kubectl logs -f <podName> <containerName> # used when you have multiple containers in a pod
+
+
 
 #######################################
 ## ServiceAccount
