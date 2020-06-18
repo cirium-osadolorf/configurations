@@ -8,6 +8,7 @@ kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
 
 sudo systemctl status kubelet                          # check status of the service
 
+kubectl create -f .                                       # create objects from all yamls in directory
 kubectl create -f <file.yaml>                             # create k8 object
 kubectl create -f <file.yaml>  --namespace=dev            # create object within
 namesapce
