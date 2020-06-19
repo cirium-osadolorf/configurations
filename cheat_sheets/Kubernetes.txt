@@ -73,6 +73,9 @@ kubectl get deployment <name> -o yaml           # returns the complete yaml of t
 kubectl describe deployment nginx-deployment    # return more info related to the deployment
 kubectl delete deployment nginx                 # delete deployments
 
+kubectl rollout history deployment/<name>   # return history of rollout
+kubcetl rollout status deployment/<name>    # return staus of rollout
+kubectl rollout undo deployment/<name>      # roll bacl to previous deployment version
 
 #######################################
 ## namespaces
