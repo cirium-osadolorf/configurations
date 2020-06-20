@@ -129,6 +129,18 @@ kubectl get endpoints                        # View the list of endpoints in you
 kubectl get gp <serviceName>                 # Vew service endpoint
 
 #######################################
+## Configmap
+######################################
+
+kubectl  get configmaps       # return configs
+kubectl describe configmaps   # describes configmaps  
+
+kubectl create configmap
+kubectl create configmap <name> --from-literal=APP_COLOR=blue                               # create config map with key value
+kubectl create configmap <name> --from-literal=APP_COLOR=blue --from-literal=APP_MODE=lazy  # create config map with keys/values
+
+
+#######################################
 ## ingress Service
 ######################################
 
