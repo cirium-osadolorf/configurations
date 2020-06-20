@@ -141,19 +141,22 @@ kubectl describe ingress        # View the existing ingress rules:
 # applied at the pod level
 
 kubectl get pods  --show-labels             # returns pods with their label
-kubectl get pods -L env                     # returns pods with specific label
+kubectl get pods -l env                     # returns pods with specific label
 kubectl get pods --selector key=value       # returns pods with specfic labels
 
-kubectl label pods <name> key=value         # apply a new label to a set of labels 
-kubectl label pods <pod name> env=pod       # apply label to a pod
 
-kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
-
-kubectl get pods -l=env             # returns pods with label key
-kubectl get pods -l=env=dev         # returns pods with label key and value
+kubectl get pods -l env=dev         # returns pods with label key and value
 kubectl get pods --selector bu=finance  # returns pods with label key and value
 kubectl get all --selector bu=finance  # returns pods with label key and value
 
+kubectl get pod -l env=prod,bu=finance,tier=frontend
+
+
+
+kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
+
+kubectl label pods <name> key=value         # apply a new label to a set of labels 
+kubectl label pods <name> env=pod          # apply label to a pod
 
 #######################################
 ## Annotations
