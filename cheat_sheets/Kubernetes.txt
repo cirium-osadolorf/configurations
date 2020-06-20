@@ -152,6 +152,8 @@ kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
 kubectl get pods -l=env             # returns pods with label key
 kubectl get pods -l=env=dev         # returns pods with label key and value
 kubectl get pods --selector bu=finance  # returns pods with label key and value
+kubectl get all --selector bu=finance  # returns pods with label key and value
+
 
 #######################################
 ## Annotations
