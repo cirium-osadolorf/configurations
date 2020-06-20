@@ -85,6 +85,17 @@ Text Manipulation ( While in Command mode)
 i           # Inserts text before highlighted character 
 a           # Inserts text after highlighted character 
 o           # Insert text on the  next paragraph
+O           # Insert text on the  above paragraph
+
+I           # Start inserting from the first chrachter of the line
+A           # Start inserting fromt he last chrachter of the line
+
+
+<number> + I # will repeat the insert n number of times once you witch to command mode
+<number> + A # will repeat the insert n number of times once you witch to command mode
+<number> + o # # will repeat the insert n number of times once you witch to command mode
+<number> + O # # will repeat the insert n number of times once you witch to command mode
+
 
 shift + ~   # toggle charachter to upercare or lowercase
 
