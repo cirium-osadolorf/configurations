@@ -97,6 +97,7 @@ pg_dump -s databasename     # Backing up schema only
 
 # Backup table to csv file
 # first login via psql and connect to the db
+# https://tableplus.com/blog/2018/04/postgresql-how-to-export-table-to-csv-file-with-header.html
 
 COPY tableName /tmp/tableName.csv' WITH (FORMAT CSV, HEADER);
 
