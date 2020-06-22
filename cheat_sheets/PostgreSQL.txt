@@ -95,6 +95,11 @@ sudo psql -U postgres -d newdb -f dump_file.sql
 pg_dump -s databasename     # Backing up schema only
 
 
+# Backup table to csv file
+# first login via psql and connect to the db
+
+COPY tableName /tmp/tableName.csv' WITH (FORMAT CSV, HEADER);
+
 
 
 ###############################
