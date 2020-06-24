@@ -6,29 +6,21 @@ kubectl get all                                        # returns all objects
 kubectl explain <object>                               # Explain resource (help)
 kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
 
-sudo systemctl status kubelet                          # check status of the service
+sudo systemctl status kubelet                             # check status of the service
 
-kubectl create -f .                                       # create objects from all yamls in directory
+kubectl create -f .                                       # create all objects in manifets 
 kubectl create -f <file.yaml>                             # create k8 object
-kubectl create -f <file.yaml>  --namespace=dev            # create object within
-namesapce
-k apply -f o.yam  -n=kube-system                          # # create object within
-namesapce
-kubectl get componentstatus                 # returns compoenets status
+kubectl create -f <file.yaml>  --namespace=dev            # create object within namesapce
+kubectl apply -f o.yam  -n=kube-system                          # create object within namesapce
 
+kubectl get componentstatus                 # returns compoenets status
 kubectl cluster-info                        # returns info on where the master and DNS is running
 kubectl config view                         # returns brief configuration of your cluster
 kubectl api-resources -o wide               # get all resource avaible on your cluster
-kubectl get pods -n kube-system             # returns pods running in the kube system namespace
-
-kubectl describe nodes                      # get Information about nodes
-kubectl describe pods                       # get Information about pods
 
 kubectl get endpoints
 kubectl get endpoints kube-scheduler -n kube-system  -o yaml
 kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
-
-kubectl get object --namespeces=<name>        # get object from a namespace
 
 #######################################
 ## Container and pods
@@ -132,12 +124,27 @@ kubectl get gp <serviceName>                 # Vew service endpoint
 ## Configmap
 ######################################
 
-kubectl  get configmaps       # return configs
+kubectl get configmaps       # return configs
 kubectl describe configmaps   # describes configmaps  
 
 kubectl create configmap
 kubectl create configmap <name> --from-literal=APP_COLOR=blue                               # create config map with key value
 kubectl create configmap <name> --from-literal=APP_COLOR=blue --from-literal=APP_MODE=lazy  # create config map with keys/values
+
+#######################################
+## Secrets
+######################################
+
+kubectl get secret
+kubectl describe secret
+kubectl get secret <name> -o yaml       # ideal to see values of secret's keys
+echo -n "enconded" | base64 --decode    # decode keys from comand above
+
+kubectl create secret generic <name> --from-literal=DB_PASSWORD=pass   
+kubectl create secret generic <name> --from-literal=DB_PASSWORD=pass  --from-literal=SERVER_PASS=pass 
+kubectl create secret generic <name> --from-file=filePath
+kubectl create secret generic <name> --from-file=./username.txt --from-file=./password.txt
+
 
 
 #######################################
