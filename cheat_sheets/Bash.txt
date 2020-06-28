@@ -72,6 +72,15 @@ usermod -aG <Group> <User>	#add user to a group
 gpasswd -a <User> <Group>	#add user to a group	
 groupdel <Group>		#Delete Group
 
+
+
+useradd -r		# Create a system account, System users will be created with no aging information in /etc/shadow, no home directory for such an user
+			# You have to specify the -m options if you want a home directory for a system account
+useradd --system	# Create a system account, System users will be created with no aging information in /etc/shadow, no home directory for such an user
+			# You have to specify the -m options if you want a home directory for a system account
+
+
+
 #User creaion in Centos
 NEWUSER=<user> && sudo useradd $NEWUSER  -G wheel ; sudo passwd $NEWUSER
 
