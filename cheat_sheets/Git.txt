@@ -1,17 +1,19 @@
 ============= Git configuration  ====================
 
-git config -l 
-git config --list
+git config -l                                 # returns git environment settings
+git config --list                             # returns git environment settings  
 git config --list --show-origin
 
 git config --global user.name <username>      # sets global git credentials
 git config --global user.email <email_addr>   # sets global git credentials
 
-git config --system core.editor vim          
-git config --global core.editor emac
+git config user.name "Your Name Here"         # sets local git credentials, will affect current repo only
+git config user.email your@email.com          # sets local git credentials,  will affect current repo only
 
-git config user.name "Your Name Here"         # sets local git credentials
-git config user.email your@email.com          # sets local git credentials
+git config --system core.editor vim           # set editor for git
+git config --global core.editor emac          # set editor for git
+
+
 
 
 # Alternatively, you may store system-wide configuration values in the file directly:
@@ -24,12 +26,26 @@ git config user.email your@email.com          # sets local git credentials
 ============= Repository Basics ===============
 
 git init                     # initalize a git repository
-git status                   # returns the status of the repo
+git init <path>
+
 git add <filename>           # adds a specific file to staging
 git add .                    # adds all files to staging
-git commit -m "text "        # commits the changes
+
+git status                   # returns items in staging area
+git status -v                # returns items with a verbose output, changes included
+git status -s                # returns items in staging area in shortened version
+                             # A --> staged itemes  
+                             # ?? --> unstaged items
+                             # AM --> staged but has been modified, changes need to be re added 
+                             
+             
+
+git rm <fileName>            # removes a file from git (untrack)
+git rm -f <fileName>         # remoeves a file from git with force (untrack)
+
+git commit                   # commit items in staging area
+git commit -m "text"         # commits the changes
 git commit -a -m "text"      # stage and commit cahnges
-git rm <file>                # used to stop tracking a provided file.
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
 git log
