@@ -45,6 +45,8 @@ git rm <fileName>            # removes a file from working direcotry
 git rm -f <fileName>         # removes a file from working direcotry with force
 
 git rm --cached <fileName>    # untrack, unstage file 
+git rm --cached <fileName> -f # untrack, unstage file 
+
 
 git commit                   # commit items in staging area
 git commit -m "text"         # commits the changes
