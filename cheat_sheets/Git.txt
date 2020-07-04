@@ -37,6 +37,7 @@ git status -s                # returns items in staging area in shortened versio
                              # A --> staged itemes  
                              # ?? --> unstaged items
                              # AM --> staged but has been modified, changes need to be re added 
+                             # D --=> item has beend delated
                              
              
 
