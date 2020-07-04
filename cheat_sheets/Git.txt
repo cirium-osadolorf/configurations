@@ -7,8 +7,8 @@ git config --list --show-origin
 git config --global user.name <username>      # sets global git credentials
 git config --global user.email <email_addr>   # sets global git credentials
 
-git config user.name "Your Name Here"         # sets local git credentials, will affect current repo only
-git config user.email your@email.com          # sets local git credentials,  will affect current repo only
+git config user.name "Your Name Here"         # sets local git credentials, will affect woring directory only
+git config user.email your@email.com          # sets local git credentials, will affect woring directory only
 
 git config --system core.editor vim           # set editor for git
 git config --global core.editor emac          # set editor for git
@@ -41,8 +41,10 @@ git status -s                # returns items in staging area in shortened versio
                              
              
 
-git rm <fileName>            # removes a file from git (untrack)
-git rm -f <fileName>         # remoeves a file from git with force (untrack)
+git rm <fileName>            # removes a file from working direcotry
+git rm -f <fileName>         # removes a file from working direcotry with force
+
+git rm --cached <fileName>    # untrack, unstage file 
 
 git commit                   # commit items in staging area
 git commit -m "text"         # commits the changes
