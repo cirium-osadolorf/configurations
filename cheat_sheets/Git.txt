@@ -101,7 +101,9 @@ git branch -d new-feature  # delete branch
 
 =============== tags ===========================
 git tag                                 # erturns working diretory tags
-git tag -a <name> -m "message"          # annotated tag
+git tag -a <name> -m "message"          # create annotated tag
+git tag <name> -m "message"             # create lightweight tag
+git tag -d <name>                       # Delete a tag      
 git show <tagName>                      # return tag commit info
 
 
