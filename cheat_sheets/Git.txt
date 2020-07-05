@@ -14,8 +14,6 @@ git config --system core.editor vim           # set editor for git
 git config --global core.editor emac          # set editor for git
 
 
-
-
 # Alternatively, you may store system-wide configuration values in the file directly:
 #– /etc/gitconfig which corresponds to --system
 #– ~/.gitconfig or ~/.config/git/config which corresponds to --global
@@ -38,9 +36,8 @@ git status -s                # returns items in staging area in shortened versio
                              # ?? --> unstaged items
                              # AM --> staged but has been modified, changes need to be re added 
                              # D --=> item has beend delated
-                             
-             
-
+                 
+                 
 git rm <fileName>            # removes a file from working direcotry
 git rm -f <fileName>         # removes a file from working direcotry with force
 
@@ -64,19 +61,17 @@ git log --oneline <filename>  # returns information on a particular file
 
 ============== Cloning and Pushing =========================
 
-git clone repouURL         # clone repo from https 
-git clone repoURl path     
-
-#clones a local repo to a specific path
-git clone <path_of_original> <clone_repo_destination>  
-
-#cloning over ssh
-git clone user@server:<original_repo_path_relative_to_user_home> <local_repo_path>    
+git clone repouURL                                                                        # clone repo 
+git clone repoURl <path>                                                                  # clones a local repo to a specific path
+git clone user@server:<original_repo_path_relative_to_user_home> <local_repo_path>        # cloning over ssh  
+git clone --single-branch --branch master https://<url>                                   # clone single branch
 
 
-git push origin master    # pushing changes to origin repository
-git push origin --all     # pushes all barnaches ot the origin
+git push origin master                                                                    # pushing changes to origin repository
+git push origin --all                                                                     # pushes all barnaches ot the origin
 
+git remote add origin https://github.com/user/repo.git                                    # Set a new remote
+git remote -v   # Verify new remote
 
 ================== Branches =====================
 
@@ -89,40 +84,31 @@ git merge <branch>            # merges the selected branch to your current branc
 git push origin --delete <new branch> # delete remote branch
 
 
+git branch -a                      # list local branches
+git branch -r                      # list remote branches
+git branch -d <name>               # Delete local branch 
+git push origin --delete <name>    # Deleting remote branch
+
+
 
 =============== Merging branches ===========================
+
 git checkout -b  feature/login
 git checkout develop
 git merge feature/login
 git branch -d new-feature  # delete branch
-git push origin --delete new-feature  # delete remote branch
 
 
-=============== unsorted ===========================
-
-git remote add origin https://github.com/user/repo.git   # Set a new remote
-git remote -v   # Verify new remote
-git pull  origin master
-git push origin master 
-
-
-===========================================
-# Deleting local branches
-===========================================
-git branch -a
-git branch -d test
-
-===========================================
-# Deleting remote branches
-===========================================
-
-git branch -a
-git push origin --delete test
+=============== tags ===========================
+git tag                                 # erturns working diretory tags
+git tag -a <name> -m "message"          # annotated tag
+git show <tagName>                      # return tag commit info
 
 
 
 
-git clone --single-branch --branch master https://<url>
 
-git branch -a   # list local branches
-git branch -r   # list remote branches
+
+
+
+
