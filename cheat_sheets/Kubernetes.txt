@@ -1,4 +1,24 @@
-alias k='kubectl'
+#######################################
+## Aliases
+######################################
+alias k='kubectl'   # my alias
+po                  # pods
+deploy              # deployment
+svc                 # service
+ns                  # namespace
+netpol              # ntetowk policy
+pv                  # persistent volume
+pvc                 # persistent volume claims
+sa                  # service accounts
+rs                  # replicaset
+cm                  # configmaps
+ep                  # endpoints
+no                  # nodes
+ds                  # daemonsets
+
+# https://kubernetes.io/docs/reference/kubectl/overview/
+
+
 #######################################
 ## System
 ######################################
