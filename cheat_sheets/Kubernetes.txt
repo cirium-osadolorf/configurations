@@ -20,7 +20,7 @@ kubectl api-resources -o wide               # get all resource avaible on your c
 
 
 #######################################
-## Container and pods
+z# Pods
 ######################################
 
 kubectl get pods                            # returns running pods
