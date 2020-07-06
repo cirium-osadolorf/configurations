@@ -21,7 +21,7 @@ kubectl api-resources -o wide               # get all resource avaible on your c
 
 
 #######################################
-z# Pods
+# Pods
 ######################################
 
 kubectl get pods                            # returns running pods
@@ -140,12 +140,15 @@ kubectl create configmap <name> --from-literal=APP_COLOR=blue --from-literal=APP
 kubectl get secret
 kubectl describe secret
 kubectl get secret <name> -o yaml       # ideal to see values of secret's keys
-echo -n "enconded" | base64 --decode    # decode keys from comand above
+echo -n "data" | bas64                  # enconde value
+echo -n "enconded" | base64 --decode    # decode value
 
 kubectl create secret generic <name> --from-literal=DB_PASSWORD=pass   
 kubectl create secret generic <name> --from-literal=DB_PASSWORD=pass  --from-literal=SERVER_PASS=pass 
 kubectl create secret generic <name> --from-file=filePath
 kubectl create secret generic <name> --from-file=./username.txt --from-file=./password.txt
+
+kubectl get secret <name> -o yaml 
 
 
 
