@@ -18,9 +18,6 @@ kubectl cluster-info                        # returns info on where the master a
 kubectl config view                         # returns brief configuration of your cluster
 kubectl api-resources -o wide               # get all resource avaible on your cluster
 
-kubectl get endpoints
-kubectl get endpoints kube-scheduler -n kube-system  -o yaml
-kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 
 #######################################
 ## Container and pods
@@ -119,6 +116,10 @@ kubectl get services kubeserve2 -o yaml      # gets yaml of the service
 kubectl get services -w                      # Watch as an external port is created for a service
 kubectl get endpoints                        # View the list of endpoints in your cluster that get created with a service
 kubectl get gp <serviceName>                 # Vew service endpoint
+
+kubectl get endpoints
+kubectl get endpoints kube-scheduler -n kube-system  -o yaml
+kubectl get endpoints kube-controller-manager  -n kube-system  -o yaml
 
 #######################################
 ## Configmap
