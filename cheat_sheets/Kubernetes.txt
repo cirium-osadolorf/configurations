@@ -311,4 +311,12 @@ kubectl run redis --image=redis --restart=Never --dry-run -o yaml > pod.yaml
 
 
 
+# Updating K8s resources
+
+kubectl get po/<name> -o yaml > o.yaml
+kubectl delete po/<name>
+kubectl apply -f o.yaml
+
+
+
 
