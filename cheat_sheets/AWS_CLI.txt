@@ -6,9 +6,6 @@
 Configuration
 =================================================================
 
-pip3 install --user --upgrade awscli
-aws configure 
-
 # Create another AWS CLI user profile that uses another keys
 aws configure --profile user
 aws configure --profile  user2
