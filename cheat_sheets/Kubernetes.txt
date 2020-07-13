@@ -237,9 +237,12 @@ kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 #######################################
 ## Maintainance
 ######################################
+
 kubectl drain <nodeName>      # Pods are gracefully terminated from a node and recreated on another, also marks node as unsheduable
 kubectl uncordon <nodeName>   # Marks node as scheduable
 kubectl cordon <nodeName>     # Marks node as unscheduable, however old pods still remain on the node
+
+kubectl drain node01 --ignore-daemonsets
 
 
 #######################################
