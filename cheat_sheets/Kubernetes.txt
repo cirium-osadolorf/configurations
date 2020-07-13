@@ -243,6 +243,7 @@ kubectl uncordon <nodeName>   # Marks node as scheduable
 kubectl cordon <nodeName>     # Marks node as unscheduable, however old pods still remain on the node
 
 kubectl drain node01 --ignore-daemonsets
+kubectl drain node02 --ignore-daemonsets --force
 
 
 #######################################
