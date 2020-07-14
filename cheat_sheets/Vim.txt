@@ -100,6 +100,7 @@ A           # Start inserting fromt he last chrachter of the line
 shift + ~   # toggle charachter to upercare or lowercase
 
 u           # undo previos changes
+ctrl r      # Redo changes
 x           # Deletes highlighted character
 .           # Copies and paste changes made in the last insert mode
 dd          # Delete line
