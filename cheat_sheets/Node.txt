@@ -1,13 +1,13 @@
 node --version
 npm --version
 
-node                              // returns js REPL
-node file.js                      // runs javascrirpt file
+node                              # returns js REPL
+node file.js                      # runs javascrirpt file
 
-npm init                          // Generates a package.json file
-npm install <paackageName>        // install package locally
-npm install -g  <paackageName>   // install a package globally
-npm install   <paackageName>   --save-dev // install package as a dev dependency
+npm init                                    # Generates a package.json file, file used to manage local packages and scripts
+npm install <paackageName>                  # install package locally
+npm install -g  <paackageName>              # install a package globally
+npm install   <paackageName>   --save-dev   # install package as a dev dependency
 
 npm root -g                     // teels you where your global packages are being installed
 npm uninstall <paackageName>
@@ -44,3 +44,20 @@ tsc file.ts --ot output-script.js  --watch  // specify output file name
                                             // updates the js output file in real time, as you save the ts file
 tsc --help  
 tsc --init  // generate a tsconfig.json
+
+
+
+
+
+
+
+====================================
+= Usefaull Node Pacakges
+====================================
+
+lodash
+nodemon       # used to realod node app when you edit the code
+
+
+
+
