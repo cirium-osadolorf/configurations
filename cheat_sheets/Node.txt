@@ -8,6 +8,7 @@ npm init                                    # Generates a package.json file, fil
 npm install <paackageName>                  # install package locally
 npm install -g  <paackageName>              # install a package globally
 npm install   <paackageName>   --save-dev   # install package as a dev dependency
+npm install                                 # locks into package.json and install all requried dependencies
 
 npm root -g                     // teels you where your global packages are being installed
 npm uninstall <paackageName>
