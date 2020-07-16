@@ -1,6 +1,7 @@
 mongo                               # Log you into the mongo DB shell
 
 use dbName                          # switch (create if does not exist) to a db
+show dbs	                          # returns databses
 db.createCollection("staff_info")   # crating a collection ("table")
 show collections                    # returns a list of collection (tables)
 db.staff_info.drop()                # Drops the collection (table)
