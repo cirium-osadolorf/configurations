@@ -225,8 +225,8 @@ kubectl taint nodes node1 key:NoSchedule-             # unTaine a node
 kubectl logs <podName> 
 kubectl logs -f <podName> <containerName> # used when you have multiple containers in a pod
 
-kubectl top node  # Only works if you have isntalled metric server
-
+kubectl top node  # get stats of cluster nodes -Only works if you have isntalled metric server
+kubectl top pod   # get stats of cluster pod -Only works if you have isntalled metric server
 
 #######################################
 ## ServiceAccount
