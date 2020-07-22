@@ -1,0 +1,7 @@
+# Kode cloud shell script tutorial
+
+
+export PATH=$PATH:newFolder
+which command   # return path of command
+
+# Naming convention 
