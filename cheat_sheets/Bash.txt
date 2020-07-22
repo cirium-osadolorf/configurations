@@ -141,6 +141,17 @@ fusermount -u /path/to/dirMounted			   # UnmountDir
 ssh-keygen -R <ServerIp or HostName>		# Fixing the WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
 
 
+
+# Naming convensions
+
+.crt --> public key
+.pem --> public.key
+
+.key --> private  key
+key.pem --> private key
+
+
+
 ============ Text ============ 
 head newfile.txt		# This will display the first 10 lines of a file
 tail newfile.txt		# This will display the last 10 lines of a file
