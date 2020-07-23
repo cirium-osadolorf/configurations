@@ -44,6 +44,9 @@ o (after Prefix)          # Go to the next pane
 Prefix + direction        # Resize the pane 
 direction (after Prefix)  # move between panes
 
+z                         # toggle pane zoom, zoom into specific pane
+
+
 ################################
 # TMUX and SSH
 ################################
