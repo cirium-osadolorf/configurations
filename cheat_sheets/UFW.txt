@@ -1,0 +1,18 @@
+By default, UFW denies all incoming connections and allows all outgoing connections. 
+It means that a client trying to reach our server would not be able to connect
+
+sudo ufw enable
+sudo ufw status verbose
+
+sudo ufw allow ssh                                  # To allow all incoming SSH connections
+sudo ufw allow from 15.15.15.0/24  to any port 22   # Allow Incoming SSH from Specific IP Address or Subnet
+
+
+sudo ufw allow http                                 # Allow Specific Incoming Connections
+sudo ufw allow 80                                   # Allow Specific Incoming Connections
+
+
+
+sudo ufw allow from 192.168.0.25 to any port 9000   # Allow request from specific ip
+
+sudo ufw deny from 203.0.123.5                      #  Deny Incoming Connections                
