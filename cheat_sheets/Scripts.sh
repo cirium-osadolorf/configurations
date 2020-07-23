@@ -43,5 +43,24 @@ fi
 
 
 
+################################################################################################
+# list all files in directory without extension
+################################################################################################
+
+#!/bin/bash
+set -e
+
+TARGET_FOLDER="."
+TABLES_PATH="${TARGET_FOLDER}/tables/"
+
+
+echo "Populating the tables"
+
+for i in $(ls ${TARGET_FOLDER}/tables/*.csv)
+  do
+  table=$(basename $i .csv) # remove .csv extension
+  echo $table
+done
+
 
 
