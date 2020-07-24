@@ -119,6 +119,8 @@ docker container ps                             # returns list of running contai
 docker container logs containerID               #returns container logs, useful for torubleshoting containers
 docker container logs -f containerID``          # returns logs in real time
 docker container stats containerID              #returns cpu and memory usage 
+docker stats -a --no-stream >> mystats.csv      # output docker stats into file
+
 docker container top containerID                #returns running processes of a container
 
 >> extra <<
