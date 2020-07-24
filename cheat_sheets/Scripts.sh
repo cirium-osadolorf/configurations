@@ -63,4 +63,19 @@ for i in $(ls ${TARGET_FOLDER}/tables/*.csv)
 done
 
 
+################################################################################################
+# Bash log with time format
+################################################################################################
+
+#!/usr/bin/env bash
+LOGFILE="/path/to/log.log"
+TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
+
+# Log file will looks like
+2013-02-03 18:22:30 Say what you are doing
+
+
+
+
+
 
