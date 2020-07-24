@@ -546,6 +546,32 @@ crontab -r		# removes crontab for user
 # Backup images to Google Drive every night at midnight
 0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
 
+
+================== Rsync ===================
+You may have noticed that there is a trailing slash (/) at the end of the first argument in the below commands:
+This is necessary to mean “the contents of dir1”. The alternative, without the trailing slash, would place dir1, including the directory, within dir2.
+
+rsync -a dir1/ dir2 		 # -a -> It stands for “archive” and 
+				 syncs recursively
+				 preserves symbolic links
+				 special and device 
+				 files
+				 modification times
+				 group
+				 owner
+				 permissions.
+
+
+
+
+rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/			# sync data (copy) 
+rsync -a --exclude '.git'  ~/git/kds_scripts/ /tmp/serv4eo-processing/		# sync data but exclude a specific file or folder 
+rsync -anv dir1/ dir2
+rsync -a --include='*.sql' --exclude='*' /home/ubuntu/dir/  <hostName>@<ip>:/tmp/ 	# Rsync over ssh, rsync specific files
+
+-n or –dry-run					# Dry run
+-v 						# versbose
+
 ================== Mounting ===================
 
 sudo mount -t cifs -o username={{username}},password={{password}} //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
@@ -623,9 +649,6 @@ pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
 
 
 find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt	
-
-sudo rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/
-
 
 tree --du -h /opt/ktube-media-downloader		# Returns tree output with size information
 sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
