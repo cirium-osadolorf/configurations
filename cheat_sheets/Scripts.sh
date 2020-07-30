@@ -2,7 +2,7 @@
 # Read user input and print it
 ####################################
 #! /bin/bash
-read -p "Enter mission name:" mission_name
+read -p "Enter mission name:" mission_name    # -p prints a message 
 echo $mission_name
 
 ################################################
