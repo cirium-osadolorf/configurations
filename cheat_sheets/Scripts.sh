@@ -1,3 +1,9 @@
+####################################
+# Read user input and print it
+####################################
+read -p "Enter mission name:" mission_name
+echo $mission_name
+
 ################################################
 # unzip every file in the fodler
 ################################################
@@ -10,10 +16,6 @@ do
   # take action on each file. $f store current file name
   gzip -d $f
 done
-
-
-
-
 
 
 
