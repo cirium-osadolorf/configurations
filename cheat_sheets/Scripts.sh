@@ -1,6 +1,7 @@
 ####################################
 # Read user input and print it
 ####################################
+#! /bin/bash
 read -p "Enter mission name:" mission_name
 echo $mission_name
 
