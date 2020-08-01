@@ -211,12 +211,28 @@ kubectl annotate deployment  <deployment_Name> mycompany.com/someannotation="cha
 kubectl get pods --field-selector status.phase=Running
 
 #######################################
+## Selector
+######################################
+
+kubectl get <object> --selector env=dev
+
+kubectl get pods --selector env=dev
+kubectl get pods --selector bu=finance
+kubectl get all --selector env=prod,bu=finance,tier=frontend
+kubectl get all --selector env=prod
+
+
+
+
+#######################################
 ## Taints
 ######################################
 kubectl taint nodes <nodename> key=value:taint=effect # Taint a node
 kubectl taint nodes node1 key:NoSchedule-             # unTaine a node
 
+kubectl taint nodes node01 spray=mortein:NoSchedule --overwrite # overwirte value of taint key value
 
+kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule- # Remove taint from node
 
 #######################################
 ## logs
