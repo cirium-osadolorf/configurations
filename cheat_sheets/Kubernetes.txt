@@ -268,7 +268,9 @@ kubectl get CertificateSigningRequest
 kubectl get csr
 
 kubectl certificate approve <csr_name>
+kubectl certificate deny <csr_name>
 
+kubectl delete csr <csr_name>
 
 #######################################
 ## Maintainance
