@@ -36,8 +36,13 @@ kubectl apply -f o.yam  -n=kube-system                          # create object 
 
 kubectl get componentstatus                 # returns compoenets status
 kubectl cluster-info                        # returns info on where the master and DNS is running
-kubectl config view                         # returns brief configuration of your cluster
 kubectl api-resources -o wide               # get all resource avaible on your cluster
+
+###############################
+# kubeconfig
+########################
+kubectl config view                         # returns brief configuration of your cluster
+                                              clusater contexts, users and default context
 
 
 #######################################
