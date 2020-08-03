@@ -5,7 +5,7 @@ rsa= cryptography algorithms
 ====================================
 openssl genrsa -out private.key 2048            # Generated private key
 openssl req -new <private.key> -subj "/CN=foo" -keyout key.pem -out server.csr  # Generate csr from private key
-openssl x509
+openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt                         # sign csr with ca
 
 
 openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr   # Generate private key and csr (one liner)
