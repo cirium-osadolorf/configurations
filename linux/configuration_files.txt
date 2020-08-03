@@ -95,7 +95,12 @@ node_modules/   // folder where dependencies are installed
 
 =========== vagrant =====================
 
-.vagrant/machines/ubuntu18/virtualbox/private_key  # ssh key location of vagrant box
+C:/Users/USERNAME/.vagrant.d/boxes                  # Location where boxes are saved
+~/.vagrant.d/boxes                                  # Location where boxes are saved
+
+.vagrant/machines/ubuntu18/virtualbox/private_key  # ssh key location of vagrant box (. indicates dir of the vagrantfile)
+
+
 
 ============== Kubernetes ==================
 
