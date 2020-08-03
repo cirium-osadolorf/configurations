@@ -110,6 +110,7 @@ C:/Users/USERNAME/.vagrant.d/boxes                  # Location where boxes are s
                  
                  
 /etc/kubernetes/manifests # path to kube0system yaml files, if you used kubeadm to bootsrap the cluster
+/etc/kubernetes/pki       # path to keys and certificates of cluster component
 
 
 
