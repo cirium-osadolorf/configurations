@@ -261,6 +261,16 @@ kubectl get serviceaccounts
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
 #######################################
+## csr
+######################################
+
+kubectl get CertificateSigningRequest
+kubectl get csr
+
+kubectl certificate approve <csr_name>
+
+
+#######################################
 ## Maintainance
 ######################################
 
