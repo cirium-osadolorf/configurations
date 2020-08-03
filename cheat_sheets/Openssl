@@ -1,0 +1,26 @@
+
+
+==================================
+== Creating
+====================================
+openssl genrsa -out private.key 2048            # Generated private key
+openssl req -new <private.key> -subj "/CN=foo" -keyout key.pem -out server.csr  # Generate csr from private key
+openssl x509
+
+
+openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr   # Generate private key and csr (one liner)
+
+
+
+==================================
+== Checking Using OpenSSL
+==================================
+If you need to check the information within a Certificate, CSR or Private Key, use these commands
+
+
+openssl req -text -noout -verify -in CSR.csr      # Check a Certificate Signing Request (CSR)
+openssl rsa -in privateKey.key -check             # Check a private key
+openssl x509 -in certificate.crt -text -noout     # Check a certificate
+openssl pkcs12 -info -in keyStore.p12             # Check a PKCS#12 file (.pfx or .p12)
+
+
