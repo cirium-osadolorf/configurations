@@ -291,6 +291,9 @@ kubectl cordon <nodeName>     # Marks node as unscheduable, however old pods sti
 kubectl drain node01 --ignore-daemonsets
 kubectl drain node02 --ignore-daemonsets --force
 
+
+kubcetl delete node <nodeName>
+
 #######################################
 ## ETCD
 ######################################
