@@ -663,6 +663,12 @@ grep -c "echo" FILE		#  This will output the number of lines that contain your s
 
 
 
+echo  'linuxhint.com' | base64
+echo 'bGludXhoaW50LmNvbQo=' | base64 --decode
+
+
+
+
 #########################################
 #### Shell Expansion
 ##########################################
