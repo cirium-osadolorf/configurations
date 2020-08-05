@@ -1,6 +1,10 @@
 ipconfig              # returns netowrk information
 ipconfig /all
-ping <ip>             # tests netowk connectivity to target               
 netstat -aon          # return ports information 
 netsh interface show interface    # This command will provide a list of interfaces
 
+
+
+ping <ip>             # tests netowk connectivity to target               
+tracert <ip>          # return complete route the packet is taking to reach the target destination 
+                      # ideally used when ping is faling, helps to debug where exatcly the request is g eeting stuck
