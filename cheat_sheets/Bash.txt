@@ -21,10 +21,17 @@ nmcli device status
 hostname -I		# returns private ip address
 ip n 			# reutns arp (address resolution protocol) table
 
-host <website> 		#returns DNS name resolution
-ping <ipadress> 	#checks connectivity to an ip address, used to troubleshoot network conenction
+host <website> 		# returns DNS name resolution
+ping <ipadress> 	# checks connectivity to an ip address, used to troubleshoot network conenction, return "ECHO reply requests"
 ping -c 3 <ipadress>	# used to test the reachability of a host on an Internet Protocol network.
 			# -c = checks that the destination device can recive packages, in this case 3 
+			
+			# Erros
+			# https://www.onlinecomputertips.com/support-categories/networking/277-ping-error-messages
+			
+traceroute <ip>		# return complete route the packet is taking to reach the target destination 
+                      	# ideally used when ping is faling, helps to debug where exatcly the request is g eeting stuck
+
 			
 sudo netstat -tupln	# (Obsolate) Return listening ports
 sudo netstat -plnt	# (Obsolate) Return listening ports
