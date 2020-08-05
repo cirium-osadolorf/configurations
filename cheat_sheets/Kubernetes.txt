@@ -279,6 +279,21 @@ kubectl certificate approve <csr_name>
 kubectl certificate deny <csr_name>
 
 kubectl delete csr <csr_name>
+#######################################
+## Roles and Rolebindings
+######################################
+
+kubectl get roles
+kubectl get rolebindings 
+
+
+kubectl auth can-i create deployments                                    # can be used by user to check if he has permission to peform action
+kubectl auth can-i delete nodes                                          # can be used by user to check if he has permission to peform action
+
+kubectl auth can-i create pods --as dev-user                             # can be used by Admin to check if user X has has permission to peform action
+kubectl auth can-i create pods --as dev-user --namespace test            # # can be used by Admin to check if user X has has permission to peform action in namespace
+
+
 
 #######################################
 ## Maintainance
