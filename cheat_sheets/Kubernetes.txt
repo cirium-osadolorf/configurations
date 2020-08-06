@@ -293,7 +293,11 @@ kubectl auth can-i delete nodes                                          # can b
 kubectl auth can-i create pods --as dev-user                             # can be used by Admin to check if user X has has permission to peform action
 kubectl auth can-i create pods --as dev-user --namespace test            # # can be used by Admin to check if user X has has permission to peform action in namespace
 
-
+###########################################
+# ClusterRole and  ClusterRoleBindings
+#########################################
+kubectl get clusterrole
+kubectl get clusterrolebindings 
 
 #######################################
 ## Maintainance
