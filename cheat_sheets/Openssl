@@ -19,8 +19,8 @@ If you need to check the information within a Certificate, CSR or Private Key, u
 
 
 openssl req -text -noout -verify -in CSR.csr      # Check a Certificate Signing Request (CSR)
-openssl rsa -in privateKey.key -check             # Check a private key
-openssl x509 -in certificate.crt -text -noout     # Check a certificate
+openssl rsa -in privateKey.key -check             # Check/view/read a private key
+openssl x509 -in certificate.crt -text -noout     # Check/view/read a certificate
 openssl pkcs12 -info -in keyStore.p12             # Check a PKCS#12 file (.pfx or .p12)
 
 
