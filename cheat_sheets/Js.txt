@@ -1,0 +1,9 @@
+========================================
+= Simple get request
+========================================
+
+fetch('http://ip/uri')
+  .then((resp) => resp.json()) // Transform the data into json
+  .then(function(data) {
+    console.log(data)
+    })
