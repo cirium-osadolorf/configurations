@@ -585,10 +585,11 @@ rsync -a --include='*.sql' --exclude='*' /home/ubuntu/dir/  <hostName>@<ip>:/tmp
 sudo mount -t cifs -o username={{username}},password={{password}} //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
 sudo umount -f -l  /mnt/folder
 
-sduo umount -f -l /mnt/myfolder
 # NFS
 sudo mount serverIP:/exportFolder_server /mnt/mountfolder_client
 showmount -e 192.168.1.12	# Run this on the client
+sudo umount /mnt/myfolder
+
 
 
 ================== Encryption ===================
