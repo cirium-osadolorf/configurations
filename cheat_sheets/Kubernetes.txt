@@ -41,8 +41,15 @@ kubectl api-resources -o wide               # get all resource avaible on your c
 ########################
 # kubeconfig
 ########################
-kubectl config view                         # returns brief configuration of your cluster
-                                              clusater contexts, users and default context
+kubectl config view                         # returns brief configuration of your cluster. clusater contexts, users and default context
+
+kubectl config view --kubeconfig=/root/my-kube-config   # view kubeconfig from specific source                                           
+            
+
+kubectl config use-context user1@prodCluster    # swtich context
+kubectl config --kubeconfig=/root/my-kube-config use-context research  # I would like to use the dev-user to access test-cluster-1. 
+                                                                       # Set the current context to the right one so I can do that.
+    
 ########################
 # proxy
 ########################
