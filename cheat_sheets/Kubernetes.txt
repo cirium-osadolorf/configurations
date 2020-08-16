@@ -48,10 +48,29 @@ kubectl config view --kubeconfig=/root/my-kube-config   # view kubeconfig from s
 kubectl config use-context <contextName>        # swtich kube context
 kubectl config use-context user1@prodCluster    # switch kube context
 kubectl config --kubeconfig=/root/my-kube-config use-context research  # switch kube context
+
+
+########################
+# Auth
+########################
+kubectl auth can-i <verb> <resource> 
+kubectl auth can-i list pods 
+kubectl auth can-i delete nodes
+kubectl auth can-i list pods --as dev-user
+kubectl auth can-i list pods --as dev-user --namespace test
+
+
+
+
+
 ########################
 # proxy
 ########################
 kubectl proxy   `               # will start a proxy on port 8081 wchich read direct request to the api server, it uses information sotred in the kubeconfigfor authentication
+ 
+ 
+                                # client will then make call -->  curl <k8s_ip>:8081 -k
+
 
 #######################################
 # Pods
