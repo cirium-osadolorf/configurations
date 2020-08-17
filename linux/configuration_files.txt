@@ -54,6 +54,9 @@
                                and in what order                
 
                 
+ /proc/sys/net/ipv4/ip_forward    # value in this file is either 0 (Deny) or 1(allow)
+                                  # allow ip fowarding,
+                                  # allow device A to ping Device B trough this machine nics
           
 
 ============ Systemd =============
