@@ -13,6 +13,12 @@ ip r
 route			# returns info on gateway
 routel 			# returns info on gateway
 netstat -r 		# (Obsolate) returns info on gateway
+
+ip addr add 192.168.1.10/24 dev eth0        # giving nic an ip
+ip route add 192.168.2.0/24 via 192.168.1.1 # adding a route to routing table
+ip route add default via 192.168.1.1 	    # route all request to unkwon netowrks via gateway
+
+
 netstat -rn
 
 nmcli			# returns network info
