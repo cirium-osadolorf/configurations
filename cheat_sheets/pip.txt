@@ -32,4 +32,4 @@ pip is the preferred installer program. Starting with Python 3.4, it is included
 ==========================
 
 
-conda env create -f environment.yml"
+conda env create -f environment.yml
