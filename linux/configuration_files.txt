@@ -48,15 +48,15 @@
 
 /etc/hostname                # contains name of the machine, as known to applications that run locally.
 /etc/network/interfaces      # This is where you configure how your system is  connected to the network. DHCP and static can be set here
-/etc/resolv.conf             # used o configure the system's Domain Name System (DNS) resolver
-/etc/hosts                   # used to map hostnames (in other words domains) to IP addresses.                   
+/etc/hosts                   # used to map hostnames (in other words domains) to IP addresses.              
+/etc/resolv.conf             # used o configure the host Domain Name Server
 /etc/nsswitch.conf           # is used by applications to determine the sources from which to obtain name-service information,
                                and in what order                
 
                 
- /proc/sys/net/ipv4/ip_forward    # value in this file is either 0 (Deny) or 1(allow)
-                                  # allow ip fowarding,
-                                  # allow device A to ping Device B trough this machine nics
+/proc/sys/net/ipv4/ip_forward    # value in this file is either 0 (Deny) or 1(allow)
+                                 # allow ip fowarding,
+                                 # allow device A to ping Device B trough this machine nics
           
 
 ============ Systemd =============
