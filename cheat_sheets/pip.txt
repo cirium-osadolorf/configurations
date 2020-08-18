@@ -31,5 +31,19 @@ pip is the preferred installer program. Starting with Python 3.4, it is included
 = Conda
 ==========================
 
+conda info                        # Verify conda is installed, check version number
+conda update conda                # Update conda to the current version
+conda install PACKAGENAME         # Install a package included in Anaconda
+conda update PACKAGENAME          # Update any installed program
+conda search PACKAGENAME          # Use conda to search for a package
+
+conda activate myenv
+conda create -n test-env
+conda env list
+
+
+
+conda install --name bio-env toolz  # Install a new package (toolz) in a different environment  (bio-env) 
+
 
 conda env create -f environment.yml
