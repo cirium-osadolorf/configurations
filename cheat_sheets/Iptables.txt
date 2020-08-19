@@ -1,0 +1,2 @@
+# iptables -n -L -v             # Verbose print out all active iptables rules
+
