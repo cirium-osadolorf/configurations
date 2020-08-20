@@ -78,8 +78,6 @@ dhclient -v enp0s8		# I ussed this command to help my VM dinf the DHCP server
 dhclient -v <Nic>		# I ussed this command to help my VM dinf the DHCP server
 
 
-netstat -anp | grep etcd
-
 
 
 ============ Users ============ 
