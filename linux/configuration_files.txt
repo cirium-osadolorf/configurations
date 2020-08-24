@@ -58,6 +58,8 @@
                                  # allow ip fowarding,
                                  # allow device A to ping Device B trough this machine nics
           
+ /opt/cni/bin                     # PATH TO ALL suported cni plugins         
+ /etc/cni/net.d                   # path to cni that kubelet will use
 
 ============ Systemd =============
 /etc/systemd/system       # system services location
