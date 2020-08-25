@@ -21,6 +21,7 @@
 
 /etc/environment        # intended for setting environment variables for every user on login
                         # /etc/environment doesn't allow scripting at all. You can only set variables here
+                        # login out and in will make the effect apprear
 /etc/profile            #
 ~/.bashrc               #
 ~/.bash_profile         #
