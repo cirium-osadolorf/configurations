@@ -223,6 +223,8 @@ kubectl get pods --selector key=value       # returns pods with specfic labels
 
 kubectl get pods -l env=dev         # returns pods with label key and value
 kubectl get pods --selector bu=finance  # returns pods with label key and value
+
+kubectl get all -l bu=finance  # returns pods with label key and value
 kubectl get all --selector bu=finance  # returns pods with label key and value
 
 kubectl get pod -l env=prod,bu=finance,tier=frontend
