@@ -1,6 +1,10 @@
 ===================
 # java
 ===================
+sudo alternatives --config java		# returns all version of ajva , Linux only
+
+
+
 java -jar <jar-file-name>.jar   #Run jar file in command prompt
 
 ===================
