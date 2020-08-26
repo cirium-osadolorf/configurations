@@ -47,6 +47,13 @@ SET column1 = value1,
     column2 = value2 ,...
 WHERE
    condition;
+   
+   
+#############################
+## Altering queries
+############################
+   
+ALTER TABLE accounts ADD COLUMN is_active boolean DEFAULT false NOT NULL;		# adds new column to a an existing table 
 
 	
 #############################
