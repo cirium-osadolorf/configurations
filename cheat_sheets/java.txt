@@ -30,6 +30,15 @@ project
 =
 ===============
 
+LocalDate localDate = LocalDate.now();//For reference
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+String formattedString = localDate.format(formatter);
+
+
+================
+=
+===============
+
 	@Test
 	public void testA() {
 		OffsetDateTime now = OffsetDateTime.now();
