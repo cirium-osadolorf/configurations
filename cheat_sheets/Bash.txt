@@ -584,12 +584,19 @@ rsync -a dir1/ dir2 		 # -a -> It stands for “archive” and
 
 
 rsync -anvP --delete  /mnt/SDS_data/ /mnt/SDS_data_small/			# sync data (copy) 
-rsync -a --exclude '.git'  ~/git/kds_scripts/ /tmp/serv4eo-processing/		# sync data but exclude a specific file or folder 
 rsync -anv dir1/ dir2
 rsync -a --include='*.sql' --exclude='*' /home/ubuntu/dir/  <hostName>@<ip>:/tmp/ 	# Rsync over ssh, rsync specific files
 
 -n or –dry-run					# Dry run
 -v 						# versbose
+
+
+rsync -a --exclude '.git'  ~/git/kds_scripts/ /tmp/serv4eo-processing/					# sync data but exclude a specific file or folder 
+rsync -a --exclude 'file1.txt' --exclude 'dir1/*' --exclude 'dir2' src_directory/ dst_directory/	# Exclude Multiple Files or Directories
+rsync -a --exclude={'file1.txt','dir1/*','dir2'} src_directory/ dst_directory/				# Exclude Multiple Files or Directories, bracket styles
+
+# Rsync rsync options 
+# https://linuxize.com/post/how-to-exclude-files-and-directories-with-rsync/
 
 ================== Mounting ===================
 
