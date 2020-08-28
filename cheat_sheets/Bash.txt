@@ -42,10 +42,15 @@ traceroute <ip>		# return complete route the packet is taking to reach the targe
 
 			
 sudo netstat -tupln	# (Obsolate) Return listening ports
-sudo netstat -plnt	# (Obsolate) Return listening ports
+			-t - Show TCP ports.
+			-u - Show UDP ports.
+			-n - Show numerical addresses instead of resolving hosts.
+			-l - Show only listening ports.
+			-p - Show the PID and name of the listener’s process. This information is shown only if you run the command as root or sudo user.
+			
 
 sudo ss -tl		# Return listening TCP ports
-sudo ss -ltn		# Return listening TCP ports and process name
+sudo ss -tunlp		# Return listening TCP ports and process name
 
 nslookup		# queries DNS server
 dig <domain>		# queries DNS server
