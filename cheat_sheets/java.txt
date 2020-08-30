@@ -4,6 +4,8 @@
 sudo alternatives --config java		# returns all version of ajva , Linux only
 
 
+java -XX:+PrintCommandLineFlags		# returns all default command line arguments used by your java setup
+					# useful for  to get garbage collectuib type used by your java setup
 
 java -jar <jar-file-name>.jar   #Run jar file in command prompt
 
