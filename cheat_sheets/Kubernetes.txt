@@ -299,6 +299,12 @@ kubectl top pod   # get stats of cluster pod -Only works if you have isntalled m
 kubectl get serviceaccounts
 kubectl get serviceaccounts/build-robot -o yaml   # get servie account yaml
 
+########################
+# ingress
+########################
+kubectl get ingress
+kubectl describe ingress
+
 #######################################
 ## csr
 ######################################
