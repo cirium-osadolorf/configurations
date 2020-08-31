@@ -393,6 +393,7 @@ kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=cl
 
 # 5) Create a service, and verify connectivity on the node port.
 kubectl expose deployment nginx --port 80 --type NodePort
+kubectl expose deployment -n ingress-space ingress-controller --type=NodePort --port=80 --name=ingress --dry-run -o yaml >ingress.yaml
 
 # 3)  Use port forwarding to extend port 80 to 8081, and verify access to the pod directly.
 kubectl port-forward [pod_name] 8081:80 # this session must be left open
