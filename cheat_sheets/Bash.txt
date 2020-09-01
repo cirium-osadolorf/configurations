@@ -720,6 +720,9 @@ grep -o				# -o returns the match cahraters only and not the entire line
 grep -P				# perl regular experssion
 grep -c "echo" FILE		#  This will output the number of lines that contain your search string.
 
+grep -r 'myString' .			# search the current directory for all files having the a string
+grep -r --include=*.{cc,h} "hello" . 	# search recursively (in all sub directories also) for all .cc OR .h files that contain "hello" at this . (current) directory
+
 
 
 echo  'linuxhint.com' | base64
