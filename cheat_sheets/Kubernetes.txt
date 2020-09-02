@@ -15,6 +15,7 @@ cm                  # configmaps
 ep                  # endpoints
 no                  # nodes
 ds                  # daemonsets
+sc                  # storage class
 
 # https://kubernetes.io/docs/reference/kubectl/overview/
 
