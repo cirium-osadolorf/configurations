@@ -1,0 +1,7 @@
+
+#! /bin/bash
+export VER="2.2.10" && wget https://releases.hashicorp.com/vagrant/${VER}/vagrant_${VER}_linux_amd64.zip
+sudo apt install unzip -y
+unzip vagrant_${VER}_linux_amd64.zip
+sudo mv vagrant /usr/local/bin
+vagrant --version
