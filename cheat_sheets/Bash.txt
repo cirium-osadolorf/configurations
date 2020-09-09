@@ -724,12 +724,27 @@ grep -r 'myString' .			# search the current directory for all files having the a
 grep -r --include=*.{cc,h} "hello" . 	# search recursively (in all sub directories also) for all .cc OR .h files that contain "hello" at this . (current) directory
 
 
-
 echo  'linuxhint.com' | base64
 echo 'bGludXhoaW50LmNvbQo=' | base64 --decode
 
+# Multiline command, allows you to execute 1 command by using new lines
+docker create \
+  --name=duckdns \
+  -e PUID=1000 `#optional` \
+  -e PGID=1000 `#optional` \
+  -e TZ=Europe/London \
+  -e SUBDOMAINS=subdomain1,subdomain2 \
+  -e TOKEN=token \
+  -e LOG_FILE=false `#optional` \
+  -v /path/to/appdata/config:/config `#optional` \
+  --restart unless-stopped \
+  linuxserver/duckdns
 
-sudo alternatives --config java		# returns all version of ajva 
+# Multiline command, allows you to execute a bunch of commands in one go
+{
+  tar -xvf etcd-v3.3.9-linux-amd64.tar.gz
+  sudo mv etcd-v3.3.9-linux-amd64/etcd* /usr/local/bin/
+}
 
 
 
