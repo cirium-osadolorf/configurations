@@ -44,6 +44,9 @@
                 # It is traditionally executed after all the normal system services are started
                 
                 
+ C:\Users\fooo\.ssh\config    # vscode config for remote ssh
+                
+                
 ============ Networking  =============
 
 
