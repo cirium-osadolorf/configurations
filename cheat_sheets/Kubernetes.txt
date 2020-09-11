@@ -24,6 +24,8 @@ sc                  # storage class
 ## System
 ######################################
 kubectl get all                                        # returns all objects
+kubectl get all -n <nameSpace>
+kubectl get all --all-namespaces
 
 kubectl explain <object>                               # Explain resource (help)
 kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
