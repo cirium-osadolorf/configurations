@@ -277,7 +277,7 @@ kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule- # Remove t
 
 kubectl logs <podName> 
 kubectl logs -f <podName> <containerName> # used when you have multiple containers in a pod
-
+kubectl logs -f <podName> --previous      # returns logs of previous instance of the pod not the current running one
 
 kubectl get events
 kubectl get events --namespace=my-namespace
