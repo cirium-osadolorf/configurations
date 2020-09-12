@@ -381,6 +381,9 @@ https://kodekloud.com/courses/539883/lectures/10503265
 --Pod
 kubectl run nginx --image nginx
 kubectl run nginx --image=nginx --dry-run=client -o yaml  
+kubectl run busybox --image=busybox --restart=Never -command -- sleep 1000
+kubectl run busybox --image=busybox --restart=Never -command -- sleep 1000 -l key=value
+
 
 --Deployment
 kubectl create deployment nginx --image=nginx 
@@ -419,7 +422,6 @@ kubectl exec busybox -- curl <IP:80>  # Runnin the curl comand from the busybox 
 kubectl scale deployment/kubeserve2 --replicas=2
 
 
-kubectl run --restart=Never --image=busybox static-busybox  --command -- sleep 1000
 
 ============== Kubernetes MicroServices ==============
 cd ~/
