@@ -54,6 +54,13 @@ kubectl config use-context <contextName>        # swtich kube context
 kubectl config use-context user1@prodCluster    # switch kube context
 kubectl config --kubeconfig=/root/my-kube-config use-context research  # switch kube context
 
+########################
+# Redirect output
+########################
+
+kubectl get nodes -o yaml > nodes.yaml
+kubectl get nodes -o json > nodes.json
+
 
 ########################
 # Auth
@@ -411,6 +418,8 @@ kubectl exec busybox -- curl <IP:80>  # Runnin the curl comand from the busybox 
 # 5) Scale deployment replicas
 kubectl scale deployment/kubeserve2 --replicas=2
 
+
+kubectl run --restart=Never --image=busybox static-busybox  --command -- sleep 1000
 
 ============== Kubernetes MicroServices ==============
 cd ~/
