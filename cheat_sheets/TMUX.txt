@@ -91,5 +91,5 @@ x kill the current pane
 Ctrl-b :
 
 setw synchronize-panes on
-setw synchronize-panes of
+setw synchronize-panes off
 
