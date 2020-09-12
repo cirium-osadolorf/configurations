@@ -81,3 +81,15 @@ o toggle between panes
 { swap with previous pane
 ! break the pane out of the window
 x kill the current pane
+
+
+
+
+#############################
+# Multi-Exec 
+#############################
+Ctrl-b :
+
+setw synchronize-panes on
+setw synchronize-panes of
+
