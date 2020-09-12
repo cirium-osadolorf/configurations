@@ -23,6 +23,9 @@ sc                  # storage class
 #######################################
 ## System
 ######################################
+kubectl cluster-info                        # returns info on where the master and DNS is running
+
+
 kubectl get all                                        # returns all objects
 kubectl get all -n <nameSpace>
 kubectl get all --all-namespaces
@@ -38,7 +41,6 @@ kubectl create -f <file.yaml>  --namespace=dev            # create object within
 kubectl apply -f o.yam  -n=kube-system                          # create object within namesapce
 
 kubectl get componentstatus                 # returns compoenets status
-kubectl cluster-info                        # returns info on where the master and DNS is running
 kubectl api-resources -o wide               # get all resource avaible on your cluster
 
 kubectl get roles,rolebindings --namespace ingress-space # query multiple resource types
