@@ -402,6 +402,7 @@ shutdown -r +10 "Rebooting in 10 minutes."
 
 
 ============== System ==================
+uptime  		# returns the system uptime from last booted
 uname  -a		#returns system info
 lsb_release  -a		#returns system info
 who 			#returns loggged in users
