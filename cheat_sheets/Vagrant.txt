@@ -30,6 +30,8 @@ vagrant global-status --prune    # clear status log
 vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
 
+vagrant port                     # returns port mapping
+
 ======== Snapshot  ========
 
 vagrant snapshot save updated               # takes snapshot of the virtual mcahine
