@@ -31,6 +31,8 @@ vagrant provision                # runs any configured provisioners
 vagrant box add ubuntu/bionic64  # add box localy
 
 vagrant port                     # returns port mapping
+vagrant port <machine>           # returns port mapping
+
 
 ======== Snapshot  ========
 
