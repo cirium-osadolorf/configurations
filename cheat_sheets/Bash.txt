@@ -751,6 +751,9 @@ docker create \
 }
 
 
+cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new lines
+
+
 
 #########################################
 #### Shell Expansion
