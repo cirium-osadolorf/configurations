@@ -1,0 +1,11 @@
+================================================
+== Mobxterm
+=================================================
+ctrl m                # maximize and minimize mobxterm
+alt  m                # open tbuttom modal erminal
+ctrl alt direction    # switch between tabs
+
+
+================================================
+== Windows terminal
+=================================================
