@@ -31,6 +31,8 @@ kubectl get all -n <nameSpace>
 kubectl get all --all-namespaces
 
 kubectl explain <object>                               # Explain resource (help)
+kubectl explain <object>  --recursive                  # Explain resource and recusrvly reutns object properties  (help)
+
 kubectl explain persistentvolumes.spec.hostPath        # Explain resource (help)
 
 sudo systemctl status kubelet                             # check status of the service
