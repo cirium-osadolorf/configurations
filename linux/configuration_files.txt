@@ -45,6 +45,9 @@
                 
                 
  C:\Users\fooo\.ssh\config    # vscode config for remote ssh
+ 
+ 
+ /var/lib/apt/lists # When you run sudo apt-get update , a list of packages will get downloaded from the Ubuntu servers. These files are then stored in
                 
                 
 ============ Networking  =============
