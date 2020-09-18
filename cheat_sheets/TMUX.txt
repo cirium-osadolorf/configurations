@@ -44,6 +44,8 @@ o (after Prefix)          # Go to the next pane
 Prefix + direction        # Resize the pane 
 direction (after Prefix)  # move between panes
 
+space (after prefix)      # rearrange panes ordering
+
 z                         # toggle pane zoom, zoom into specific pane
 
 
@@ -81,8 +83,6 @@ o toggle between panes
 { swap with previous pane
 ! break the pane out of the window
 x kill the current pane
-
-
 
 
 #############################
