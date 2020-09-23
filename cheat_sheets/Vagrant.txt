@@ -52,6 +52,21 @@ vagrant snapshot delete <snapo_name>        # delete snapshot, halt the box befo
 
 --push and pop  method --
 
+======== plugins  ========
+
+vagrant plugin list
+vagrant plugin install <plugin_name>
+vagrant plugin update <plugin_name>
+
+vagrant plugin repair <plugin_name>   # vagrant will attempt to repair faulty plugin 
+
+vagrant plugin license <licesnse_file>
+
+vagrant plugin uninstall <plugin_name>
+
+vagrant plugin expunge                # repairs all plugins
+vagrant plugin expunge --reinstall    # repairs and reinstall plugins 
+
 
 
 
