@@ -67,9 +67,16 @@ vagrant plugin uninstall <plugin_name>
 vagrant plugin expunge                # repairs all plugins
 vagrant plugin expunge --reinstall    # repairs and reinstall plugins 
 
+## Useful plugins
 
+vagrant plugin install vagrant-vbguest   # adds VirtualBox Guest Additions to our guest systems
+vagrant plugin install vagrant-winnfsd   # for windows users, NFS support
+vagrant plugin install vagrant-hostmanager # manipulate our /etc/hosts file before provisioning
 
+vagrant plugin install vagrant-netinfo    # shows us the ports that are mapped to our hos
+vagrant plugin install vagrant-git        # lets you deploy and clone code from Git to your guests
 
+https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins
 
 ======== ssh  ========
 vagrant ssh               # SSH into a vagrant box, used for single guest in an enverioment 
