@@ -35,6 +35,9 @@ vagrant port                     # returns port mapping
 vagrant port <machine>           # returns port mapping
 
 
+vagrant upload <source> <destination> [hostname]   # upload file from host to vm
+
+
 ======== Snapshot  ========
 --save and restore  method --
 # You can either use this method or the other, not both
