@@ -36,22 +36,33 @@ vagrant port <machine>           # returns port mapping
 
 
 ======== Snapshot  ========
+--save and restore  method --
+# You can either use this method or the other, not both
 
-vagrant snapshot save updated               # takes snapshot of the virtual mcahine
+vagrant snapshot save <snapshot_name>                # takes snapshot of the virtual mcahine
+vagrant snapshot save <vm_name> <snapshot_name>      # takes snapshot of a specific box
+vagrant snapshot save default <snapshot_name>        # takes snapshot of a specific box
+vagrant snapshot list                                # list snapshoes
 
-vagrant snapshot save <hostname> updated    # takes snapshot of a specific box
-vagrant snapshot save default updated       # takes snapshot of a specific box
-vagrant snapshot list                       # lsit snapshoes
+vagrant snapshot restore <snapshot_name>             # restore snapshots
+vagrant snapshot restore default <snapshot_name>     # restroe specific snapshot
 
-vagrant snapshot restore updated            # restore snapshots
-vagrant snapshot restore default updated    # restroe specific snapshot
-
-vagrant snapshot delete <snapo_name>        # delete snapshot, halt the box before deleting
-
+vagrant snapshot delete <snapo_name>                 # delete snapshot (halt the box before deleting for a quickker process)
 
 
 
 --push and pop  method --
+# You can either use this method or the other, not both
+# you can not  define the name of the machine  you want to save or the name of the snapshot
+# similar to git stash 
+# ideal for quick save and restore
+
+vagrant snapshot push                            # takes a snapshot
+vagrant snapshot list                            # list snapshoes
+vagrant snahphot pop                             # restore the snaphost and removes it from snaphsot list
+
+
+
 
 ======== plugins  ========
 
