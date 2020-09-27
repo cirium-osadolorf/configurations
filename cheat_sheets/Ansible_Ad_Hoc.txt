@@ -109,3 +109,30 @@ Other Modules
 # Replace module
 # script module
 # template module
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================================
+# Ansible-playbook
+===================================================================
+ansible-playbook  -h
+ansible-playbook --help
+
+
+
+
+
+
+
+
+
