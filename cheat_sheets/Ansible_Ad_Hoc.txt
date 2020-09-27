@@ -132,10 +132,10 @@ ansible-playbook --help
 ansible-galaxy init <reoleName>       # create ansible role directore structure
 ansible-galaxy list                   # lists roles
 
-ansible-galaxy <roleName>             # pulls role from ansible galaxy into default role path
+ansible-galaxy install <roleName>             # pulls role from ansible galaxy into default role path
+ansible-galaxy install <roleName>  -p .roles  # pullls role from ansible galaxy to specified path
 
-
-ansible-config dump | grep ROLE       # view where role default path is
+ansible-config dump | grep ROLE               # view where role default path is
 
 
 
