@@ -754,6 +754,10 @@ docker create \
 cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new lines
 
 
+who am i	# retrun info on logged in user
+tty		# return ty info
+
+
 
 #########################################
 #### Shell Expansion
