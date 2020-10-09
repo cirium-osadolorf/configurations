@@ -88,6 +88,10 @@
 =========== Docker =====================
 /var/lib/docker/volumes   # path to docker volumes
 
+/proc/1/environ           # path in the container where docker stores environment  varibales
+
+
+/var/lib/docker/containers/<container_id>/<container_id>-json.log     # path to container lofs
 
 =========== Postgres =====================
 /etc/postgresql/9.5/main/pg_hba.conf                # host-based authentication, used to setup authe systems
