@@ -86,6 +86,10 @@ docker container run -d --name name --restart always user:image:latest
 docker container run --name moviesearchapi -p 3000:3000 -d fortunexfortune/moviesearchapi:latest
 
 
+docker run -e MYVAR1 --env MYVAR2=foo --env-file ./env.list ubuntu bash
+docker run --env VAR1 --env VAR2 ubuntu 
+
+
 ============================== Containers ======================================
 
 docker container --help                         #returns container commands
