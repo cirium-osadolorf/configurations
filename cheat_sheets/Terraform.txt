@@ -20,3 +20,7 @@ terraform
     validate           Validates the Terraform files
     version            Prints the Terraform version
     workspace          Workspace management
+    
+    
+terraform destroy -target RESOURCE_TYPE.NAME -target RESOURCE_TYPE2.NAME
+
