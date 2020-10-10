@@ -476,6 +476,14 @@ sudo apt install -f
 }
 
 
+sudo apt list --installed | grep grid
+sudo apt remove program_name
+
+
+dpkg -l | grep grid	# list
+dpkg -r program_name  # remove package
+
+
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
