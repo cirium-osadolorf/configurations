@@ -469,6 +469,14 @@ sudo apt-mark showhold 				# view hold packages
 sudo sudo apt-mark unhold <package name>	# unhold pacakges
 
 
+{
+sudo apt install path_to_deb_file
+sudo dpkg -i path_to_deb_file
+sudo apt install -f
+}
+
+
+
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
 chkconfig				#Returns runlevel services
