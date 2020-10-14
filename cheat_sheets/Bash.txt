@@ -692,6 +692,52 @@ sudo swapoff -a
 sudo swapon -a
 sudo swapon --show	# return swap location
 
+=================================
+== Find
+=================================
+
+# type
+find .					# finds all files and dir below current directory
+find dir				# finds all files and dir below specified directory
+find . -type d				# finds all directory under specified directory
+find . -type f				# finds all files under specified directory
+find . -type f	--name "fileName"	# finds all files under specified directory with specified name
+find . -type f	--name "fileN*"		# finds all files under specified directory with wildcard name
+find . -type f	--iname "fileN*"        # finds all files under specified directory with wildcard name, iname makes it case insensitive
+
+# min
+find . -type f -mmin 10			# find all files modified 10 mins ago
+find . -type f -mmin -10	        # find all files modified less than 10 mins ago
+find . -type f -mmin +10	        # find all files modified more than 10 mins ago
+find . -type f -mmin +1 -mmin -5	# returns file modified more than 1 m ago and less than 5 age	
+
+# days
+find . -type f -mtime 20		# find file modified 20 days ago
+find . -type f -mtime -20		# find file modified less than 20 days ago
+find . -type f -mtime +20		# find file modified more than 20 days ago
+
+
+# size
+
+find . -size +5M			# returns file over 5mb
+find . -size +5k			# returns file over 5kb
+find . -size +5G			# returns file over 5gb
+
+
+# empty
+find . -empty 				# returns all empty files
+
+
+# permissions 
+
+find . -perm 777 			# find all files with specific permission
+
+
+# exec
+# used to peform action on returned results
+
+
+
 ==================Extras===================
 curl -I ip_Adress # Curls the header of the target ip
 
