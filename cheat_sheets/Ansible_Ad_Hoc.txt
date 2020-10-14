@@ -152,7 +152,7 @@ molecule init role --driver-name docker --role-name ansible-role-redis        # 
 
 
 
-
+molecule test     # run test for the role
 
 
 
