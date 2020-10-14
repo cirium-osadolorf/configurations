@@ -149,10 +149,15 @@ pip install molecule docker                                                   # 
 
 molecule init role                                                            # create a new role
 molecule init role --driver-name docker  ansible-role-redis        # create ansible role with docker driver 
+                                                                   # Setup new ansible role with molecule
 
 
 
 molecule test     # run test for the role
+
+
+molecule init scenario --driver-name docker  # Setup the existing ansible role with molecule - 
+                                             # Goto inside ansible role and run below command
 
 
 
