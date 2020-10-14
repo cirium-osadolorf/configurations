@@ -121,10 +121,6 @@ Other Modules
 
 
 
-
-
-
-
 ===================================================================
 # Ansible-playbook
 ===================================================================
@@ -139,6 +135,25 @@ ansible-galaxy install <roleName>             # pulls role from ansible galaxy i
 ansible-galaxy install <roleName>  -p .roles  # pullls role from ansible galaxy to specified path
 
 ansible-config dump | grep ROLE               # view where role default path is
+
+
+
+
+
+===================================================================
+# Molecule
+===================================================================
+
+pip install molecule docker                                                   # install molecule and docker libray for python
+
+
+molecule init role                                                            # create a new role
+molecule init role --driver-name docker --role-name ansible-role-redis        # create ansible role with docker driver 
+
+
+
+
+
 
 
 
