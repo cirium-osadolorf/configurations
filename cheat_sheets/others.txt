@@ -9,3 +9,13 @@ ctrl alt direction    # switch between tabs
 ================================================
 == Windows terminal
 =================================================
+
+
+================================================
+== Windows Desktop
+=================================================
+
+win+shift+s         # screenshot and snip
+
+win+clt+dir         # move between Desktops
+
