@@ -431,6 +431,8 @@ du -shm /home/tecmint	# returns size of a folder in mb
 du -h /home/tecmint 	# returns the size of each file inside the target folder
 du -mh /home/tecmint
 
+# Find folder taking space 
+https://maryrosecook.com/blog/post/freeing-disk-space-on-your-linux-server
 
 =============== EOF - Here Document  ========
 # A here document is used to redirect input into an interactive shell script or program.
