@@ -19,3 +19,5 @@ win+shift+s         # screenshot and snip
 
 win+clt+dir         # move between Desktops
 
+
+win+dir             # move applicaiton to the side of the screen
