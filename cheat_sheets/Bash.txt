@@ -418,7 +418,14 @@ su -			#logs you to root in the root home folder
 su user			#logs you to  the user in the current directory 
 su - user		#logs you to the user in the user home folder
 
-lsblk	# list block devices
+
+============== Storage ==================
+
+
+lsblk			# list block devices
+mkfs.ext4 /dev/sdb1	# Format the new partition using Ext4.
+df -T			# returns block devices  with format type
+
 
 
 df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
