@@ -52,6 +52,25 @@ tsc --init  // generate a tsconfig.json
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+npm run dev
+
+
+
+
+
+
 ====================================
 = Usefaull Node Pacakges
 ====================================
