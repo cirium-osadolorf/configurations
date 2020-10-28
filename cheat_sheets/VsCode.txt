@@ -1,1 +1,6 @@
 f2      # Refactor variable
+
+
+
+doc + tab   # # creates html template
+! + tab     # creates html template
