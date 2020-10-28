@@ -1,10 +1,10 @@
 ! /bin/bash
 
 export VER="0.12.29"
-curl https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip --output terraform_${VER}_linux_amd64.zip
+apt-get install -y curl
 apt-get install -y unzip
+curl https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip --output terraform_${VER}_linux_amd64.zip
 unzip terraform_${VER}_linux_amd64.zip
-mkdir /bin/terraform
 mv terraform /usr/local/bin/
 rm -fR terraform_${VER}_linux_amd64.zip
 terraform -version
