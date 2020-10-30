@@ -123,8 +123,15 @@ p           # paste
              # 5 = Ending Line
              # # = Comment symbol
 
-: %s /<old-value>/<new_value>/g    # Replace all instaces of the word 
-: %s /<old-value>/<new_value>/gc   # Replace all instaces of the word with confirmation prompt 
+
+:s/foo/bar/g                       # Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
+
+
+:%s/foo/bar/g                      # Replace all instaces of the word 
+:%s/foo/bar/gc                     # Replace all instaces of the word with confirmation prompt 
+
+
+:%s/\<foo\>/bar/gc                 # Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
 
 
 =====================================================
