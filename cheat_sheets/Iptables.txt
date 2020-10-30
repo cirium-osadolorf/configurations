@@ -1,2 +1,46 @@
-# iptables -n -L -v             # Verbose print out all active iptables rules
+
+
+
+
+======================================================
+= Tables
+======================================================
+https://www.thegeekstuff.com/2011/01/iptables-fundamentals/
+
+
+Filter 
+
+INPUT chain – Incoming to firewall. For packets coming to the local server.
+OUTPUT chain – Outgoing from firewall. For packets generated locally and going out of the local server.
+FORWARD chain - Packet for another NIC on the local server. For packets routed through the local server.
+
+NAT 
+
+PREROUTING chain – Alters packets before routing. i.e Packet translation happens immediately after the packet comes to the system (and before routing).
+POSTROUTING chain – Alters packets after routing. i.e Packet translation happens when the packets are leaving the system.
+OUTPUT chain – NAT for locally generated packets on the firewall.
+
+
+Mangle 
+
+PREROUTING chain
+OUTPUT chain
+FORWARD chain
+INPUT chain
+POSTROUTING chain
+
+
+Raw 
+
+PREROUTING chain
+OUTPUT chain
+
+======================================================
+= Commands 
+======================================================
+
+iptables -L                   # List filter table (default table)
+
+
+iptables -n -L -v             # Verbose print out all active iptables rules
 
