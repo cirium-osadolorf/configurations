@@ -11,6 +11,7 @@ ctrl alt direction    # switch between tabs
 =================================================
 Alt+Shift+=         # create vertical pane
 Alt+Shift+-         # create horizontal pane
+Ctrl+Shift+W        # clsoe pane
 
 Alt+ directoion     # switch betwwen panes
 
