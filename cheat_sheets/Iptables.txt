@@ -35,19 +35,59 @@ OUTPUT chain
 = Commands 
 ======================================================
 
-iptables -L                   # List filter table (default table)
+# Generic
 
 
-iptables -n -L -v             # Verbose print out all active iptables rules
-
-
-
+iptables -A INPUT -p tcp --dport 80 -j DROP                                 # block  https request, frome everywhere 
 
 iptables -t filter -A INPUT -p icmp --icmp-type echo-request -j DROP        # bock icmp requests, more specifically echo requests
 
-
 iptables -t filter -A OUTPUT -p tcp --dport 80 -d www.ubuntu.com -j DROP    # block outing request to ubuntu domain
 iptables -t filter -A OUTPUT -p tcp --dport 443 -d www.ubuntu.com -j DROP   # # block outing request to ubuntu domain
+
+
+# LIST
+iptables -L                   # List filter table (default table)
+iptables -nvL                 # Verbose print out all active iptables rules
+                              # v verbose, n numberic , L list
+                              
+# APPEND
+iptables -A INPUT -p tcp --dport 80 -j DROP           # append command tothe INPUT chain (will be added to the bottom of the chain by default)
+
+
+# INSERT
+iptables -I INPUT -p icmp -j ACCEPT                   # insert rule at the top of the chain (default behavoiur)
+iptables -I INPUT -p udp --dport 69 -j DROP           # insert rule at the top of the chain (default behavoiur)
+
+iptables -I INPUT <n> -p icmp -j ACCEPT                 # insert rule at position n of the chain 
+iptables -I INPUT 3 -p icmp -j ACCEPT                   # insert rule at position n of the chain 
+
+
+
+# FLUSH
+iptables -F                                           # flushes all rules in all chains of the default table (filter table)
+iptables -F INPUT                                          
+iptables -F INPUT  -t nat                
+
+
+# ZERO
+iptables -Z                                            # resets bytes and packets counter 
+
+
+# N
+iptables -N TCP_TRAFFIC                                # creates a user-defined CHAIN
+ 
+# X
+iptables -X TCP_TRAFFIC                                # delete a user-defined CHAIN
+
+# P
+iptables -P INPUT ACCEPT                               # sets the default POLICY for a chain when no rules matach a request (ACCEPT/DROP)
+ 
+
+
+# D
+iptables -D OUTPUT 2                                   #  deletes a rule, the rule number must be supplied
+
 
 =============================
 = Extras
