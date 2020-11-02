@@ -46,6 +46,9 @@ iptables -n -L -v             # Verbose print out all active iptables rules
 iptables -t filter -A INPUT -p icmp --icmp-type echo-request -j DROP        # bock icmp requests, more specifically echo requests
 
 
+iptables -t filter -A OUTPUT -p tcp --dport 80 -d www.ubuntu.com -j DROP    # block outing request to ubuntu domain
+iptables -t filter -A OUTPUT -p tcp --dport 443 -d www.ubuntu.com -j DROP   # # block outing request to ubuntu domain
+
 =============================
 = Extras
 ==============================
