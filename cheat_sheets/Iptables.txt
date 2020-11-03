@@ -51,7 +51,15 @@ iptables -L                   # List filter table (default table)
 iptables -nvL                 # Verbose print out all active iptables rules
                               # v --> versbose, show interface name, packet and bytes quantity 
                               # n --> ip adress and ports will be printed  numerically 
+               
                               
+iptables -t filter -L         # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
+iptables -vnL                 # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
+iptables -vnL INPUT         ` # listing just a chain
+iptables -t nat -vnL          # listing another table, not filter
+iptables -t nat -vnL POSTROUTING  # listing just a CHAIN
+
+
 # APPEND
 iptables -A INPUT -p tcp --dport 80 -j DROP           # append command tothe INPUT chain (will be added to the bottom of the chain by default)
 
