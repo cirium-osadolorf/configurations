@@ -51,7 +51,7 @@ iptables -L                   # List filter table (default table)
 iptables -nvL                 # Verbose print out all active iptables rules
                               # v --> versbose, show interface name, packet and bytes quantity 
                               # n --> ip adress and ports will be printed  numerically 
-               
+            
                               
 iptables -t filter -L         # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
 iptables -vnL                 # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
@@ -67,7 +67,6 @@ iptables -A INPUT -p tcp --dport 80 -j DROP           # append command tothe INP
 # INSERT
 iptables -I INPUT -p icmp -j ACCEPT                   # insert rule at the top of the chain (default behavoiur)
 iptables -I INPUT -p udp --dport 69 -j DROP           # insert rule at the top of the chain (default behavoiur)
-
 iptables -I INPUT <n> -p icmp -j ACCEPT                 # insert rule at position n of the chain 
 iptables -I INPUT 3 -p icmp -j ACCEPT                   # insert rule at position n of the chain 
 
@@ -91,7 +90,10 @@ iptables -X TCP_TRAFFIC                                # delete a user-defined C
 
 # P
 iptables -P INPUT ACCEPT                               # sets the default POLICY for a chain when no rules matach a request (ACCEPT/DROP)
- 
+iptables -P FORWARD DROP                               # Setting the DROP Policy on FORWARD chain
+iptables -P OUTPUT ACCEPT                              # Setting the ACCEPT Policy on OUTPUT chain
+iptables -P INPUT DROP                                 # Setting the DROP Policy on INPUT chain
+
 
 
 # D
