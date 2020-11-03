@@ -49,7 +49,8 @@ iptables -t filter -A OUTPUT -p tcp --dport 443 -d www.ubuntu.com -j DROP   # # 
 # LIST
 iptables -L                   # List filter table (default table)
 iptables -nvL                 # Verbose print out all active iptables rules
-                              # v verbose, n numberic , L list
+                              # v --> versbose, show interface name, packet and bytes quantity 
+                              # n --> ip adress and ports will be printed  numerically 
                               
 # APPEND
 iptables -A INPUT -p tcp --dport 80 -j DROP           # append command tothe INPUT chain (will be added to the bottom of the chain by default)
