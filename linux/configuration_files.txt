@@ -130,3 +130,15 @@ C:/Users/USERNAME/.vagrant.d/boxes                  # Location where boxes are s
 
 
 
+
+
+=============== IPTABLES ========================
+
+ /etc/iptables/rules.v4     # file that load rules in memoery for IPV4 by iptables-persistent / DEBIAN
+ /etc/iptables/rules.v6     # file that load rules in memoery for IPV6 by iptables-persistent / DEBIAN
+
+
+/etc/sysconfig/iptables     # file that load rules in memory for IPV4 by iptables-persistent / REHL
+/etc/sysconfig/ip6tables    # file that load rules in memory for IPV6 by iptables-persistent / REHL
+
+
