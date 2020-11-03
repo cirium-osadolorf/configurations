@@ -101,6 +101,34 @@ iptables -P INPUT DROP                                 # Setting the DROP Policy
 iptables -D OUTPUT 2                                   #  deletes a rule, the rule number must be supplied
 
 
+
+
+=============================
+= SAVE e RESTORE
+==============================
+
+iptables-save                         # load rules from momory
+iptables-save > my_rules.txt          # write rules in memory into file
+
+iptables-restore my_rules.txt         # load rules into memory
+
+
+
+
+# Persist rules on rebioot - UBUNTU / CENTOS
+apt-get install iptables-persistent
+
+
+Debian/Ubuntu: iptables-save > /etc/iptables/rules.v4
+RHEL/CentOS: iptables-save > /etc/sysconfig/iptables
+
+Debian/Ubuntu: ip6tables-save > /etc/iptables/rules.v6
+RHEL/CentOS: ip6tables-save > /etc/sysconfig/ip6tables
+
+
+https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently#:~:text=Since%20Ubuntu%2010.04%20LTS%20(Lucid,v6%20for%20IPv6.
+
+
 =============================
 = Extras
 ==============================
