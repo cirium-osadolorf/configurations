@@ -101,6 +101,19 @@ vagrant ssh -c "Command"  # Returns ssh comand to hostm machine
 vagrant ssh-config        # Returns info on ssh setup
 ssh -p 2222 vagrant@127.0.0.1
 
+======== Boxes  ========
+
+vagrant box list
+
+            add
+            list
+            outdated
+            prune
+            remove
+            repackage
+            update
+
+
 
 =============================================================
 Providers
