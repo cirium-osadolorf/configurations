@@ -87,6 +87,7 @@ iptables -N TCP_TRAFFIC                                # creates a user-defined 
  
 # X
 iptables -X TCP_TRAFFIC                                # delete a user-defined CHAIN
+iptables -X                                            # delete all user definied  chains
 
 # P
 iptables -P INPUT ACCEPT                               # sets the default POLICY for a chain when no rules matach a request (ACCEPT/DROP)
