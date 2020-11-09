@@ -250,6 +250,8 @@ zzzz 2>> err.txt		#Insert error message into the file new line
 
 command > file-name 2>&1.               # outputs both stderr and output into a file 
 SomeCommand 2>&1 | tee SomeFile.txt	# outputs both stderr and output displayed on the console and in a file
+SomeCommand 2>&1 | tee -a log
+
 
 
 ============ Operators ======================
