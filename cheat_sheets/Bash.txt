@@ -747,6 +747,10 @@ find . -perm 777 			# find all files with specific permission
 # exec
 # used to peform action on returned results
 
+==================File manipulation===================
+
+sed -i -e 's/sudo//g'  <fileName>		# removes instace of word in file
+sed -i -e 's/\(sudo\|-E\)//g' <fileName>	# remove instaces of different words in a file
 
 
 ==================Extras===================
