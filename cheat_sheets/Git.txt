@@ -117,7 +117,9 @@ git show <tagName>                      # return tag commit info
 
 
 
-
+git tag                         # see tag lists
+git push origin <tag-name>      # push a single tag
+git push --tags                 # push all local tags 
 
 
 
