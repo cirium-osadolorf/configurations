@@ -160,9 +160,12 @@ molecule init scenario --driver-name docker  # Setup the existing ansible role w
                                              # Goto inside ansible role and run below command
 
 
+molecule test
 
+molecule converge
 
+molecule destroy
 
-
+molecule verify
 
 
