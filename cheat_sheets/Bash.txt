@@ -472,8 +472,12 @@ EOF
 
 ================= installing software ==========
 
---debian packer
-sudo apt install ./name.deb # install a debian deb package
+sudo apt install <packageName>	# install a debian deb package
+sudo apt remove <packageName>	# remove a debian deb package
+sudo apt purge <packageName>   #  removes everything related to a package including the configuration files.
+
+sudo apt list --installed	# list installed packages
+
 
 sudo apt-mark hold kubelet kubeadm kubectl	# put's packages on hold meaning you can not update the package
 sudo apt-mark showhold 				# view hold packages
@@ -488,7 +492,6 @@ sudo apt install -f
 
 
 sudo apt list --installed | grep grid
-sudo apt remove program_name
 
 
 dpkg -l | grep grid	# list
