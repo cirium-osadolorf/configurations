@@ -472,11 +472,18 @@ EOF
 
 ================= installing software ==========
 
+# Debian / Ubuntu
+
 sudo apt install <packageName>	# install a debian deb package
 sudo apt remove <packageName>	# remove a debian deb package
-sudo apt purge <packageName>   #  removes everything related to a package including the configuration files.
+sudo apt purge <packageName>    #  removes everything related to a package including the configuration files.
+sudo apt autoremove		# This command removes libs and packages that were installed automatically to satisfy the dependencies of an installed package.
 
 sudo apt list --installed	# list installed packages
+sudo apt search <search term>	# will find all the packages containing your search term
+sudo apt show <package_name>		# If you want to know more about a package before installing or removing it,
+
+
 
 
 sudo apt-mark hold kubelet kubeadm kubectl	# put's packages on hold meaning you can not update the package
