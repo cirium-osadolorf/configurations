@@ -146,7 +146,6 @@ ansible-config dump | grep ROLE               # view where role default path is
 
 pip install molecule docker                                                   # install molecule and docker libray for python
 
-
 molecule init role                                                            # create a new role
 molecule init role --driver-name docker  ansible-role-redis        # create ansible role with docker driver 
                                                                    # Setup new ansible role with molecule
@@ -155,17 +154,55 @@ molecule init role --driver-name docker  ansible-role-redis        # create ansi
 
 molecule test     # run test for the role
 
-
 molecule init scenario --driver-name docker  # Setup the existing ansible role with molecule - 
                                              # Goto inside ansible role and run below command
+                                             
+                                             
 
 
-molecule test
+molecule test         # Runs full testing life cycle for testing (create - converge - verify - destroy)
+molecule converge     #'provision instances with provisioing playbook
+molecule destroy      # destroy intances
+molecule verify       # run assert playbook aginst provisioned instances 
+molecule list         # list machines provisioned for testing
+molecule login       #  allows to login to instance 
 
-molecule converge
 
-molecule destroy
-
-molecule verify
-
+scenario:
+  create_sequence:
+    - dependency
+    - create
+    - prepare
+  check_sequence:
+    - dependency
+    - cleanup
+    - destroy
+    - create
+    - prepare
+    - converge
+    - check
+    - destroy
+  converge_sequence:
+    - dependency
+    - create
+    - prepare
+    - converge
+  destroy_sequence:
+    - dependency
+    - cleanup
+    - destroy
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - idempotence
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
 
