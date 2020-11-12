@@ -161,6 +161,7 @@ molecule init scenario --driver-name docker  # Setup the existing ansible role w
 
 
 molecule test         # Runs full testing life cycle for testing (create - converge - verify - destroy)
+molecule test --destroy=never
 molecule converge     #'provision instances with provisioing playbook
 molecule destroy      # destroy intances
 molecule verify       # run assert playbook aginst provisioned instances 
