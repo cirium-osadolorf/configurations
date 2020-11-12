@@ -90,6 +90,7 @@ x kill the current pane
 #############################
 Ctrl-b :
 
-setw synchronize-panes on
-setw synchronize-panes off
+setw synchronize-panes on       # sync panes
+setw synchronize-panes off      # turn offf panes syncx
+set -g mouse on                 # enable mouse scrolling in panes
 
