@@ -421,6 +421,17 @@ su user			#logs you to  the user in the current directory
 su - user		#logs you to the user in the user home folder
 
 
+
+watch date		# execute a command repeatedly so as to track any change in output (every 2 sec)
+watch -d date		# highlight the part of output that's changing between updates
+watch -n 5 date		#  customize update interval
+watch -t date		# turn off the header in output
+watch -g free		# watch' command to exit after a change in output is detected
+	
+
+
+
+
 ============== Storage ==================
 
 
