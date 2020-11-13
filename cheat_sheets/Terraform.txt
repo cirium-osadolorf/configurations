@@ -21,6 +21,14 @@ terraform
     version            Prints the Terraform version
     workspace          Workspace management
     
-    
-terraform destroy -target RESOURCE_TYPE.NAME -target RESOURCE_TYPE2.NAME
+
+terraform apply -auto-approve
+
+
+terraform workspace show
+terraform workspace list
+terraform workspace new prod
+terraform workspace select prod
+
+
 
