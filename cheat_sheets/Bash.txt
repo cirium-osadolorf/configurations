@@ -1,4 +1,5 @@
 =========== Networking  ==================
+# apt install iproute2
 ip a 			# the new substitue for ifonfig
 ip r			# returns info on gateway 
 routel			# return route tables
