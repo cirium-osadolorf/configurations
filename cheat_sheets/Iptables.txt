@@ -61,7 +61,7 @@ iptables -t nat -vnL POSTROUTING  # listing just a CHAIN
 
 
 # APPEND
-iptables -A INPUT -p tcp --dport 80 -j DROP           # append command tothe INPUT chain (will be added to the bottom of the chain by default)
+iptables -A INPUT -p tcp --dport 80 -j DROP           # append command to the INPUT chain (will be added to the bottom of the chain by default)
 
 
 # INSERT
