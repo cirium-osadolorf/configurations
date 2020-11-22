@@ -146,6 +146,10 @@ sudo iptables -A OUTPUT -d 8.0.0.0/8 -j DROP           # drop ougoing traffic to
 
 
 
+iptables -A OUTPUT -p tcp --dport 443   -j ACCEPT           # implicitly the destination will be all | allow https over ssh to other ips
+iptables -A OUTPUT -p tcp --dport 443  -d 0/0 -j ACCEPT     # explictly  defining the destination to all | allow https over ssh to other ips
+
+
 =============================
 = Extras
 ==============================
