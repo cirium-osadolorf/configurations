@@ -107,8 +107,8 @@ iptables -D OUTPUT 2                                   #  deletes a rule, the ru
 = SAVE e RESTORE
 ==============================
 
-iptables-save                         # load rules from momory
-iptables-save > my_rules.txt          # write rules in memory into file
+iptables-save                         # returns iptables rules that are  active(from memory)
+iptables-save > my_rules.txt          # write active rules(from memory) into file
 
 iptables-restore my_rules.txt         # load rules into memory
 
