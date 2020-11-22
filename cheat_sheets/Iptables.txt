@@ -129,6 +129,23 @@ RHEL/CentOS: ip6tables-save > /etc/sysconfig/ip6tables
 https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently#:~:text=Since%20Ubuntu%2010.04%20LTS%20(Lucid,v6%20for%20IPv6.
 
 
+
+
+
+=====================
+= BASIC matches
+====================
+iptables  -A INPUT -s <ip> -j DROP                    # drop incoming traffic from specific IP
+iptables  -A INPUT -s <domain> -j DROP                # drop incoming traffic from specific domain, iptables will take care of DNS resolution
+iptables  -A INPUT -s <networkSubnet> -j DROP         # drop incoming traffic netowrk subnet
+iptables  -A INPUT -s 192.168.1.179 -j DROP           # drop incoming traffic from specific IP
+
+
+
+sudo iptables -A OUTPUT -d 8.0.0.0/8 -j DROP           # drop ougoing traffic to the all 8.0.0.0 network, all IPs under that nwtwork
+
+
+
 =============================
 = Extras
 ==============================
