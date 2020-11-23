@@ -487,38 +487,44 @@ EOF
 ================= installing software ==========
 
 # Debian / Ubuntu
+# https://help.ubuntu.com/community/AptGet/Howto
 
 sudo apt install <packageName>	# install a debian deb package
 sudo apt remove <packageName>	# remove a debian deb package
-sudo apt purge <packageName>    #  removes everything related to a package including the configuration files.
-sudo apt autoremove		# This command removes libs and packages that were installed automatically to satisfy the dependencies of an installed package.
+sudo apt purge <packageName>    # removes everything related to a package including the configuration files. Configs in ~ are not usually affected by this command.
+sudo apt autoremove		# This command removes packages that were installed by other packages and are no longer needed.
+sudo apt-get autoclean		# This command removes .deb files for packages that are no longer installed on your system. 
+			        # removing these files from /var/cache/apt/archives may regain a significant amount of diskspace.
 
-sudo apt list --installed	# list installed packages
+sudo apt list  <packageName>			# list all avaible apt  packages for your os (not all are neccesary installed)
+sudo apt list --installed			# list installed packages
+sudo apt list --installed <packageName>		# list installed packages
+
 sudo apt search <search term>	# will find all the packages containing your search term
-sudo apt show <package_name>		# If you want to know more about a package before installing or removing it,
+sudo apt show <package_name>    # If you want to know more about a package before installing or removing it,
 
+sudo apt-cache search <search_term> # Each package has a name and a description. This command lists packages whose name or description contains <search_term>.
+sudo dpkg -l *<search_term>*        # This will find packages whose names contain <search_term>. 
+                                    # Similar to apt-cache search, but also shows whether a package is installed on your system 
+				    # by marking it with ii (installed) and un (not installed).		    
 
+apt-cache show <package_name>       # This command shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts.
 
 
 sudo apt-mark hold kubelet kubeadm kubectl	# put's packages on hold meaning you can not update the package
 sudo apt-mark showhold 				# view hold packages
 sudo sudo apt-mark unhold <package name>	# unhold pacakges
 
+sudo apt install -f                             # This command does the same thing as Edit->Fix Broken Packages in Synaptic.
+						# Do this if you get complaints about packages with "unmet dependencies".
 
 {
 sudo apt install path_to_deb_file
 sudo dpkg -i path_to_deb_file
-sudo apt install -f
+sudo apt install -f					
 }
 
-
-sudo apt list --installed | grep grid
-
-
-dpkg -l | grep grid	# list
 dpkg -r program_name  # remove package
-
-
 
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
