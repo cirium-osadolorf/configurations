@@ -65,6 +65,10 @@ git diff            # Show changes between the working tree and the index or a t
 git diff --cached   # You have already staged the changes (presumably by running git add), so in order to get their diff, you need to run:
 
 
+git diff myfile.txt                 # for unstage files
+git diff --cached myfile.txt        # for stagesd files
+
+
 
 ============== Cloning and Pushing =========================
 
