@@ -488,6 +488,7 @@ EOF
 
 # Debian / Ubuntu
 # https://help.ubuntu.com/community/AptGet/Howto
+# https://www.cyberciti.biz/howto/question/linux/dpkg-cheat-sheet.php
 
 sudo apt install <packageName>	# install a debian deb package
 sudo apt remove <packageName>	# remove a debian deb package
