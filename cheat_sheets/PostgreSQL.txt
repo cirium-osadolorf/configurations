@@ -77,6 +77,14 @@ createuser test
 # https://www.a2hosting.co.uk/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
 
 
+
+
+===========================
+= Connect to remote db
+==========================
+
+psql -h <host_or_ip> -d <fb_name> -W
+
 ###############################
 #backup and restore
 ###############################
