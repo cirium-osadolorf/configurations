@@ -447,7 +447,7 @@ df -T			# returns block devices  with format type
 df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
 df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
 
-du -sh /file/path	# returns size of folder
+du -sh /file/path	# returns size of folder in GB
 du -shk /file/path	# returns size of a folder in Kilobytes
 du -shm /home/tecmint	# returns size of a folder in mb
 
