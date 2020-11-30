@@ -431,6 +431,7 @@ watch -n 5 date		#  customize update interval
 watch -t date		# turn off the header in output
 watch -g free		# watch' command to exit after a change in output is detected
 	
+watch 'COMMAND_1 | COMMAND_2'	# run watch for command that requires Pipes 
 
 
 
@@ -453,6 +454,13 @@ du -shm /home/tecmint	# returns size of a folder in mb
 
 du -h /home/tecmint 	# returns the size of each file inside the target folder
 du -mh /home/tecmint
+
+
+# Monitor Progress of Copy Command
+cp ubuntu-15.10-desktop-amd64.iso /home/tecmint/ &			# Copy with this conmmand
+watch -n 0.1 du -s /home/tecmint/ubuntu-15.10-desktop-amd64.iso 	# Monitor destination folder 
+
+
 
 # Find folder taking space 
 https://maryrosecook.com/blog/post/freeing-disk-space-on-your-linux-server
