@@ -19,6 +19,8 @@ Esc                     # Switch to Command mode
 : help <keyworkd>
 
 
+view <file_name>        # open file in vim in read only mode
+
  vim +36 <fileName>     # open file at specific line number
 
 =====================================================
