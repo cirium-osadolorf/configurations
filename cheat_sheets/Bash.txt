@@ -443,18 +443,23 @@ lsblk			# list block devices
 mkfs.ext4 /dev/sdb1	# Format the new partition using Ext4.
 df -T			# returns block devices  with format type
 
-
-
 df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
 df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
 
-du -sh /file/path	# returns size of folder in GB
-du -shk /file/path	# returns size of a folder in Kilobytes
-du -shm /home/tecmint	# returns size of a folder in mb
+
 
 du -h /home/tecmint 	# returns the size of each file inside the target folder
 du -mh /home/tecmint
 
+du -sh /file/path	# returns size of folder in GB
+du -shk /file/path	# returns size of a folder in KB
+du -shm /home/tecmint	# returns size of a folder in MB
+
+
+	-c 		# Retruns also gran total 
+	-h 		# How to view disk usage in human readable format
+	-s 		# size
+	-r		# sort by file or folder size
 
 # Monitor Progress of Copy Command
 cp ubuntu-15.10-desktop-amd64.iso /home/tecmint/ &			# Copy with this conmmand
