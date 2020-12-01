@@ -22,6 +22,7 @@ tmux kill-session -t <name> # kill session (delete)
 ###########################
 ctrl + b                  # Prefix, all tmux commands are executed after this prefix
 
+s (after prefix)          # switch between sessions
 
 # Window managament 
 c (after Prefix)          # create a new window
