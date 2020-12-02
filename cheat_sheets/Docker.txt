@@ -403,3 +403,10 @@ docker run -t -i centos /bin/bash   # used to  stand containers of an images tha
 
 sudo docker run -it --entrypoint /bin/bash [docker_image]  # overwrite entrypoint
 docker inspect --format '{{ .State.Pid }}' [container_id] # Get the process ID for the container
+
+
+
+==================== READY to GO ====================
+
+sudo docker run -it -v mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
+
