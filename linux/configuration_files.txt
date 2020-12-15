@@ -38,8 +38,6 @@
 /etc/sysctl.conf          # file is used to override default kernel parameter values, for exmpale swap
 
 
-
-
 /etc/rc.local   # The script /etc/rc.local is for use by the system administrator. 
                 # It is traditionally executed after all the normal system services are started
                 
@@ -49,7 +47,8 @@
  
  /var/lib/apt/lists # When you run sudo apt-get update , a list of packages will get downloaded from the Ubuntu servers. These files are then stored in
                 
-                
+               
+ /etc/protocols             # file contains information regarding the known protocols used in the DARPA Interne                
 ============ Networking  =============
 
 
