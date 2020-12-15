@@ -62,9 +62,9 @@ sudo dhclient -r		# release ip address
 sudo dhclient 			# restarts dhc client 
 sudo ss -luntp | grep -i dhc	# Return dhclient listening port 
 
-nmap <ip>			# view all open ports on an server 
 telnet {host} {port}
 nmap -p {port} {host}		# ping and test for a specific port
+nmap <ip>			# view all open ports on an server 
 
 nmap -sP <subent>		# scan network and return all connected devices (ping all subnet devices)
 nmap -sP 192.168.0.74/24	# scan network and return all connected devices (ping all subnet devices)
