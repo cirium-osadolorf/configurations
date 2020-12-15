@@ -135,6 +135,8 @@ https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently#
 =====================
 = BASIC matches
 ====================
+
+# Filer by ip address
 iptables  -A INPUT -s <ip> -j DROP                    # drop incoming traffic from specific IP
 iptables  -A INPUT -s <domain> -j DROP                # drop incoming traffic from specific domain, iptables will take care of DNS resolution
 iptables  -A INPUT -s <networkSubnet> -j DROP         # drop incoming traffic netowrk subnet
@@ -148,14 +150,20 @@ iptables -A OUTPUT -p tcp --dport 443   -j ACCEPT           # implicitly | allow
 iptables -A OUTPUT -p tcp --dport 443  -d 0/0 -j ACCEPT     # explicitly | allow outgoing HTTPS traffic to all ips (same as the command above)
 
 
-# Match agaisnt a list of IPs
+# Filter by IP range
 iptables -A INPUT -p tcp --dport 25 -m iprange --src-range 10.0.0.10-10.0.0.18 -j DROP    # DROP smtp traffic (port25) for ip range (incoming)
 iptables -A OUTPUT-p tcp --dport 25 -m iprange --src-dst 10.0.0.10-10.0.0.18 -j DROP      # DROP smtp traffic (port25) for ip range (outgoing)
 
 
-# Match network typ
+# Filter by network type
 iptables -m addrtype --help
 iptables -A OUTPUT -m addrtype --dst-type MULTICAST -j DROP
+
+
+# Filter by port 
+iptables -A INPUT -p tcp --dport 22 -j DROP                           # filter by specific port
+iptables -A OUTPUT -p tcp -m multiport --dports 80,443 -j ACCEPT      # filter multiple ports with single command
+
 
 
 =============================
