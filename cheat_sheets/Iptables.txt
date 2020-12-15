@@ -165,6 +165,15 @@ iptables -A INPUT -p tcp --dport 22 -j DROP                           # filter b
 iptables -A OUTPUT -p tcp -m multiport --dports 80,443 -j ACCEPT      # filter multiple ports with single command
 
 
+# filter by network interface
+
+iptables -A INPUT -i wlan0 -j ACCEPT        # allow any incoming traffic coming via the wlan0 interface
+                                            # -i allowd only for INPUT, FORWARD, PREROUTING
+iptables -A INPUT -i wlan+ -j ACCEPT        # the + sign is a wildcard that will match any charchter                                 
+                                            # -i alloewd only for INPUT, FORWARD, PREROUTING
+                                            
+iptables -A OUTPUT -o enp8s0 ACCEPT         # allow any outgoing traffic going trough the enp8s0  interface                            
+                                            # -i alloewd only for FORWARD, OUTPUT, POSTROUTING
 
 =============================
 = Extras
