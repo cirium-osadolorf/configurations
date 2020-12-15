@@ -166,7 +166,6 @@ iptables -A OUTPUT -p tcp -m multiport --dports 80,443 -j ACCEPT      # filter m
 
 
 # filter by network interface
-
 iptables -A INPUT -i wlan0 -j ACCEPT        # allow any incoming traffic coming via the wlan0 interface
                                             # -i allowd only for INPUT, FORWARD, PREROUTING
 iptables -A INPUT -i wlan+ -j ACCEPT        # the + sign is a wildcard that will match any interfce which string start with wlan                               
@@ -174,6 +173,14 @@ iptables -A INPUT -i wlan+ -j ACCEPT        # the + sign is a wildcard that will
                                             
 iptables -A OUTPUT -o enp8s0 ACCEPT         # allow any outgoing traffic going trough the enp8s0  interface                            
                                             # -o alloewd only for FORWARD, OUTPUT, POSTROUTING
+                                            
+# Negating Matches
+
+iptables -A INPUT -p tcp --dport 22 ! -s 100.0.0.1 -j DROP        # dropping all incoming ssh traffic accepting packets from 100.0.0.1 
+iptables -A OUTPUT -p tcp --dport 443 ! -d www.linux.com -j DROP  # dropping all outgoing https traffic excepting to www.linux.com
+iptables -A INPUT -m mac ! --mac-source b4:6d:83:77:85:f4 -j DROP # dropping all communication excepting that with the default gateway (mac is b4:6d:83:77:85:f4)
+
+ 
 
 =============================
 = Extras
