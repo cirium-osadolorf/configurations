@@ -141,21 +141,16 @@ iptables  -A INPUT -s <networkSubnet> -j DROP         # drop incoming traffic ne
 iptables  -A INPUT -s 192.168.1.179 -j DROP           # drop incoming traffic from specific IP
 
 
-
 sudo iptables -A OUTPUT -d 8.0.0.0/8 -j DROP           # drop ougoing traffic to the all 8.0.0.0 network, all IPs under that nwtwork
 
 
-
-iptables -A OUTPUT -p tcp --dport 443   -j ACCEPT           # implicitly the destination will be all | allow https over ssh to other ips
-iptables -A OUTPUT -p tcp --dport 443  -d 0/0 -j ACCEPT     # explictly  defining the destination to all | allow https over ssh to other ips
-
-
-
+iptables -A OUTPUT -p tcp --dport 443   -j ACCEPT           # implicitly | allow outgoing HTTPS traffic to all ips (same as the command below)
+iptables -A OUTPUT -p tcp --dport 443  -d 0/0 -j ACCEPT     # explicitly | allow outgoing HTTPS traffic to all ips (same as the command above)
 
 
 # Match agaisnt a list of IPs
-iptables -A INPUT -p tcp --dport 25 -m iprange --src-range 10.0.0.10-10.0.0.18 -j DROP
-iptables -A OUTPUT-p tcp --dport 25 -m iprange --src-dst 10.0.0.10-10.0.0.18 -j DROP
+iptables -A INPUT -p tcp --dport 25 -m iprange --src-range 10.0.0.10-10.0.0.18 -j DROP    # DROP smtp traffic (port25) for ip range (incoming)
+iptables -A OUTPUT-p tcp --dport 25 -m iprange --src-dst 10.0.0.10-10.0.0.18 -j DROP      # DROP smtp traffic (port25) for ip range (outgoing)
 
 
 # Match network typ
