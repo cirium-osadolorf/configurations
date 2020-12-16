@@ -4,6 +4,20 @@
 https://www.thegeekstuff.com/2011/01/iptables-fundamentals/
 
 
+
+iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
+
+
+
+
+
+
+
+
+
+
+
+
 Filter 
 
 INPUT chain – Incoming to firewall. For packets coming to the local server.
