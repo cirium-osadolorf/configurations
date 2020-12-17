@@ -194,6 +194,8 @@ iptables -A OUTPUT -p tcp --tcp-flags syn,ack,rst,fin syn,ack -j LOG    # loggin
 =====================
 = Advanced Matches
 ====================
+
+# Stateful firewall
 states:
 NEW           # the first packet from a connection
 ESTABLISHED   # packets that are part of an existing connection.
@@ -202,6 +204,12 @@ INVALID       #  packets that are not part of any existing connection
 UNTRACKED     #  packets marked within the raw table with the NOTRACK target.
 
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+
+
+# Filter by MAC address
+
+iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP    
 
 
 
