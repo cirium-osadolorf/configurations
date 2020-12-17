@@ -8,16 +8,6 @@ https://www.thegeekstuff.com/2011/01/iptables-fundamentals/
 iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 
 
-
-
-
-
-
-
-
-
-
-
 Filter 
 
 INPUT chain – Incoming to firewall. For packets coming to the local server.
@@ -199,6 +189,19 @@ iptables -A INPUT -m mac ! --mac-source b4:6d:83:77:85:f4 -j DROP # dropping all
 iptables -A INPUT -i wlan0 -p tcp --syn -s 10.0.0.1 -j ACCEPT           # accept tcp incoming from source with tcp sync set 
 iptables -A INPUT -p tcp --syn -j DROP                                  #  dropping all incoming tcp packets that have syn set
 iptables -A OUTPUT -p tcp --tcp-flags syn,ack,rst,fin syn,ack -j LOG    # logging outgoing traffic that has syn and ack set
+
+
+=====================
+= Advanced Matches
+====================
+states:
+NEW           # the first packet from a connection
+ESTABLISHED   # packets that are part of an existing connection.
+RELATED       # - packets that are requesting a new connection and are already part of an existing connection (Ex: FTP)
+INVALID       #  packets that are not part of any existing connection
+UNTRACKED     #  packets marked within the raw table with the NOTRACK target.
+
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 
 
