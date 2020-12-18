@@ -3,10 +3,7 @@
 ======================================================
 https://www.thegeekstuff.com/2011/01/iptables-fundamentals/
 
-
-
 iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
-
 
 Filter 
 
@@ -55,7 +52,6 @@ iptables -L                   # List filter table (default table)
 iptables -nvL                 # Verbose print out all active iptables rules
                               # v --> versbose, show interface name, packet and bytes quantity 
                               # n --> ip adress and ports will be printed  numerically 
-            
                               
 iptables -t filter -L         # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
 iptables -vnL                 # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
@@ -73,7 +69,6 @@ iptables -I INPUT -p icmp -j ACCEPT                   # insert rule at the top o
 iptables -I INPUT -p udp --dport 69 -j DROP           # insert rule at the top of the chain (default behavoiur)
 iptables -I INPUT <n> -p icmp -j ACCEPT                 # insert rule at position n of the chain 
 iptables -I INPUT 3 -p icmp -j ACCEPT                   # insert rule at position n of the chain 
-
 
 
 # FLUSH
@@ -104,9 +99,6 @@ iptables -P INPUT DROP                                 # Setting the DROP Policy
 # D
 iptables -D OUTPUT 2                                   #  deletes a rule, the rule number must be supplied
 
-
-
-
 =============================
 = SAVE e RESTORE
 ==============================
@@ -115,8 +107,6 @@ iptables-save                         # returns iptables rules that are  active(
 iptables-save > my_rules.txt          # write active rules(from memory) into file
 
 iptables-restore my_rules.txt         # load rules into memory
-
-
 
 
 # Persist rules on rebioot - UBUNTU / CENTOS
@@ -131,9 +121,6 @@ RHEL/CentOS: ip6tables-save > /etc/sysconfig/ip6tables
 
 
 https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently#:~:text=Since%20Ubuntu%2010.04%20LTS%20(Lucid,v6%20for%20IPv6.
-
-
-
 
 
 =====================
@@ -206,9 +193,7 @@ UNTRACKED     #  packets marked within the raw table with the NOTRACK target.
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 
-
 # Filter by MAC address
-
 iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP    
 
 
@@ -216,7 +201,4 @@ iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP
 =============================
 = Extras
 ==============================
-
 sudo apt-get --reinstall install iptables
-
-
