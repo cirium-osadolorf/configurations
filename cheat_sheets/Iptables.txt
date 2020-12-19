@@ -198,10 +198,13 @@ iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP
 
 
 # Filter by Time and Date
+
+iptables -A INPUT -p tcp --dport 80 -m time --timestart 17:00 --timestop 17:16 -j DROP   # drop incoming packets to port 80 between 5pm -5:16pm  UTC
+
 iptables -A INPUT -p tcp --dport 22 -m time --timestart 8:00 --timestop 18:00 -j ACCEPT  # accepting incoming tcp port 22 (ssh) packets daily ONLY between 8:00-18:00 
 
-
 iptables -A FORWARD -p tcp --dport 80 -d www.ubuntu.com -m time --weekdays Mon,Tue,Wed,Thu,Fri --timestart 18:00 --timestop 8:00 -j ACCEPT 
+
                                                                         # accepting forwarded traffic (this is the Router) to www.ubuntu.com on workdays between 18:00-08:00
 
 
