@@ -20,6 +20,11 @@ Alt+Shift+ direction  # pane resize
 ================================================
 == Windows Desktop
 =================================================
+Ctrl + F5           # refresh web broswer
+Ctrl + Shift + R    # refresh web broswer
+
+tabs # https://www.wikihow.com/Switch-Tabs-in-Chrome#:~:text=The%20keyboard%20shortcut%20Ctrl%20%2B%20Shift,right%20to%20left%20in%20Chrome.&text=How%20do%20I%20shift%20tabs,tabs%20from%20right%20to%20left.
+
 
 win+shift+s         # screenshot and snip
 
