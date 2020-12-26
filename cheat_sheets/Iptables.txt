@@ -53,10 +53,10 @@ iptables -nvL                 # Verbose print out all active iptables rules
                               # v --> versbose, show interface name, packet and bytes quantity 
                               # n --> ip adress and ports will be printed  numerically 
                               
-iptables -t filter -L         # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
-iptables -vnL                 # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
-iptables -vnL INPUT         ` # listing specific chain whitin  a table 
-iptables -t nat -vnL          # listing another table, not filter
+iptables -t filter -L             # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
+iptables -vnL                     # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
+iptables -vnL INPUT         `     # listing specific chain whitin  a table 
+iptables -t nat -vnL              # listing another table, not filter
 iptables -t nat -vnL POSTROUTING  # listing just a CHAIN
 
 
@@ -65,8 +65,8 @@ iptables -A INPUT -p tcp --dport 80 -j DROP           # append command to the IN
 
 
 # INSERT
-iptables -I INPUT -p icmp -j ACCEPT                   # insert rule at the top of the chain (default behavoiur)
-iptables -I INPUT -p udp --dport 69 -j DROP           # insert rule at the top of the chain (default behavoiur)
+iptables -I INPUT -p icmp -j ACCEPT                     # insert rule at the top of the chain (default behavoiur)
+iptables -I INPUT -p udp --dport 69 -j DROP             # insert rule at the top of the chain (default behavoiur)
 iptables -I INPUT <n> -p icmp -j ACCEPT                 # insert rule at position n of the chain 
 iptables -I INPUT 3 -p icmp -j ACCEPT                   # insert rule at position n of the chain 
 
@@ -198,7 +198,6 @@ iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP
 
 
 # Filter by Time and Date
-
 iptables -A INPUT -p tcp --dport 80 -m time --timestart 17:00 --timestop 17:16 -j DROP   # drop incoming packets to port 80 between 5pm -5:16pm  UTC
 
 iptables -A INPUT -p tcp --dport 22 -m time --timestart 8:00 --timestop 18:00 -j ACCEPT  # accepting incoming tcp port 22 (ssh) packets daily ONLY between 8:00-18:00 
@@ -208,11 +207,17 @@ iptables -A FORWARD -p tcp --dport 80 -d www.ubuntu.com -m time --weekdays Mon,T
                                                                         # accepting forwarded traffic (this is the Router) to www.ubuntu.com on workdays between 18:00-08:00
 
 
-
-# Connlimit 
+# Connlimit (filter by parallele connections from same source)
 iptables -A INPUT -p tcp --dport 25 --syn -m connlimit --connlimit-above 5 -j REJECT --reject-with tcp-rst
-                                                                        # allows a max off  only 5 parrallel conenctions to destination port 25
-                                                                          
+                                                                        # allows a max off only 5 parrallel conenctions to destination port 25
+            
+# Limit match (filter by number of cnonnections)
+iptables -A INPUT -p tcp --dport 443 --syn -m limit --limit 5/sec -j ACCEPT    # allow only 5 new incoming connections per second to port 443 (https) 
+                                                                               # by default limit burst is 5
+                                                                               # sec
+
+iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/sec --limit-burst 3 -j ACCEPT 
+                                                                        # allow only 1 incoming ping (echo-request) per second with a burst of 3
                                                                           
                                                                           
 =============================
