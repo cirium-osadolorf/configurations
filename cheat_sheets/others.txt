@@ -32,3 +32,12 @@ win+clt+dir         # move between Desktops
 
 
 win+dir             # move applicaiton to the side of the screen
+
+
+
+
+=========================================================
+== Intelijee
+=========================================================
+
+sout + tab   # system.out.println shorcut
