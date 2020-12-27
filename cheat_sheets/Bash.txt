@@ -355,7 +355,7 @@ ctrl +z 		#Used to pause a process
 kill (Process_id)	#used to  kill proceses
 
 top
-htop 
+htop 			' https://www.youtube.com/watch?v=Qw2ZUf0hTF8&t=22s
 
 ============== Hardware information ==============
 lscpu			#Returns- information about the cpu and processing units
