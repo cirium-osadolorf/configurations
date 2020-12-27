@@ -382,6 +382,7 @@ ls -a /path/folder	#retrun a list of all files (hiden files included)
 ls -l path/folder	#returns you a detailed report of the files
 ls -t			# sort by date
 ls -tr			# sort by reverse date 
+ls -lh			# return file with size in human format
 cd /path/folder		#Change directory
 cd ..			#Takes you up 1 director
 cd .. / ..		#Takes you up 2 director
