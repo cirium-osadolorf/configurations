@@ -38,6 +38,8 @@ ping -c 3 <ipadress>	# used to test the reachability of a host on an Internet Pr
 			
 			# Erros
 			# https://www.onlinecomputertips.com/support-categories/networking/277-ping-error-messages
+
+ping -i 0.1 <ip>	# ping every 0.1 sec, requires sudo to run
 			
 traceroute <ip>		# return complete route the packet is taking to reach the target destination 
                       	# ideally used when ping is faling, helps to debug where exatcly the request is g eeting stuck
