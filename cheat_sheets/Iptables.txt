@@ -227,14 +227,46 @@ iptables -A OUTPUT -d 80.0.0.1 -p tcp --sport 80  -j DROP
 =============================
 = IPSET
 ==============================
-IP sets are a framework inside the Linux kernel, which can be administered by the ipset utility. Depending on the type, an IP set may store IP addresses, networks, (TCP/UDP) port numbers, MAC addresses, interface names or combinations of them in a way, which ensures lightning speed when matching an entry against a set.
+IP sets are a framework inside the Linux kernel,
+setTypes : hash:ip, iphash, hash:net, nethash,  
 
-
+sudo apt install ipset 
 ipset help | less     
 
+# Creating set
+
+ipset -N <setName> hash:ip                    # create a new named set ips (-N or create)
+ipset -N <setName> hash:ip -exist             # create a new named set for ips (-N or create), if set does not exists
+ipset -N <setName> iphash                     # create a new named set for ips (-N or create)
+ipset -N <setName> iphash -exist              # create a new named set for ips (-N or create), if set does not exists
+ipset create <setName> hash:ip                # create a new named set ips (-N or create)
+ 
+ipset create <setName> hash:ip maxelem 2048   # Setting the maximal number of elements which can be stored in a set (default value: 65535) 
 
 
+# Adding entries to sets 
+ipset -A <setName> 1.2.3.4        # Adding IPs to the set (-A or add)
+ipset add <setName> 4.3.2.1       # Adding IPs to the set (-A or add)
+ipset -A <setName> 3.2.1.4 -exist # -exist -> no error if the entry already exists in the set
 
+# Listing
+ipset list            # => lists all sets with all entries    
+ipset -L <setName>    # => lists namedset that set
+ipset -L -n 	        # => lists only the set names
+ 
+# Flushing or removing entries
+ipset -D <setName> 1.0.0.0/8    # removes entry 1.0.0.0/8 from set (-D or del)
+ipset -F                        # removes all entries from all sets (-F or flush)
+ipset -F <setName>              # removes all entries from namedSet (-F or flush)
+
+# Destroying sets
+ipset destroy <setName>         # destroy set (-X or destroy),  cant destory if there are references to the set
+ipset -X                        # destroy all sets (-X or destroy), cant destory if there are references to the set
+
+{
+
+
+}
                
 =============================
 = Extras
