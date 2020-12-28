@@ -264,7 +264,12 @@ ipset destroy <setName>         # destroy set (-X or destroy),  cant destory if 
 ipset -X                        # destroy all sets (-X or destroy), cant destory if there are references to the set
 
 {
-
+  ipset -N myset iphash -exist
+  ipset -A myset 1.2.3.4
+  ipset add myset 4.3.2.1
+  ipset -A myset 3.2.1.4
+  ipset -A myset 3.2.1.4 -exist # -exist -> no error if the entry already exists in the set
+  iptables -A INPUT -m set --match-set myset src -j DROP
 
 }
                
