@@ -183,6 +183,7 @@ iptables -A OUTPUT -p tcp --tcp-flags syn,ack,rst,fin syn,ack -j LOG    # loggin
 ====================
 
 # Stateful firewall
+iptables -m state --help | less
 states:
 NEW           # the first packet from a connection
 ESTABLISHED   # packets that are part of an existing connection.
@@ -190,14 +191,17 @@ RELATED       # - packets that are requesting a new connection and are already p
 INVALID       #  packets that are not part of any existing connection
 UNTRACKED     #  packets marked within the raw table with the NOTRACK target.
 
+iptables -m state --help 
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 
 # Filter by MAC address
+iptables -m mac --help
 iptables -A INPUT -i wlan0 -m mac --mac-source 08:00:27:55:6f:20 -j DROP    
 
 
 # Filter by Time and Date
+iptables -m time --help
 iptables -A INPUT -p tcp --dport 80 -m time --timestart 17:00 --timestop 17:16 -j DROP   # drop incoming packets to port 80 between 5pm -5:16pm  UTC
 
 iptables -A INPUT -p tcp --dport 22 -m time --timestart 8:00 --timestop 18:00 -j ACCEPT  # accepting incoming tcp port 22 (ssh) packets daily ONLY between 8:00-18:00 
@@ -208,10 +212,12 @@ iptables -A FORWARD -p tcp --dport 80 -d www.ubuntu.com -m time --weekdays Mon,T
 
 
 # Connlimit (filter by parallel connections from same source)
+iptables -m connlimit --help
 iptables -A INPUT -p tcp --dport 25 --syn -m connlimit --connlimit-above 5 -j REJECT --reject-with tcp-rst
                                                                         # allows a max off only 5 parrallel conenctions to destination port 25
             
 # Limit match (filter by number of cnonnections)
+iptables -m limit --help
 iptables -A INPUT -p tcp --dport 443 --syn -m limit --limit 5/sec -j ACCEPT    # allow only 5 new incoming connections per second to port 443 (https) 
                                                                                # by default limit burst is 5
 
@@ -220,6 +226,7 @@ iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/sec --limi
                
                
 # Quota (filter by amount of packets size in bytes)
+iptables -m quota --help
 iptables -A OUTPUT -d 80.0.0.1 -p tcp --sport 80 -m quota --quota 1000000000 -j ACCEPT 
 iptables -A OUTPUT -d 80.0.0.1 -p tcp --sport 80  -j DROP
                
