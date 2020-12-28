@@ -225,6 +225,18 @@ iptables -A OUTPUT -d 80.0.0.1 -p tcp --sport 80  -j DROP
                
                
 =============================
+= IPSET
+==============================
+IP sets are a framework inside the Linux kernel, which can be administered by the ipset utility. Depending on the type, an IP set may store IP addresses, networks, (TCP/UDP) port numbers, MAC addresses, interface names or combinations of them in a way, which ensures lightning speed when matching an entry against a set.
+
+
+ipset help | less     
+
+
+
+
+               
+=============================
 = Extras
 ==============================
 sudo apt-get --reinstall install iptables
