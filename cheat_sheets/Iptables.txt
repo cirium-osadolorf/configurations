@@ -305,7 +305,9 @@ TEE           # non terminating
               # It is used for traffic mirroring.
               # The TEE target will clone a packet and redirect this clone to another machine on the local subnet.v  
 
-
+REDIRECT      # Used to redirect packets from one port to another on the same machine.
+              # The REDIRECT target is extremely good to use  for transparent proxying, where the LAN hosts do not know about the proxy at all.
+              # REDIRECT target is only valid within the PREROUTING and OUTPUT chains of the nat table.
 
 # Accept
 iptables -A INPUT -p tcp --dport 25 -j ACCEPT
@@ -324,6 +326,10 @@ dmesg     # returns kernel logs, here youll find the mtached target LOGS
 
 # Tee
 iptables -A FORWARD -i eth0 -o eth1 -p tcp -d 80.0.0.1 -j TEE --gateway 10.0.0.10 
+
+
+# REDIRECT 
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
 
                
 =============================
