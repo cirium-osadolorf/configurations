@@ -116,7 +116,8 @@ dhclient -v enp0s8		# I ussed this command to help my VM dinf the DHCP server
 dhclient -v <Nic>		# I ussed this command to help my VM dinf the DHCP server
 
 
-tcpdump  icmp -n 
+tcpdump  icmp -n 		# returns info on icmp requests
+tcpdump  host {ip} -n		# returns info on network communication between specific host
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
