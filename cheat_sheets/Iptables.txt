@@ -294,17 +294,36 @@ ipset -X                        # destroy all sets (-X or destroy), cant destory
 ====================
 ACCEPT        # terminating - accepts packets
 DROP          # terminating - drops packets
+
 REJECT        # terminating - Like DROP it denies the packet but also sends back a reply packet to the source. 
               # By default it sends back an ICMP Port Unreachable packet.
               # It’s possible to change the response packet using --reject-with option.
               # Sometimes it’s more efficient to REJECT than DROPPING the packet 
 LOG           # non terminating
-TEE 
+
+TEE           # non terminating
+              # It is used for traffic mirroring.
+              # The TEE target will clone a packet and redirect this clone to another machine on the local subnet.v  
 
 
 
+# Accept
+iptables -A INPUT -p tcp --dport 25 -j ACCEPT
+
+# Drop
+iptables -I OUTPUT -p udp --dport 53 ! -d 8.8.8.8 -j DROP
+
+# Reject
+iptables -I FORWARD -p udp --dport 69 -j REJECT --reject-with icmp-port-unreachable
 
 
+# Log
+iptables -A INPUT -p tcp --dport 22 --syn -j LOG 
+iptables -A INPUT -p tcp --dport 22 --syn -j LOG --log-prefix="incoming ssh:"  --log-level info
+dmesg     # returns kernel logs, here youll find the mtached target LOGS
+
+# Tee
+iptables -A FORWARD -i eth0 -o eth1 -p tcp -d 80.0.0.1 -j TEE --gateway 10.0.0.10 
 
                
 =============================
