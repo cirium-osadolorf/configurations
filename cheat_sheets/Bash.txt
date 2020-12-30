@@ -75,7 +75,7 @@ nmap -p {port} {host}		# ping and test for a specific port
 nmap -p {port1,port2} {host}    # scans specific ports
 nmap -p {port} -sV {host}	# scans for a specific port and returns verbose output by describing the running services
 nmap -p- {host}			# scans all ports, can take a long time, by pressing ENTER you can get scan percentage
-nmap -sS -p {port} -sV {host}	# TCP syn scan, default and most popular scan option
+nmap -sS -p {port} -sV {host}	# TCP syn scan, default and most popular scan option, "STEALTH SCAN”
 				# It is fast and able to scan 1000s of ports x sec if there are no firewall restircting it
 				# Refered to as the half open scan cause it does no open a full TCP connection
 				# This starts the TCP 3 way handshake, but does not complete this handshake 
