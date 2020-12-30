@@ -1,5 +1,6 @@
 ipconfig              # returns netowrk information
 ipconfig /all
+netstat -a
 netstat -aon          # return ports information 
 netsh interface show interface    # This command will provide a list of interfaces
 
