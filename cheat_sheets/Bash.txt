@@ -75,12 +75,18 @@ nmap -p {port} {host}		# ping and test for a specific port
 nmap -p {port1,port2} {host}    # scans specific ports
 nmap -p {port} -sV {host}	# scans for a specific port and returns verbose output by describing the running services
 nmap -p- {host}			# scans all ports, can take a long time, by pressing ENTER you can get scan percentage
-nmap -sP <subent>		# scan network and return all connected devices (ping all subnet devices)
-nmap -sP 192.168.0.74/24	# scan network and return all connected devices (ping all subnet devices)
-
+nmap -sS -p {port} -sV {host}	# TCP syn scan, default and most popular scan option
+				# It is fast and able to scan 1000s of ports x sec if there are no firewall restircting it
+				# Refered to as the half open scan cause it does no open a full TCP connection
+				# This starts the TCP 3 way handshake, but does not complete this handshake 
+				# need root privilage to execute this type of scan
+				# https://uwnthesis.wordpress.com/2013/06/11/how-to-use-nmap-scanner-which-is-the-right-scan-to-use/
 
 nmap -sU {host}			# udp port scanning, slower and more difficult than tcp
-nmap -sn {network/24}		# icmp scanning, dispaly  info on hosts on a network
+
+nmap -sn {subent}		# icmp scanning, scans network and dispaly info on its hosts 
+nmap -sP <subent>		# icmp scanning, scan network and return all connected devices (ping all subnet devices)
+nmap -sP 192.168.0.74/24	# icmp scanning, scan network and return all connected devices (ping all subnet devices)
 
 # netcat
 
