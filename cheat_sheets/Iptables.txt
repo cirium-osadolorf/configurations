@@ -288,6 +288,24 @@ ipset -X                        # destroy all sets (-X or destroy), cant destory
   iptables -I INPUT -p tcp --dport 80 -j SET --add-set auto_blocked src
   iptables -A INPUT -m set --match-set auto_blocked src -j DROP
 }
+
+=====================
+= TARGETS  
+====================
+ACCEPT        # terminating - accepts packets
+DROP          # terminating - drops packets
+REJECT        # terminating - Like DROP it denies the packet but also sends back a reply packet to the source. 
+              # By default it sends back an ICMP Port Unreachable packet.
+              # It’s possible to change the response packet using --reject-with option.
+              # Sometimes it’s more efficient to REJECT than DROPPING the packet 
+LOG           # non terminating
+TEE 
+
+
+
+
+
+
                
 =============================
 = Extras
