@@ -36,8 +36,10 @@ OUTPUT chain
 = Commands 
 ======================================================
 
-# Generic
+# help
+iptables -p icmp --help
 
+# Generic
 
 iptables -A INPUT -p tcp --dport 80 -j DROP                                 # block  https request, frome everywhere 
 
@@ -55,8 +57,8 @@ iptables -nvL                 # Verbose print out all active iptables rules
                               
 iptables -t filter -L             # listing the filter table of all chains (INPUT, OUTPUT and FORWARD)
 iptables -vnL                     # listing the filter table (it's default) of all chains, verbose (v) and in numeric format (n) 
-iptables -vnL INPUT         `     # listing specific chain whitin  a table 
-iptables -t nat -vnL              # listing another table, not filter
+iptables -vnL INPUT               # listing specific chain whitin  a table 
+iptables -t nat -vnL              # listing nat table chains rules
 iptables -t nat -vnL POSTROUTING  # listing just a CHAIN
 
 
@@ -73,8 +75,8 @@ iptables -I INPUT 3 -p icmp -j ACCEPT                   # insert rule at positio
 
 # FLUSH
 iptables -F                                           # flushes all rules in all chains of the default table (filter table)
-iptables -F INPUT                                          
-iptables -F INPUT  -t nat                
+iptables -F INPUT                                     # flushes all rules in INPUT chain of the default table (filter table)                     
+iptables -F PREROUTING  -t nat                        # flushes all rules in PREROUTING chain of the nat table
 
 
 # ZERO
