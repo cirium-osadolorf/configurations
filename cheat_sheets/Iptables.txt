@@ -316,12 +316,14 @@ iptables -A INPUT -p tcp --dport 25 -j ACCEPT
 iptables -I OUTPUT -p udp --dport 53 ! -d 8.8.8.8 -j DROP
 
 # Reject
+iptables -j REJECT --help
 iptables -I FORWARD -p udp --dport 69 -j REJECT --reject-with icmp-port-unreachable
 
 
 # Log
+iptables -j LOG --help
 iptables -A INPUT -p tcp --dport 22 --syn -j LOG 
-iptables -A INPUT -p tcp --dport 22 --syn -j LOG --log-prefix="incoming ssh:"  --log-level info
+iptables  -A INPUT -p tcp --dport 22 --syn -j LOG --log-prefix="incoming ssh:"  --log-level info
 dmesg     # returns kernel logs, here youll find the mtached target LOGS
 
 # Tee
