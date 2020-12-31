@@ -101,6 +101,28 @@ nc localhost 2399		# Client side - client communicate to server on selected port
 nc -l 2399 Hello Server		# Server sidee	- Server listens on selected port with message
 nc localhost 2399 Hello Server	# Client side - client sends message to server over specfific port
 
+
+# tcpdump
+TCP Flags --> [S]=SYN  [.]=ACK   [S.]=SYNACK [F]=Finish  [R]=SET  [P]=PUSH  [U]=URGENT
+tcpdump tcp output -->  [timestamp] [protocol] [source_ip.source_protocol] > [destination_ip.destination_port]: Flag.. , [Seq_number]
+
+tcpdump -D			# returns all Nic
+tcpdump -i any			# any interface is a psudo interface used to capture traffic from all interfaces
+
+tcpdump -i any -c 5		# -c --> stops capturing after n number of packets
+tcpdump -i any -c 5 -n		# -n --> converts service name or hostname to ips 
+
+
+tcpdump-i eth1 -v		# capture all traffic from eth1, is good practice to specify the nic we want 
+
+tcpdump -i eth1 -v host {ip}	# capture traffic from specific host
+tcpdump  icmp -n 		# returns info on icmp requests
+tcpdump  host {ip} -n		# returns info on network communication between specific host
+
+tcpdump  src {ip} -n		# captures only incoming traafic from src
+tcpdump  dst {ip} -n		# captures only ourgoing traafic to dst
+
+
 # extra
 			
 telnet {host} {port}
