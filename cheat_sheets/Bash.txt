@@ -935,7 +935,8 @@ cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new 
 who am i	# retrun info on logged in user
 tty		# return ty info
 
-
+dmesg 		# used to display the kernel related messages on Unix like systems. retrieve its data by reading the kernel ring buffer.
+dmesg -wH	# get kernel logs in real time in human readable format
 
 #########################################
 #### Shell Expansion
