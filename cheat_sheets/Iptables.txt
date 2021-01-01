@@ -327,6 +327,7 @@ iptables  -A INPUT -p tcp --dport 22 --syn -j LOG --log-prefix="incoming ssh:"  
 dmesg     # returns kernel logs, here youll find the mtached target LOGS
 
 # Tee
+iptables -A INPUT -p tcp -j TEE --gateway 10.0.0.1
 iptables -A FORWARD -i eth0 -o eth1 -p tcp -d 80.0.0.1 -j TEE --gateway 10.0.0.10 
 
 
