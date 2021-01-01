@@ -138,8 +138,16 @@ dhclient -v enp0s8		# I ussed this command to help my VM dinf the DHCP server
 dhclient -v <Nic>		# I ussed this command to help my VM dinf the DHCP server
 
 
-tcpdump  icmp -n 		# returns info on icmp requests
-tcpdump  host {ip} -n		# returns info on network communication between specific host
+# IP forwarding 
+
+sysctl net.ipv4.ip_forward								# Get current state of IP forwarding
+cat /proc/sys/net/ipv4/ip_forward							# Get current state of IP forwarding
+
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf		# Enable IP Forwarding method 1
+echo 1 > /proc/sys/net/ipv4/ip_forward							# Enable IP Forwardingmethod 2
+
+echo 0 > /proc/sys/net/ipv4/ip_forward							# Disable IP Forwarding method 1
+
 
 ============ Users ============ 
 sudo visudo 			#returns sudoers file
