@@ -340,17 +340,28 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
 https://gist.github.com/tomasinouk/eec152019311b09905cd
 https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-6.html
 
+# SNAT
+
 # MASQUERADE
 
 iptables -t nat -A PREROUTING -s 192.168.1.2 -i eth0 -j MASQUERADE  # masquarade all outgoing packets to be WLAN0 IP
 
 
+# DNAT
 
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.0.20      # all the packets coming to the public IP address of the router and port 80 
+                                                                                           # will be port forwarded to 192.168.0.20 and port 80
 
+iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 192.168.0.20:80 # Internet clients connect to the public IP address of the router and port 8080 
+                                                                                           # and the packets are redirected to the private server with 192.168.0.20 and port 80
 
+{
+  #2. Load-Balancing
+  # On all 5 private servers (192.168.0.20-192.168.0.24)run the same service (e.g. HTTPS)
+  # The router will pick-up a random private IP from the range and then translate and send (port-forward) the packet to that IP
+  iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 192.168.0.20-192.168.0.24
+}
 
-
-               
 =============================
 = Extras
 ==============================
