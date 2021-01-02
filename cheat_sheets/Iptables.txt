@@ -149,6 +149,12 @@ iptables -A OUTPUT-p tcp --dport 25 -m iprange --src-dst 10.0.0.10-10.0.0.18 -j 
 
 
 # Filter by network type
+
+Unicast    # One-to-one 
+Multicast  # Ont-to-many devics in a network
+Broadcast  # One-to-all devices in a network
+
+
 iptables -m addrtype --help
 iptables -A OUTPUT -m addrtype --dst-type MULTICAST -j DROP
 
