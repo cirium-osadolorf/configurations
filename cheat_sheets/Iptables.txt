@@ -340,13 +340,14 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
 https://gist.github.com/tomasinouk/eec152019311b09905cd
 https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-6.html
 
+echo 1 > /proc/sys/net/ipv4/ip_forward	  # allow linux host to route traffic
+
 # SNAT
-
+iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp0s3 -j SNAT --to-source 80.0.0.1      # define rules that match traffic that should be NATed, sorce ip will become 80.0.0.1  
+                                                                                          # filtering is done on FORWARD CHAIN
 # MASQUERADE
-
-iptables -t nat -A PREROUTING -s 192.168.1.2 -i eth0 -j MASQUERADE  # masquarade all outgoing packets to be WLAN0 IP
-
-
+# iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp0s3 -j MASQUERADE                   # if the public IP address is dynamic we use MASQUERADE instead of SNAT
+                                                                                          # filtering is done on FORWARD CHAIN
 # DNAT
 
 iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.0.20      # all the packets coming to the public IP address of the router and port 80 
