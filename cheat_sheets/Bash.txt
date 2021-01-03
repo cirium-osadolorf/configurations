@@ -112,28 +112,36 @@ nc localhost 2399 Hello Server	# Client side - client sends message to server ov
 
 
 # tcpdump
-TCP Flags --> [S]=SYN  [.]=ACK   [S.]=SYNACK [F]=Finish  [R]=SET  [P]=PUSH  [U]=URGENT
+tcpdump -h 	# returns version 
 tcpdump tcp output -->  [timestamp] [protocol] [source_ip.source_protocol] > [destination_ip.destination_port]: Flag.. , [Seq_number]
+TCP Flags --> [S]=SYN  [.]=ACK   [S.]=SYNACK [F]=Finish  [R]=SET  [P]=PUSH  [U]=URGENT
 
 tcpdump -D			# returns all Nic
 tcpdump -i any			# any interface is a psudo interface used to capture traffic from all interfaces
-
+tcpdump -i eth1			# capture all traffic from eth1, is good practice to specify the nic we want 
 tcpdump -i any -c 5		# -c --> stops capturing after n number of packets
-tcpdump -i any -c 5 -n		# -n --> converts service name or hostname to ips 
+tcpdump -i any -c 5 -n		# -n --> converts service name or hostname to ips / port numbers, tcpdump triggers dns trffic to peform this
+tcpdump -i any -c 5 -v		# -v --> verbose
 
+tcpdump  tcp -n 		# capture traffic on tcp traffic
+tcpdump  icmp -n 		# capture traffic on icmp traffic
 
-tcpdump-i eth1 -v		# capture all traffic from eth1, is good practice to specify the nic we want 
+tcpdump -n port 80 		# capture traffic to port 80
 
-tcpdump -i eth1 -v host {ip}	# capture traffic from specific host
-tcpdump  icmp -n 		# returns info on icmp requests
-tcpdump  host {ip} -n		# returns info on network communication between specific host
-
+tcpdump  host {ip} -n		# capture traffic between host, incoming and outgoing
 tcpdump  src {ip} -n		# captures only incoming traafic from src
 tcpdump  dst {ip} -n		# captures only ourgoing traafic to dst
+tcpdump  net {subnet} -n	# captures subnet traffic
 
 
+tcpdump -i eth0 -v 'src port 443 and dst 192.168.1.107'
 
 
+tcpdump -n -w  /path/to/file.pcap -i etho0 -v 'tcp and net 192.168.1.0/24'	# -w --> capture traffic and write it to file
+									 	# -v --> useful when capturing to a file
+										
+										
+tcpdump -n -r /path/to.file.pcap | less						# read captured file
 
 # extra
 			
