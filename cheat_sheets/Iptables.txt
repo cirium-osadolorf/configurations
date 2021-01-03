@@ -83,8 +83,6 @@ iptables -F PREROUTING  -t nat                        # flushes all rules in PRE
 iptables -Z                                            # resets bytes and packets counter 
 
 
-# N
-iptables -N TCP_TRAFFIC                                # creates a user-defined CHAIN
  
 # X
 iptables -X TCP_TRAFFIC                                # delete a user-defined CHAIN
@@ -100,6 +98,15 @@ iptables -P INPUT DROP                                 # Setting the DROP Policy
 
 # D
 iptables -D OUTPUT 2                                   #  deletes a rule, the rule number must be supplied
+
+
+# USER definied CHAIN
+iptables -N TCP_TRAFFIC                                # creates a user-defined CHAIN
+
+iptables -N NEW_CHAIN                                  # reates a new user-defined chain
+iptables -L NEW_CHAIN                                  # lists the content of the chain
+iptables -X NEW_CHAIN                                  # deletes the custom-chain (it must be emptied before using -F)
+iptables -F NEW-CHAIN                                  # flushes all rules from the chain
 
 =============================
 = SAVE e RESTORE
