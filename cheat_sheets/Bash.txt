@@ -122,7 +122,9 @@ tcpdump -i eth1			# capture all traffic from eth1, is good practice to specify t
 tcpdump -i any -c 5		# -c --> stops capturing after n number of packets
 tcpdump -i any -c 5 -n		# -n --> converts service name or hostname to ips / port numbers, tcpdump triggers dns trffic to peform this
 tcpdump -i any -c 5 -v		# -v --> verbose
-
+				# -vvv --> up to a level of 3 times verbosy can be specified
+				
+tcpdump -i any -c 5 -q		# q --> quite, provide minumm amount of info
 tcpdump  tcp -n 		# capture traffic on tcp traffic
 tcpdump  icmp -n 		# capture traffic on icmp traffic
 
