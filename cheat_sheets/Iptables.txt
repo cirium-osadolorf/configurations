@@ -108,6 +108,13 @@ iptables -L NEW_CHAIN                                  # lists the content of th
 iptables -X NEW_CHAIN                                  # deletes the custom-chain (it must be emptied before using -F)
 iptables -F NEW-CHAIN                                  # flushes all rules from the chain
 
+
+{
+  iptbles -N MYCHAIN                                            # create new cahin
+  iptables -A MYCHAIN -p icmp --icmp-type echo-request -j DROP  # add rule to cusom chain
+  iptables -A INPUT -j MYCHAIN                                  # add jump to custom chain from input chain
+  
+}
 =============================
 = SAVE e RESTORE
 ==============================
