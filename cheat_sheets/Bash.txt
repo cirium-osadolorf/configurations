@@ -976,6 +976,8 @@ $?   	# rturns status code of previous command
 $#   	# number of arguments that were presented to the script
 $( ls ) # command substistution
 
+echo -n "insert value: " 	# pint on standard out witout going to a new line 
+
 #########################################
 #### Shell Expansion
 ##########################################
