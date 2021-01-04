@@ -969,6 +969,13 @@ tty		# return ty info
 dmesg 		# used to display the kernel related messages on Unix like systems. retrieve its data by reading the kernel ring buffer.
 dmesg -wH	# get kernel logs in real time in human readable format
 
+
+
+$VAR	# returns value of var
+$?   	# rturns status code of previous command
+$#   	# number of arguments that were presented to the script
+$( ls ) # command substistution
+
 #########################################
 #### Shell Expansion
 ##########################################
