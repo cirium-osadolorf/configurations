@@ -530,7 +530,9 @@ mkfs.ext4 /dev/sdb1	# Format the new partition using Ext4.
 df -T			# returns block devices  with format type
 
 df -h 	/mnt/SDS_data_small/ # Return disk space in human readable format
+df -BM  /mnt/SDS_data_small/ #  Return disk space in MB
 df -BG  /mnt/SDS_data_small/ #  Return disk space in GB
+df -TM  /mnt/SDS_data_small/ #  Return disk space in TB
 
 
 
