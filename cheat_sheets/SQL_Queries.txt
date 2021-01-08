@@ -33,6 +33,11 @@ SELECT column_names FROM table_name WHERE column_name IS NULL;
 SELECT first_name,last_name FROM customer WHERE first_name LIKE 'Jen%';
 
 
+
+# Convert list of rows to string
+select string_agg(name1, ',') as Name1s from t1
+
+
 #############################
 ## Insert  queries
 ############################
