@@ -42,27 +42,25 @@ DROP DATABASE <DBNAME>;                                 # Drop db
 ALTER DATABASE "old_dbname" RENAME TO "new_dbname";     # Rename a db
 
 
+SELECT * FROM cities;
+
+INSERT INTO cities VALUES ('test','modena', 'Emiglia_Romagnia');
+
 -- Table --
 CREATE TABLE cities (
 cityid varchar(5),
 cityname varchar(80),
 state varchar(20));
 
-INSERT INTO cities VALUES ('test','modena', 'Emiglia_Romagnia');
-SELECT * FROM cities;
-
-
-select pg_terminate_backend(pid) from pg_stat_activity where datname='dbName';    # drops connections to databse
 
 
 ######################################
-## Postgress user command
-###################################### 
-# must be logged as postgres user to lunch the following
-su - postgres
+## maintainance
+######################################
 
-createdb dbName # create db
-dropdb dbName   # drop db
+# drops connections to databse
+select pg_terminate_backend(pid) from pg_stat_activity where datname='dbName';    
+
 
 ######################################
 ## psql terminal
@@ -72,12 +70,13 @@ su - postgres
 
 createuser test
 
+createdb dbName # create db
+dropdb dbName   # drop db
+
 ###############################
 # Postress from the comand line
 ###############################
 # https://www.a2hosting.co.uk/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
-
-
 
 
 ===========================
@@ -87,29 +86,24 @@ createuser test
 psql -h <host_or_ip> -d <fb_name> -W
 
 ###############################
-#backup and restore
+# backup and restore
 ###############################
 
 pg_dump dbName > file.txt   # backup db to a file, must be logged in as db user
+pg_dump -s databasename     # Backing up schema only
 psql dbName < file.txt      # populate db from backup file
 
 # sudo pg_dump -h <public_dns> -U <db_user> -f </path/to/your/file/name_of_dump_file.sql> <db_name>
 sudo pg_dump -h 127.0.0.1 -U user -f dump_file.sql kore
 
-# Populate local databse from the sql file
-# First make sure you create the database then run the following to populate it 
+# Populate local databse from the sql file - First make sure you create the database then run the following to populate it 
 sudo psql -U postgres -d newdb -f dump_file.sql
-
-
-pg_dump -s databasename     # Backing up schema only
-
 
 # Backup table to csv file
 # first login via psql and connect to the db
 # https://tableplus.com/blog/2018/04/postgresql-how-to-export-table-to-csv-file-with-header.html
 
 COPY tableName /tmp/tableName.csv' WITH (FORMAT CSV, HEADER);
-
 
 
 ###############################
