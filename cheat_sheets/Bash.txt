@@ -234,7 +234,10 @@ ssh -v user@hostname		#SSH into remote computer while returning what the client 
 ssh user@hostname <COMMAND>	#Returns command standard-out peformed on the server to the client terminal
 
 
-#ssh -p 8011 -L 8080:172.20.0.1:4200 ubuntu@184.34.4.4	# ssh local port fowarding
+# https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot
+ssh -p 8011 -L 8080:172.20.0.1:4200 ubuntu@184.34.4.4							# ssh local port fowarding
+ssh -p <REMOTE_HOST_SSH_PORT> -L <LOCAL_PORT>:<TARGET_HOST>:<TARGET_PORT> <REMOTE_USER>@<REMOTE_HOST>	# ssh local port fowarding
+
 
 
 ssh -D 9000 -C ubuntu@179.32.9.6 -p 2222	# Socks proxy via ssh Dynamic tunnel setup
