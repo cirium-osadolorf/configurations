@@ -798,6 +798,13 @@ rsync -a --exclude={'file1.txt','dir1/*','dir2'} src_directory/ dst_directory/		
 # Rsync rsync options 
 # https://linuxize.com/post/how-to-exclude-files-and-directories-with-rsync/
 
+
+
+sudo rsync -avl --dry-run --stats --size-only /mnt/dir1 /mnt/dir2			# Returns all files which differ in size from the 2 directories 
+
+
+
+
 ================== Mounting ===================
 
 sudo mount -t cifs -o username={{username}},password={{password}} //172.16.0.34/AtlasData/KORE/data_unit_tests  /mnt/atlas_kore/
