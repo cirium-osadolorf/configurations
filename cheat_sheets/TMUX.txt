@@ -3,6 +3,7 @@ TMUX   (1 or more) --> session (1 or more) ---> window (1 or more) ---> pane
 ###########################
 # System
 ###########################
+tmux -V
 
 tmux                      # lunch tmux, 
 tmux new -s <name>        # start new named seesion tmux session. By default, Tmux sessions are named numerically.
