@@ -42,6 +42,7 @@ docker tag <Image-ID> <desired Name:Tag>         # tagging image to was jsut res
 docker build -t fortunexfortune/moviesearchapi .  #build image
 docker image build -t rivethead42/my-express --no-cache . #build image with not cache
 
+docker build -t portal -f compose/production/Dockerfile .         # build docker image by specifing path to dockerfile
 
 docker image build -t <NAME>:<TAG> .                              #creates a docker image
 docker image build -t <NAME>:<TAG>  -f Dockerfile.test .          #-f = Name of the Dockerfile to build
