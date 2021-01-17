@@ -96,3 +96,7 @@ setw synchronize-panes on       # sync panes
 setw synchronize-panes off      # turn offf panes syncx
 set -g mouse on                 # enable mouse scrolling in panes
 
+
+update tmux to latest version
+http://witkowskibartosz.com/blog/update-your-tmux-to-latest-version.html#.YASwYej7RPZ
+
