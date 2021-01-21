@@ -889,28 +889,41 @@ find . -perm 777 			# find all files with specific permission
 # exec
 # used to peform action on returned results
 
+
+####################################
+#### EXTRA
+####################################
+
+
+==================BASH===================
+
+
+echo $?			# return exit status of previuos command, 0 = sucess , 1 = error, >1 = other special error
+$VAR			# returns value of var
+$?   			# returns status code of previous command
+$#   			# retruns number of arguments that were presented to the script
+$( ls )			# command substistution
+( echo "Hello" ) 	# runs command in a subshell
+( echo $BASH_SUBSHELL)	# runs commaind in a subshell 
+
+who am i	# retrun info on logged in user
+tty		# return ty info
+
+
 ==================File manipulation===================
 
 sed -i -e 's/sudo//g'  <fileName>		# removes instace of word in file
 sed -i -e 's/\(sudo\|-E\)//g' <fileName>	# remove instaces of different words in a file
 
 
-==================Extras===================
-curl -I ip_Adress # Curls the header of the target ip
+================== Shell Expansion ==================
+sudo mkdir /mnt/{dir1,dir2,dir3,dir3}  # create multiple dir under /mnt
 
-echo $?			# return exit status of previuos command, 0 = sucess , 1 = error, >1 = other special error
-( echo "Hello" ) 	# runs command in a subshell
-( echo $BASH_SUBSHELL)	# runs commaind in a subshell 
 
-CTRL + A 		#Takes you to the begining of the comand line
-CTRl + E 		#Takes you to the end of the comand line
-clear 			#clear the screen
-Up and Down		#scroll through the commands
-ctrl + r		#used after typing a comand, used to rewrite the same type of commands that was used in time past 
-ctrl+c 			#interupt, it will get you out of a process 
+============  Sending file via putty, from windows to linux ============ 
+pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune #  https://it.cornell.edu/managed-servers/transfer-files-using-putty
 
-sha256sum fileName | grep fcaf10fa60066437b20... # Compares the result of the hash operation with the original, if the output from gerp
-						 # is red, then the file was not hijacked
+=================== customzie OS =====================
 
 export PS1="\e[0;31m[\u@\h \W]\$ \e[m "		#To set a red color prompt
 #Link to  Promopt formatting --> https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
@@ -921,36 +934,8 @@ setxkbmap -layout us  # set keyboard to us
 setxkbmap -layout gb  # set keyboard to gb
 
 
+================== Multiline commands Bash ===================
 
-echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf	# Appends input to output file
-
-VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
-
-============  Sending file via putty, from windows to linux ============ 
-
-pscp C:\Users\fortu\Downloads\Note.sql fortune@34.244.23.180:/home/fortune
-#https://it.cornell.edu/managed-servers/transfer-files-using-putty
-
-
-find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt	
-
-tree --du -h /opt/ktube-media-downloader		# Returns tree output with size information
-sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
-
-
-command & # This command will let your command run in background, but will be killed when current session closed.
-nohup <command> <args> ><filename> 2>&1 &  # This command will continue running even the terminal session ends.
-
-grep -o				# -o returns the match cahraters only and not the entire line
-grep -P				# perl regular experssion
-grep -c "echo" FILE		#  This will output the number of lines that contain your search string.
-
-grep -r 'myString' .			# search the current directory for all files having the a string
-grep -r --include=*.{cc,h} "hello" . 	# search recursively (in all sub directories also) for all .cc OR .h files that contain "hello" at this . (current) directory
-
-
-echo  'linuxhint.com' | base64
-echo 'bGludXhoaW50LmNvbQo=' | base64 --decode
 
 # Multiline command, allows you to execute 1 command by using new lines
 docker create \
@@ -972,27 +957,72 @@ docker create \
 }
 
 
-cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new lines
 
 
-who am i	# retrun info on logged in user
-tty		# return ty info
+================== Extras ===================
+
+CTRL + A 		# Takes you to the begining of the comand line
+CTRl + E 		# Takes you to the end of the comand line
+clear 			# clear the screen
+Up and Down		# scroll through the commands
+ctrl + r		# used after typing a comand, used to rewrite the same type of commands that was used in time past 
+ctrl+c 			# interupt, it will get you out of a process 
+
+
+
+
+================== Utilities  ===================
+
+
+# curl
+curl -I ip_Adress # Curls the header of the target ip
+
+# grep
+grep -o					# -o returns the match cahraters only and not the entire line
+grep -P					# perl regular experssion
+grep -c "echo" FILE			#  This will output the number of lines that contain your search string.
+grep -r 'myString' .			# search the current directory for all files having the a string
+grep -r --include=*.{cc,h} "hello" . 	# search recursively (in all sub directories also) for all .cc OR .h files that contain "hello" at this . (current) directory
+
+
+
+
+
+
+
+================== unsorted  ===================
+
+
+
+sha256sum fileName | grep fcaf10fa60066437b20... # Compares the result of the hash operation with the original, if the output from gerp
+						 # is red, then the file was not hijacked
+
+
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf	# Appends input to output file
+
+VBoxManage modifyhd KoreVM-disk001.vdi --resize 50000	# virtualbbox
+
+
+
+find /mnt/SDS_data  -type f -mtime -8 >> newFiles.txt	
+
+tree --du -h /opt/ktube-media-downloader		# Returns tree output with size information
+sudo  tune2fs -l /dev/nvme2n1 | grep Block		# returns block size of the mountpoint
+
+
+command & # This command will let your command run in background, but will be killed when current session closed.
+nohup <command> <args> ><filename> 2>&1 &  # This command will continue running even the terminal session ends.
+
 
 dmesg 		# used to display the kernel related messages on Unix like systems. retrieve its data by reading the kernel ring buffer.
 dmesg -wH	# get kernel logs in real time in human readable format
 
 
-
-$VAR	# returns value of var
-$?   	# rturns status code of previous command
-$#   	# number of arguments that were presented to the script
-$( ls ) # command substistution
-
+echo  'linuxhint.com' | base64
+echo 'bGludXhoaW50LmNvbQo=' | base64 --decode
 echo -n "insert value: " 	# pint on standard out witout going to a new line 
 
-#########################################
-#### Shell Expansion
-##########################################
+cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new lines
 
-sudo mkdir /mnt/{dir1,dir2,dir3,dir3}  # create multiple dir under /mnt
+
 
