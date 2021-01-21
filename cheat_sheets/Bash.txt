@@ -906,6 +906,11 @@ $( ls )			# command substistution
 ( echo "Hello" ) 	# runs command in a subshell
 ( echo $BASH_SUBSHELL)	# runs commaind in a subshell 
 
+command > /dev/null 2>&1 & 	# run command in the backgorund 
+jobs -l				# display the status of all stopped and background jobs in the current shell session:
+
+
+
 who am i	# retrun info on logged in user
 tty		# return ty info
 
