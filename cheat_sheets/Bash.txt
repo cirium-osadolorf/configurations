@@ -914,6 +914,9 @@ jobs -l				# display the status of all stopped and background jobs in the curren
 who am i	# retrun info on logged in user
 tty		# return ty info
 
+sudo update-alternatives --config editor	# Set default text editor
+sudo visudo 					# open sudoers file
+
 
 ==================File manipulation===================
 
@@ -965,6 +968,7 @@ docker create \
 
 
 ================== Extras ===================
+
 
 CTRL + A 		# Takes you to the begining of the comand line
 CTRl + E 		# Takes you to the end of the comand line
