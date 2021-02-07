@@ -916,6 +916,7 @@ tty		# return ty info
 
 sudo update-alternatives --config editor	# Set default text editor
 sudo visudo 					# open sudoers file
+export VISUAL=vim; visudo			# change default editor to open visudo
 
 
 ==================File manipulation===================
