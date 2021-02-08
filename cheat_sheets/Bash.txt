@@ -896,7 +896,6 @@ find . -perm 777 			# find all files with specific permission
 
 ==================BASH===================
 
-
 echo $?			# return exit status of previuos command, 0 = sucess , 1 = error, >1 = other special error
 $VAR			# returns value of var
 $?   			# returns status code of previous command
@@ -909,7 +908,6 @@ command > /dev/null 2>&1 & 	# run command in the backgorund
 jobs -l				# display the status of all stopped and background jobs in the current shell session:
 
 
-
 who am i	# retrun info on logged in user
 tty		# return ty info
 
@@ -918,9 +916,9 @@ sudo visudo 					# open sudoers file
 export VISUAL=vim; visudo			# change default editor to open visudo
 
 
-
 cat <(echo hey there)		 # Process Substitution -  this outputs: hey there
 echo <(echo hey there) 		 # Process Substitution -  this outputs: /dev/fd/63   (the tmp file where the result is stored in)
+diff <(ls /bin) <(ls /usr/bin)	 # process Substitution 
 
 
 ==================File manipulation===================
@@ -968,8 +966,6 @@ docker create \
   tar -xvf etcd-v3.3.9-linux-amd64.tar.gz
   sudo mv etcd-v3.3.9-linux-amd64/etcd* /usr/local/bin/
 }
-
-
 
 
 ================== Extras ===================
