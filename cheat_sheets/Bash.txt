@@ -918,6 +918,11 @@ sudo visudo 					# open sudoers file
 export VISUAL=vim; visudo			# change default editor to open visudo
 
 
+
+cat <(echo hey there)		 # Process Substitution -  this outputs: hey there
+echo <(echo hey there) 		 # Process Substitution -  this outputs: /dev/fd/63   (the tmp file where the result is stored in)
+
+
 ==================File manipulation===================
 
 sed -i -e 's/sudo//g'  <fileName>		# removes instace of word in file
