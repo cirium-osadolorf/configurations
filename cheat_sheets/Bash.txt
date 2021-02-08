@@ -921,6 +921,13 @@ echo <(echo hey there) 		 # Process Substitution -  this outputs: /dev/fd/63   (
 diff <(ls /bin) <(ls /usr/bin)	 # process Substitution 
 
 
+================== Demoggification  ==================
+
+Process of removing unsless use of CATS or other commands 
+
+cat /etc/passwd | grep rob   # rather than doinf this do the commnad below
+grep rob /etc/passwd	     # clener and more optimal command than the one above
+
 ==================File manipulation===================
 
 sed -i -e 's/sudo//g'  <fileName>		# removes instace of word in file
