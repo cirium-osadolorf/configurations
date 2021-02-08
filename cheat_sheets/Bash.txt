@@ -345,9 +345,9 @@ SomeCommand 2>&1 | tee -a log
 
 ============ Operators ======================
 #link to the resource https://askubuntu.com/questions/334994/which-one-is-better-using-or-to-execute-multiple-commands-in-one-line
+A && B  # AND LIST - Run B if and only if A succeeded 
+A || B  # OR LIST  - Run B if and only if A failed
 A; B    # Run A and then B, regardless of success of A
-A && B  # Run B if and only if A succeeded
-A || B  # Run B if and only if A failed
 A &     # Run A in background.
 
 prog | Prog2 | prog3		#Feeds the output of each comand or program into the next program
