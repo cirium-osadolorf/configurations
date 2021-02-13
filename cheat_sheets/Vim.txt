@@ -108,15 +108,13 @@ x           # Deletes highlighted character
 dd          # Delete line
 dw          # Delete a word
 
-d           # cut line
-yy          # Copies line
-p           # Paste line
+v ← or →    # Mark mode, Copies highlighted text [ once you are done selecting use Esc to finsh the action ]
+
+d           # cut selection
+yy          # Copies selection
+p           # Paste selection
 
 J           # Appends the start of previosly line to the end of the current line
-
-
-v ← or →    # Mark mode, Copies highlighted text [ once you are done selecting use Esc to finsh the action ]
-p           # paste 
 
 >>          # indents line
 <<          # removes indent
