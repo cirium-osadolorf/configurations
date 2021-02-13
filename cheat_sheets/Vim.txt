@@ -108,6 +108,7 @@ x           # Deletes highlighted character
 dd          # Delete line
 dw          # Delete a word
 
+d           # cut line
 yy          # Copies line
 p           # Paste line
 
