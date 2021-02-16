@@ -7,8 +7,14 @@ vagrant --version         # Returns vegrant version
 vagrant <command> -h      # Returns help on the selected command
 
 ======== Vagrantfile  ========
-vagrant init              # initialize a vagrant environment by creating a vagrantfile
-vagrant init -m           # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
+vagrant init                                    # initialize a vagrant environment by creating a vagrantfile
+vagrant init -m                                 # initialize a vagrant environment by creating a vagrantfile with the minimum requiremnts
+
+vagrant init hashicorp/bionic64                 # Create a base Vagrantfile:
+vagrant init -m hashicorp/bionic64              # Create a minimal Vagrantfile (no comments or helpers)
+
+vagrant init -m bento/ubuntu-20.04              
+
 
 ======== Mangaging the box  ========
 ## Remember taht a <hostname> can be specifiedas part of the following commands
