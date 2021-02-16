@@ -40,4 +40,34 @@ win+dir             # move applicaiton to the side of the screen
 == Intelijee
 =========================================================
 
-sout + tab   # system.out.println shorcut
+sout + tab          # system.out.println shortcut
+ctrl + f            # search in file
+shift + ctrl + f    # search in folder 
+
+
+ctrl+B                     # go to method or class
+ctrl + click on method     # takes you to method implementation
+ctrl + click on class      # takes you to class
+
+
+Alt+F7              # Show all places where a code element is used across your project.
+                    # show all implementations of code
+Ctrl+Alt+L          # format code
+
+
+
+Ctrl+Shift+A        # Find a command and execute it, open a tool window or search for a setting.
+
+F2                  # Navigate between code issues
+Shift+F2            # Navigate between code issues
+
+
+Shift+F6            # refactoring variable
+
+
+
+
+
+
+
+
