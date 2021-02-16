@@ -48,9 +48,11 @@ git rm --cached <fileName>    # untrack, unstage file
 git rm --cached <fileName> -f # untrack, unstage file 
 
 
-git commit                   # commit items in staging area
-git commit -m "text"         # commits the changes
-git commit -a -m "text"      # stage and commit cahnges
+git commit                                    # commit items in staging area
+git commit -m "text"                          # commits the changes
+git commit -a -m "text"                       # stage and commit cahnges
+git commit --amend -m "New commit message."   # ammend last commit message
+
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
 git log
