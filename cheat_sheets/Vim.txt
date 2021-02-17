@@ -162,6 +162,7 @@ Extras  ( While in Command mode)
 Set commands  
 =====================================================
 :set number             # number all lines
+:set nonumber             # number all lines
 
 : set list     # view all special charachters (tabs, end of line, )
 : set nolist   # disble set list
