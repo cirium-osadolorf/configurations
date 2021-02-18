@@ -28,4 +28,4 @@ mvn dependency:tree | less -r	       # print out dependecny tree
 
 groupId  	--> com.companyname.project
 artifactId	--> project
-version	--> 0.0.1
+version		--> 0.0.1
