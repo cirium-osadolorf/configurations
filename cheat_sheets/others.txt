@@ -65,6 +65,9 @@ Shift+F2            # Navigate between code issues
 Shift+F6            # refactoring variable
 
 
+alt + insert        # Generate constuctur, getters and setters and other
+
+
 
 
 
