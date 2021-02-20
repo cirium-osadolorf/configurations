@@ -42,8 +42,7 @@ project
             `-- $package
                 `-- AppTest.java
 
-                                   
-				   
+https://maven.apache.org/archetypes/index.html
 				   
 				   
 				   
