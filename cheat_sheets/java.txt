@@ -12,7 +12,13 @@ java -jar <jar-file-name>.jar   #Run jar file in command prompt
 ===================
 # maven
 ===================
-mvn dependency:purge-local-repository # purge dependencies that were incorrectly downloaded 
+
+groupId  	--> com.companyname.project
+artifactId	--> project
+version		--> 0.0.1
+
+
+mvn dependency:purge-local-repository   # purge dependencies that were incorrectly downloaded 
                                         # force mvn to download dependecies if u deleted the .m2 fodler
                                         
             
@@ -20,12 +26,31 @@ mvn dependency:purge-local-repository # purge dependencies that were incorrectly
 mvn dependency:tree 		       # print out dependecny tree
 mvn dependency:tree | less -r	       # print out dependecny tree
 
+
+# Generate simple archetype
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+project
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- $package
+    |           `-- App.java
+    `-- test
+        `-- java
+            `-- $package
+                `-- AppTest.java
+
                                    
-
-================
-= GAV
-===============
-
-groupId  	--> com.companyname.project
-artifactId	--> project
-version		--> 0.0.1
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
