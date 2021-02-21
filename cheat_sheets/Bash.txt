@@ -229,7 +229,12 @@ ssh-keygen -f ~/dir/dishout-ssh-keys -t rsa -b 4096	#Creates new authentication 
 ssh user@hostname		#SSH into remote comupter
 ssh -p 22 user@hostname		#SSH into remote computer via a specific port
 ssh-copy-id pi@10.25.6.0	#Copies the public key to the remote computer
+
 ssh -v user@hostname		#SSH into remote computer while returning what the client is doing
+ssh -v computer@somehost
+ssh -vv computer@somehost
+ssh -vvv computer@somehost
+
 ssh user@hostname <COMMAND>	#Returns command standard-out peformed on the server to the client terminal
 
 
