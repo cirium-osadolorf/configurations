@@ -826,6 +826,7 @@ sudo umount /mnt/myfolder
 
 ================== Encryption ===================
 # https://www.cyberciti.biz/tips/linux-how-to-encrypt-and-decrypt-files-with-a-password.html
+# https://devhints.io/gnupg
 
 # Adding gpg keys to gitlab
 # https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/
@@ -838,6 +839,7 @@ gpg --full-gen-key						# same as --gen-key but used for a full featured key gen
 gpg --list-secret-keys 						# list keys
 gpg --list-secret-keys --keyid-format LONG 			# list keys
 gpg --list-secret-keys --keyid-format LONG <your_email>		# list keys
+gpg -k								# list keys
 
 
 gpg --armor --export 30F2B65B9246B6CA				# Export the public key of that ID (replace your key ID from the id you got from listing keys)
