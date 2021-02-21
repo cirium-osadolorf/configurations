@@ -5,7 +5,6 @@ ctrl m                # maximize and minimize mobxterm
 alt  m                # open tbuttom modal erminal
 ctrl alt direction    # switch between tabs
 
-
 ================================================
 == Windows terminal
 =================================================
@@ -25,15 +24,9 @@ Ctrl + Shift + R    # refresh web broswer
 
 tabs # https://www.wikihow.com/Switch-Tabs-in-Chrome#:~:text=The%20keyboard%20shortcut%20Ctrl%20%2B%20Shift,right%20to%20left%20in%20Chrome.&text=How%20do%20I%20shift%20tabs,tabs%20from%20right%20to%20left.
 
-
 win+shift+s         # screenshot and snip
-
 win+clt+dir         # move between Desktops
-
-
 win+dir             # move applicaiton to the side of the screen
-
-
 
 
 =========================================================
@@ -55,22 +48,10 @@ Alt+F7              # Show all places where a code element is used across your p
 Ctrl+Alt+L          # format code
 
 
-
 Ctrl+Shift+A        # Find a command and execute it, open a tool window or search for a setting.
-
 F2                  # Navigate between code issues
 Shift+F2            # Navigate between code issues
 
-
 Shift+F6            # refactoring variable
 
-
 alt + insert        # Generate constuctur, getters and setters and other
-
-
-
-
-
-
-
-
