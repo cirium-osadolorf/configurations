@@ -95,6 +95,7 @@ git push origin master                                                          
 git push origin --all                                                                     # pushes all barnaches ot the origin
 
 git remote add origin https://github.com/user/repo.git                                    # Set a new remote
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git                          # change remote origin
 git remote -v   # Verify new remote
 
 ================== Branches =====================
