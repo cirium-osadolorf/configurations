@@ -141,3 +141,17 @@ git push --tags                 # push all local tags
 
 
 
+
+
+
+
+
+
+
+#  How to fix “Filename too long error
+
+git clone -c core.longpaths=true                        # set the setting for the repo and clones it
+git config --system core.longpaths true                 # sets the setting system wide
+
+
+
