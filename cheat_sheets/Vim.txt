@@ -117,11 +117,23 @@ ctrl r      # Redo changes
 x           # Deletes highlighted character
 .           # Copies and paste changes made in the last insert mode
 dd          # Delete line
-dw          # Delete a word
+dw          # Delete a word  (will not delete punctuation)
+db          # delete a word backwards (will not delete punctuation)
+
+dW          # Delete a word  (will delete punctuation)
+dB          # delete a word backwards (will delete punctuation)
 
 v ← or →    # Mark mode, Copies highlighted text [ once you are done selecting use Esc to finsh the action ]
 
-d           # cut selection
+d           # cut selection - can paste afterwards with p
+d + 0       # delete from pointer to the begining on the line
+d + $       # delete from pointer to the end on the line
+d + shift6  # delete from pointer to the begining on the line
+
+
+d{          # delete entire paragraph from pointer onwards
+d}          # delete entire paragraph from pointer backwards
+
 yy          # Copies selection
 p           # Paste selection
 
