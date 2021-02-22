@@ -21,7 +21,7 @@ Esc                     # Switch to Command mode
 
 view <file_name>        # open file in vim in read only mode
 
- vim +36 <fileName>     # open file at specific line number
+vim +36 <fileName>     # open file at specific line number
 
 =====================================================
 Movment ( While in Command mode)
@@ -45,14 +45,13 @@ end       # [kb] Moves cursor to the end of the line
 
 shit 6    # Moves cursor to the first not blank or space charachter of the line
 
-
 gg        # Moves cursor to the top of the file
 1gg       # Moves cursor to the top of the file
 1G        # Moves cursor to the top of the file
 G         # Moves cursor to the bottom of the file
 
 100%      # moves to line percentage of the file
-<numer>%
+<numer>%  # move to percentage line of the file
 
 {         # Moves cursor to the previous paragraph 
 }         # Moves cursor to the next paragraph
@@ -71,17 +70,14 @@ L          # lowest visible line
 :<number>  # Moves cursor to line number
 <Number> G # Moves cursor to line number
 
-
-
 =====================================================
 Visual Mode
 =====================================================
 v                                # individual characters highlighting  - Can add multiplier
-V (capital)                      # whole line highlighting  - Can add multiplier
+shift V                          # whole line highlighting             - Can add multiplier
 
 o (while in visual mode)         # changes the highlithing corner
 gv                               # re highlights last thing that you highlighted
-
 
 v + highlight string + u         # toggle String to upercare 
 v + highlight string + U         # toggle String to lowercase
@@ -89,6 +85,20 @@ v + highlight string + >         # indent
 v + highlight string + <         # dedent
 
 # comment trick
+
+
+=====================================================
+yanking text  
+=====================================================
+# You do not need to select with visual mode to copying and pasting
+y          # copies all paragraph 
+yy         # copies a line
+y0         # copies from cursor  to the first char of a line 
+y$         # copies from cusror to the end of the line 
+yG         # copies from cusror to the end of the line 
+
+
+3yy copies 3 lines from current down
 
 
 =====================================================
