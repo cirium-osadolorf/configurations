@@ -76,21 +76,32 @@ L          # lowest visible line
 =====================================================
 Visual Mode
 =====================================================
-:v                                # then you highligh strings
-:V  + highlight string + u        # toggle String to upercare 
-:V  + highlight string + U        # toggle String to lowercase
+v                                # individual characters highlighting  - Can add multiplier
+V (capital)                      # whole line highlighting  - Can add multiplier
+
+o (while in visual mode)         # changes the highlithing corner
+gv                               # re highlights last thing that you highlighted
+
+
+v + highlight string + u         # toggle String to upercare 
+v + highlight string + U         # toggle String to lowercase
+v + highlight string + >         # indent
+v + highlight string + <         # dedent
+
+# comment trick
+
 
 =====================================================
 Text Manipulation ( While in Command mode)
 =====================================================
 
-i           # Inserts text before highlighted character 
-a           # Inserts text after highlighted character 
-o           # Insert text on the  next paragraph
-O           # Insert text on the  above paragraph
+i           # Inserts text before highlighted character  - Can add multiplier
+a           # Inserts text after highlighted character   - Can add multiplier
+o           # Insert text on the  next paragraph         - Can add multiplier
+O           # Insert text on the  above paragraph        - Can add multiplier
 
-I           # Start inserting from the first chrachter of the line
-A           # Start inserting fromt he last chrachter of the line
+I           # Start inserting from the first chrachter of the line   - Can add multiplier 
+A           # Start inserting fromt he last chrachter of the line    - Can add multiplier
 
 
 <number> + I # will repeat the insert n number of times once you witch to command mode
