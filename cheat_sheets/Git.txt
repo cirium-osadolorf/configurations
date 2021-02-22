@@ -75,11 +75,15 @@ git diff            # Show changes between the working tree and the index or a t
                     # changes between the index and a tree, changes between two trees, 
                     # changes resulting from a merge, changes between two blob objects, 
                     # or changes between two files on disk.
+                    
 git diff --cached   # You have already staged the changes (presumably by running git add), so in order to get their diff, you need to run:
 
 
 git diff myfile.txt                 # for unstage files
 git diff --cached myfile.txt        # for stagesd files
+
+git diff origin/master              # diff comperaed to master
+git diff -w origin/master           # run git diff and ignore-all-space changes
 
 
 
