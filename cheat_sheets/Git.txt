@@ -15,10 +15,7 @@ git config --global core.editor emac          # set editor for git
 
 git config --global user.signingkey 30F2B65B9246B6CA  # tell Git to use that key to sign the commits 
 git config --global commit.gpgsign true               # If you don’t want to type the -S flag every time you commit, you can tell Git to sign your commits automatically
-        
-git commit -S -m "My commit msg"                      # Commit like you used to, the only difference is the addition of the -S flag:
-
-
+git config commit.gpgsign true                        # same as above but locally 
 
 
 
@@ -64,6 +61,9 @@ git commit                                    # commit items in staging area
 git commit -m "text"                          # commits the changes
 git commit -a -m "text"                       # stage and commit cahnges
 git commit --amend -m "New commit message."   # ammend last commit message
+
+git commit -S -m "My commit msg"              # Commit and sign commit
+
 
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
