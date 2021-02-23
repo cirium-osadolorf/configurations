@@ -1,4 +1,23 @@
-============ System  =============               
+============ root folders  =============    
+
+/bin                    # contains essential binaries for the entire OS. Programs such as gzip, curl, ls, cd are all in here 
+/sbin                   # contains system binary that should only be execute by the root user
+/lib                    # contains common libraries for /bin and /sbin binaries
+
+/usr/bin                # contains binaries for applications not essential to the OS, they are intended for the end user
+/usr/local/bin          # folder where you can place manuaally compiled libraries
+
+/etc                    # Editable text conifg, herer you will find configs filew for different programs 
+/home                   # contains user data 
+/boot                   # contains files needed to boot the sytem like the linux kernel
+/dev                    # device files, allows you to interface with drives or hardare as id they were regular files 
+/opt                    # contains optional software 
+/var                    # contains var files as the os is being used (logs and cahache files)
+/tmp                    # contains temporary files and dirs, contente here is not persisted after reboot
+/proc                   # memory file system used to keep track of processes (does not actually exist in the disk)
+
+============ System  =============    
+
                  
 /etc/sudoers            # contains the information regarding privileges for different users and groups of our server
 /etc/skel               # contains files and directories that are automatically copied over to a new user's home with useradd
