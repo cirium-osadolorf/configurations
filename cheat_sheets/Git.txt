@@ -84,6 +84,7 @@ git log --stat                # returns logs with stats on number of commits
 git log -S <string>           # return logs that contain input string
 git log --oneline             # return abbreviated log info
 git log -p                    # returns detailed info 
+git log -<number>             # returns n number of logs  
 git log -1 --pretty=%H        # formated log - returns the last commit hash 
 git log --pretty="%h - %an -%ar - %s" # formated log - returns customized data, you can tune this to your test
 git log -- <filename>         # returns information on a particular file
@@ -107,6 +108,8 @@ git diff -w origin/master           # run git diff and ignore-all-space changes
 
 
 ============== Cloning and Pushing =========================
+
+git clone local_repo  new_dir                                                             # Cloning Local Repository into a new folder
 
 git clone repouURL                                                                        # clone repo 
 git clone repoURl <path>                                                                  # clones a local repo to a specific path
