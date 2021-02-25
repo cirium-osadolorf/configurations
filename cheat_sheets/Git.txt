@@ -111,8 +111,8 @@ git diff -w origin/master           # run git diff and ignore-all-space changes
 
 git clone local_repo  new_dir                                                             # Cloning Local Repository into a new folder
 
-git clone repouURL                                                                        # clone repo 
-git clone repoURl <path>                                                                  # clones a local repo to a specific path
+git clone repouURL                                                                        # clone remote repo 
+git clone repoURl <path>                                                                  # clones a remote repo to a specific path
 git clone user@server:<original_repo_path_relative_to_user_home> <local_repo_path>        # cloning over ssh  
 git clone --single-branch --branch master https://<url>                                   # clone single branch
 
