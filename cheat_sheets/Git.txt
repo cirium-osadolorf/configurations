@@ -180,4 +180,8 @@ git clone -c core.longpaths=true <repo-url>             # set the setting for th
 git config --system core.longpaths true                 # sets the setting system wide
 
 
+git gc --auto         # checks if repo needs cleaning, if it does it will clean it if not it wont
+
+git gc --prune        # run garbage collection to clean object older than 2 weeks (unrefereced objects)
+
 
