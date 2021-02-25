@@ -145,8 +145,8 @@ git branch -d new-feature  # delete branch
 
 =============== tags ===========================
 git tag                                 # erturns working diretory tags
-git tag -a <name> -m "message"          # create annotated tag
-git tag <name> -m "message"             # create lightweight tag
+git tag -a <name> -m "message"          # create annotated tag -  These have an author and a date and can be referred because they have their own SHA key.
+git tag <name> -m "message"             # create lightweight tag - Basically, lightweight tags are just pointers to specific commits
 git tag -d <name>                       # Delete a tag      
 git show <tagName>                      # return tag commit info
 
@@ -160,6 +160,9 @@ git push --tags                 # push all local tags
 
 
 
+=============== gitignore ===========================
+
+git check-ignore <pattern>        # debug .gitignore file by tesing againt it 
 
 
 
