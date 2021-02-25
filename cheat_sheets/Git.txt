@@ -165,6 +165,10 @@ git push --tags                 # push all local tags
 git check-ignore <pattern>        # debug .gitignore file by tesing againt it 
 
 
+=============== resolving conflicts ===========================
+https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts/
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line
+https://www.aatlassian.com/git/tutorials/using-branches/merge-conflicts
 
 
 
