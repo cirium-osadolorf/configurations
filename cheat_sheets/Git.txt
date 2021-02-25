@@ -29,7 +29,9 @@ git config commit.gpgsign true                        # same as above but locall
 ============= Repository Basics ===============
 
 git init                     # initalize a git repository
-git init <path>
+git init existingDir         # initialize git on existing folder
+git init newDir              # creates folder and initialize git it
+
 
 git add <filename>           # adds a specific file to staging
 git add .                    # adds all files to staging
