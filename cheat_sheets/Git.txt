@@ -8,6 +8,8 @@ git config <seeting>                          # project: Project configs are onl
 git config --global <setting>                 # global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
 git config --system <setting>                 # System: System configs are available for all the users/projects and stored in /etc/gitconfig.
 
+man git-config                                # returns all possible configurable settings
+
 # common configs
 
 git config --global user.name <username>      # sets global git credentials
