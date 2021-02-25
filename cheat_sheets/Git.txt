@@ -79,9 +79,13 @@ git commit -S -m "My commit msg"              # Commit and sign commit
 git checkout -- d_file       # brings back previosly commited file that was deleted
 
 git log
+git log --graph               # returns logs with nice format
+git log --stat                # returns logs with stats on number of commits
+git log -S <string>           # return logs that contain input string
 git log --oneline             # return abbreviated log info
 git log -p                    # returns detailed info 
-git log -1 --pretty=%H        # returns the last commit hash 
+git log -1 --pretty=%H        # formated log - returns the last commit hash 
+git log --pretty="%h - %an -%ar - %s" # formated log - returns customized data, you can tune this to your test
 git log -- <filename>         # returns information on a particular file
 git log --oneline <filename>  # returns information on a particular file
 
@@ -150,13 +154,16 @@ git tag <name> -m "message"             # create lightweight tag - Basically, li
 git tag -d <name>                       # Delete a tag      
 git show <tagName>                      # return tag commit info
 
-
-
+git fetch --tags                        # In order to checkout the latest Git tag, first update your repository by fetching the remote tags available.
 
 
 git tag                         # see tag lists
 git push origin <tag-name>      # push a single tag
 git push --tags                 # push all local tags 
+
+
+git checkout v1.9                       # view the versions of the files that particular version tag
+git checkout tags/<tag> -b <branch>
 
 
 
