@@ -4,19 +4,26 @@ git config -l                                 # returns git environment settings
 git config --list                             # returns git environment settings  
 git config --list --show-origin
 
+git config <seeting>                          # project: Project configs are only available for the current project and stored in .git/config in the project's directory
+git config --global <setting>                 # global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
+git config --system <setting>                 # System: System configs are available for all the users/projects and stored in /etc/gitconfig.
+
+# common configs
+
 git config --global user.name <username>      # sets global git credentials
 git config --global user.email <email_addr>   # sets global git credentials
 
 git config user.name "Your Name Here"         # sets local git credentials, will affect woring directory only
 git config user.email your@email.com          # sets local git credentials, will affect woring directory only
 
-git config --system core.editor vim           # set editor for git
 git config --global core.editor emac          # set editor for git
+git config --system core.editor vim           # set editor for git
+
 
 git config --global user.signingkey 30F2B65B9246B6CA  # tell Git to use that key to sign the commits 
-git config --global commit.gpgsign true               # If you don’t want to type the -S flag every time you commit, you can tell Git to sign your commits automatically
-git config commit.gpgsign true                        # same as above but locally 
 
+git config commit.gpgsign true                        # same as above but locally 
+git config --global commit.gpgsign true               # If you don’t want to type the -S flag every time you commit, you can tell Git to sign your commits automatically
 
 
 # Alternatively, you may store system-wide configuration values in the file directly:
