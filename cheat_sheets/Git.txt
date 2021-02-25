@@ -44,14 +44,12 @@ git init newDir              # creates folder and initialize git it
 
 git add <filename>           # adds a specific file to staging
 git add .                    # adds all files to staging
-
 git add -p                   # Interactively choose hunks of patch between the index and the work tree and add them to the index. 
                              # This gives the user a chance to review the difference before adding modified contents to the index.
                              
 git reset <file>             # unstage stage file - ungo git add on file
 git reset                    # unstage all changes - undo last git add
                              
-
 git status                   # returns items in staging area
 git status -v                # returns items with a verbose output, changes included
 git status -s                # returns items in staging area in shortened version
@@ -72,7 +70,6 @@ git commit                                    # commit items in staging area
 git commit -m "text"                          # commits the changes
 git commit -a -m "text"                       # stage and commit cahnges
 git commit --amend -m "New commit message."   # ammend last commit message
-
 git commit -S -m "My commit msg"              # Commit and sign commit
 
 
