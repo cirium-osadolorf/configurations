@@ -42,6 +42,10 @@ project
         `-- java
             `-- $package
                 `-- AppTest.java
+		
+		
+		
+mvn clean install -DskipTests		# Build project without running tests
 
 
 				   
