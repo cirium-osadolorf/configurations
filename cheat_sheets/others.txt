@@ -55,3 +55,6 @@ Shift+F2            # Navigate between code issues
 Shift+F6            # refactoring variable
 
 alt + insert        # Generate constuctur, getters and setters and other
+
+
+ctrl + alt + h      # open call hierchcy, all reference to specific method call
