@@ -58,3 +58,5 @@ alt + insert        # Generate constuctur, getters and setters and other
 
 
 ctrl + alt + h      # open call hierchcy, all reference to specific method call
+
+Ctrl+Alt+S          # open settings/preferences
