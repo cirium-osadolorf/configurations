@@ -37,7 +37,7 @@ win+dir             # move applicaiton to the side of the screen
 sout + tab                # system.out.println shortcut
 main + tab                # create main method
 alt + insert              # Generate constuctur, getters and setters and other
-
+ctrl+alt+insert           # generate class or interface  or enum
 
 # search
 ctrl + f                  # search in file
