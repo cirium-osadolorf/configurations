@@ -23,6 +23,8 @@ git config --system core.editor vim           # set editor for git
 
 
 git config --global user.signingkey 30F2B65B9246B6CA  # tell Git to use that key to sign the commits 
+git config user.signingkey 30F2B65B9246B6CA           # tell Git to use that key to sign the commits (local)
+
 
 git config commit.gpgsign true                        # same as above but locally 
 git config --global commit.gpgsign true               # If you don’t want to type the -S flag every time you commit, you can tell Git to sign your commits automatically
