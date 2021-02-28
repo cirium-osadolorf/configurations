@@ -8,13 +8,14 @@ ctrl alt direction    # switch between tabs
 ================================================
 == Windows terminal
 =================================================
-Alt+Shift+=         # create vertical pane
-Alt+Shift+-         # create horizontal pane
-Ctrl+Shift+W        # clsoe pane
 
-Alt+ directoion     # switch betwwen panes
-
-Alt+Shift+ direction  # pane resize
+Alt+Shift+=            # create vertical pane
+Alt+Shift+-            # create horizontal pane
+Ctrl+Shift+W           # clsoe pane
+Ctrl+Shift+W           # clsoe tab
+Alt+ directoion        # switch betwwen panes
+shift+Ctrl+Tab         # move between tabs
+Alt+Shift+ direction   # pane resize
 
 ================================================
 == Windows Desktop
