@@ -26,6 +26,8 @@ mvn dependency:purge-local-repository   # purge dependencies that were incorrect
 mvn dependency:tree 		       # print out dependecny tree
 mvn dependency:tree | less -r	       # print out dependecny tree
 
+mvn dependency-check:purge		# purge loccal CVE db, allowing maven to redownload on next build 
+
 
 # Generate simple archetype
 https://maven.apache.org/archetypes/index.html
