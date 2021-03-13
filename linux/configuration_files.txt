@@ -64,10 +64,20 @@
  C:\Users\fooo\.ssh\config    # vscode config for remote ssh
  
  
- /var/lib/apt/lists # When you run sudo apt-get update , a list of packages will get downloaded from the Ubuntu servers. These files are then stored in
                 
                
- /etc/protocols             # file contains information regarding the known protocols used in the DARPA Interne                
+ /etc/protocols             # file contains information regarding the known protocols used in the DARPA Interne   
+ 
+ 
+ ============ Debian ===============
+/var/lib/apt/lists # When you run sudo apt-get update , a list of packages will get downloaded from the Ubuntu servers. These files are then stored in
+
+  
+/etc/apt/sources.list           # directory that holds URLs and other information for remote repositories from where software packages and applications are installed
+/etc/apt/sources.list.d         # directory you can easily add new repositories without the need to edit the central /etc/apt/sources.list
+                                # https://dev.to/bijaykumarpun/what-s-inside-etc-apt-sources-list-2h1k#:~:text=Upfront%2C%20the%20%2Fetc%2Fapt,%2Fetc%2Fapt%2Fsources.
+
+
 ============ Networking  =============
 
 
