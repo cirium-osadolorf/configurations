@@ -643,6 +643,11 @@ sudo apt install -f
 
 dpkg -r program_name  # remove package
 
+
+apt-key add					# adds a package key
+apt-key list					# This will list the keys added		
+apt-key del 30C18A2B				# remove the key 		
+
 ================ RedHat Service Tools ======================
 runlevel				#Returns you current runlevel
 chkconfig				#Returns runlevel services
@@ -658,7 +663,7 @@ service serviceName restart 		#restart services
 service serviceName reload 
 sudo service --status-all 		# List all running services 
 
-================ Systremd ======================
+================ systemd ======================
 systemd-cgls 				# returns all the processes of the system
 systemd-cgtop 				# returns the top cgroups accodring to their resources
 systemctl status			# returns the top cgroups accodring to their resources
