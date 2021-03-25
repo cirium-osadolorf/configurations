@@ -414,3 +414,8 @@ sudo docker run -it -v mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
 
 
 docker container exec -it  -u 0 db  /bin/bash
+
+
+
+docker run --rm -d --network host --name my_nginx nginx   # host network
+
