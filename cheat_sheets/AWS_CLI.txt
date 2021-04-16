@@ -129,6 +129,9 @@ aws autoscaling create-launch-configuration
       --key-name my-key-pair
       
       
+      
+      
+      
 aws autoscaling describe-launch-configurations
 aws autoscaling delete-launch-configuration --launch-configuration-name <value>
 
@@ -140,3 +143,18 @@ EC2 Key Pairs
  aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
  aws ec2 describe-key-pairs --key-name MyKeyPair
  aws ec2 delete-key-pair --key-name MyKeyPair
+
+
+
+===========================================
+== ADFS
+===========================================
+
+aws-adfs login --adfs-host=<domain> --ssl-verification
+
+
+===========================================
+== AWS EKS
+===========================================
+
+aws eks update-kubeconfig --name <clusterName>    # adds new context to your local .kube/config
