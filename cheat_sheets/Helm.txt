@@ -1,0 +1,9 @@
+
+helm version
+
+
+helm repo add gitlab https://charts.gitlab.io/        # add repo to helm repostiroy 
+
+
+helm repo list                                        # list repos 
+
