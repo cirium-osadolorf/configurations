@@ -7,3 +7,5 @@ helm repo add gitlab https://charts.gitlab.io/        # add repo to helm reposti
 
 helm repo list                                        # list repos 
 
+helm repo update                                      # update all repos
+helm search repo                                      # list repo carts 
