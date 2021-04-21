@@ -481,3 +481,15 @@ https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questio
 
 # certificateSigningRequests
 https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
+
+
+
+
+
+
+
+
+==============================
+== ready to go tools
+=============================
+kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # curl pod used tp trpuble shoot internal cluster
