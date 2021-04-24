@@ -179,11 +179,16 @@ aws kms encrypt \
     --profile iamadmin-general | base64 \
     --decode > not_battleplans.enc 
     
+                                                           # can ommit profile flag if not needed
+    
 aws kms decrypt \
     --ciphertext-blob fileb://not_battleplans.enc \
     --output text \
     --profile iamadmin-general \
     --query Plaintext | base64 --decode > decryptedplans.txt
+    
+                                                           # can ommit profile flag if not needed
+
     
     
     
