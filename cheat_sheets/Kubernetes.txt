@@ -271,6 +271,13 @@ kubectl get pods --selector bu=finance
 kubectl get all --selector env=prod,bu=finance,tier=frontend
 kubectl get all --selector env=prod
 
+######################################
+## PVC
+######################################
+
+kubectl delete pvc --all  --all-namespaces            # delete all pvcs 
+
+
 
 
 
@@ -467,6 +474,13 @@ kubectl run redis --image=redis --restart=Never --dry-run -o yaml > pod.yaml
 kubectl get po/<name> -o yaml > o.yaml
 kubectl delete po/<name>
 kubectl apply -f o.yaml
+
+
+# delting all resources of the same type
+kubectl delete pvc --all                              # delete all pvcs 
+kubectl delete pvc --all  --all-namespaces            # delete all pvcs 
+
+
 
 
 ############################
