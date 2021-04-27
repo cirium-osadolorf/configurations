@@ -401,6 +401,8 @@ kubectl create deployment nginx --image=nginx
 kubectl create deployment --image=nginx nginx --dry-run -o yaml
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
 
+k create deployment http-frontend --image httpd:2.4-alpine --replicas=3 --dry-run=client -o yaml
+
 -- Generate Deployment with 4 Replicas
 kubectl create deployment nginx --image=nginx
 kubectl scale deployment nginx --replicas=4
