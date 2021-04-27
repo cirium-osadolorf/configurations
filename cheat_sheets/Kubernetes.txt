@@ -481,7 +481,8 @@ kubectl delete pvc --all                              # delete all pvcs
 kubectl delete pvc --all  --all-namespaces            # delete all pvcs 
 
 
-
+# kubectl apply on all files in a dir
+kubectl apply -f <folder> 
 
 ############################
 # ETCD Backup and Restore
