@@ -1,14 +1,15 @@
 rsa= cryptography algorithms
 
 ==================================
-== Quick start - creating CSR
+== Quick start 
 ====================================
-openssl genrsa -out private.key 2048            # Generated private key
-openssl req -new <private.key> -subj "/CN=foo" -keyout key.pem -out server.csr  # Generate csr from private key
-openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt                         # sign csr with ca
+openssl genrsa -out private.key 2048            								# Generated private key
+openssl req -new <private.key> -subj "/CN=foo" -keyout key.pem -out server.csr  				# Generate csr from private key
+openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt                         				# sign csr with ca
 
+openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr   					# Generate private key and csr (one liner)
 
-openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr   # Generate private key and csr (one liner)
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt		# generate self signed certificate (one liner)
 
 =================================================
 == Quick start - Checking/viewing Using OpenSSL
@@ -47,28 +48,25 @@ openssl version -a
 ---> Manging private key
 
 openssl genrsa -out yourdomain.key 2048				# generate private key
-								                              # This command generates a private key in your current directory named yourdomain.key (-out yourdomain.key) 									
-                                              # Using the RSA algorithm (genrsa) with a key length of 2048 bits (2048). 
-								                              # The generated key is created using the OpenSSL format called PEM.
-
-cat yourdomain.key						                # view the raw, encoded contents (PEM format) of the private key
+								# This command generates a private key in your current directory named yourdomain.key (-out yourdomain.key) 	
+                                              			# Using the RSA algorithm (genrsa) with a key length of 2048 bits (2048). 
+								# The generated key is created using the OpenSSL format called PEM.
+cat yourdomain.key						# view the raw, encoded contents (PEM format) of the private key
 
 openssl rsa -text -in yourdomain.key -noout		# view and decode the private 
-								                              # The -noout switch omits the output of the encoded version of the private key.
-
+							# The -noout switch omits the output of the encoded version of the private key.
 
 
 ---> Extracting public key
  
 openssl rsa -in yourdomain.key -pubout -out yourdomain_public.key	# The private key file contains both the private key and the public key. 
-									                                                # You can extract your public key from your private key file if needed.
-
+									# You can extract your public key from your private key file if needed.
 
 ---> creating a CSR (option 1)
 
 openssl req -new -key yourdomain.key -out yourdomain.csr		# After generating your private key, you are ready to create your CSR. 
-								                                          	# The CSR is created using the PEM format and contains the public key portion of the private key 
-								                                          	# as well as information about you (or your company).
+								        # The CSR is created using the PEM format and contains the public key portion of the private key 
+								        # as well as information about you (or your company).
 									
 									
 After entering the command, you will be asked series of questions. Your answers to these questions will be embedded in the CSR. Answer the questions as described below:
