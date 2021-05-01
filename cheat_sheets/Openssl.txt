@@ -32,6 +32,7 @@ CSR: Certificate Signing Request
 SHA: Secure Hash Algorithm
 SSL: Secure Socket Layer
 TLS: Transport Layer Security
+X.509: is a standard defining the format of public-key certificates. X.509 certificates are used in many Internet protocols, including TLS/SS
 
 DER: Distinguished Encoding Rules
 PEM: Privacy Enhanced Mail
