@@ -1,7 +1,7 @@
 rsa= cryptography algorithms
 
 ==================================
-== Creating
+== Quick start - creating CSR
 ====================================
 openssl genrsa -out private.key 2048            # Generated private key
 openssl req -new <private.key> -subj "/CN=foo" -keyout key.pem -out server.csr  # Generate csr from private key
@@ -10,17 +10,93 @@ openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt                        
 
 openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr   # Generate private key and csr (one liner)
 
-
-
-==================================
-== Checking Using OpenSSL
-==================================
+=================================================
+== Quick start - Checking/viewing Using OpenSSL
+=================================================
 If you need to check the information within a Certificate, CSR or Private Key, use these commands
 
 
 openssl req -text -noout -verify -in CSR.csr      # Check a Certificate Signing Request (CSR)
 openssl rsa -in privateKey.key -check             # Check/view/read a private key
-openssl x509 -in certificate.crt -text -noout     # Check/view/read a certificate
+openssl x509 -in certificate.crt -text -noout     # Check/view/read a signed certificate
 openssl pkcs12 -info -in keyStore.p12             # Check a PKCS#12 file (.pfx or .p12)
 
 
+================================
+= Common terms 
+================================
+# https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm
+
+CSR: Certificate Signing Request
+SHA: Secure Hash Algorithm
+SSL: Secure Socket Layer
+TLS: Transport Layer Security
+
+DER: Distinguished Encoding Rules
+PEM: Privacy Enhanced Mail
+PKCS: Public-Key Cryptography Standards
+
+
+=======================================
+= Deep dive openssl
+=======================================
+
+openssl version 
+openssl version -a
+
+---> Manging private key
+
+openssl genrsa -out yourdomain.key 2048				# generate private key
+								                              # This command generates a private key in your current directory named yourdomain.key (-out yourdomain.key) 									
+                                              # Using the RSA algorithm (genrsa) with a key length of 2048 bits (2048). 
+								                              # The generated key is created using the OpenSSL format called PEM.
+
+cat yourdomain.key						                # view the raw, encoded contents (PEM format) of the private key
+
+openssl rsa -text -in yourdomain.key -noout		# view and decode the private 
+								                              # The -noout switch omits the output of the encoded version of the private key.
+
+
+
+---> Extracting public key
+ 
+openssl rsa -in yourdomain.key -pubout -out yourdomain_public.key	# The private key file contains both the private key and the public key. 
+									                                                # You can extract your public key from your private key file if needed.
+
+
+---> creating a CSR (option 1)
+
+openssl req -new -key yourdomain.key -out yourdomain.csr		# After generating your private key, you are ready to create your CSR. 
+								                                          	# The CSR is created using the PEM format and contains the public key portion of the private key 
+								                                          	# as well as information about you (or your company).
+									
+									
+After entering the command, you will be asked series of questions. Your answers to these questions will be embedded in the CSR. Answer the questions as described below:
+
+Country Name (2 letter code)			The two-letter country code where your company is legally located.
+State or Province Name (full name)		The state/province where your company is legally located.
+Locality Name (e.g., city)			The city where your company is legally located.
+Organization Name (e.g., company)		Your company's legally registered name (e.g., YourCompany, Inc.).
+Organizational Unit Name (e.g., section)	The name of your department within the organization. (You can leave this option blank; simply press Enter.)
+Common Name (e.g., server FQDN)			The fully-qualified domain name (FQDN) (e.g., www.example.com).
+Email Address					Your email address. (You can leave this option blank; simply press Enter.)
+A challenge password				Leave this option blank (simply press Enter).
+An optional company name			Leave this option blank (simply press Enter).
+
+
+---> creating a CSR (option 2)
+
+Another option when creating a CSR is to provide all the necessary information within the command itself by using the -subj switch to provide all the CSR information.
+
+openssl req -new -key yourdomain.key -out yourdomain.csr \
+-subj "/C=US/ST=Utah/L=Lehi/O=Your Company, Inc./OU=IT/CN=yourdomain.com"
+
+
+---> creating a CSR (option 3)
+Instead of generating a private key and then creating a CSR in two separate steps, you can actually perform both tasks at once
+
+openssl req -new \
+-newkey rsa:2048 -nodes -keyout yourdomain.key \
+-out yourdomain.csr \
+-subj "/C=US/ST=Utah/L=Lehi/O=Your Company, Inc./OU=IT/CN=yourdomain.com"
+                                                                            # -nodes flag disable passprhase during the private key creation
