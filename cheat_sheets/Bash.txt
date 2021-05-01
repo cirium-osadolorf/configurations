@@ -535,6 +535,39 @@ watch -g free		# watch' command to exit after a change in output is detected
 watch 'COMMAND_1 | COMMAND_2'	# run watch for command that requires Pipes 
 
 
+============== Security ======================
+
+CSR: Certificate Signing Request
+SHA: Secure Hash Algorithm
+SSL: Secure Socket Layer
+TLS: Transport Layer Security
+
+DER: Distinguished Encoding Rules
+PEM: Privacy Enhanced Mail
+PKCS: Public-Key Cryptography Standards
+
+ --> Manging private key
+
+openssl version 
+openssl version -a
+
+	
+openssl genrsa -out yourdomain.key 2048				# generate private key
+								# This command generates a private key in your current directory named yourdomain.key (-out yourdomain.key) 									# Using the RSA algorithm (genrsa) with a key length of 2048 bits (2048). 
+								# The generated key is created using the OpenSSL format called PEM.
+
+cat yourdomain.key						# view the raw, encoded contents (PEM format) of the private key
+openssl rsa -text -in yourdomain.key -noout			# view and decode the private 
+								# The -noout switch omits the output of the encoded version of the private key.
+
+
+
+ --> Extracting public key
+ 
+openssl rsa -in yourdomain.key -pubout -out yourdomain_public.key	# The private key file contains both the private key and the public key. 
+									# You can extract your public key from your private key file if needed.
+
+
 
 
 ============== Storage ==================
