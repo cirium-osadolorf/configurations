@@ -90,5 +90,17 @@ done
 
 
 
+#############################
+# One line for loop
+############################
+
+for i in {1..5}; do COMMAND-HERE; done
+for((i=1;i<=10;i+=2)); do echo "Welcome $i times"; done
+for i in *; do echo $i; done
+for i in /etc/*.conf; do cp $i /backup; done
+
+
+
+
 
 
