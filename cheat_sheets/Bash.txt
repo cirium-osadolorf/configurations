@@ -313,6 +313,12 @@ tar -xf Rese.tar.gz			# unzip tar.gz
 gunzip file.gz 		# compress
 gzip -d file.gz		# decomporess
 
+
+# https://www.geeksforgeeks.org/cut-command-linux-examples/
+cut -f 1 state.txt		# cut field n from string  , space is implied as the delimiter 
+cut -d "-" -f 1 state.txt	# cut field n from string  , specify the delimiter -
+cut -d " " -f 1-4 state.txt	# cut filed 1 to 4 
+
 				
 
 ============ Variables ============ 
