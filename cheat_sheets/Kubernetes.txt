@@ -22,6 +22,10 @@ sc                  # storage class
 #######################################
 ## System
 ######################################
+# node monitor period = 5s            # how often nodes get monitored by the api server
+# node monitor grace period = 40 s    # after how long ...
+# pod eviction  time outs = 5m        # after how long ...
+
 kubectl cluster-info                        # returns info on where the master and DNS is running
 
 
