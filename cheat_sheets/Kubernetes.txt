@@ -135,6 +135,7 @@ kubectl rollout history deployment/<name>   # return history of rollout
 kubcetl rollout status deployment/<name>    # return staus of rollout
 kubectl rollout undo deployment/<name>      # roll bacl to previous deployment version
 
+
 #######################################
 ## namespaces
 ######################################
@@ -401,11 +402,19 @@ kubectl create deployment nginx --image=nginx
 kubectl create deployment --image=nginx nginx --dry-run -o yaml
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
 
-k create deployment http-frontend --image httpd:2.4-alpine --replicas=3 --dry-run=client -o yaml
+kubectl create deployment http-frontend --image httpd:2.4-alpine --replicas=3 --dry-run=client -o yaml
 
 -- Generate Deployment with 4 Replicas
 kubectl create deployment nginx --image=nginx
 kubectl scale deployment nginx --replicas=4
+
+
+-- Modifying deployment image deployment --
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record                                                                       
+                                                                  # It'll record your changes for a given deployment. - Later you can rollback using revision number if needed.
+
+kubectl --record <changes you making> set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1     
+                                                                  # It'll record your changes for a given deployment. - Later you can rollback using revision number if needed.
 
 -- service
 # EXPSOE = This will automatically use the pod's labels as selectors but  cannot accept a node port
@@ -458,17 +467,13 @@ https://github.com/linuxacademy/robot-shop/tree/master/K8s/descriptors
 
 kubectl get secrets # kubectl get secrets
 
-
 kubectl get endpoints kube-scheduler -n kube-system -o yaml
-
 
 
 # Create a pod instead of a deployment
 # --dry-run simulaate the execution
 # --restart=Never makes sure this is a pod and not a deployment
 kubectl run redis --image=redis --restart=Never --dry-run -o yaml > pod.yaml
-
-
 
 
 # Updating K8s resources
@@ -491,7 +496,6 @@ kubectl apply -f <folder>
 ############################
 https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md
 
-
 =====================================
 == Manifests
 =====================================
@@ -499,14 +503,15 @@ https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questio
 # certificateSigningRequests
 https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
 
-
-
-
-
-
-
-
 ==============================
 == ready to go tools
 =============================
 kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # curl pod used tp trpuble shoot internal cluster
+
+
+
+
+
+
+
+
