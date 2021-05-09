@@ -19,7 +19,6 @@ sc                  # storage class
 
 # https://kubernetes.io/docs/reference/kubectl/overview/
 
-
 #######################################
 ## System
 ######################################
@@ -75,18 +74,11 @@ kubectl auth can-i delete nodes
 kubectl auth can-i list pods --as dev-user
 kubectl auth can-i list pods --as dev-user --namespace test
 
-
-
-
-
 ########################
 # proxy
 ########################
-kubectl proxy   `               # will start a proxy on port 8081 wchich read direct request to the api server, it uses information sotred in the kubeconfigfor authentication
- 
- 
+kubectl proxy   `               # will start a proxy on port 8081 wchich read direct request to the api server, it uses information sotred in the kubeconfigfor authentication 
                                 # client will then make call -->  curl <k8s_ip>:8081 -k
-
 
 #######################################
 # Pods
@@ -246,8 +238,6 @@ kubectl get all --selector bu=finance  # returns pods with label key and value
 
 kubectl get pod -l env=prod,bu=finance,tier=frontend
 
-
-
 kubectl label node chadcrowell1c.mylabserver.com availability-zone=zone1
 
 kubectl label pods <name> key=value         # apply a new label to a set of labels 
@@ -278,10 +268,6 @@ kubectl get all --selector env=prod
 
 kubectl delete pvc --all  --all-namespaces            # delete all pvcs 
 
-
-
-
-
 #######################################
 ## Taints
 ######################################
@@ -303,9 +289,7 @@ kubectl logs -f <podName> --previous      # returns logs of previous instance of
 kubectl get events
 kubectl get events --namespace=my-namespace
 
-
-
-#######################################
+######################################
 ## Stats
 ######################################
 
@@ -382,8 +366,6 @@ ETCDCTL_API=3 etcdctl snapshot save -h
 ETCDCTL_API=3 etcdctl snapshot status -h 
 
 ETCDCTL_API=3 etcdctl snapshot restore -h 
-
-
 
 #######################################
 ## OneLiners
@@ -507,11 +489,3 @@ https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
 == ready to go tools
 =============================
 kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # curl pod used tp trpuble shoot internal cluster
-
-
-
-
-
-
-
-
