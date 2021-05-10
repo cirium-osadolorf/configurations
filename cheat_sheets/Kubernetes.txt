@@ -56,10 +56,16 @@ kubectl get roles,rolebindings --namespace ingress-space # query multiple resour
 kubectl config view                                     # returns brief configuration of your cluster. clusater contexts, users and default context
 kubectl config view --kubeconfig=/root/my-kube-config   # view kubeconfig from specific source                                           
       
-      
+kubectl config get-contexts                          # display list of contexts 
+kubectl config current-context                       # display the current-context
+
 kubectl config use-context <contextName>        # swtich kube context
 kubectl config use-context user1@prodCluster    # switch kube context
 kubectl config --kubeconfig=/root/my-kube-config use-context research  # switch kube context
+
+kubectl config view -o jsonpath='{.users[].name}'    # display the first user
+kubectl config view -o jsonpath='{.users[*].name}'   # get a list of users
+
 
 ########################
 # Redirect output
