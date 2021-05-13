@@ -222,6 +222,7 @@ sudo usermod -a -G basket frank
 
 ============ SSH ============ 
 #Link to ssh article:  https://www.ssh.com/ssh/keygen/
+# General  ssh things
 ssh-keygen   						#Creates new authentication key pairs for SSH
 ssh-keygen -t rsa -b 4096				#Creates new authentication key pairs for SSH with rsa algorithm
 ssh-keygen -f ~/dir/dishout-ssh-keys -t rsa -b 4096	#Creates new authentication key pairs for SSH with rsa algorithm
@@ -237,17 +238,17 @@ ssh -vvv computer@somehost
 
 ssh user@hostname <COMMAND>	#Returns command standard-out peformed on the server to the client terminal
 
-
+# Port fowarding 
 # https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot
-ssh -p 8011 -L 8080:172.20.0.1:4200 ubuntu@184.34.4.4							# ssh local port fowarding
 ssh -p <REMOTE_HOST_SSH_PORT> -L <LOCAL_PORT>:<TARGET_HOST>:<TARGET_PORT> <REMOTE_USER>@<REMOTE_HOST>	# ssh local port fowarding
-
-
+ssh -L <LOCAL_PORT>:<TARGET_HOST>:<TARGET_PORT> <REMOTE_USER>@<REMOTE_HOST>				# ssh local port fowarding
+ssh -p 8011 -L 8080:172.20.0.1:4200 ubuntu@184.34.4.4							# ssh local port fowarding
+ssh -L 80:intra.example.com:80 gw.example.com
 
 ssh -D 9000 -C ubuntu@179.32.9.6 -p 2222	# Socks proxy via ssh Dynamic tunnel setup
 ssh -D 9000 -C ubuntu@179.32.9.6 		# Socks proxy via ssh Dynamic tunnel setup
 
-
+# Copying
 scp file user@hostname:/path_on_server		#Transer file from client to server
 scp file user@hostname:				#Transer file from client to server HOME directory
 scp -P  port file user@hostname:/path_on_server	#Transer file from client to server over specific port
@@ -260,10 +261,21 @@ sshfs user@hostanme:dir_to-mount /place_to_mount_localally # Mount dir
 fusermount -u /path/to/dirMounted			   # UnmountDir
 
 
+# ssh agent
+eval `ssh-agent`				# run ssh-agent 
+echo $SSH_AGENT_SOCK				# can be used to check if agent is running 
+
+ssh-add -l					# list in memory keys (by default )
+ssh-add /path/to/private_key			# addes private key to memory, next time you peform ssh you don't need to specify key path 
+						# ssh will try and use keys that have been added to memory when attempting authT
+						# you can specify as many private keys as you want
+ssh -A user@hostanme				# forwards keys in memory to actual server, hence allowing you to use keys added via ssh-add from the machine you logged into
+
+# ssh bastian 
+
 
 ssh-keygen -R <ServerIp or HostName>		# Fixing the WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
-
-
+~.						# (tilde + period) escape from a dead ssh connection
 
 # Naming convensions
 
@@ -272,6 +284,8 @@ ssh-keygen -R <ServerIp or HostName>		# Fixing the WARNING: REMOTE HOST IDENTIFI
 
 .key --> private  key
 key.pem --> private key
+
+
 
 
 
