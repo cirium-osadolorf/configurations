@@ -499,3 +499,8 @@ https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
 == ready to go tools
 =============================
 kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # curl pod used tp trpuble shoot internal cluster
+
+
+
+
+kubectl delete all --all -n namespaceName             # delete all reousces within a specific resources
