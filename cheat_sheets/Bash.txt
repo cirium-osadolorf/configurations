@@ -271,23 +271,17 @@ ssh-add /path/to/private_key			# addes private key to memory, next time you pefo
 						# you can specify as many private keys as you want
 ssh -A user@hostanme				# forwards keys in memory to actual server, hence allowing you to use keys added via ssh-add from the machine you logged into
 
-# ssh bastian 
+# ssh bastian / jump host
+https://www.tecmint.com/access-linux-server-using-a-jump-host/
+https://smallstep.com/blog/ssh-agent-explained/
+
+ssh -J host1 host2
+ssh -J username@host1:port username@host2:port
+ssh -J username@host1:port,username@host2:port username@host3:port	# The same syntax can be used to make jumps over multiple servers.
 
 
 ssh-keygen -R <ServerIp or HostName>		# Fixing the WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
 ~.						# (tilde + period) escape from a dead ssh connection
-
-# Naming convensions
-
-.crt --> public key
-.pem --> public.key
-
-.key --> private  key
-key.pem --> private key
-
-
-
-
 
 ============ Text ============ 
 head newfile.txt		# This will display the first 10 lines of a file
