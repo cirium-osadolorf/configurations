@@ -398,15 +398,14 @@ A & B || c			#Runs either b or c if A succeed
 -x FILE - True if the FILE exists and is executable.
 
 
-
 # https://www.cyberciti.biz/faq/check-if-a-directory-exists-in-linux-or-unix-shell/
 
 test -d "DIRECTORY" && echo "Found/Exists" || echo "Does not exist"
 [ -d "DIR" ] && echo "yes" || echo "noop"
 
+# Comparison Operators
+https://tldp.org/LDP/abs/html/comparison-ops.html
 
-
-		
 ================ Permissions [ chmod ]============================
 7 == is the combination of all the numbers "Read Write Execute"
 6 == is the combination of 4 and 2 "Read and Write"
