@@ -51,6 +51,7 @@ space (after prefix)      # rearrange panes ordering
 
 
 t (after Prefix)          # show the time
+q (adter prefix)          # view pane numbering
 x (after Prefix)          # Close the current window
 d (after prefix)          # You can detach from the Tmux session and return to your normal shell
 
@@ -86,19 +87,17 @@ pg up   (while in copy mode)
 pg down (while in copy mode)
 
 
-G
+G     # can't make it work....
 g
-?     # serach for keyword keyword up wards
-/     # search for keyword downwards 
-n     # go to next
-N     # to go to previous 
+?     # can't make it work.... serach for keyword keyword up wards
+/     # can't make it work.... search for keyword downwards 
+n     # can't make it work.... go to next
+N     # can't make it work.... to go to previous 
 
 
-space + select  # select text from buffer
-w               # copy selection
-enter           # copy selection 
-
-
+space + select  # can't make it work.... select text from buffer
+w               # can't make it work.... copy selection
+enter           # can't make it work.... copy selection 
 
 ]       paste the  text
 
