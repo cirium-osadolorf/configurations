@@ -73,6 +73,10 @@ o toggle between panes
 ! break the pane out of the window
 x kill the current pane
 
+
++ zoom into therminal
+- zoom out of the terminal
+
 ################################
 # Copy mode
 ################################
