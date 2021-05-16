@@ -48,18 +48,6 @@ direction (after Prefix)  # move between panes
 
 space (after prefix)      # rearrange panes ordering
 
-z                         # toggle pane zoom, zoom into specific pane
-
-
-################################
-# TMUX and SSH
-################################
-Tmux (Local) → Ctrl+b
-Tmux (Local) inside Tmux (ssh) → Ctrl+b+b
-Tmux (Local) inside Tmux (ssh) inside Tmux (other ssh) → Ctrl+b+b+b+b
-
-
-
 
 
 t (after Prefix)          # show the time
@@ -67,10 +55,8 @@ x (after Prefix)          # Close the current window
 d (after prefix)          # You can detach from the Tmux session and return to your normal shell
 
 
-C-b ? to see a list of all available commands and start experimenting.
-
-
-C-b z: make a pane go full screen. Hit C-b z again to shrink it back to its previous size
+? (after prfix)           # to see a list of all available commands and start experimenting.
+z (after prfix)           # make a pane go full screen. Hit C-b z again to shrink it back to its previous size
 
 
 % create a horizontal pane
@@ -86,9 +72,47 @@ o toggle between panes
 ! break the pane out of the window
 x kill the current pane
 
+################################
+# Copy mode
+################################
+prefix:
+
+[       (while in copy mode) # enter copy mode
+q       (while in copy mode) # to exit copy  mode
+
+up      (while in copy mode)
+down    (while in copy mode)
+pg up   (while in copy mode)
+pg down (while in copy mode)
+
+
+G
+g
+?     # serach for keyword keyword up wards
+/     # search for keyword downwards 
+n     # go to next
+N     # to go to previous 
+
+
+space + select  # select text from buffer
+w               # copy selection
+enter           # copy selection 
+
+
+
+]       paste the  text
+
+
+################################
+# TMUX and SSH
+################################
+Tmux (Local) → Ctrl+b
+Tmux (Local) inside Tmux (ssh) → Ctrl+b+b
+Tmux (Local) inside Tmux (ssh) inside Tmux (other ssh) → Ctrl+b+b+b+b
+
 
 #############################
-# Multi-Exec 
+# Settings
 #############################
 Ctrl-b :
 
