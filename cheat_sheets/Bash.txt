@@ -289,18 +289,20 @@ tail newfile.txt		# This will display the last 10 lines of a file
 tail -f /log			# Monitor Logs in Real Time
 sudo tail -n2 -f /log		# Monitor Logs last n lines in Real Time
 
-touch file.txt			#Create blank file
-cat file.txt 			#Read file
-cat file1.txt file2.txt  	#Read files
-mkdir				#maked directory
-mkdir -p hello/no/yes/lol	#Creates cascade directories,directories inside directories
-mv file /home/fortune/holder 	#Moves the file to the specified folder*/
-mv file file2			#rename the file to hello2*/
-rm 				#remove files*/
-rm -rf folder 			#removes directoriey
-cp  file location/path		#copy a file from a location to the other
-grep  "phrase" file 		#used to look for a word or phrase in a file, it will then print the specific line  
-diff file1 file2 		#analyze the 2 files and print out any line that do not match in both files
+touch file.txt				# Create blank file
+cat file.txt 				# Read file
+cat file1.txt file2.txt  		# Read files
+mkdir					# maked directory
+mkdir -p hello/no/yes/lol		# Creates cascade directories,directories inside directories
+mv file /home/fortune/holder 		# Moves the file to the specified folder*/
+mv file file2				# rename the file to hello2*/
+rm 					# remove files*/
+rm -rf folder 				# removes directoriey
+cp  file location/path			# copy a file from a location to the other
+grep  "phrase" file 			# used to look for a word or phrase in a file, it will then print the specific line  
+grep -vE "string one|string two"	# used to exlude input lines that contain the select string
+
+diff file1 file2 			# analyze the 2 files and print out any line that do not match in both files
 diff -qr directory-1/ directory-2/ 	# returns diff between dirs, r = rescurive and q = returns only differenes
 
 ========== File Compression and Archiving  ==================
