@@ -377,6 +377,8 @@ ETCDCTL_API=3 etcdctl snapshot status -h
 
 ETCDCTL_API=3 etcdctl snapshot restore -h 
 
+ETCDCTL_API=3 etcdctl --cacert=ca.crt --cert=server.crt --key server.key endpoint health --endpoints=127.0.0.1:2379
+
 #######################################
 ## OneLiners
 ######################################
