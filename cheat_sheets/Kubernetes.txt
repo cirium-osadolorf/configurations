@@ -506,3 +506,15 @@ kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # 
 kubectl exec --stdin --tty pod_name -- /bin/bash      # sh into pod
 
 kubectl delete all --all -n namespaceName             # delete all reousces within a specific resources
+
+
+
+========================
+= Json path
+========================
+
+
+kubectl get nodes -o=jsonpath="{.items[*]['metadata.name']}"
+
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="Hostname")].address}'
