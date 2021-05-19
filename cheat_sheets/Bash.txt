@@ -1046,7 +1046,15 @@ ctrl+c 			# interupt, it will get you out of a process
 
 
 # curl
-curl -I ip_Adress # Curls the header of the target ip
+curl example.com							 
+curl -o vue-v2.6.10.js https://cdn.jsdelivr.net/npm/vue/dist/vue.js	# save output to file
+curl -O https://cdn.jsdelivr.net/npm/vue/dist/vue.js			# Uppercase -O saves the file with its original filename:
+
+curl -I <host or IP> 							# Curls the header of the target ip
+
+curl -X POST -F 'name=linuxize' -F 'email=linuxize@example.com' https://example.com/contact.php
+curl -X POST -F 'image=@/path/to/file.jpg' <host or IP>			# upload a file
+
 
 # grep
 grep -o					# -o returns the match cahraters only and not the entire line
