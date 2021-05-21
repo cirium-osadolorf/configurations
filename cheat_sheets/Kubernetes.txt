@@ -368,6 +368,35 @@ kubectl drain node02 --ignore-daemonsets --force
 
 kubcetl delete node <nodeName>
 
+
+#######################################
+## Upgrade via kubeadm
+######################################
+
+kubectl get nodes             #  return version of kubeadm of kublet in each node
+
+kubeadm upgrade plan          # on the master, returns useful info on the upgrade procedure and insturctions 
+
+1) update kubeadm
+apt-get upgrade -y kubeadm=1.12.0-00      # upgrade the package version
+kubeadm upgrade apply v1.12.0             # apply the update to the note
+                                          # pulls update images and update cluster components 
+
+2) update kublet 
+apt-get upgrade -y kubelet=1.12.0-00       # upgrade the package version 
+systectl restart kubetl                    # restart kubectl 
+kubectl get nodes                          # verify version of kublet of the node has been updated
+
+
+2) Repeat these commands for all worker nodes
+kubectl drain node-01                                  # drains pods from the node and marks the node unscheduable
+apt-get upgrade -y kubeadm=1.12.0-00                   # upgrade the package version
+kubeadm upgrade apply v1.12.0                          # apply the update to the note
+apt-get upgrade -y kubelet=1.12.0-00                   # upgrade the package version 
+kubeadm upgrade ndde config --kubelet-version v1.12.0  # upgrade node config
+systectl restart kubetl                                # restart kubectl 
+kubectl uncordon node-01                               # mark the node scheduable again 
+
 #######################################
 ## ETCD
 ######################################
