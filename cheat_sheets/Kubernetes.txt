@@ -400,6 +400,9 @@ kubectl uncordon node-01                               # mark the node scheduabl
 #######################################
 ## ETCD
 ######################################
+
+kubectl get all --all-namespeces -o yaml > all-deploy-services.yaml     # backup all services running 
+
 ETCDCTL_API=3 etcdctl snapshot save -h 
 
 ETCDCTL_API=3 etcdctl snapshot status -h 
