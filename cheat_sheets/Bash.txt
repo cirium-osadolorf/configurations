@@ -149,7 +149,13 @@ tcpdump -n -r /path/to.file.pcap | less						# read captured file
 			
 telnet {host} {port}
 
+
+
+
 nslookup <domain>		# queries DNS server and returns IP adress of a website
+				# https://help.fasthosts.co.uk/app/answers/detail/a_id/1543/~/nslookup-explained
+				
+				
 dig <domain>			# queries DNS server
 dig -4 <domain> 		# reutrns "A records" of the domain name
 
