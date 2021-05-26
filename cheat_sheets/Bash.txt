@@ -226,6 +226,19 @@ sudo usermod -a -G basket frank
 /*-g == change primary group */
 /*-G == add user to another group wihout taking him off his primary group*/
 
+============ Cryptography ============ 
+
+Symmetric 
+
+	AES (reccomended)
+	DES (Do not use this)
+
+Assymetric 
+
+	RSA with at least 2048 bits reccomended)
+	Eliptic curve  reccomended)
+
+
 ============ SSH ============ 
 #Link to ssh article:  https://www.ssh.com/ssh/keygen/
 # General  ssh things
