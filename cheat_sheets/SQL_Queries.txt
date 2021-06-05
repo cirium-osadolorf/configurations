@@ -11,7 +11,7 @@ population INTEGER,
 area INTEGER
 );
 
-=== insert into a table ====
+============ insert into a table ============
 INSERT INTO cities VALUES ('test','modena', 'Emiglia_Romagnia');
 
 INSERT INTO cities (name, country, population, area)
@@ -25,7 +25,7 @@ VALUES
 	('Sao Paulo', 'Brazil', 20935000, 3043);
 	
 
-===  Select from table  ====
+============  Select from table  ============
 SELECT * FROM cities;
 
 SELECT name,country FROM cities;
@@ -36,8 +36,6 @@ SELECT name,country FROM cities;
 SELECT name,country, population/area AS density FROM cities;	
 SELECT name,country, population*area AS density FROM cities;
 SELECT name,country, population-area AS density FROM cities;
-
-
 
 
 -- string operators
@@ -62,13 +60,13 @@ SELECT * FROM cities WHERE area NOT IN (3042, 8223);
 SELECT name, population/area AS density FROM cities WHERE population/area > 6000;
 
 
+-- update query
+
+UPDATE cities SET population=9998 WHERE name='Delhi'
 
 
-
-
-
-
-
+-- delete 
+DELETE FROM cities WHERE name='Delhi'
 
 
 #############################
