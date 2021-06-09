@@ -88,7 +88,14 @@ SELECT first_name,last_name FROM customer WHERE first_name LIKE 'Jen%';
 
 
 # Convert list of rows to string
-select string_agg(name1, ',') as Name1s from t1
+select string_agg(name1, ',') as Name1s from t1#
+
+================================
+= 3 way joins
+===============================
+
+SELECT title,name, rating FROM reviews JOIN books ON reviews.book_id = books.id 
+JOIN authors ON authors.id = reviews.reviewer_id AND authors.id=books.author_id
 
 
 #############################
