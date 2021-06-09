@@ -1075,6 +1075,8 @@ curl -X POST -F 'name=linuxize' -F 'email=linuxize@example.com' https://example.
 curl -X POST -F 'image=@/path/to/file.jpg' <host or IP>			# upload a file
 
 
+curl --cacert cacert.pem https://daniel.haxx.se				# specify the cacert
+
 # grep
 grep -o					# -o returns the match cahraters only and not the entire line
 grep -P					# perl regular experssion
