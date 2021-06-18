@@ -1126,3 +1126,9 @@ cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new 
 
 
 
+
+figlet TecMint.com	# Text Banners in Terminal
+			# https://www.tecmint.com/create-ascii-text-banners-in-linux-terminal/
+
+
+
