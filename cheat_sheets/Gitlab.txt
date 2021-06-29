@@ -1,0 +1,7 @@
+
+Password reset
+https://docs.gitlab.com/ee/security/reset_user_password.html#rake-task
+
+
+Logs
+https://docs.gitlab.com/omnibus/settings/logs.html
