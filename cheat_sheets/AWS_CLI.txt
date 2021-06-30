@@ -195,4 +195,18 @@ aws kms decrypt \
     
     
     
+=====================
+= EC2 meta-data API
+=====================
+# Run the following from ec2 instance to access Ec2 metadat info
     
+curl http://169.254.169.254/latest/meta-data/public-ipv4
+curl http://169.254.169.254/latest/meta-data/public-hostname
+
+wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
+chmod u+x ec2-metadata
+
+ec2-metadata --help
+ec2-metadata -a
+ec2-metadata -z
+ec2-metadata -s
