@@ -150,14 +150,37 @@ tcpdump -n -r /path/to.file.pcap | less						# read captured file
 telnet {host} {port}
 
 
+# Nslookup - Name Server Lookup
+nslookup <domain>					# queries DNS server and returns IP adress of a website -  will display the “A Record” (IP Address)
+							# https://www.geeksforgeeks.org/nslookup-command-in-linux-with-examples/
+nslookup 192.168.0.10 					# Reverse DNS lookup
+nslookup -type=any google.com
+nslookup -type=soa redhat.com
+nslookup -type=ns google.com
+nslookup -type=a google.com
+nslookup -type=mx google.com
+nslookup -type=txt google.com
 
+# DIG - Domain Information Groper
+dig							# return root servers	
+							# https://phoenixnap.com/kb/linux-dig-command-examples
+dig <domain>						# perform a DNS lookup on domain name
+dig -4 <domain> 					# returns "A records" of the domain name
+dig @8.8.8.8 google.com					# Use the following command to specifya custom domain server
+dig google.com MX					# (Query MX records
+dig hostinger.com txt 					# (Query TXT record)
+dig hostinger.com cname 				# (Query CNAME record)
+dig hostinger.com ns 					# (Query NS record)
+dig hostinger.com A 					# (Query A record)
+dig google.com ANY					# returns all of the results of the query
 
-nslookup <domain>		# queries DNS server and returns IP adress of a website
-				# https://help.fasthosts.co.uk/app/answers/detail/a_id/1543/~/nslookup-explained
-				
-				
-dig <domain>			# queries DNS server
-dig -4 <domain> 		# reutrns "A records" of the domain name
+dig google.com +short					# return only ip address of the hostname 
+dig google.com +trace					# sts each different server the query goes through to its final destination. 
+							# Use this command option to identify the IP address where traffic is dropping
+
+dig -x 172.217.14.238					# Rever DNS lookup -  look up a domain name by its IP address
+
+	
 
 sudo dhclient -r		# release ip address 
 sudo dhclient 			# restarts dhc client 
