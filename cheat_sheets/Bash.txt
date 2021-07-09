@@ -180,7 +180,7 @@ dig google.com +trace					# sts each different server the query goes through to 
 
 dig -x 172.217.14.238					# Rever DNS lookup -  look up a domain name by its IP address
 
-	
+ dig +trace www.example.com				# trace dig 	
 
 sudo dhclient -r		# release ip address 
 sudo dhclient 			# restarts dhc client 
