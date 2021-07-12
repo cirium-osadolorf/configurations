@@ -110,6 +110,16 @@ nc localhost 2399		# Client side - client communicate to server on selected port
 nc -l 2399 Hello Server		# Server sidee	- Server listens on selected port with message
 nc localhost 2399 Hello Server	# Client side - client sends message to server over specfific port
 
+nc -z -v site.com		# run a basic port scan of the specified website or server. Netcat will return verbose results with lists of ports and statuses. 
+
+nc -v -n 8.8.8.8 1-1000		# basic port scan command for an IP ncat address
+
+nc -zv site.com 80 		# – scan a single port
+nc -zv hostname.com 80 84 	# – scan a set of individual ports
+nc -zv site.com 80-84 		# – scan a range of port
+
+
+
 
 # tcpdump
 tcpdump -h 	# returns version 
