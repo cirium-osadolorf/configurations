@@ -53,6 +53,8 @@ kubectl get roles,rolebindings --namespace ingress-space # query multiple resour
 ########################
 # kubeconfig
 ########################
+kubectl cluster-info                                        # useful to run this after you setup the kubeconfig file, can debug error with this
+
 kubectl config view                                     # returns brief configuration of your cluster. clusater contexts, users and default context
 kubectl config view --kubeconfig=/root/my-kube-config   # view kubeconfig from specific source                                           
       
