@@ -27,6 +27,7 @@ openssl pkcs12 -info -in keyStore.p12             # Check a PKCS#12 file (.pfx o
 = Common terms 
 ================================
 # https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm
+# https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file
 
 CSR: Certificate Signing Request
 SHA: Secure Hash Algorithm
@@ -37,6 +38,7 @@ X.509: is a standard defining the format of public-key certificates. X.509 certi
 DER: Distinguished Encoding Rules
 PEM: Privacy Enhanced Mail
 PKCS: Public-Key Cryptography Standards
+
 
 
 =======================================
