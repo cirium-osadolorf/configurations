@@ -90,8 +90,16 @@
 
                 
 /proc/sys/net/ipv4/ip_forward    # value in this file is either 0 (Deny) or 1(allow)
-                                 # allow ip fowarding,
-                                 # allow device A to ping Device B trough this machine nics
+                                 # 1 allow IP fowarding,
+                                 # For example allow device A to ping Device B trough this machine nics
+                                 # changes to this file will not persit reboot
+                                 
+/etc/sysctl.conf                 # config file that can be used to make IP fowarding change persist though reboot --> net.ipv4.icmp_echo_ignore_all = 1
+                                 # https://linoxide.com/linux-sysctl-tuning/
+/etc/nsswitch.conf               # used by the GNU C Library and certain other applications to determine the sources 
+                                 # from which to obtain  name-service information in a range of categories, and in what order.
+                                 # you can change order of name resolution/DNS 
+                                 # for example files (/etc/host) and DNS. By default the /etc/hosts file is lookedup prior to making a DNS call
           
  /opt/cni/bin                     # PATH TO ALL suported cni plugins         
  /etc/cni/net.d                   # path to cni that kubelet will use
