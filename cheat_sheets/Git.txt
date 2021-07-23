@@ -106,6 +106,13 @@ git diff --cached myfile.txt        # for stagesd files
 git diff origin/master              # diff comperaed to master
 git diff -w origin/master           # run git diff and ignore-all-space changes
 
+============== Stashing =========================
+
+git stash save "changes on new-branch"          # Instead of committing your changes or reverting, you can stash them
+git checkout new-branch
+git stash pop                                   # Your changes will be put back and you can continue what you were doing initially.
+git stash list                                  # You can stack several changes and check the current stash stack using:
+git stash pop "stash@{1}"                       # You can also unstash a specific stash by using
 
 
 ============== Cloning and Pushing =========================
