@@ -51,6 +51,8 @@ git add -p                   # Interactively choose hunks of patch between the i
                              
 git reset <file>             # unstage stage file - ungo git add on file
 git reset                    # unstage all changes - undo last git add
+
+git reset --soft HEAD~1      # undo last commit 
                              
 git status                   # returns items in staging area
 git status -v                # returns items with a verbose output, changes included
