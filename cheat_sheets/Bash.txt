@@ -628,6 +628,8 @@ du -shm /home/tecmint	# returns size of a folder in MB
 	-h 		# How to view disk usage in human readable format
 	-s 		# size
 	-r		# sort by file or folder size
+	
+du -sh /var/lib/docker/* | sort -rh	# return size and sort
 
 # Monitor Progress of Copy Command
 cp ubuntu-15.10-desktop-amd64.iso /home/tecmint/ &			# Copy with this conmmand
