@@ -118,27 +118,26 @@ Other Modules
 ===================================================================
 # Ansible-playbook
 ===================================================================
+# https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
+
 ansible-playbook  -h
 ansible-playbook --help
 
+ansible-playbook main.yml
 
-ansible-galaxy init <reoleName>       # create ansible role directore structure
-ansible-galaxy list                   # lists roles
-
-ansible-galaxy install <roleName>                               # pulls role from ansible galaxy into default role path
-ansible-galaxy install <roleName>  -p .roles                    # pullls role from ansible galaxy to specified path
-ansible-galaxy install --roles-path ~/ansible-roles debops.apt
-
-ansible-config dump | grep ROLE               # view where role default path is
 
 ===================================================================
-# Ansible Galaxy 
+# Ansible Galaxy  | Ansible Roles
 ===================================================================
 # https://galaxy.ansible.com/docs/using/installing.html
 
+ansible-config dump | grep ROLE                                           # view where role default path is
+
+ansible-galaxy init <reoleName>                                           # create ansible role directore structure
+ansible-galaxy list                                                          # lists roles
+
 ansible-galaxy install <reoleName>                                         #  download roles from the Galaxy serve
 ansible-galaxy install --roles-path ~/ansible-roles <reoleName>            #  override the default path where ansible stores roles
-
 
 ansible-galaxy install geerlingguy.apache,v1.0.0                           # download role with specific tag version 
 
