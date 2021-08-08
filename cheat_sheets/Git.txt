@@ -108,6 +108,16 @@ git diff --cached myfile.txt        # for stagesd files
 git diff origin/master              # diff comperaed to master
 git diff -w origin/master           # run git diff and ignore-all-space changes
 
+
+
+git diff tag1 tag2                  # compare diff between 2 tags
+git log tag1..tag2                  # show logs between 2 tags
+
+git diff tag1 tag2 --stat               # sometimes it may be convenient to see only the list of files that were changed
+git diff tag1 tag2 -- some/file/name    # and then look at the differences for some particular file
+
+
+
 ============== Stashing =========================
 
 git stash save "changes on new-branch"          # Instead of committing your changes or reverting, you can stash them
