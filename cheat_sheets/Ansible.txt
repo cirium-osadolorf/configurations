@@ -115,12 +115,6 @@ Other Modules
 
 
 
-
-
-
-
-
-
 ===================================================================
 # Ansible-playbook
 ===================================================================
@@ -137,8 +131,18 @@ ansible-galaxy install --roles-path ~/ansible-roles debops.apt
 
 ansible-config dump | grep ROLE               # view where role default path is
 
+===================================================================
+# Ansible Galaxy 
+===================================================================
+# https://galaxy.ansible.com/docs/using/installing.html
+
+ansible-galaxy install <reoleName>                                         #  download roles from the Galaxy serve
+ansible-galaxy install --roles-path ~/ansible-roles <reoleName>            #  override the default path where ansible stores roles
 
 
+ansible-galaxy install geerlingguy.apache,v1.0.0                           # download role with specific tag version 
+
+ansible-galaxy install -r requirements.yml                                 # Multiple roles can be installed by listing them in a requirements.yml file. 
 
 
 
