@@ -34,6 +34,19 @@ vault secrets enable -path=<secret_path> <secret_engine>      # Create secret pa
 vault secrets enable -path=my_key_values kv                   # Create secret path for a specific engine 
 vault secrets disable my_key_values                           # Disbale secret path
 
+
+# KV
+
+vault kv put <secret_path>/<secret_name> <key>=<value>        # Create kv secret
+vault kv get <secret_path>/<secret_name>                      # Get kv secret
+vault kv delete <secret_path>/<secret_name>                   # Delete kv secret
+
+vault secrets enable -path=my_secrets kv                      # Enable kv secret path
+vault kv put my_secrets/db password=root99                    # Create kv secret
+vault kv get my_secrets/db                                    # Get kv secret
+vault kv delete my_secrets/db                                 # Delete kv secret
+
+
 vault kv put secret/password value=itsasecret
 
 https://www.vaultproject.io/docs/commands
