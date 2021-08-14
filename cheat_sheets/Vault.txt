@@ -6,7 +6,10 @@ consul kv delete -recurse vault/
 sudo systemctl start vault
 vault operator init 
 
-# Starting 
+==============================
+= Starting  
+==============================
+
 vault operator init                     # Initialize vault server 
                                         # returns 5  unseal keys - any 3 of these can be used to unseal the vault server 
                                         # return initial root token
@@ -22,10 +25,14 @@ vault operator unseal key12
 vault login                             # authenticates users or machines to Vault using the provided arguments 
                                         # prompots you to insert a vault token
 
+==============================
+= Working with secrets  
+==============================
+vault secrets list                      # list secrets 
 
-
-
-
+vault secrets enable -path=<secret_path> <secret_engine>      # Create secret path for a specific engine 
+vault secrets enable -path=my_key_values kv                   # Create secret path for a specific engine 
+vault secrets disable my_key_values                           # Disbale secret path
 
 vault kv put secret/password value=itsasecret
 
