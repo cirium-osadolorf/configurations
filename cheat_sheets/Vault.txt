@@ -46,7 +46,23 @@ vault kv put my_secrets/db password=root99                    # Create kv secret
 vault kv get my_secrets/db                                    # Get kv secret
 vault kv delete my_secrets/db                                 # Delete kv secret
 
+==============================
+= Authentication  
+==============================
+# Token
+vault token create                                            # crate token
+vault token revoke <token>                                    # revoke token
 
-vault kv put secret/password value=itsasecret
+# User and password
+vault auth enable userpass                                    # enable userpass auth
+vault auth disable userpass                                   # disable userpass auth
+
+vault write auth/userpass/users/mitchellh password=foo        # create user password 
+
+vault login -method=userpass username=mitchellh               # authenticate via user passwor authT
+
+==============================
+= Extra  
+==============================
 
 https://www.vaultproject.io/docs/commands
