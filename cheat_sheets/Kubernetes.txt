@@ -232,6 +232,10 @@ kubectl get secret <name> -o yaml
 kubectl edit ingress            # Edit the ingress rules:
 kubectl describe ingress        # View the existing ingress rules:
 
+
+kubectl create ingress <ingress-name> --rule="host/path=service:port"
+kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80"
+
 #######################################
 ## Labels
 ######################################
@@ -540,6 +544,9 @@ kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # 
 kubectl exec --stdin --tty pod_name -- /bin/bash      # sh into pod
 
 kubectl delete all --all -n namespaceName             # delete all reousces within a specific resources
+
+
+
 
 
 
