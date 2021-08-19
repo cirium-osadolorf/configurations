@@ -24,6 +24,8 @@ vault operator unseal key12
 
 vault login                             # authenticates users or machines to Vault using the provided arguments 
                                         # prompots you to insert a vault token
+                                        
+vault login token                       # Not secure, cause the token is left in the history
 
 ==============================
 = Working with secrets  
@@ -52,6 +54,9 @@ vault kv delete my_secrets/db                                 # Delete kv secret
 # Token
 vault token create                                            # crate token
 vault token revoke <token>                                    # revoke token
+vault token create -policy="policy_name"                      # create a token with a policy attached
+vault token capabilities <secret_path/something/ok>            # returns the capabilities the vault token has over that path 
+
 
 # User and password
 vault auth enable userpass                                    # enable userpass auth
@@ -60,6 +65,16 @@ vault auth disable userpass                                   # disable userpass
 vault write auth/userpass/users/mitchellh password=foo        # create user password 
 
 vault login -method=userpass username=mitchellh               # authenticate via user passwor authT
+
+
+==============================
+= Policy
+==============================
+vault policy write <policy_name> policy_name.hcl              # add policy to vault
+
+
+
+
 
 ==============================
 = Extra  
