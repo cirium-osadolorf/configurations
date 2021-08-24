@@ -13,3 +13,15 @@ https://forum.gitlab.com/t/how-do-i-change-my-profile-to-admin/35888
 
 sidekiq
 https://docs.bitnami.com/bch/apps/gitlab/administration/control-server/
+
+
+
+
+sudo gitlab-ctl reconfigure       #reconfigure gitlab, use this after ocnfigure gitlab config file
+
+sudo sudo gitlab-ctl restart      # Restart all GitLab components:
+sudo gitlab-ctl stop              # stop 
+sudo gitlab-ctl start             # start 
+
+
+
