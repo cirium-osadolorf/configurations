@@ -5,3 +5,7 @@ https://docs.gitlab.com/ee/security/reset_user_password.html#rake-task
 
 Logs
 https://docs.gitlab.com/omnibus/settings/logs.html
+
+
+Turn user to admin
+https://forum.gitlab.com/t/how-do-i-change-my-profile-to-admin/35888
