@@ -35,6 +35,7 @@ vault secrets list                      # list secrets
 vault secrets enable -path=<secret_path> <secret_engine>      # Create secret path for a specific engine 
 vault secrets enable -path=my_key_values kv                   # Create secret path for a specific engine 
 vault secrets disable my_key_values                           # Disbale secret path
+                                                              # When a secrets engine is disabled, all secrets are revoked and the corresponding Vault data and configuration is removed.
 
 
 # KV
