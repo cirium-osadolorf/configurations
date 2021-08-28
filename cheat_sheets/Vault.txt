@@ -85,36 +85,39 @@ vault list auth/{auth_method}/role                            # list roles
 
 # Check if vault has been Initialize 
 curl -s -H 'Accept: application/json' \
--H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+-H "Authorization: Bearer ${TOKEN}" \
 https://vault.development-aws.fortunetech.dev/v1/sys/init | jq '.'
+
+# Enable secret path 
+vault secrets enable -path=/fortune_secrets/db kv
 
     
 # Post secret
 curl -s \
-    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    -H "Authorization: Bearer ${TOKEN}" \
     -H "Content-Type: application/json" \
     -X POST \
-    -d '{"value":"bar"}' \
-    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    -d '{"password":"secure222"}' \
+    https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds | jq '.'
     
     
 # Get secret 
 curl -s -H 'Accept: application/json' \
-    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
-    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    -H "Authorization: Bearer ${TOKEN}" \
+    https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds| jq '.'
     
     
 # Delete secret 
 curl -s -H 'Accept: application/json' \
-    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    -H "Authorization: Bearer ${TOKEN}" \
     --request DELETE \
-    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds | jq '.'
 
 # List secrets 
 curl -s -H 'Accept: application/json' \
-    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    -H "Authorization: Bearer ${TOKEN}" \
     -X LIST \
-    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/ | jq '.'
 
 
 
