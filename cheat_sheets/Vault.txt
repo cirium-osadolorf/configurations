@@ -82,6 +82,7 @@ vault list auth/{auth_method}/role                            # list roles
 =============================
 # DO NOT ACCESS API via HTTP, TLS should be enabled
 # https://www.vaultproject.io/api
+# https://www.vaultproject.io/api/system/internal-specs-openapi
 
 # Check if vault has been Initialize 
 curl -s -H 'Accept: application/json' \
