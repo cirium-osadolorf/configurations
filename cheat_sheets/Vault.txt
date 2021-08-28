@@ -77,6 +77,45 @@ vault policy write <policy_name> policy_name.hcl              # add policy to va
 vault list auth/{auth_method}/role                            # list roles
 
 
+=============================
+= API
+=============================
+# DO NOT ACCESS API via HTTP, TLS should be enabled
+# https://www.vaultproject.io/api
+
+# Check if vault has been Initialize 
+curl -s -H 'Accept: application/json' \
+-H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+https://vault.development-aws.fortunetech.dev/v1/sys/init | jq '.'
+
+    
+# Post secret
+curl -s \
+    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    -H "Content-Type: application/json" \
+    -X POST \
+    -d '{"value":"bar"}' \
+    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    
+    
+# Get secret 
+curl -s -H 'Accept: application/json' \
+    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+    
+    
+# Delete secret 
+curl -s -H 'Accept: application/json' \
+    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    --request DELETE \
+    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+
+# List secrets 
+curl -s -H 'Accept: application/json' \
+    -H "Authorization: Bearer f3b09679-3001-009d-2b80-9c306ab81aa6" \
+    -X LIST \
+    https://vault.development-aws.fortunetech.dev/v1/api-test/test/my_secret | jq '.'
+
 
 
 ==============================
