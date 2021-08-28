@@ -92,7 +92,7 @@ https://vault.development-aws.fortunetech.dev/v1/sys/init | jq '.'
 vault secrets enable -path=/fortune_secrets/db kv
 
     
-# Post secret
+# Creating a secret
 curl -s \
     -H "Authorization: Bearer ${TOKEN}" \
     -H "Content-Type: application/json" \
@@ -101,24 +101,57 @@ curl -s \
     https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds | jq '.'
     
     
-# Get secret 
+# Getting a secret 
 curl -s -H 'Accept: application/json' \
     -H "Authorization: Bearer ${TOKEN}" \
     https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds| jq '.'
     
     
-# Delete secret 
+# Deleting a secret 
 curl -s -H 'Accept: application/json' \
     -H "Authorization: Bearer ${TOKEN}" \
     --request DELETE \
     https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/creds | jq '.'
 
-# List secrets 
+# Listing secrets 
 curl -s -H 'Accept: application/json' \
     -H "Authorization: Bearer ${TOKEN}" \
     -X LIST \
     https://vault.development-aws.fortunetech.dev/v1/fortune_secrets/db/ | jq '.'
+    
+    
+    
+# Creating a Token 
+cat << EOF > payload.json
+{
+   "policies":[
+      "root"
+   ],
+   "meta":{
+      "user":"test-user"
+   },
+   "ttl":"lh",
+   "renewable":true
+}
+EOF
 
+curl -s \
+    -H "Authorization: Bearer ${TOKEN}" \
+    -H "Content-Type: application/json" \
+    -X POST \
+    -d @payload.json \
+    https://vault.development-aws.fortunetech.dev/v1/auth/token/create | jq '.'
+    
+    
+    
+# Get metadata info about your token 
+curl -s \
+    -H "Authorization: Bearer ${TOKEN}" \
+    -H "Content-Type: application/json" \
+    https://vault.development-aws.fortunetech.dev/v1/auth/token/lookup-self | jq '.'
+    
+    
+# Creating a policy
 
 
 ==============================
