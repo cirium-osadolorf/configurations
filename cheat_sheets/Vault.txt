@@ -82,7 +82,7 @@ vault list auth/{auth_method}/role                            # list roles
 =============================
 # DO NOT ACCESS API via HTTP, TLS should be enabled
 # https://www.vaultproject.io/api
-# https://www.vaultproject.io/api/system/internal-specs-openapi
+# Check the sidebar
 
 # Check if vault has been Initialize 
 curl -s -H 'Accept: application/json' \
@@ -152,8 +152,6 @@ curl -s \
     https://vault.development-aws.fortunetech.dev/v1/auth/token/lookup-self | jq '.'
     
     
-# Creating a policy
-
 
 ==============================
 = Extra  
