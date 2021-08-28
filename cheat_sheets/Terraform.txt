@@ -32,3 +32,6 @@ terraform workspace select prod
 
 
 
+terraform force-unlock -force 9db590f1-b6fe-c5f2-2678-8804f089deba                  # remove lock from state - USE this with caution
+
+
