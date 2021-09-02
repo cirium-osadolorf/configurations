@@ -24,4 +24,7 @@ sudo gitlab-ctl stop              # stop
 sudo gitlab-ctl start             # start 
 
 
+# Managing Sifekiq, gitlab 
+
+https://docs.bitnami.com/bch/apps/gitlab/administration/control-server/
 
