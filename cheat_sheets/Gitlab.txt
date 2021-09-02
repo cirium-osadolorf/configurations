@@ -25,6 +25,8 @@ sudo gitlab-ctl start             # start
 
 
 # Managing Sifekiq, gitlab 
-
 https://docs.bitnami.com/bch/apps/gitlab/administration/control-server/
+
+# Gitlab give user admin rights 
+https://forum.gitlab.com/t/how-do-i-change-my-profile-to-admin/35888/3
 
