@@ -1,3 +1,5 @@
+explorer .										# git bash open file explorer
+
 =========== Networking  ==================
 # apt install iproute2 net-tools
 
