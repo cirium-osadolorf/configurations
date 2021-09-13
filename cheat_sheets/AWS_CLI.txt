@@ -2,6 +2,16 @@
 # http://skillslane.com/aws-tutorial-vpc-launch-instance-cli/
 # https://github.com/rajivkanaujia/alphaworks/wiki/Installing-AWS-CLI-via-pip3-and-python3
 
+
+=============================================================================
+= ENV variables 
+=============================================================================
+
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-west-2
+export AWS_SESSION_TOKEN=
+
 =================================================================
 Configuration
 =================================================================
@@ -27,6 +37,11 @@ aws sts get-caller-identity
 IAM
 =================================================================
 
+=================================================================
+STS
+=================================================================
+ aws sts assume-role --role-arn arn:aws:iam::822304886948:role/test_aws_backup --role-session-name test_user --profile test_user
+ 
 =================================================================
 Availability zones
 =================================================================
