@@ -7,10 +7,13 @@
 = ENV variables 
 =============================================================================
 
-export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
-export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-export AWS_DEFAULT_REGION=us-west-2
-export AWS_SESSION_TOKEN=
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
+
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE                      # access key
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI..                       # secret access key
+export AWS_DEFAULT_REGION=us-west-2                                # region
+export AWS_SESSION_TOKEN=                                          # STS token 
+export AWS_DEFAULT_PROFILE=<USER>                                  # Set default aws profile
 
 =================================================================
 Configuration
@@ -24,8 +27,6 @@ aws configure --profile  user2
 aws ec2 describe-instances
 aws ec2 describe-instances --profile user2
 
-# Set default aws profile
-export AWS_DEFAULT_PROFILE=<USER>
 
 # List of configured profiles
 cat  ~/.aws/credentials | grep "\["
