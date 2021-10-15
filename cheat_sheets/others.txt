@@ -64,3 +64,5 @@ Ctrl+Alt+L          # format code
 
 
 Ctrl+Shift+A        # Find a command and execute it, open a tool window or search for a setting.
+
+Ctrl+Shift+R       # search and replace all instance of the word x
