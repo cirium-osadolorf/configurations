@@ -207,8 +207,10 @@ aws kms decrypt \
     --query Plaintext | base64 --decode > decryptedplans.txt
     
                                                            # can ommit profile flag if not needed
-
-    
+========================
+= SSM session manager
+=======================
+aws ssm describe-instance-information
     
 =====================
 = SSM parameters
