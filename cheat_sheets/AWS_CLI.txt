@@ -211,6 +211,9 @@ aws kms decrypt \
 = SSM session manager
 =======================
 aws ssm describe-instance-information
+
+aws ssm start-session \
+    --target instance-id
     
 =====================
 = SSM parameters
