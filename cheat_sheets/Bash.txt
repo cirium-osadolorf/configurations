@@ -997,6 +997,16 @@ find . -perm 777 			# find all files with specific permission
 # exec
 # used to peform action on returned results
 
+=================================================
+===== Background (bg) and Foreground (fg)
+=================================================
+
+ctrl+z 			# sends process to the backgound, useful for things like vim and htop
+sleep 20 &		# sends process to the backround 
+			
+jobs			# list background processes with their ids
+fg 			# bring backgound process to the front (must recent one)
+fg job_id		# bring up specific backgound job
 
 ####################################
 #### EXTRA
