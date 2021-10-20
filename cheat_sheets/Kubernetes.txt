@@ -206,6 +206,12 @@ kubectl create configmap
 kubectl create configmap <name> --from-literal=APP_COLOR=blue                               # create config map with key value
 kubectl create configmap <name> --from-literal=APP_COLOR=blue --from-literal=APP_MODE=lazy  # create config map with keys/values
 
+
+# dry run examples
+kubectl create configmap --dry-run=client somename --from-file=./conf/nginx.conf --output yaml
+kubectl create configmap --dry-run=client somename --from-file=./conf/nginx.conf --output yaml | tee somename.yaml
+
+
 #######################################
 ## Secrets
 ######################################
