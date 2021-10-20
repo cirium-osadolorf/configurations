@@ -1081,9 +1081,12 @@ cat /etc/passwd | grep rob   # rather than doinf this do the commnad below
 grep rob /etc/passwd	     # clener and more optimal command than the one above
 
 ==================File manipulation===================
+# https://victoria.dev/blog/how-to-replace-a-string-with-sed-in-current-and-recursive-subdirectories/
 
 sed -i -e 's/sudo//g'  <fileName>		# removes instace of word in file
 sed -i -e 's/\(sudo\|-E\)//g' <fileName>	# remove instaces of different words in a file
+
+
 
 
 ================== Shell Expansion ==================
