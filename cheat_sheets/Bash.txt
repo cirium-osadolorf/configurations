@@ -453,6 +453,38 @@ A & B || c			#Runs either b or c if A succeed
 -w FILE - True if the FILE exists and is writable.
 -x FILE - True if the FILE exists and is executable.
 
+   -a file
+          True if file exists.
+   -b file
+          True if file exists and is a block special file.
+   -c file
+          True if file exists and is a character special file.
+   -d file
+          True if file exists and is a directory.
+   -e file
+          True if file exists.
+   -f file
+          True if file exists and is a regular file.
+   -g file
+          True if file exists and is set-group-id.
+   -h file
+          True if file exists and is a symbolic link.
+   -k file
+          True if file exists and its ``sticky'' bit is set.
+   -p file
+          True if file exists and is a named pipe (FIFO).
+   -r file
+          True if file exists and is readable.
+   -s file
+          True if file exists and has a size greater than zero.
+   -t fd  True if file descriptor fd is open and refers to a terminal.
+   -u file
+          True if file exists and its set-user-id bit is set.
+   -w file
+          True if file exists and is writable.
+   -x file
+          True if file exists and is executable.
+
 
 # https://www.cyberciti.biz/faq/check-if-a-directory-exists-in-linux-or-unix-shell/
 
