@@ -216,6 +216,10 @@ aws ssm start-session \
     --target instance-id
     
  aws ssm send-command     --instance-ids "i-0253d456b7282573a"     --document-name "AWS-RunShellScript"     --comment "IP config"     --parameters commands="touch /tmp/test"     --output text
+ 
+ 
+ 
+ sudo -H -u ubuntu bash -c 'grep -q haha /tmp/authorized_keys || echo haha >>  /tmp/authorized_keys'
     
 =====================
 = SSM parameters
