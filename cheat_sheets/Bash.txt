@@ -989,6 +989,7 @@ sudo swapon --show	# return swap location
 == Find
 =================================
 https://www.tecmint.com/35-practical-examples-of-linux-find-command/amp/
+https://unix.stackexchange.com/questions/12902/how-to-run-find-exec
 
 # type
 find .					# finds all files and dir below current directory
