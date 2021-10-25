@@ -221,3 +221,35 @@ scenario:
     - cleanup
     - destroy
 
+
+=========================================================================
+= SSH Pipelining 
+=========================================================================
+
+Instead of copying files, running them on the remote server, then removing them,
+the ‘pipelining’ method of OpenSSH transfer will send and execute commands for
+most Ansible modules directly over the SSH connection.
+Chapter 3 - Ad-Hoc Commands 45
+This method of connection can be enabled by adding pipelining=True under the
+[ssh_connection] section of the Ansible configuration file (ansible.cfg, which will
+be covered in more detail later).
+The pipelining=True configuration option won’t help much unless
+you have removed or commented the Defaults requiretty option in
+/etc/sudoers. This is commented out in the default configuration for most
+OSes, but you might want to double-check this setting to make sure you’re
+getting the fastest connection possible!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
