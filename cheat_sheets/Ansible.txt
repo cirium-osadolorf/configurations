@@ -104,6 +104,15 @@ Controlling Daemons with the Service Module
 ansible -i inv remote -b -m service -a "name=nginx state=started enabled=yes"
 
 ===================================================================
+Other flags 
+===================================================================
+
+ ansible multi -b -k -m yum -a "name=chrony state=present"           # -b --> become, run command with sudo
+                                                                     # -k --> if you’re running commands against a server where your user account 
+                                                                               requires a password for privilege escalation, pass in -K (alias for --ask-become-pass)
+ 
+
+===================================================================
 Other Modules
 ===================================================================
 # ansible-doc -l
