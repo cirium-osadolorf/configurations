@@ -287,3 +287,18 @@ stat          https://docs.ansible.com/ansible/latest/collections/ansible/builti
 
 raw?
 script?
+
+
+
+• If the play fails on a particular host (or all hosts) before handlers are notified,
+the handlers will never be run. If it’s desirable to always run handlers, even
+after the playbook has failed, you can use the meta module as described
+above as a separate task in the playbook, or you use the command line flag
+--force-handlers when running your playbook. Handlers won’t run on any
+hosts that became unreachable during the playbook’s run
+
+
+
+
+
+
