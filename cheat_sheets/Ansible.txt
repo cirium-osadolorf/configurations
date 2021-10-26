@@ -283,3 +283,7 @@ scenario:
 
 pre_tasks
 post_tasks
+stat          https://docs.ansible.com/ansible/latest/collections/ansible/builtin/stat_module.html
+
+raw?
+script?
