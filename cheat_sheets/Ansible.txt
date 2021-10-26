@@ -302,3 +302,4 @@ hosts that became unreachable during the playbook’s run
 
 
 
+Per-task environment variables
