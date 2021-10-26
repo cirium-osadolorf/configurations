@@ -171,6 +171,7 @@ ansible-playbook playbook.yml --limit xyz.example.com                     # limi
 
 ansible-playbook playbook.yml --list-hosts                               # see a list of hosts that would be affected by your playbook before you actually run it
 
+ansible-playbook example.yml --extra-vars "foo=bar"                      # running ansible playbook with cli vars
 
 
 
