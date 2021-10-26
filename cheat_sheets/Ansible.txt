@@ -178,13 +178,14 @@ ansible-playbook playbook.yml --user=johndoe
 
 ansible-playbook playbook.yml --become --become-user=janedoe --ask-become-pass
 
-# Extra vars 
---inventory=PATH 
---verbose (-v)
---extra-vars=VARS (-e VARS):
---forks=NUM (-f NUM)
- --check
-
+# Extra tags 
+--inventory=PATH                # Define a custom inventory file (default is the default Ansible inventory file, usually located at /etc/ansible/hosts).
+--verbose (-v)                  # versbose mode, can go up to vvv
+--extra-vars=VARS (-e VARS):    # Define variables to be used in the playbook, in "key=value,key=value" format.
+--forks=NUM (-f NUM)            # Default is 5
+--check                         # Dry run playbook
+--become-user                   # Define the sudo user for tasks run via sudo (the default is root) 
+--ask-become-pass               # used for password base AuthT
 
 ===================================================================
 # Ansible Galaxy  | Ansible Roles
