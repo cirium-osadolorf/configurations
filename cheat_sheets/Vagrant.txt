@@ -35,6 +35,7 @@ vagrant global-status            # returns the state of the machine present in t
 vagrant status <hostname>        # returns state of the specified vm
 vagrant global-status --prune    # clear status log
 vagrant provision                # runs any configured provisioners
+vagrant up --color  --provision  # runs any configured provisioners with color
 vagrant box add ubuntu/bionic64  # add box localy
 
 vagrant port                     # returns port mapping
