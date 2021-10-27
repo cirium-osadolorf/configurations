@@ -454,6 +454,9 @@ kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record
 kubectl --record <changes you making> set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1     
                                                                   # It'll record your changes for a given deployment. - Later you can rollback using revision number if needed.
 
+
+kubectl edit deployment/name --record=true                        # edit and save record hisotry 
+
 -- service
 # EXPSOE = This will automatically use the pod's labels as selectors but  cannot accept a node port
 kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml
