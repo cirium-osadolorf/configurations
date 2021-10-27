@@ -164,6 +164,10 @@ kubectl rollout undo deployment/my-first-deployment
 # Rollback Deployment to Specific Revision
 kubectl rollout undo deployment/my-first-deployment --to-revision=3
 
+# Rolling Restarts - Rolling restarts will kill the existing pods and recreate new pods in a rolling fashion.
+kubectl rollout restart deployment/<Deployment-Name>
+kubectl rollout restart deployment/my-first-deployment
+
 #######################################
 ## namespaces
 ######################################
