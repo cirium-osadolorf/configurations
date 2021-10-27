@@ -140,6 +140,30 @@ kubcetl rollout status deployment/<name>    # return staus of rollout
 kubectl rollout undo deployment/<name>      # roll bacl to previous deployment version
 
 
+# Check the Rollout History of a Deployment
+kubectl rollout history deployment/<Deployment-Name>
+kubectl rollout history deployment/my-first-deployment  
+
+# Edit Deployment
+kubectl edit deployment/<Deployment-Name> --record=true
+kubectl edit deployment/my-first-deployment --record=true
+
+# Verify Rollout Status 
+kubectl rollout status deployment/my-first-deployment
+
+
+# List Deployment History with revision information
+kubectl rollout history deployment/my-first-deployment --revision=1
+kubectl rollout history deployment/my-first-deployment --revision=2
+kubectl rollout history deployment/my-first-deployment --revision=3
+
+
+# Undo Deployment - roll back to previous revision 
+kubectl rollout undo deployment/my-first-deployment                    
+
+# Rollback Deployment to Specific Revision
+kubectl rollout undo deployment/my-first-deployment --to-revision=3
+
 #######################################
 ## namespaces
 ######################################
