@@ -168,6 +168,14 @@ kubectl rollout undo deployment/my-first-deployment --to-revision=3
 kubectl rollout restart deployment/<Deployment-Name>
 kubectl rollout restart deployment/my-first-deployment
 
+
+
+# Pause/Resume the Deployment
+# https://github.com/stacksimplify/kubernetes-fundamentals/tree/master/04-Deployments-with-kubectl/04-04-Pause-and-Resume-Deployment
+kubectl rollout pause deployment/<Deployment-Name>
+kubectl rollout pause deployment/my-first-deployment
+kubectl rollout resume deployment/my-first-deployment
+
 #######################################
 ## namespaces
 ######################################
