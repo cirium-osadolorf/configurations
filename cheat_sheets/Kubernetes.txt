@@ -459,6 +459,17 @@ ETCDCTL_API=3 etcdctl snapshot restore -h
 
 ETCDCTL_API=3 etcdctl --cacert=ca.crt --cert=server.crt --key server.key endpoint health --endpoints=127.0.0.1:2379
 
+
+
+========================
+= Json path
+========================
+
+kubectl get nodes -o=jsonpath="{.items[*]['metadata.name']}"
+
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="Hostname")].address}'
+
 #######################################
 ## OneLiners
 ######################################
@@ -568,9 +579,9 @@ kubectl delete pvc --all  --all-namespaces            # delete all pvcs
 # kubectl apply on all files in a dir
 kubectl apply -f <folder> 
 
-############################
-# ETCD Backup and Restore
-############################
+=====================================
+= ETCD Backup and Restore
+=====================================
 https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md
 
 =====================================
@@ -595,12 +606,19 @@ kubectl delete all --all -n namespaceName             # delete all reousces with
 
 
 
-========================
-= Json path
-========================
 
 
-kubectl get nodes -o=jsonpath="{.items[*]['metadata.name']}"
 
-kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
-kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="Hostname")].address}'
+
+
+# kubectl replace or create new configmap if not exist 
+# https://github.com/kubernetes/kubernetes/issues/65066
+
+kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f -
+
+
+
+
+
+
+
