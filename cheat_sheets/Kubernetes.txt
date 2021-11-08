@@ -618,7 +618,10 @@ kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f -
 
 
 
+==============================
+== EKS 
+=============================
 
-
-
+kubectl -n kube-system describe configmap aws-auth                 # Get Worker node IAM Role ARN
+ 
 
