@@ -1,5 +1,7 @@
 explorer .										# git bash open file explorer
 
+ export test=$( curl https://jsonplaceholder.typicode.com/todos/1 |  jq '.id' )
+ 
 =========== Networking  ==================
 # apt install iproute2 net-tools
 
