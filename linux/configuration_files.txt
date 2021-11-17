@@ -116,6 +116,11 @@
 /etc/nginx              # Nginx config dir
 /usr/share/share/html   # Default html page Nginx server
 
+/var/log/nginx/             # nginx logs folder
+/var/log/nginx/access.log   # nginx access logs
+/var/log/nginx/error.log    # nginx error logs 
+
+
 =========== Ansible =====================
 /etc/ansible/ansible.cfg  # Ansible configuration file 
 /etc/ansible/hosts        # Ansible default inventory 
