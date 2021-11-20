@@ -34,6 +34,10 @@ cat  ~/.aws/credentials | grep "\["
 # return caller identity
 aws sts get-caller-identity
 
+
+# assume role 
+aws sts assume-role --role-arn arn:aws:iam::922304886948:role/OrganizationAccountAccessRole  --role-session-name OrganizationAccountAccessRole
+
 =================================================================
 IAM
 =================================================================
