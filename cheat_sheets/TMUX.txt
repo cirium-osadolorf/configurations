@@ -48,6 +48,7 @@ direction (after Prefix)  # move between panes
 
 space (after prefix)      # rearrange panes ordering
 
+. (after Prefix)          # rename window index
 
 t (after Prefix)          # show the time
 q (adter prefix)          # view pane numbering
