@@ -1,8 +1,8 @@
 TMUX   (1 or more) --> session (1 or more) ---> window (1 or more) ---> pane
 
-###########################
-# System
-###########################
+===========================
+== System
+===========================
 tmux -V
 
 tmux                      # lunch tmux, 
@@ -18,9 +18,9 @@ tmux rename-session -t 0 database   # rename session
 tmux switch -t <name>       # switches to an existing session named session_name
 tmux kill-session -t <name> # kill session (delete)
 
-###########################
-# After Prefix
-###########################
+===========================
+== After Prefix
+===========================
 ctrl + b                  # Prefix, all tmux commands are executed after this prefix
 
 s (after prefix)          # switch between sessions
@@ -36,18 +36,17 @@ w (after Prefix)          # list windows
 
 # Window Movement 
 number (after Prefix)     # switch between windows
-Prefix + o                # flip pane position
+hold Prefix + o           # flip pane position
 n (after Prefix)          # Go to the next window
 p (after Prefix)          # Go to the previous window
 
 # Pane Movement 
 o (after Prefix)          # Go to the next pane
 ; (after Prefix)          # Toggle between the current and previous pane
-Prefix + direction        # Resize the pane 
+hold Prefix + direction   # Resize the pane 
 direction (after Prefix)  # move between panes
 
 space (after prefix)      # rearrange panes ordering
-
 
 
 t (after Prefix)          # show the time
@@ -58,7 +57,8 @@ d (after prefix)          # You can detach from the Tmux session and return to y
 
 ? (after prfix)           # to see a list of all available commands and start experimenting.
 z (after prfix)           # make a pane go full screen. Hit C-b z again to shrink it back to its previous size
-
+w (after prfix)           # view sessions in interactive window 
+l (after prfix)           # go to previous active session
 
 % create a horizontal pane
 " create a vertical pane
@@ -66,7 +66,7 @@ h move to the left pane. *
 j move to the pane below *
 l move to the right pane *
 k move to the pane above *
-q show pane numbers
+
 o toggle between panes
 } swap with next pane
 { swap with previous pane
@@ -77,9 +77,9 @@ x kill the current pane
 + zoom into therminal
 - zoom out of the terminal
 
-################################
-# Copy mode
-################################
+===========================
+== Copy mode
+===========================
 prefix:
 
 [       (while in copy mode) # enter copy mode
@@ -106,17 +106,17 @@ enter           # can't make it work.... copy selection
 ]       paste the  text
 
 
-################################
-# TMUX and SSH
-################################
+===========================
+== TMUX and SSH
+===========================
 Tmux (Local) → Ctrl+b
 Tmux (Local) inside Tmux (ssh) → Ctrl+b+b
 Tmux (Local) inside Tmux (ssh) inside Tmux (other ssh) → Ctrl+b+b+b+b
 
 
-#############################
-# Settings
-#############################
+===========================
+== Settings
+===========================
 Ctrl-b :
 
 setw synchronize-panes on       # sync panes
@@ -126,4 +126,3 @@ set -g mouse on                 # enable mouse scrolling in panes
 
 update tmux to latest version
 http://witkowskibartosz.com/blog/update-your-tmux-to-latest-version.html#.YASwYej7RPZ
-
