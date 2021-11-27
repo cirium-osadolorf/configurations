@@ -1,3 +1,6 @@
+===========================
+== Overview
+===========================
 TMUX   (1 or more) --> session (1 or more) ---> window (1 or more) ---> pane
 
 ===========================
@@ -16,78 +19,79 @@ tmux rename-session -t 0 database   # rename session
 tmux switch -t <name>               # switches to an existing session named session_name
 tmux kill-session -t <name>         # kill session (delete)
 
+
+ctrl + b                  # Prefix, all tmux commands are executed after this prefix
+
 ===========================
 == Session managment 
 ===========================
 
-ctrl + b                  # Prefix, all tmux commands are executed after this prefix
-
 s (after prefix)          # switch between sessions
-
-# Window managament 
-c (after Prefix)          # create a new window
-, (after Prefix)          # rename current window
-w (after Prefix)          # list windows
-
-# Pane managment 
-% (after Prefix)          # Split current window into 2 horizontally panes
-" (after Prefix)          # Split current window into 2 vertical panes
-
-# Window Movement 
-number (after Prefix)     # switch between windows
-hold Prefix + o           # flip pane position
-n (after Prefix)          # Go to the next window
-p (after Prefix)          # Go to the previous window
-
-# Pane Movement 
-o (after Prefix)          # Go to the next pane
-; (after Prefix)          # Toggle between the current and previous pane
-hold Prefix + direction   # Resize the pane 
-direction (after Prefix)  # move between panes
-
-space (after prefix)      # rearrange panes ordering
-
-. (after Prefix)          # rename window index
-& (after Prefix)          # close a window with all its panes 
-
-t (after Prefix)          # show the time
-q (adter prefix)          # view pane numbering
-x (after Prefix)          # Close the current window
-d (after prefix)          # You can detach from the Tmux session and return to your normal shell
-
-
-? (after prfix)           # to see a list of all available commands and start experimenting.
-z (after prfix)           # make a pane go full screen. Hit C-b z again to shrink it back to its previous size
-w (after prfix)           # view sessions in interactive window 
-l (after prfix)           # go to previous active session
-
-% create a horizontal pane
-" create a vertical pane
-h move to the left pane. *
-j move to the pane below *
-l move to the right pane *
-k move to the pane above *
-
-o toggle between panes
-} swap with next pane
-{ swap with previous pane
-! break the pane out of the window
-x kill the current pane
-
-
-+ zoom into therminal
-- zoom out of the terminal
 
 
 ===========================
 == Window managment
 ===========================
 
+c (after Prefix)          # create a new window
+, (after Prefix)          # rename current window
+w (after Prefix)          # list windows
+
+number (after Prefix)     # switch between windows
+hold Prefix + o           # flip pane position
+n (after Prefix)          # Go to the next window
+p (after Prefix)          # Go to the previous window
+
+. (after Prefix)          # rename window index
+& (after Prefix)          # close a window with all its panes 
 
 ===========================
 == Panes managment
 ===========================
 
+% (after Prefix)          # Split current window into 2 horizontally panes
+" (after Prefix)          # Split current window into 2 vertical panes
+
+z (after prfix)           # make a pane go full screen. Hit C-b z again to shrink it back to its previous size
+
+o (after Prefix)          # Go to the next pane
+; (after Prefix)          # Toggle between the current and previous pane
+
+
+space (after prefix)      # rearrange panes ordering
+
+%  (after Prefix)         # create a horizontal pane
+"  (after Prefix)         # create a vertical pane
+h  (after Prefix)         # move to the left pane
+j  (after Prefix)         # move to the pane below
+l  (after Prefix)         # move to the right pane
+k  (after Prefix)         # move to the pane above 
+
+o  (after Prefix)         # toggle between panes
+}  (after Prefix)         # swap with next pane
+{  (after Prefix)         # swap with previous pane
+!  (after Prefix)         # break the pane out of the window
+x  (after Prefix)         # kill the current pane
+
+===========================
+== other
+===========================
+
+t (after Prefix)          # show the time
+q (adter prefix)          # view pane numbering
+x (after Prefix)          # Close the current pane or window
+d (after prefix)          # You can detach from the Tmux session and return to your normal shell
+
+
+? (after prfix)           # to see a list of all available commands and start experimenting.
+w (after prfix)           # view sessions in interactive window 
+l (after prfix)           # go to previous active session
+
+
+(hold Prefix) +              # zoom into terminal
+(hold Prefix) -              # zoom out of the terminal
+(hold Prefix) direction      # Resize the pane 
+(after Prefix) direction     # move between panes
 
 ===========================
 == Copy mode
