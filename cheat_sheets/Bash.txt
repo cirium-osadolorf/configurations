@@ -418,7 +418,8 @@ command > file-name 2>&1.               # outputs both stderr and output into a 
 SomeCommand 2>&1 | tee SomeFile.txt	# outputs both stderr and output displayed on the console and in a file
 SomeCommand 2>&1 | tee -a log
 
-
+> test.conf				# wipe content from a file
+ cat /dev/null > test.conf		# wipe content from a file
 
 ============ Operators ======================
 #link to the resource https://askubuntu.com/questions/334994/which-one-is-better-using-or-to-execute-multiple-commands-in-one-line
