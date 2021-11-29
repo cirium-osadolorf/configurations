@@ -1148,11 +1148,14 @@ Up and Down		# scroll through the commands
 ctrl + r		# used after typing a comand, used to rewrite the same type of commands that was used in time past 
 ctrl+c 			# interupt, it will get you out of a process 
 
+
 !! 			# run last command 
 sudo 			# run last command with sudo
 
 !history_number		# re runs command from history
 
+mount | column -t	# format command output in columns 
+command | column -t	# format command output in columns 
 
 ================== BASH vars ===================
 
