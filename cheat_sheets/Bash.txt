@@ -587,6 +587,7 @@ cd /path/folder		#Change directory
 cd ..			#Takes you up 1 director
 cd .. / ..		#Takes you up 2 director
 cd ~			#Takes you to the home directory
+cd -			#Takes you to the previous directory
 which command 		#returns comand bianry path
 xxd  -b `which command` #returns hex reppresentaion of the program
 xxd  `which command`	 #returns binary reppresentaion of the program
@@ -1140,12 +1141,15 @@ docker create \
 
 CTRL + A 		# Takes you to the begining of the comand line
 CTRl + E 		# Takes you to the end of the comand line
+CTRL + L		# clear the screen
 clear 			# clear the screen
+reset 			# resets the screen
 Up and Down		# scroll through the commands
 ctrl + r		# used after typing a comand, used to rewrite the same type of commands that was used in time past 
 ctrl+c 			# interupt, it will get you out of a process 
 
-
+!! 			# run last command 
+sudo 			# run last command with sudo
 
 
 ================== Utilities  ===================
