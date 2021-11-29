@@ -1151,6 +1151,14 @@ ctrl+c 			# interupt, it will get you out of a process
 !! 			# run last command 
 sudo 			# run last command with sudo
 
+!history_number		# re runs command from history
+
+
+================== BASH vars ===================
+
+export HISTCONTROL=ignoreboth			# A value of ignoreboth is shorthand for ignorespace and ignoredups
+export HISTCONTROL=ignoreboth:erasedups		# 
+export HISTTIMEFORMAT="%d/%m/%y %T "		# add time info to hisory commands
 
 ================== Utilities  ===================
 
