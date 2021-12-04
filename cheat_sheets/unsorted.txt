@@ -1,0 +1,5 @@
+sudo lsof | grep -i deleted
+
+ls -lh /proc/*/fd | grep deleted
+
+docker kill (docker ps -q)
