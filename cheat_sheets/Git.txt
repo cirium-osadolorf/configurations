@@ -188,6 +188,13 @@ git push --tags                 # push all local tags
 git checkout v1.9                       # view the versions of the files that particular version tag
 git checkout tags/<tag> -b <branch>
 
+=============== rebase ===========================
+# https://linuxize.com/post/change-git-commit-message
+The rebase command rewrites the commit history And it is strongly discouraged to rebase commits that are already pushed to the remote Git repository .
+
+git rebase -i HEAD~5                      # Changing an Older or Multiple Commits
+                                          # Move to the lines of the commit message you want to change and replace pick with reword
+
 
 
 =============== gitignore ===========================
