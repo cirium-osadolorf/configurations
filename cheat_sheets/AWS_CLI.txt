@@ -305,3 +305,11 @@ ec2-metadata --help
 ec2-metadata -a
 ec2-metadata -z
 ec2-metadata -s
+
+
+
+=====================
+= Other
+=====================
+
+aws ec2 describe-availability-zones --region eu-west-2 | jq -r '.AvailabilityZones[] | [ .ZoneName, .ZoneId ] | join(" = ")'  # view AZsid per az within a region
