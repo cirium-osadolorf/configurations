@@ -74,6 +74,9 @@ DELETE FROM cities WHERE name='Delhi'
 #############################
 ## Select  queries
 ############################
+SELECT version(); 				# returns postgres version
+
+
 
 SELECT id, name, address, gender  FROM services WHERE customer_id='user';
 
