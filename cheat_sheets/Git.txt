@@ -195,7 +195,11 @@ The rebase command rewrites the commit history And it is strongly discouraged to
 git rebase -i HEAD~5                      # Changing an Older or Multiple Commits
                                           # Move to the lines of the commit message you want to change and replace pick with reword
 
+============= Reverting  ====================
 
+git log                                   # return commit logs
+git revert -m 1 <coomitHash>              # revert to commit
+git push --force-with-lease               # safely push 
 
 =============== gitignore ===========================
 
