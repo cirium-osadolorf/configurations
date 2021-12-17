@@ -618,6 +618,9 @@ kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f -
 
 
  kubectl logs -f --since=10m flight-processor-23424 
+ 
+ 
+cat manifest.yaml | kubectl apply --namespace "${NAMESPACE}" --force --cascade=orphan --prune --all --prune-whitelist=core/v1/ConfigMap --prune-whitelist=core/v1/Secret -f -
 
 ==============================
 == EKS 
