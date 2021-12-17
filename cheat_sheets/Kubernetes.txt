@@ -625,4 +625,4 @@ kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f -
 
 kubectl -n kube-system describe configmap aws-auth                 # Get Worker node IAM Role ARN
  
-
+ kubectl run nginx --image nginx  --limits="memory=100Mi" -n default
