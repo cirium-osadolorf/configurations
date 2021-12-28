@@ -8,7 +8,7 @@ https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/01-E
 
 eksctl create --help
 eksctl create cluster --help
-
+eksctl create nodegroup --help
 
 ================================
 = Cluster creation 
