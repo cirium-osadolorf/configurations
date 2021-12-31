@@ -597,7 +597,7 @@ https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
 kubectl run curl-<YOUR NAME> --image=radial/busyboxplus:curl -i --tty --rm    # curl pod used tp trpuble shoot internal cluster
 
 
-kubectl exec --stdin --tty pod_name -- /bin/bash      # sh into pod
+kubectl exec --stdin --tty pod_name -- /bin/bash      # /bin/sh into pod
 
 kubectl delete all --all -n namespaceName             # delete all reousces within a specific resources
 
@@ -605,10 +605,10 @@ kubectl delete all --all -n namespaceName             # delete all reousces with
 # kubectl replace or create new configmap if not exist 
 # https://github.com/kubernetes/kubernetes/issues/65066
 
-kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f -
+kubectl create configmap my-config ... --dry-run -o yaml | kubectl apply -f - 
 
 
- kubectl logs -f --since=10m flight-processor-23424 
+kubectl logs -f --since=10m flight-processor-23424 
  
  
 cat manifest.yaml | kubectl apply --namespace "${NAMESPACE}" --force --cascade=orphan --prune --all --prune-whitelist=core/v1/ConfigMap --prune-whitelist=core/v1/Secret -f -
@@ -619,11 +619,11 @@ cat manifest.yaml | kubectl apply --namespace "${NAMESPACE}" --force --cascade=o
 
 kubectl -n kube-system describe configmap aws-auth                 # Get Worker node IAM Role ARN
  
- kubectl run nginx --image nginx  --limits="memory=100Mi" -n default
 
 
 ==============================
 == Extra
 =============================
-kubectl get sc,pvc,pv                     # get multiple type of resouces 
+kubectl get sc,pvc,pv                                                          # get multiple type of resouces 
+kubectl run nginx --image nginx  --limits="memory=100Mi" -n default            # run pod with resource limits 
 
