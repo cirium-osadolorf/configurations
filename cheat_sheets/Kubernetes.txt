@@ -402,6 +402,18 @@ kubectl auth can-i create pods --as dev-user --namespace test            # # can
 kubectl get clusterrole
 kubectl get clusterrolebindings 
 
+###########################################
+# Limits
+#########################################
+kubectl get limits -n dev3
+kubectl describe limits default-cpu-mem-limit-range -n dev3
+
+###########################################
+# Resource Quota 
+#########################################
+kubectl get quota -n dev3
+kubectl describe quota ns-resource-quota -n dev3
+
 #######################################
 ## Maintainance
 ######################################
