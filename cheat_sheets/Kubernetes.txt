@@ -639,3 +639,8 @@ kubectl -n kube-system describe configmap aws-auth                 # Get Worker 
 kubectl get sc,pvc,pv                                                          # get multiple type of resouces 
 kubectl run nginx --image nginx  --limits="memory=100Mi" -n default            # run pod with resource limits 
 
+
+
+kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node>     #  Get Pods on Specific Nodes
+
+
