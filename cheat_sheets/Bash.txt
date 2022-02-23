@@ -1076,8 +1076,17 @@ export VISUAL=vim; visudo			# change default editor to open visudo
 
 cat <(echo hey there)		 # Process Substitution -  this outputs: hey there
 echo <(echo hey there) 		 # Process Substitution -  this outputs: /dev/fd/63   (the tmp file where the result is stored in)
+
+
+==================DIFF===================
+
+
+https://researchhubs.com/post/computing/linux-cmd/compare-the-content-of-files.html#:~:text=If%20you%20want%20to%20compare,and%20file2%20on%20the%20right.
+
 diff <(ls /bin) <(ls /usr/bin)	 # process Substitution 
 
+sdiff -s file1 file2			# returns lines that differ (It does not display the identical identical lines)
+sdiff -o OutFile file1 file2		# Creates a third file, specified by the OutFile variable, 
 
 ================== Demoggification  ==================
 
@@ -1186,8 +1195,6 @@ grep -P					# perl regular experssion
 grep -c "echo" FILE			#  This will output the number of lines that contain your search string.
 grep -r 'myString' .			# search the current directory for all files having the a string
 grep -r --include=*.{cc,h} "hello" . 	# search recursively (in all sub directories also) for all .cc OR .h files that contain "hello" at this . (current) directory
-
-
 
 
 
