@@ -1,7 +1,7 @@
 ===================
 # java
 ===================
-sudo alternatives --config java		# returns all version of ajva , Linux only
+update-alternatives --config java	# returns all version of ajva , Linux only
 
 
 update-java-alternatives -l
