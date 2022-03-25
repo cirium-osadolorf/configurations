@@ -124,6 +124,7 @@ nc -zv site.com 80-84 		# – scan a range of port
 
 
 
+nc -v -w5 -z portquiz.net 7999		# got this bad boy from Altaf
 
 # tcpdump
 tcpdump -h 	# returns version 
@@ -1239,6 +1240,5 @@ cat fortune.csr | base64 | tr -d "\n"		# convert to base 64 and get rids of new 
 
 figlet TecMint.com	# Text Banners in Terminal
 			# https://www.tecmint.com/create-ascii-text-banners-in-linux-terminal/
-
 
 
