@@ -72,7 +72,6 @@ PEM: Privacy Enhanced Mail
 PKCS: Public-Key Cryptography Standards
 
 
-
 =======================================
 = Deep dive openssl
 =======================================
@@ -133,8 +132,6 @@ openssl req -new \
 -out yourdomain.csr \
 -subj "/C=US/ST=Utah/L=Lehi/O=Your Company, Inc./OU=IT/CN=yourdomain.com"
                                                                             # -nodes flag disable passprhase during the private key creation
-
-
 
 
 
