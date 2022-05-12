@@ -1242,3 +1242,11 @@ figlet TecMint.com	# Text Banners in Terminal
 			# https://www.tecmint.com/create-ascii-text-banners-in-linux-terminal/
 
 
+# AWK in action 
+k get svc -A  | grep -i load | awk '{print $1, $2, $3, $6}' | column -t		# awks is used to output colmun 1,2,3 and 6 of the kubectl output
+
+
+
+
+
+
