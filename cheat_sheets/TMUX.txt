@@ -142,3 +142,8 @@ set -g mouse on                 # enable mouse scrolling in panes
 
 update tmux to latest version
 http://witkowskibartosz.com/blog/update-your-tmux-to-latest-version.html#.YASwYej7RPZ
+
+
+
+# Easy pairing and shell session sharing with tmate
+https://www.youtube.com/watch?app=desktop&v=Twz6yWuP8iQ&feature=youtu.be
