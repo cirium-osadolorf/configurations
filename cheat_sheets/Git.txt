@@ -118,6 +118,9 @@ git diff tag1 tag2 -- some/file/name    # and then look at the differences for s
 
 
 
+git diff-tree -p COMMIT                 # see the changes in a Git commit and tree; use git log to obtain commit
+
+
 ============== Stashing =========================
 
 git stash save "changes on new-branch"          # Instead of committing your changes or reverting, you can stash them
