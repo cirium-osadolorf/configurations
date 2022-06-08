@@ -10,10 +10,11 @@ grep -P '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' ip
 grep -E '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' ip
 
 
-
-
-
-
 grep  '\[\w*]'  production  > sorted
 
 sed -i -r 's/\[|]/"/g' sorted
+
+grep --color -o -E 'args=user_key=[a-zA-Z0-9]*'  NoUserAgent_Header.log | sort -u
+
+grep -o -E 'args=user_key=[a-zA-Z0-9]*'  NoUserAgent_Header.log               # -o return the word only not the full line 
+                                                                              # [a-zA-Z0-9]* match a string of numbers and letters
