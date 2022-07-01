@@ -648,3 +648,31 @@ kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash
 
 # Utility
 https://github.com/nicolaka/netshoot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://gist.github.com/zparnold/0e72d7d3563da2704b900e3b953a8229
+
+kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod
+kubectl get pods --field-selector 'status.phase=Failed' -o name | xargs kubectl delete
+kubectl get pods --all-namespaces | grep Evicted | awk '{print $2 " --namespace=" $1}' | xargs kubectl delete pod
+
+
+https://linuxhint.com/xargs_linux/
+echo -n "pods-pods" | xargs -d - -I{} kubectl auth can-i create {} --as cirium_developers --as-group cirium_developers --namespace atomicus-feature-aosom-138
+
+
+
+
