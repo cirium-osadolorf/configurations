@@ -1250,3 +1250,12 @@ k get svc -A  | grep -i load | awk '{print $1, $2, $3, $6}' | column -t		# awks 
 
 
 
+==================  xarg  ==================
+
+# Remove all your local git branches but keep master
+git branch | grep -v "master" | xargs git branch -D  		
+
+# Run comand against all entries in echo command 
+echo -n "pods-service-daemonset" | xargs -d - -I{} kubectl auth can-i delete {} --as cirium_developers --namespace atomicus-feature-aosom-138
+
+
