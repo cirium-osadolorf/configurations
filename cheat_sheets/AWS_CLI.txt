@@ -323,3 +323,31 @@ aws configure list-profiles
 
 
 aws configure list 
+
+
+
+
+
+
+
+
+# Vault 
+
+{
+ export AWS_DATA=$(curl -s --header "X-Vault-Token: ${VAULT_TOKEN}" https://vault_eu_prod.b2b.regn.net/v1/aws/csa/sts/terraform-${ROLE} | jq ".data")
+ export AWS_ACCESS_KEY_ID=$(echo $AWS_DATA | jq -r ".access_key")
+ export AWS_SECRET_ACCESS_KEY=$(echo $AWS_DATA | jq -r ".secret_key")
+ export AWS_SESSION_TOKEN=$(echo $AWS_DATA | jq -r ".security_token")
+ export AWS_DEFAULT_REGION=eu-west-1
+}
+
+# AWS sts
+
+{
+ export AWS_DATA=$( aws sts assume-role --role-arn arn:aws:iam::174663516678:role/SVC-Cirium-Terraform --role-session-name fortune | jq ".Credentials")
+ export AWS_ACCESS_KEY_ID=$(echo $AWS_DATA | jq -r ".AccessKeyId")
+ export AWS_SECRET_ACCESS_KEY=$(echo $AWS_DATA | jq -r ".SecretAccessKey")
+ export AWS_SESSION_TOKEN=$(echo $AWS_DATA | jq -r ".SessionToken")
+ export AWS_DEFAULT_REGION=eu-west-1
+}
+
