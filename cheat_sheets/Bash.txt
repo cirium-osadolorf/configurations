@@ -122,9 +122,9 @@ nc -zv site.com 80 		# – scan a single port
 nc -zv hostname.com 80 84 	# – scan a set of individual ports
 nc -zv site.com 80-84 		# – scan a range of port
 
-
-
 nc -v -w5 -z portquiz.net 7999		# got this bad boy from Altaf
+
+nc -z -n -v 192.168.0.173 1-1000 2>&1 | grep succeeded  # scans a range of ports
 
 # tcpdump
 tcpdump -h 	# returns version 
