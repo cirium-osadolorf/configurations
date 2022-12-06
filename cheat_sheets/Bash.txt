@@ -1258,4 +1258,4 @@ git branch | grep -v "master" | xargs git branch -D
 # Run comand against all entries in echo command 
 echo -n "pods-service-daemonset" | xargs -d - -I{} kubectl auth can-i delete {} --as cirium_developers --namespace atomicus-feature-aosom-138
 
-
+export GOOGLE_CREDENTIALS=$(cat ../secrets | jq -c )
