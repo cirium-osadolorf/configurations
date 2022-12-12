@@ -357,4 +357,4 @@ aws configure list
 # EKS Service account troubleshooting 
 https://aws.amazon.com/premiumsupport/knowledge-center/eks-pods-iam-role-service-accounts/
 
-
+https://aws.amazon.com/premiumsupport/knowledge-center/eks-restrict-s3-bucket/
