@@ -351,3 +351,10 @@ aws configure list
  export AWS_DEFAULT_REGION=eu-west-1
 }
 
+
+
+
+# EKS Service account troubleshooting 
+https://aws.amazon.com/premiumsupport/knowledge-center/eks-pods-iam-role-service-accounts/
+
+
