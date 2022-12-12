@@ -675,7 +675,7 @@ echo -n "pods-pods" | xargs -d - -I{} kubectl auth can-i create {} --as cirium_d
 
 
 
-kubectl  log -l app=something -f    # return logs from pods with label 
+kubectl  logs -l app=something -f    # return logs from pods with label 
 
 
 
