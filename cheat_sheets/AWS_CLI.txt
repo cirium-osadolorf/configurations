@@ -358,3 +358,23 @@ aws configure list
 https://aws.amazon.com/premiumsupport/knowledge-center/eks-pods-iam-role-service-accounts/
 
 https://aws.amazon.com/premiumsupport/knowledge-center/eks-restrict-s3-bucket/
+
+
+
+
+
+
+
+
+
+
+
+==============================
+vim ~/.aws/config
+
+[default]
+region=us-east-1
+output=json
+role_arn = arn:aws:iam::xxxxx:role/OrganizationAccountAccessRole
+role_session_name=vagrant-OrganizationAccountAccessRole
+source_profile=default
