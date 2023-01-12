@@ -314,6 +314,7 @@ ec2-metadata -s
 
 
 IF(HOUR(m1)<7 OR HOUR(m1)>18 AND DAY(m1)<6 OR DAY(m1)>=6 ,m1)    # alerts out of hours or during weekend 
+IF(DAY(m1)>=6 OR HOUR(m1)<7 OR HOUR(m1)>10, m1)                  # alerts out of hours or during weekend 
 
 
 =====================
