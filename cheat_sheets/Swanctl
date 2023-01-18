@@ -1,0 +1,21 @@
+
+## starts the connection and the remote children setup
+sudo swanctl -i -c <name-of-children-connection>
+
+
+
+## stops the complete connection
+sudo swanctl -t -i <name-of-the-connection>
+
+
+
+
+swanctl --list-sas
+
+
+
+ swanctl --list-conn
+ 
+ 
+ 
+ swanctl --log
