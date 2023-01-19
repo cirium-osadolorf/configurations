@@ -1265,3 +1265,14 @@ git branch | grep -v "master" | xargs git branch -D
 echo -n "pods-service-daemonset" | xargs -d - -I{} kubectl auth can-i delete {} --as cirium_developers --namespace atomicus-feature-aosom-138
 
 export GOOGLE_CREDENTIALS=$(cat ../secrets | jq -c )
+
+
+
+
+
+# Unattended upgrades 
+
+sudo dpkg-reconfigure -plow unattended-upgrades
+
+cat /var/log/unattended-upgrades/ 
+
