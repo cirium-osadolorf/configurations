@@ -677,7 +677,7 @@ echo -n "pods-pods" | xargs -d - -I{} kubectl auth can-i create {} --as cirium_d
 
 kubectl  logs -l app=something -f    # return logs from pods with label 
 
-
+kubectl logs -f deployment/ebs-csi-controller -n kube-system -c ebs-plugin
 
 
 
