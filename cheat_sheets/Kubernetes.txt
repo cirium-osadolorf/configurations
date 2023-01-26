@@ -680,4 +680,4 @@ kubectl  logs -l app=something -f    # return logs from pods with label
 kubectl logs -f deployment/ebs-csi-controller -n kube-system -c ebs-plugin
 
 
-
+kubectl get job | grep myjob | awk '{print $1}' | xargs kubectl delete job
