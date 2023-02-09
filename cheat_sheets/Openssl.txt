@@ -23,8 +23,6 @@ openssl x509 -in certificate.crt -text -noout     # Check/view/read a signed cer
 openssl pkcs12 -info -in keyStore.p12             # Check a PKCS#12 file (.pfx or .p12)
 
 
-oenssl rsa -in dummy_key -noout -modulus	  # return private key modulus
-openssl x509 -in Rainbow.cert -noout -modulus	  # returns cert modulus (public key)
 
 
 # Use openssl x509 utility to request specific fields from a Certificate
@@ -144,14 +142,17 @@ openssl req -new \
 # Inspecting x.509 Certificate 
 # https://classes.pracnet.net/courses/practical-tls/contents/5f936ac652157
 
-openssl s_client -connect reddit.com:443		# returns  CERT data in raw format
-openssl x509 -in certificate.crt -text -noout		# returns CERT data, algorithm and digest signature  in plain text
+openssl s_client -connect reddit.com:443		# returns  CERT data in raw format (base64 encoded)
+openssl x509 -in certificate.crt -text -noout		# returns CERT data, algorithm and digest signature as text
 
 
+openssl rsa -in <private.key> -noout -text 		# returns private key file as text
+openssl x509 -in <cert> -noout -text 			# returns private key file as text
 
 
-
-
+# Public key contains modulus and public exponent. Modulus (n) is the product of two prime numbers used to generate the key pair
+oenssl rsa -in dummy_key -noout -modulus	  # return private key modulus
+openssl x509 -in Rainbow.cert -noout -modulus	  # returns cert modulus (public key)
 
 
 
