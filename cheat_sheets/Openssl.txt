@@ -141,6 +141,11 @@ openssl req -new \
 
 
 
+# Inspecting x.509 Certificate 
+# https://classes.pracnet.net/courses/practical-tls/contents/5f936ac652157
+
+openssl s_client -connect reddit.com:443		# returns  CERT data in raw format
+openssl x509 -in certificate.crt -text -noout		# returns CERT data, algorithm and digest signature  in plain text
 
 
 
@@ -152,5 +157,9 @@ openssl req -new \
 
 
 
-openssl s_client -connect reddit.com:443		# returns CERT and a bunch of details
-openssl x509 -in certificate.crt -text -noout		# returns CERT details in plain text
+
+
+
+
+
+
