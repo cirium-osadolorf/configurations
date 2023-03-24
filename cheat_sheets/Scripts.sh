@@ -106,3 +106,25 @@ for i in /etc/*.conf; do cp $i /backup; done
 # One line for loop SCP
 ############################
 for x in 0 1 2; do scp swimgw-install-bundle-20220119v1-6-1.zip core@10.44.1.1$x:~/; done
+
+
+
+
+=============================================
+= ENV var checker prior to start script
+=============================================
+
+# Sanity check - ensure all required vars are set
+ERRORS=""
+for required in CI_API_V4_URL API_TOKEN API_TOKEN2 API_TOKEN3; do
+  var_val=$(eval echo "\$${required}")
+  if [ -z "${var_val}" ]; then ERRORS="${ERRORS} ${required}"; fi
+done
+
+if [ -n "$ERRORS" ]; then
+  echo "Error: one or more required environment vars missing:"
+  for var in $ERRORS; do
+    echo "* ${var}"
+  done
+  exit 1
+fi
