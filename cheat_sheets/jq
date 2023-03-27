@@ -1,0 +1,37 @@
+===================================================================================================================================================
+= Ourput select attribute into a file
+===================================================================================================================================================
+
+ jq -r '.[] | "\(.project),\(.token)"' >> "${mend_projects}"
+
+
+===================================================================================================================================================
+= Advance
+===================================================================================================================================================
+# 
+# Filter with prefix
+# Trim prefix
+# Reassemble output into new array
+
+Example input 
+{
+	"projectTags":[
+    	{
+			"name": "My Project 1",
+			"token": "project_token_1",
+			"tags":{
+				"Component": [
+					"Database"
+				],
+				"Module": [
+					"Server"
+				]
+			}
+		}
+	]
+}
+
+
+# GET projects from MEND and filter AirOps ones
+cat data | jq -r ".projectTags[] | select(.name | startswith(\"FortunexFortune\")) | {project: (.name | ltrimstr(\"FortunexFortune - \")), token: .token}" \
+         | jq -r -s '.[] | "\(.project),\(.token)"' >> "${test_projects}"
