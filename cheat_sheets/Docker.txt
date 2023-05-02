@@ -407,6 +407,8 @@ docker inspect --format '{{ .State.Pid }}' [container_id] # Get the process ID f
 
 
 
+docker container run --name tmp-ubuntu --rm -it ubuntu //bin/bash # ubuntu docker 
+
 ==================== READY to GO ====================
 
 sudo docker run -it -v mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
@@ -418,4 +420,6 @@ docker container exec -it  -u 0 db  /bin/bash
 
 
 docker run --rm -d --network host --name my_nginx nginx   # host network
+
+
 
